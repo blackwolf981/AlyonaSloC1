@@ -88,9 +88,9 @@ function plosca(): string {
 
 /* ---------- izris: kartica naloge ---------- */
 
-function vrzel(i: number, besedilo: string): string {
+function vrzel(i: number, besedilo: string, napacno = false): string {
   return besedilo
-    ? `<span class="vrzel vrzel-polna" data-vrzel="${i}">${esc(besedilo)}</span>`
+    ? `<span class="vrzel vrzel-polna${napacno ? ' vrzel-napacna' : ''}" data-vrzel="${i}">${esc(besedilo)}</span>`
     : `<span class="vrzel" data-vrzel="${i}" aria-label="vrzel">&nbsp;</span>`;
 }
 
@@ -98,7 +98,7 @@ function vstavkiZaVrzeli(n: Naloga, odgovor: string): string[] {
   return steviloVrzeli(n) > 1 ? odgovor.split(';').map((s) => s.trim()) : [odgovor.trim()];
 }
 
-function kontekstHtml(n: Naloga, odgovor: string): string {
+function kontekstHtml(n: Naloga, odgovor: string, napacno = false): string {
   const deli = n.kontekst.split(VRZEL);
   if (deli.length === 1) {
     const oznaka = n.tip_naloge === 'popravek_napake' ? 'Poved z napako' : 'Izhodiščna poved';
@@ -109,7 +109,7 @@ function kontekstHtml(n: Naloga, odgovor: string): string {
   }
   const vstavki = vstavkiZaVrzeli(n, odgovor);
   return `<p class="kontekst">${deli
-    .map((del, i) => esc(del) + (i < deli.length - 1 ? vrzel(i, vstavki[i] ?? '') : ''))
+    .map((del, i) => esc(del) + (i < deli.length - 1 ? vrzel(i, vstavki[i] ?? '', napacno) : ''))
     .join('')}</p>`;
 }
 
@@ -249,7 +249,7 @@ function kartica(n: Naloga): string {
         ${stanje ? `<span class="ml-auto">${stanje}</span>` : ''}
       </header>
       <p class="navodilo"><span class="navodilo-oznaka">Navodilo</span>${esc(n.navodilo)}</p>
-      ${kontekstHtml(n, odgovor)}
+      ${kontekstHtml(n, odgovor, rez ? !rez.pravilno : false)}
       <div class="mt-4">${odgovorHtml(n, odgovor, rez)}</div>
       ${odzivHtml(n, rez)}
       <div class="mt-4 flex flex-wrap gap-2">

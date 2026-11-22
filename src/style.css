@@ -83,12 +83,17 @@ body {
 @layer components {
   /* --- plošča na vrhu --- */
   .plosca {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: color-mix(in srgb, var(--bg) 90%, transparent);
-    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
+  }
+  /* Lepljiva plošča samo na širših zaslonih; na telefonu bi zasedla pol višine. */
+  @media (min-width: 640px) and (min-height: 600px) {
+    .plosca {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(8px);
+    }
   }
   .napredek-trak {
     height: 0.5rem;
@@ -212,6 +217,13 @@ body {
     border-radius: 0.25rem 0.25rem 0 0;
     background: var(--ok-tint);
   }
+  .vrzel.vrzel-napacna {
+    border-bottom-style: dashed;
+    border-color: var(--napaka);
+    background: var(--napaka-tint);
+    color: var(--text);
+    text-decoration: line-through;
+  }
 
   /* --- možnosti (izbira) --- */
   .moznost {
@@ -251,7 +263,8 @@ body {
   .moznost[aria-pressed="true"] .moznost-crka,
   .moznost-pravilna .moznost-crka { background: var(--ok); border-color: var(--ok); color: var(--on-ok); }
   .moznost-pravilna { border-color: var(--ok); background: var(--ok-tint); opacity: 1; }
-  .moznost-napacna { border-color: var(--napaka); border-style: dashed; background: var(--napaka-tint); box-shadow: none; }
+  /* .moznost.moznost-napacna: mora premagati .moznost[aria-pressed="true"] (izbrana, a napačna) */
+  .moznost.moznost-napacna { border-color: var(--napaka); border-style: dashed; background: var(--napaka-tint); box-shadow: none; }
   .moznost.moznost-napacna .moznost-crka { background: var(--napaka); border-color: var(--napaka); color: var(--on-napaka); }
   .moznost-napacna .moznost-besedilo { text-decoration: line-through; }
   .moznost-zatemnjena { opacity: 0.5; }
