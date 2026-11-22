@@ -89,6 +89,12 @@ Vse naloge morajo dosledno slediti naslednji JSON strukturi:
 3. `popravek_napake` (Poišči in popravi slogovno/slovnično napako v stavku)
 4. `parafraza` (Preoblikuj stavek z uporabo zahtevanega frazema ali veznika)
 
+### ⚠️ Pomembna pravila formatiranja za Codex:
+* **Oblikovanje vrzeli:** Vsaka vrzel v polju `kontekst` mora biti označena s tremi ali več podčrtaji (`___`). Med tipkanjem se vrzel v živo polni z vnosom učenca.
+* **Več vrzeli v eni nalogi:** Če ima naloga tipa `vnos` več vrzeli (npr. sedanjik, deležnik, pomožnik), mora biti `pravilni_odgovor` zapisan ločeno s podpičjem in presledkom po vzorcu: `prva; druga; tretja` (zgled: `sta; pripravljena; prevzela`).
+* **Naloge brez vrzeli:** Tipi `parafraza` in `popravek_napake` nimajo vrzeli v `kontekst`, saj se celotno besedilo v vmesniku prikaže kot »Izhodiščna poved« ali »Poved z napako«.
+* **Veljavnost JSON:** Ob vsakem buildu spletne strani se izvede stroga validacija sintakse JSON. Če pride do sintaktične napake, se stran ne bo zgradila ali objavila.
+
 ---
 
 ## 🎯 Fokusna tematska področja ravni C1

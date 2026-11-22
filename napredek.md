@@ -12,7 +12,7 @@
 | :--- | :--- | :--- |
 | **Število potrjenih C1 nalog** | `7` | `100+` |
 | **Tematski moduli z nalogami** | `5 / 7` | `7 / 7` |
-| **Spletni vmesnik (Frontend)** | 🟢 Ogrodje & GitHub Pages pripravljeno | Delujoča interaktivna aplikacija |
+| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna aplikacija (reševanje, razlage, filtri, LocalStorage) | Delujoča interaktivna aplikacija |
 | **Lektura in jezikovna potrditev** | 🟢 7 / 7 nalog potrjenih (100 %) | 100 % pregledanih nalog |
 
 ---
@@ -31,9 +31,9 @@
 - [x] Izbira in postavitev razvojnega ogrodja spletne strani (Vite + TS + Tailwind) *(Claude Code)*
 - [x] Mehanizem za dinamično branje `naloge.json` ob zagonu in buildu *(Claude Code)*
 - [x] Uspešna objava delujoče spletne strani na GitHub Pages (`https://blackwolf981.github.io/AlyonaSloC1/`)
-- [ ] Izdelava celovitega odzivnega vmesnika z interaktivnim reševanjem vseh 4 tipov nalog *(Claude Code)*
-- [ ] Prikaz takojšnje povratne informacije, slovničnih razlag in tipičnih napak *(Claude Code)*
-- [ ] Lokalno shranjevanje napredka (LocalStorage) in filtri po kategorijah *(Claude Code)*
+- [x] Izdelava celovitega odzivnega vmesnika z interaktivnim reševanjem vseh 4 tipov nalog *(Claude Code)*
+- [x] Prikaz takojšnje povratne informacije, slovničnih razlag in tipičnih napak *(Claude Code)*
+- [x] Lokalno shranjevanje napredka (LocalStorage) in filtri po kategorijah *(Claude Code)*
 
 ### Faza 3: Širitev vsebinske baze C1
 - [ ] Modul 1: Vezljivost glagolov in predložne zveze (trenutno: 2, cilj: 15 nalog)
@@ -82,10 +82,13 @@
   - Avtomatiziran build test s preverjanjem veljavnosti `naloge.json` ob buildu.
   - Dodani `.gitignore`, `.github/workflows/deploy.yml` (CI/CD za avtomatsko objavo) in `README.md`.
   - Repozitorij uspešno povezan z GitHubom (`blackwolf981/AlyonaSloC1`), opravljen prvi push na vejo `main`.
+  - **Faza 2 zaključena (commita 8f2fe4b in bdaac15):** Polno interaktivno reševanje vseh 4 tipov nalog z dinamičnimi vrzelmi, karticami možnosti A–D, hitrimi tipkami (Enter / Ctrl+Enter), gumbom »Vstavi izhodiščno poved«, takojšnjo povratno informacijo, izpisom didaktičnih razlag in tipičnih napak.
+  - Dodana nadzorna vrstica (statistika, filtri kategorij, LocalStorage).
+  - Uspešno opravljeno testiranje v Chromu (namizje in 375 px mobilni pogled) ter odprava 3 vizualnih napak.
 
 ---
 
 ## 🔜 Naslednji takojšnji koraki
-1. Predati prvi ukaz agentu **Codex / ChatGPT** za generiranje pilotne baze nalog (`naloge.json`).
-2. **Gemini** opravi slovnični pregled generiranih nalog v `naloge.json`.
-3. Predati nalogo agentu **Claude Code** za pripravo ogrodja spletne strani.
+1. **Codex / ChatGPT (Faza 3):** Generiranje 13 novih C1 nalog za Modul 1 (*Vezljivost in predlogi*), da dosežemo načrtovano kvoto 15 nalog (ob upoštevanju formatiranja `___` in `; `).
+2. **Gemini (Urednik):** Slovnični pregled in lektura novih nalog za Modul 1.
+3. **Claude Code (UX nadgradnje):** Dodajanje filtra »Samo nerešene / napačne naloge« ter stikala za preklop svetle/temne teme.
