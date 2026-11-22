@@ -46,9 +46,11 @@
 - [ ] Modul 6: Polstavčne strukture in skladnja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
 - [ ] Modul 7: Slogovni registri in sopomenke (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
 
-### Faza 4: Uporabniško testiranje in jezikovno brušenje
+### Faza 4: Uporabniško testiranje, jezikovno brušenje in napredne funkcije (»Pika na i«)
 - [ ] Testiranje uporabniške izkušnje z Aljono na telefonu
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
+- [ ] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — v načrtu za večji nabor nalog)*
+- [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — v načrtu)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Gemini)*
 
 ---
