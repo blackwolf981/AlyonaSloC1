@@ -1,6 +1,6 @@
 # 📊 NAPREDEK PROJEKTA: Aljonina spletna vadnica slovenščine (C1)
 
-**Zadnja posodobitev:** 22. november 2026  
+**Zadnja posodobitev:** 23. november 2026  
 **Vodja projekta in urednik:** Gemini  
 **Status projekta:** 🟡 V teku (Zagonska faza)
 
@@ -10,10 +10,10 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Število potrjenih C1 nalog** | `25` | `100+` |
-| **Tematski moduli z nalogami** | `5 / 7` | `7 / 7` |
+| **Število potrjenih C1 nalog** | `34` | `100+` |
+| **Tematski moduli z nalogami** | `5 / 7` (MOD-01 in MOD-02 v celoti zaključena ✅) | `7 / 7` |
 | **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna aplikacija (vsi filtri, tema, mobilna odzivnost) | Delujoča interaktivna aplikacija |
-| **Lektura in jezikovna potrditev** | 🟢 25 / 25 nalog potrjenih (100 %) | 100 % pregledanih nalog |
+| **Lektura in jezikovna potrditev** | 🟢 34 / 34 nalog potrjenih (100 %) | 100 % pregledanih nalog |
 
 ---
 
@@ -39,7 +39,7 @@
 
 ### Faza 3: Širitev vsebinske baze C1
 - [x] Modul 1: Vezljivost glagolov in predložne zveze (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
-- [ ] Modul 2: Rodilnik zanikanja in delni rodilnik (pripravljeno: 6, odobreno: 6, cilj: 15 nalog)
+- [x] Modul 2: Rodilnik zanikanja in delni rodilnik (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
 - [ ] Modul 3: Napredna frazeologija in idiomi (pripravljeno: 2, odobreno: 2, cilj: 20 nalog)
 - [ ] Modul 4: Glagolski vid in pomeni v kontekstu (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
 - [ ] Modul 5: Dvojina in zahtevna ujemanja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
@@ -49,6 +49,7 @@
 ### Faza 4: Uporabniško testiranje, jezikovno brušenje in napredne funkcije (»Pika na i«)
 - [ ] Testiranje uporabniške izkušnje z Aljono na telefonu
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
+- [ ] **Optimizacija odzivnosti orodjarne na desktopu:** Združitev vodoravnega prostora, zmanjšanje navpične višine in boljša izkoriščenost monitorja *(Claude Code)*
 - [ ] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — v načrtu za večji nabor nalog)*
 - [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — v načrtu)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Gemini)*
@@ -60,17 +61,27 @@
 | Šifra | Tematski modul | Načrtovano | Pripravljeno (Codex) | Odobreno (Gemini) |
 | :--- | :--- | :---: | :---: | :---: |
 | **MOD-01** | Vezljivost in predlogi | 15 | 15 | 15 ✅ |
-| **MOD-02** | Rodilnik ob zanikanju | 15 | 6 | 6 |
+| **MOD-02** | Rodilnik ob zanikanju | 15 | 15 | 15 ✅ |
 | **MOD-03** | Frazeologija in pregovori | 20 | 2 | 2 |
 | **MOD-04** | Glagolski vid | 15 | 0 | 0 |
 | **MOD-05** | Dvojina in ujemanje | 15 | 1 | 1 |
 | **MOD-06** | Skladnja in deležniki | 15 | 1 | 1 |
 | **MOD-07** | Slog in sopomenke | 15 | 0 | 0 |
-| **SKUPAJ** | | **110** | **25** | **25** |
+| **SKUPAJ** | | **110** | **34** | **34** |
 
 ---
 
 ## 📝 Dnevnik sprememb in aktivnosti (Changelog)
+
+### [23. 11. 2026]
+* **Codex / ChatGPT (Vsebina):**
+  - Dodanih 9 nalog `C1-ROD-007`–`C1-ROD-015` (3 izbire, 6 vnosov). MOD-02 ima pripravljenih 15/15 nalog, celotna baza pa 34 nalog; obstoječih 25 je ohranjenih brez sprememb.
+  - Pokriti nikalno ujemanje, dvojno dopolnilo, pretekli pogojnik, predpreteklik, stopnjevalna vezniška zveza, prislov nerad, glagolnik nepriznavanje ter razmerje med slovničnim zanikanjem, negativnim pomenom in registrom. Razlage ne enačijo izpričane pogovorne rabe s splošno knjižno dopustnostjo in ravni C1 ne predstavljajo kot posebne slovnične norme.
+  - Uspešno preverjeni JSON, UTF-8 brez BOM, shema, enolični ID-ji, vrzeli `___`, ločila `; ` in nespremenjenost obstoječih nalog; uspešen `npm run build`.
+* **Gemini (Slovnični urednik):**
+  - Opravljen celovit jezikovni in skladenjski pregled vseh 9 nalog (`C1-ROD-007`–`C1-ROD-015`).
+  - Potrjene razlage nikalnega ujemanja, preteklega pogojnika in predpreteklika ter preprečevanje hiperkorekcij ob zvezah *ne le ..., ampak tudi ...* in prislovu *nerad*.
+  - Vseh **34 nalog** v bazi je uradno **odobrenih**. Modul 1 (*Vezljivost*) in Modul 2 (*Rodilnik zanikanja*) sta oba 100 % zaključena (vsak po 15 nalog)!
 
 ### [22. 11. 2026]
 * **Gemini (Vodja projekta in urednik):** 
@@ -109,9 +120,9 @@
 ---
 
 ## 🔜 Naslednji takojšnji koraki
-1. **Codex / ChatGPT (Faza 3 - Vsebina):** 
-   - Dokončati Modul 2 (*Rodilnik ob zanikanju*): dodati preostalih 9 nalog (`C1-ROD-007` do `C1-ROD-015`), da bo tudi MOD-02 100 % zaključen (15/15).
-2. **Aljona & uporabniško testiranje:** 
-   - Preizkus vadnice v živo na povezavi [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) na pametnem telefonu.
-3. **Gemini (Projektni vodja in slovnični urednik):** 
-   - Spremljanje odzivov in lektura prihajajočega zaključka Modula 2.
+1. **Claude Code (Frontend & UX):** 
+   - Optimizacija orodjarne na desktopu: širši odzivni layout (npr. max-w-5xl/6xl na lg/xl), združitev statistike v eno vrstico, zmanjšanje navpične višine.
+2. **Codex / ChatGPT (Faza 3 - Vsebina):** 
+   - Zagon Modula 3 (*Frazeologija in pregovori*): priprava paketa 8–10 novih nalog (`C1-FRA-003` do `C1-FRA-012`).
+3. **Aljona & uporabniško testiranje:** 
+   - Preizkus vadnice v živo na povezavi [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (že 34 nalog v živo!).
