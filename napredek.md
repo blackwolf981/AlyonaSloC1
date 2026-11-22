@@ -30,6 +30,7 @@
 - [x] Priprava Git repozitorija, GitHub Pages konfiguracije in base URL poti *(Claude Code)*
 - [x] Izbira in postavitev razvojnega ogrodja spletne strani (Vite + TS + Tailwind) *(Claude Code)*
 - [x] Mehanizem za dinamično branje `naloge.json` ob zagonu in buildu *(Claude Code)*
+- [x] Uspešna objava delujoče spletne strani na GitHub Pages (`https://blackwolf981.github.io/AlyonaSloC1/`)
 - [ ] Izdelava celovitega odzivnega vmesnika z interaktivnim reševanjem vseh 4 tipov nalog *(Claude Code)*
 - [ ] Prikaz takojšnje povratne informacije, slovničnih razlag in tipičnih napak *(Claude Code)*
 - [ ] Lokalno shranjevanje napredka (LocalStorage) in filtri po kategorijah *(Claude Code)*
