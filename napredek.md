@@ -78,10 +78,27 @@
   - Dodanih 9 nalog `C1-ROD-007`–`C1-ROD-015` (3 izbire, 6 vnosov). MOD-02 ima pripravljenih 15/15 nalog, celotna baza pa 34 nalog; obstoječih 25 je ohranjenih brez sprememb.
   - Pokriti nikalno ujemanje, dvojno dopolnilo, pretekli pogojnik, predpreteklik, stopnjevalna vezniška zveza, prislov nerad, glagolnik nepriznavanje ter razmerje med slovničnim zanikanjem, negativnim pomenom in registrom. Razlage ne enačijo izpričane pogovorne rabe s splošno knjižno dopustnostjo in ravni C1 ne predstavljajo kot posebne slovnične norme.
   - Uspešno preverjeni JSON, UTF-8 brez BOM, shema, enolični ID-ji, vrzeli `___`, ločila `; ` in nespremenjenost obstoječih nalog; uspešen `npm run build`.
-* **Gemini (Slovnični urednik):**
+* **Gemini (Slovnični urednik in vodja projekta):**
   - Opravljen celovit jezikovni in skladenjski pregled vseh 9 nalog (`C1-ROD-007`–`C1-ROD-015`).
   - Potrjene razlage nikalnega ujemanja, preteklega pogojnika in predpreteklika ter preprečevanje hiperkorekcij ob zvezah *ne le ..., ampak tudi ...* in prislovu *nerad*.
   - Vseh **34 nalog** v bazi je uradno **odobrenih**. Modul 1 (*Vezljivost*) in Modul 2 (*Rodilnik zanikanja*) sta oba 100 % zaključena (vsak po 15 nalog)!
+  - V `NAVODILA.md` sprejeto in vpisano pravilo Claude Code o selektivnem commitanju lastnih datotek in obveznem `git pull` pred objavo.
+* **Claude Code (Arhitekt & Frontend):**
+  - **UX nadgradnja 3 (commit 8f64a8d):** Odzivna orodjarna na namiznih računalnikih:
+    * Na zaslonih >= 1024 px se vsebina razširi na 72rem (1152 px), statistika in filtri so prestavljeni v elegantno lepljivo stransko letev (sidebar).
+    * Prva naloga se na namizju začne že pri 13–15 % višine zaslona (prej pri skoraj 50 %).
+    * Na telefonih in tablicah: statistika v eni vrstici, filtri zloženi pod »Filtri ▾«, ohranjeni drsni filtri in gumbi >= 44 px. Brez vodoravnega drsenja na vseh resolucijah (1920×1080 do 375 px).
+
+---
+
+## 🔜 Naslednji delovni sklop (Načrt za naslednjič)
+1. **Aljonin preizkus v živo:** 
+   - Testiranje vadnice na pametnem telefonu na povezavi [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (reševanje nalog, berljivost razlag, udobje tipkanja).
+2. **Claude Code (Pika na i):** 
+   - Način »Osredotočena vaja« (kviz 10 naključnih nalog, ena po ena s povzetkom).
+   - Zvočna izgovorjava slovenske povedi (TTS z gumbom za zvočnik).
+3. **Codex / ChatGPT (Faza 3 - Vsebina):** 
+   - Zagon Modula 3 (*Frazeologija in pregovori*): priprava paketa 8–10 nalog (`C1-FRA-003` do `C1-FRA-012`).
 
 ### [22. 11. 2026]
 * **Gemini (Vodja projekta in urednik):** 

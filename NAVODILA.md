@@ -115,3 +115,6 @@ Vse naloge morajo dosledno slediti naslednji JSON strukturi:
 2. **Korak 2 (Gemini):** Pregleda jezikovno neoporečnost nalog, preveri ustreznost razlag in potrdi vpis v `napredek.md`.
 3. **Korak 3 (Claude Code):** Implementira ali posodobi prikaz in funkcionalnost v aplikaciji, zagotovi brezhibno delovanje uporabniškega vmesnika.
 4. **Pravilo integritete:** Noben agent ne prepisuje ali spreminja logike drugega brez uskladitve. Vse bistvene spremembe se beležijo v `napredek.md`.
+5. **Pravilo selektivnega commitanja in sinhronizacije (po predlogu Claude Code):**
+   * Vsak agent v `git add` in `git commit` vključi **izključno svoje datoteke** (Claude: `src/`, slogi, UI konfiguracije; Codex: `naloge.json`; Gemini: `napredek.md`, `NAVODILA.md`).
+   * Pred vsakim potiskom (`git push`) agent obvezno preveri stanje z `git pull`, da se preprečijo morebitna neskladja med sočasnim delom.
