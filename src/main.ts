@@ -42,6 +42,7 @@ const odprteRazlage = new Set<string>();
 let filter = 'vse';
 let tipFilter: 'vse' | TipNaloge = 'vse';
 let samoOdprte = false; // »Samo nerešene / napačne«; vsi trije filtri se kombinirajo
+let filtriOdprti = false; // zloženi filtri pod 1024 px; na namizju so v stranski letvi vedno vidni
 
 const poId = (id: string | undefined) => naloge.find((n) => n.id === id);
 const trenutniOdgovor = (n: Naloga) => napredek[n.id]?.odgovor ?? osnutki.get(n.id) ?? '';
@@ -110,28 +111,39 @@ function plosca(): string {
   const vKat = naloge.filter(vKategoriji);
   const tipi = Object.keys(TIPI) as TipNaloge[];
 
+  // Povzetek izbranih filtrov za zloženi gumb »Filtri« (tablica, telefon).
+  const aktivni = [
+    filter !== 'vse' ? oznakaKategorije(filter) : '',
+    tipFilter !== 'vse' ? TIPI[tipFilter] : '',
+    samoOdprte ? 'samo nerešene' : '',
+  ].filter(Boolean);
+  const steviloVidnih = naloge.filter((n) => vKategoriji(n) && vTipu(n) && (!samoOdprte || jeOdprta(n))).length;
+
   return `
-    <div class="mx-auto max-w-3xl px-4 py-3">
-      <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <p class="text-base" aria-live="polite">
-          <strong>Rešeno:</strong> ${resene.length} / ${naloge.length}
-          <span class="mx-1 text-[var(--muted)]" aria-hidden="true">|</span>
-          <strong>Uspešnost:</strong> ${uspesnost}
-        </p>
-        <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="ponastavi" ${resene.length ? '' : 'disabled'}>
-          <span aria-hidden="true">↻</span> Ponastavi napredek
-        </button>
-      </div>
-      <div class="napredek-trak mt-2" role="progressbar" aria-label="Delež rešenih nalog"
+    <div class="statistika">
+      <p class="stat-besedilo" aria-live="polite">
+        <strong>Rešeno:</strong> ${resene.length} / ${naloge.length}
+        <span class="stat-locilo" aria-hidden="true">·</span>
+        <strong>Uspešnost:</strong> ${uspesnost}
+        <span class="stat-locilo" aria-hidden="true">·</span>
+        <span class="stat-st"><span aria-hidden="true">✓</span><span class="sr-only">pravilno:</span> ${pravilne}</span>
+        <span class="stat-st"><span aria-hidden="true">!</span><span class="sr-only">napačno:</span> ${resene.length - pravilne}</span>
+      </p>
+      <div class="napredek-trak" role="progressbar" aria-label="Delež rešenih nalog"
            aria-valuemin="0" aria-valuemax="${naloge.length}" aria-valuenow="${resene.length}">
         <span style="width:${delez}%"></span>
       </div>
-      <p class="mt-1 text-xs text-[var(--muted)]">
-        <span aria-hidden="true">✓</span> pravilno: ${pravilne}
-        <span class="mx-1" aria-hidden="true">·</span>
-        <span aria-hidden="true">!</span> napačno: ${resene.length - pravilne}
-      </p>
-      <div class="mt-3 space-y-2">
+      <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="ponastavi" aria-label="Ponastavi napredek"
+              title="Ponastavi napredek" ${resene.length ? '' : 'disabled'}>
+        <span aria-hidden="true">↻</span> Ponastavi
+      </button>
+    </div>
+    <button type="button" class="filtri-preklop" data-akcija="filtri" aria-expanded="${filtriOdprti}" aria-controls="filtri">
+      <span class="font-semibold">Filtri</span>
+      <span class="filtri-povzetek">${aktivni.length ? esc(aktivni.join(' · ')) : 'vse naloge'} (${steviloVidnih})</span>
+      <span aria-hidden="true">${filtriOdprti ? '▴' : '▾'}</span>
+    </button>
+    <div id="filtri" class="filtri" data-odprto="${filtriOdprti}">
         <nav class="vrsta-filtrov" aria-label="Filter po kategoriji">
           <span class="vrsta-oznaka">Kategorija</span>
           <div class="vrsta-cipi">
@@ -157,7 +169,6 @@ function plosca(): string {
             </button>
           </div>
         </nav>
-      </div>
     </div>`;
 }
 
@@ -491,6 +502,11 @@ app.addEventListener('click', (e) => {
       osveziSeznam();
       document.querySelector<HTMLElement>('[data-akcija="samo-odprte"]')?.focus();
       break;
+    case 'filtri':
+      filtriOdprti = !filtriOdprti;
+      osveziPlosco();
+      document.querySelector<HTMLElement>('[data-akcija="filtri"]')?.focus();
+      break;
     case 'tema':
       preklopiTemo();
       break;
@@ -528,19 +544,19 @@ app.addEventListener('keydown', (e) => {
 
 function lupina(vsebina: string): string {
   return `
-    <header class="mx-auto max-w-3xl px-4 pt-8 pb-4 sm:pt-12">
-      <div class="flex items-center justify-between gap-3">
+    <header class="ovoj glava">
+      <div class="min-w-0">
         <p class="text-sm font-semibold uppercase tracking-wide text-[var(--accent-text)]">Raven C1</p>
-        ${gumbTema()}
+        <h1 class="text-2xl font-bold sm:text-3xl lg:text-4xl">Aljonina spletna vadnica slovenščine</h1>
+        <p class="mt-1 text-[var(--muted)]">Vezljivost, frazeologija, glagolski vid, dvojina in slog za napredne.</p>
       </div>
-      <h1 class="text-2xl font-bold sm:text-4xl">Aljonina spletna vadnica slovenščine</h1>
-      <p class="mt-2 text-[var(--muted)]">Vezljivost, frazeologija, glagolski vid, dvojina in slog za napredne.</p>
+      ${gumbTema()}
     </header>
     ${vsebina}`;
 }
 
 async function zagon() {
-  app.innerHTML = lupina(`<p class="mx-auto max-w-3xl px-4 text-[var(--muted)]">Nalagam naloge …</p>`);
+  app.innerHTML = lupina(`<p class="ovoj text-[var(--muted)]">Nalagam naloge …</p>`);
   try {
     ({ naloge } = await naloziNaloge());
     // pozabi rezultate nalog, ki jih v naloge.json ni več
@@ -548,14 +564,16 @@ async function zagon() {
     for (const id of Object.keys(napredek)) if (!ids.has(id)) delete napredek[id];
 
     app.innerHTML = lupina(`
-      <div id="plosca" class="plosca"></div>
-      <main id="seznam" class="mx-auto max-w-3xl space-y-4 px-4 py-6 sm:space-y-6"></main>`);
+      <div class="ovoj postavitev">
+        <aside id="plosca" class="plosca" aria-label="Napredek in filtri"></aside>
+        <main id="seznam" class="seznam"></main>
+      </div>`);
     osveziPlosco();
     osveziSeznam();
   } catch (e) {
     const sporocilo = e instanceof Error ? e.message : String(e);
     app.innerHTML = lupina(`
-      <div role="alert" class="mx-auto max-w-3xl px-4">
+      <div role="alert" class="ovoj">
         <div class="odziv odziv-napaka">
           <span class="odziv-znak" aria-hidden="true">!</span>
           <div><strong>Napaka:</strong> ${esc(sporocilo)}</div>
