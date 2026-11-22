@@ -10,10 +10,10 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Število potrjenih C1 nalog** | `7` | `100+` |
+| **Število potrjenih C1 nalog** | `15` | `100+` |
 | **Tematski moduli z nalogami** | `5 / 7` | `7 / 7` |
 | **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna aplikacija (reševanje, razlage, filtri, LocalStorage) | Delujoča interaktivna aplikacija |
-| **Lektura in jezikovna potrditev** | 🟢 7 / 7 nalog potrjenih (100 %) | 100 % pregledanih nalog |
+| **Lektura in jezikovna potrditev** | 🟢 15 / 15 nalog potrjenih (100 %) | 100 % pregledanih nalog |
 
 ---
 
@@ -36,13 +36,13 @@
 - [x] Lokalno shranjevanje napredka (LocalStorage) in filtri po kategorijah *(Claude Code)*
 
 ### Faza 3: Širitev vsebinske baze C1
-- [ ] Modul 1: Vezljivost glagolov in predložne zveze (trenutno: 2, cilj: 15 nalog)
-- [ ] Modul 2: Rodilnik zanikanja in delni rodilnik (trenutno: 1, cilj: 15 nalog)
-- [ ] Modul 3: Napredna frazeologija in idiomi (trenutno: 2, cilj: 20 nalog)
-- [ ] Modul 4: Glagolski vid in pomeni v kontekstu (trenutno: 0, cilj: 15 nalog)
-- [ ] Modul 5: Dvojina in zahtevna ujemanja (trenutno: 1, cilj: 15 nalog)
-- [ ] Modul 6: Polstavčne strukture in skladnja (trenutno: 1, cilj: 15 nalog)
-- [ ] Modul 7: Slogovni registri in sopomenke (trenutno: 0, cilj: 15 nalog)
+- [ ] Modul 1: Vezljivost glagolov in predložne zveze (pripravljeno: 10, odobreno: 10, cilj: 15 nalog)
+- [ ] Modul 2: Rodilnik zanikanja in delni rodilnik (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
+- [ ] Modul 3: Napredna frazeologija in idiomi (pripravljeno: 2, odobreno: 2, cilj: 20 nalog)
+- [ ] Modul 4: Glagolski vid in pomeni v kontekstu (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
+- [ ] Modul 5: Dvojina in zahtevna ujemanja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
+- [ ] Modul 6: Polstavčne strukture in skladnja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
+- [ ] Modul 7: Slogovni registri in sopomenke (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
 
 ### Faza 4: Uporabniško testiranje in jezikovno brušenje
 - [ ] Testiranje uporabniške izkušnje z Aljono
@@ -55,14 +55,14 @@
 
 | Šifra | Tematski modul | Načrtovano | Pripravljeno (Codex) | Odobreno (Gemini) |
 | :--- | :--- | :---: | :---: | :---: |
-| **MOD-01** | Vezljivost in predlogi | 15 | 2 | 2 |
+| **MOD-01** | Vezljivost in predlogi | 15 | 10 | 10 |
 | **MOD-02** | Rodilnik ob zanikanju | 15 | 1 | 1 |
 | **MOD-03** | Frazeologija in pregovori | 20 | 2 | 2 |
 | **MOD-04** | Glagolski vid | 15 | 0 | 0 |
 | **MOD-05** | Dvojina in ujemanje | 15 | 1 | 1 |
 | **MOD-06** | Skladnja in deležniki | 15 | 1 | 1 |
 | **MOD-07** | Slog in sopomenke | 15 | 0 | 0 |
-| **SKUPAJ** | | **110** | **7** | **7** |
+| **SKUPAJ** | | **110** | **15** | **15** |
 
 ---
 
@@ -76,6 +76,12 @@
   - Pregledanih in odobrenih prvih 7 pilotnih nalog v `naloge.json`. Slovnična ustreznost, didaktična struktura in razlage ocenjene z odlično oceno.
 * **Codex / ChatGPT (Vsebina):**
   - Izdelana začetna datoteka `naloge.json` s 7 pilotnimi nalogami C1 (vezljivost, rodilnik zanikanja, frazeologija, dvojina mešanega osebka, skladenjski deležijski polstavek).
+  - Dodan paket 8 nalog za MOD-01 (`C1-VEZ-003`–`C1-VEZ-010`): 3 naloge tipa `izbira` in 5 tipa `vnos`; prvotnih 7 nalog je ohranjenih. Skupaj je pripravljenih 15 nalog, od tega 10 za MOD-01.
+  - Preverjeni UTF-8 JSON, shema, enoličnost ID-jev, vrzeli `___` in ločila `; ` pri več rešitvah; uspešno izveden `npm run build`.
+* **Gemini (Slovnični urednik):**
+  - Opravljen poglobljen jezikovni in didaktični pregled vseh 8 novih nalog paketa MOD-01.
+  - Potrjena visoka kakovost razlag registra pri *dvomiti v/o*, razlikovanja med predložnim tožilnikom in rodilnikom ob glagolskem samostalniku pri *prizadevati si za odpravo ovir*, predlogov *k/h* in *z/s* ter dajalnika ob zanikanju pri *odpovedati se pravici*.
+  - Vseh 15 nalog v bazi je uradno **odobrenih**.
 * **Claude Code (Arhitekt & Frontend):**
   - Postavljeno ogrodje Vite + TypeScript + Tailwind CSS v4 (`index.html`, `src/`, `vite.config.ts`).
   - `base: './'`: relativne poti, pripravljeno za GitHub Pages podmapo `/AlyonaSloC1/`.
@@ -89,6 +95,6 @@
 ---
 
 ## 🔜 Naslednji takojšnji koraki
-1. **Codex / ChatGPT (Faza 3):** Generiranje 13 novih C1 nalog za Modul 1 (*Vezljivost in predlogi*), da dosežemo načrtovano kvoto 15 nalog (ob upoštevanju formatiranja `___` in `; `).
+1. **Codex / ChatGPT (Faza 3):** Do načrtovane kvote 15 nalog za Modul 1 (*Vezljivost in predlogi*) manjka še 5 nalog; naslednji paket se pripravi po uskladitvi (ob upoštevanju formatiranja `___` in `; `).
 2. **Gemini (Urednik):** Slovnični pregled in lektura novih nalog za Modul 1.
 3. **Claude Code (UX nadgradnje):** Dodajanje filtra »Samo nerešene / napačne naloge« ter stikala za preklop svetle/temne teme.
