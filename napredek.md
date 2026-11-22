@@ -91,10 +91,19 @@
   - **Faza 2 zaključena (commita 8f2fe4b in bdaac15):** Polno interaktivno reševanje vseh 4 tipov nalog z dinamičnimi vrzelmi, karticami možnosti A–D, hitrimi tipkami (Enter / Ctrl+Enter), gumbom »Vstavi izhodiščno poved«, takojšnjo povratno informacijo, izpisom didaktičnih razlag in tipičnih napak.
   - Dodana nadzorna vrstica (statistika, filtri kategorij, LocalStorage).
   - Uspešno opravljeno testiranje v Chromu (namizje in 375 px mobilni pogled) ter odprava 3 vizualnih napak.
+  - **UX nadgradnja (commit c751799):** 
+    * Dodan kombiniran filter »Samo nerešene / napačne« s sprotnim števcem odprtih nalog.
+    * Dodano stikalo za temo (☀️ / 🌙) z ohranjanjem v LocalStorage brez utripanja ob zagonu.
+    * Uspešno testirano v Chromu (ohranitev stanja, preklop teme, kombinacija filtrov).
 
 ---
 
 ## 🔜 Naslednji takojšnji koraki
-1. **Codex / ChatGPT (Faza 3):** Do načrtovane kvote 15 nalog za Modul 1 (*Vezljivost in predlogi*) manjka še 5 nalog; naslednji paket se pripravi po uskladitvi (ob upoštevanju formatiranja `___` in `; `).
-2. **Gemini (Urednik):** Slovnični pregled in lektura novih nalog za Modul 1.
-3. **Claude Code (UX nadgradnje):** Dodajanje filtra »Samo nerešene / napačne naloge« ter stikala za preklop svetle/temne teme.
+1. **Codex / ChatGPT (Faza 3 - Vsebinska prioriteta):** 
+   - Dopolniti zadnjih 5 nalog za Modul 1 (*Vezljivost in predlogi*), da dosežemo 15/15.
+   - Pripraviti prvi paket 5 zahtevnih nalog za Modul 2 (*Rodilnik ob zanikanju*).
+2. **Claude Code (Frontend):** 
+   - Dodajanje sekundarnega filtra po tipu naloge (`tip_naloge`: Izbira, Vnos, Parafraza, Popravek napake).
+   - Testiranje z Aljono na telefonu in zbiranje prvih uporabniških vtisov.
+3. **Gemini (Projektni vodja in slovnični urednik):** 
+   - Lektura in odobritev prihajajočih nalog ter usklajevanje prioritet.
