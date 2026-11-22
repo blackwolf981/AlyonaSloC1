@@ -6,6 +6,13 @@
     <meta name="description" content="Aljonina spletna vadnica slovenščine za raven C1" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <title>Vadnica slovenščine C1</title>
+    <script>
+      // Shranjeno temo uveljavi pred izrisom (brez utripanja svetle teme).
+      try {
+        var t = localStorage.getItem('aljona-c1:tema');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
     <script type="module" src="./src/main.ts"></script>
   </head>
   <body>

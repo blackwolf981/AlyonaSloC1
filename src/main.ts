@@ -40,9 +40,54 @@ let napredek: Napredek = preberiNapredek();
 const osnutki = new Map<string, string>(); // trenutni (še nepreverjeni) odgovori
 const odprteRazlage = new Set<string>();
 let filter = 'vse';
+let samoOdprte = false; // »Samo nerešene / napačne«, kombinira se s kategorijo
 
 const poId = (id: string | undefined) => naloge.find((n) => n.id === id);
 const trenutniOdgovor = (n: Naloga) => napredek[n.id]?.odgovor ?? osnutki.get(n.id) ?? '';
+const jeOdprta = (n: Naloga) => !napredek[n.id]?.pravilno; // nerešena ali napačna
+
+/* ---------- tema (svetla / temna) ---------- */
+
+const KLJUC_TEMA = 'aljona-c1:tema';
+type Tema = 'light' | 'dark';
+
+function trenutnaTema(): Tema {
+  const t = document.documentElement.dataset.theme;
+  if (t === 'light' || t === 'dark') return t;
+  return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function gumbTema(): string {
+  const temna = trenutnaTema() === 'dark';
+  const opis = temna ? 'Preklopi na svetli način' : 'Preklopi na temni način';
+  return `
+    <button type="button" id="gumb-tema" class="gumb gumb-tih gumb-mali" data-akcija="tema"
+            aria-label="${opis}" title="${opis}">
+      <span aria-hidden="true">${temna ? '☀️' : '🌙'}</span>
+      <span class="hidden sm:inline">${temna ? 'Svetlo' : 'Temno'}</span>
+    </button>`;
+}
+
+function preklopiTemo() {
+  const nova: Tema = trenutnaTema() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = nova;
+  try {
+    localStorage.setItem(KLJUC_TEMA, nova);
+  } catch {
+    /* tema velja do osvežitve */
+  }
+  const gumb = document.getElementById('gumb-tema');
+  if (gumb) {
+    gumb.outerHTML = gumbTema();
+    document.getElementById('gumb-tema')?.focus();
+  }
+}
+
+// Če uporabnik teme ni izbral ročno, gumb sledi sistemski nastavitvi.
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  const gumb = document.getElementById('gumb-tema');
+  if (gumb && !document.documentElement.dataset.theme) gumb.outerHTML = gumbTema();
+});
 
 /* ---------- izris: plošča na vrhu ---------- */
 
@@ -79,9 +124,14 @@ function plosca(): string {
         <span class="mx-1" aria-hidden="true">·</span>
         <span aria-hidden="true">!</span> napačno: ${resene.length - pravilne}
       </p>
-      <nav class="mt-3 flex flex-wrap gap-2" aria-label="Filtri po kategorijah">
+      <nav class="mt-3 flex flex-wrap items-center gap-2" aria-label="Filtri nalog">
         ${cip('vse', 'Vse', naloge.length)}
         ${kategorije.map((k) => cip(k, oznakaKategorije(k), naloge.filter((n) => n.kategorija === k).length)).join('')}
+        <span class="cip-locilo" aria-hidden="true"></span>
+        <button type="button" class="cip cip-stanje" data-akcija="samo-odprte" aria-pressed="${samoOdprte}">
+          <span aria-hidden="true">${samoOdprte ? '✓' : '○'}</span>Samo nerešene / napačne
+          <span class="cip-st">${naloge.filter((n) => jeOdprta(n) && (filter === 'vse' || n.kategorija === filter)).length}</span>
+        </button>
       </nav>
     </div>`;
 }
@@ -263,9 +313,12 @@ function kartica(n: Naloga): string {
 }
 
 function seznam(): string {
-  const vidne = filter === 'vse' ? naloge : naloge.filter((n) => n.kategorija === filter);
-  return vidne.length
-    ? vidne.map(kartica).join('')
+  const vidne = naloge.filter(
+    (n) => (filter === 'vse' || n.kategorija === filter) && (!samoOdprte || jeOdprta(n)),
+  );
+  if (vidne.length) return vidne.map(kartica).join('');
+  return samoOdprte
+    ? '<p class="text-[var(--muted)]"><span aria-hidden="true">✓</span> Vse naloge v tem izboru so rešene pravilno. 🎉</p>'
     : '<p class="text-[var(--muted)]">V tej kategoriji še ni nalog.</p>';
 }
 
@@ -400,6 +453,17 @@ app.addEventListener('click', (e) => {
       osveziSeznam();
       document.querySelector<HTMLElement>(`[data-akcija="filter"][aria-pressed="true"]`)?.focus();
       break;
+    case 'samo-odprte':
+      // Seznam se filtrira le ob kliku na filter, ne ob vsakem preverjanju,
+      // da pravkar rešena kartica ne izgine sredi povratne informacije.
+      samoOdprte = !samoOdprte;
+      osveziPlosco();
+      osveziSeznam();
+      document.querySelector<HTMLElement>('[data-akcija="samo-odprte"]')?.focus();
+      break;
+    case 'tema':
+      preklopiTemo();
+      break;
     case 'ponastavi':
       ponastavi();
       break;
@@ -435,7 +499,10 @@ app.addEventListener('keydown', (e) => {
 function lupina(vsebina: string): string {
   return `
     <header class="mx-auto max-w-3xl px-4 pt-8 pb-4 sm:pt-12">
-      <p class="text-sm font-semibold uppercase tracking-wide text-[var(--accent-text)]">Raven C1</p>
+      <div class="flex items-center justify-between gap-3">
+        <p class="text-sm font-semibold uppercase tracking-wide text-[var(--accent-text)]">Raven C1</p>
+        ${gumbTema()}
+      </div>
       <h1 class="text-2xl font-bold sm:text-4xl">Aljonina spletna vadnica slovenščine</h1>
       <p class="mt-2 text-[var(--muted)]">Vezljivost, frazeologija, glagolski vid, dvojina in slog za napredne.</p>
     </header>
