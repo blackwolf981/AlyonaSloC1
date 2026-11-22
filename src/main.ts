@@ -40,11 +40,14 @@ let napredek: Napredek = preberiNapredek();
 const osnutki = new Map<string, string>(); // trenutni (še nepreverjeni) odgovori
 const odprteRazlage = new Set<string>();
 let filter = 'vse';
-let samoOdprte = false; // »Samo nerešene / napačne«, kombinira se s kategorijo
+let tipFilter: 'vse' | TipNaloge = 'vse';
+let samoOdprte = false; // »Samo nerešene / napačne«; vsi trije filtri se kombinirajo
 
 const poId = (id: string | undefined) => naloge.find((n) => n.id === id);
 const trenutniOdgovor = (n: Naloga) => napredek[n.id]?.odgovor ?? osnutki.get(n.id) ?? '';
 const jeOdprta = (n: Naloga) => !napredek[n.id]?.pravilno; // nerešena ali napačna
+const vKategoriji = (n: Naloga) => filter === 'vse' || n.kategorija === filter;
+const vTipu = (n: Naloga) => tipFilter === 'vse' || n.tip_naloge === tipFilter;
 
 /* ---------- tema (svetla / temna) ---------- */
 
@@ -98,10 +101,14 @@ function plosca(): string {
   const delez = naloge.length ? (resene.length / naloge.length) * 100 : 0;
 
   const kategorije = [...new Set(naloge.map((n) => n.kategorija))];
-  const cip = (vrednost: string, oznaka: string, st: number) => `
-    <button type="button" class="cip" data-akcija="filter" data-vrednost="${esc(vrednost)}" aria-pressed="${filter === vrednost}">
-      ${filter === vrednost ? '<span aria-hidden="true">✓</span>' : ''}${esc(oznaka)} <span class="cip-st">${st}</span>
+  const cip = (akcija: string, vrednost: string, oznaka: string, st: number, aktiven: boolean) => `
+    <button type="button" class="cip" data-akcija="${akcija}" data-vrednost="${esc(vrednost)}" aria-pressed="${aktiven}">
+      ${aktiven ? '<span aria-hidden="true">✓</span>' : ''}${esc(oznaka)} <span class="cip-st">${st}</span>
     </button>`;
+  // Števci: kategorije so osnovni nivo (vse naloge), tipi štejejo znotraj izbrane kategorije,
+  // stikalo za odprte pa znotraj kategorije in tipa, torej toliko, kolikor se bo prikazalo.
+  const vKat = naloge.filter(vKategoriji);
+  const tipi = Object.keys(TIPI) as TipNaloge[];
 
   return `
     <div class="mx-auto max-w-3xl px-4 py-3">
@@ -124,15 +131,33 @@ function plosca(): string {
         <span class="mx-1" aria-hidden="true">·</span>
         <span aria-hidden="true">!</span> napačno: ${resene.length - pravilne}
       </p>
-      <nav class="mt-3 flex flex-wrap items-center gap-2" aria-label="Filtri nalog">
-        ${cip('vse', 'Vse', naloge.length)}
-        ${kategorije.map((k) => cip(k, oznakaKategorije(k), naloge.filter((n) => n.kategorija === k).length)).join('')}
-        <span class="cip-locilo" aria-hidden="true"></span>
-        <button type="button" class="cip cip-stanje" data-akcija="samo-odprte" aria-pressed="${samoOdprte}">
-          <span aria-hidden="true">${samoOdprte ? '✓' : '○'}</span>Samo nerešene / napačne
-          <span class="cip-st">${naloge.filter((n) => jeOdprta(n) && (filter === 'vse' || n.kategorija === filter)).length}</span>
-        </button>
-      </nav>
+      <div class="mt-3 space-y-2">
+        <nav class="vrsta-filtrov" aria-label="Filter po kategoriji">
+          <span class="vrsta-oznaka">Kategorija</span>
+          <div class="vrsta-cipi">
+            ${cip('filter', 'vse', 'Vse', naloge.length, filter === 'vse')}
+            ${kategorije
+              .map((k) => cip('filter', k, oznakaKategorije(k), naloge.filter((n) => n.kategorija === k).length, filter === k))
+              .join('')}
+          </div>
+        </nav>
+        <nav class="vrsta-filtrov" aria-label="Filter po tipu naloge">
+          <span class="vrsta-oznaka">Tip</span>
+          <div class="vrsta-cipi">
+            ${cip('tip', 'vse', 'Vse', vKat.length, tipFilter === 'vse')}
+            ${tipi.map((t) => cip('tip', t, TIPI[t], vKat.filter((n) => n.tip_naloge === t).length, tipFilter === t)).join('')}
+          </div>
+        </nav>
+        <nav class="vrsta-filtrov" aria-label="Filter po stanju">
+          <span class="vrsta-oznaka">Stanje</span>
+          <div class="vrsta-cipi">
+            <button type="button" class="cip cip-stanje" data-akcija="samo-odprte" aria-pressed="${samoOdprte}">
+              <span aria-hidden="true">${samoOdprte ? '✓' : '○'}</span>Samo nerešene / napačne
+              <span class="cip-st">${vKat.filter((n) => vTipu(n) && jeOdprta(n)).length}</span>
+            </button>
+          </div>
+        </nav>
+      </div>
     </div>`;
 }
 
@@ -313,13 +338,12 @@ function kartica(n: Naloga): string {
 }
 
 function seznam(): string {
-  const vidne = naloge.filter(
-    (n) => (filter === 'vse' || n.kategorija === filter) && (!samoOdprte || jeOdprta(n)),
-  );
+  const izbor = naloge.filter((n) => vKategoriji(n) && vTipu(n));
+  const vidne = samoOdprte ? izbor.filter(jeOdprta) : izbor;
   if (vidne.length) return vidne.map(kartica).join('');
-  return samoOdprte
+  return samoOdprte && izbor.length
     ? '<p class="text-[var(--muted)]"><span aria-hidden="true">✓</span> Vse naloge v tem izboru so rešene pravilno. 🎉</p>'
-    : '<p class="text-[var(--muted)]">V tej kategoriji še ni nalog.</p>';
+    : '<p class="text-[var(--muted)]">Za izbrano kombinacijo kategorije in tipa še ni nalog.</p>';
 }
 
 /* ---------- osveževanje DOM ---------- */
@@ -452,6 +476,12 @@ app.addEventListener('click', (e) => {
       osveziPlosco();
       osveziSeznam();
       document.querySelector<HTMLElement>(`[data-akcija="filter"][aria-pressed="true"]`)?.focus();
+      break;
+    case 'tip':
+      tipFilter = (el.dataset.vrednost ?? 'vse') as 'vse' | TipNaloge;
+      osveziPlosco();
+      osveziSeznam();
+      document.querySelector<HTMLElement>(`[data-akcija="tip"][aria-pressed="true"]`)?.focus();
       break;
     case 'samo-odprte':
       // Seznam se filtrira le ob kliku na filter, ne ob vsakem preverjanju,
