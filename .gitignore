@@ -1,0 +1,34 @@
+# Odvisnosti
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+*.tsbuildinfo
+.vite/
+
+# Dnevniki
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Okolje / skrivnosti
+.env
+.env.*
+!.env.example
+
+# Urejevalniki
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Sistemske datoteke
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Lokalne nastavitve Claude Code
+.claude/settings.local.json

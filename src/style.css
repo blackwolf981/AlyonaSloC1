@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Paleta, prijazna do barvne slepote (Okabe-Ito):
+   modra = pravilno / primarno, oranžna = napačno / opozorilo, škrlatna = poudarek.
+   Barva nikoli ni edini znak: stanja imajo vedno tudi ikono (✓ / !) in besedilo. */
+@theme {
+  --color-primary: #0072B2;
+  --color-ok: #0072B2;
+  --color-warn: #E69F00;
+  --color-accent: #CC79A7;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1220;
+    --surface: #131c2e;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #243049;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --surface: #131c2e;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --border: #243049;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
