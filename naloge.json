@@ -629,6 +629,196 @@
       "slovnicna_razlaga": "Po toči zvoniti je prepozno opozarja na zamujeno ukrepanje: ko je škoda že nastala, je ni več mogoče preprečiti. Podoba se navezuje na nekdanje zvonjenje ob nevarnosti toče v prepričanju, da jo je mogoče odvrniti; zvonjenje po neurju pridelka ne reši. Zveza po toči vsebuje mestnik in označuje čas po dogodku, nedoločnik zvoniti pa poimenuje prepozno dejanje. Pregovor je pogost v pogovornem in publicističnem komentiranju ter lahko zveni očitajoče. Tu se nanaša na izgubljene posnetke in ne zanika koristnosti zaščite za prihodnje podatke. Druge možnosti poudarjajo trud, družinsko podobnost ali posledice prevzetnosti, česar naloga ne postavlja v ospredje.",
       "tipicna_napaka": "Dobesedno omejevanje pregovora na vreme ali napačen sklep, da po napaki noben popravljalni oziroma preventivni ukrep nima več smisla. Pregovor tu izpostavlja samo nepopravljivost že nastale izgube.",
       "oznake": ["MOD-03", "pregovori", "po_toci_zvoniti", "preneseni_pomen", "prepozno_ukrepanje", "pragmatika"]
+    },
+    {
+      "id": "C1-VID-001",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "zanikani_velelnik_prepoved_vs_svarilo",
+      "raven": "C1",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite dovršni velelnik za enkratno preventivno svarilo pred nevarno prekinitvijo napajanja. Svarilo razumite kot opozorilo, naj se dogodek ne zgodi.",
+      "kontekst": "Med posodabljanjem sistema nikar ___ napajanja, saj bi to povzročilo nepopravljivo okvaro krmilnika.",
+      "moznosti": [
+        "ne prekinjajte",
+        "ne prekinite",
+        "ne bi prekinjali",
+        "niste prekinili"
+      ],
+      "pravilni_odgovor": "ne prekinite",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Ne prekinite je zanikani velelnik dovršnega glagola prekiniti v 2. osebi množine. Dovršnik predstavi prekinitev kot celovit dogodek, ki ga želi govorec preprečiti. Nedovršni velelnik ne prekinjajte je prav tako slovnično mogoč, vendar dejanje predstavlja kot potek ali ponavljajoče se ravnanje; navodilo izrecno zahteva dovršno svarilo. Razlika ni absolutno pravilo, da vsaka prepoved zahteva nedovršnik ali vsako svarilo dovršnik. V drugačni zgradbi Pazite, da ne prekinete napajanja bi v odvisniku stal sedanjik prekinete, ne velelnik prekinite. Napajanja je rodilnik zanikanega neposrednega predmeta.",
+      "tipicna_napaka": "Zamenjevanje velelnika ne prekinite s sedanjikom ne prekinete ali vstavljanje velelnika v odvisnik Pazite, da … . Napačno je tudi prepričanje, da dovršni glagol v zanikanem velelniku nikoli ni dopusten.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "zanikani_velelnik",
+        "svarilo",
+        "dovrsnost",
+        "preventiva"
+      ]
+    },
+    {
+      "id": "C1-VID-002",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "ponavljanje_in_habitualnost",
+      "raven": "C1",
+      "tip_naloge": "vnos",
+      "navodilo": "Iz para »spregledati / spregledovati« izberite nedovršnik, ki ravnanje predstavlja kot ponavljajočo se prakso. Vpišite samo deležnik na -l v moški ednini; pomožnik je je že v povedi.",
+      "kontekst": "Nekdanji revizor je v svojih letnih poročilih vztrajno ___ očitna neskladja med prihodki in odhodki, zato so pristojni organi sprožili preiskavo.",
+      "moznosti": [],
+      "pravilni_odgovor": "spregledoval",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Spregledoval je deležnik na -l nedovršnega glagola spregledovati; s pomožnikom je tvori preteklik v moški ednini. Vztrajno in v svojih letnih poročilih podpirata prikaz ravnanja kot ponavljajoče se prakse. Nedovršnik je zahtevan z navodilom, ne s splošno prepovedjo dovršnika pri ponavljanju: tudi dovršni glagol lahko v ustreznem sobesedilu označuje ponovljene celovite dogodke, na primer Vsako leto je spregledal isto neskladje. Spregledati ne pomeni nujno hipnega dogodka. Pregledovati pomeni opravljati pregled, spregledovati pa ne opaziti oziroma ne upoštevati česa; glagola nista vidski par.",
+      "tipicna_napaka": "Vnos celotnega preteklika je spregledoval, ki bi podvojil že zapisani pomožnik, ali zamenjava s pregledoval. Dovršnik spregledal ne izpolni izrecne zahteve po prikazu nedovršne prakse, ni pa ob vsakem ponavljanju slovnično napačen.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "ponavljanje",
+        "nedovrsnost",
+        "habitualnost"
+      ]
+    },
+    {
+      "id": "C1-VID-003",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "vljudnostni_register_in_dejanje",
+      "raven": "C1",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite slogovno nevtralno obliko nedovršnega glagola v sedanjiku, s katero pisec prošnjo neposredno izreka. Izognite se posebej uradovalno zaznamovani sopomenki.",
+      "kontekst": "Ker želimo gradivo pravočasno predložiti senatu, vas vljudno ___, da nam potrjeni zapisnik pošljete do petka.",
+      "moznosti": [
+        "naprošamo",
+        "prosimo",
+        "bomo prosili",
+        "poprosimo"
+      ],
+      "pravilni_odgovor": "prosimo",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Prosimo je sedanjik nedovršnega glagola prositi v 1. osebi množine. V tem dopisu ima performativno vlogo: z zapisom povedi pisec prošnjo tudi izreče. Enkratnost govornega dejanja ne zahteva dovršnega vida. Naprošamo je slovnično dopustna, vendar uradovalno zaznamovana sopomenka; izločena je zaradi izrecne zahteve po slogovno nevtralni obliki, ne zato, ker bi bila neknjižna. Bomo prosili prošnjo šele napoveduje, poprosimo pa je dovršna oblika in ne izpolnjuje zahteve po nedovršniku. Dovršni sedanjik v slovenščini ni na splošno izključen iz performativne rabe. Pošljete v odvisniku predstavi želeni rezultat: oddajo potrjenega zapisnika do roka.",
+      "tipicna_napaka": "Enačenje enkratne prošnje z obvezno dovršnostjo ali razglasitev naprošamo za slovnično napačno obliko. Pri tej nalogi odločata zahtevana nedovršnost in slogovna nevtralnost.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "uradovalni_slog",
+        "vljudnost",
+        "performativnost"
+      ]
+    },
+    {
+      "id": "C1-VID-004",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "faza_dejanja_ob_glagolih_zacetka",
+      "raven": "C1",
+      "tip_naloge": "vnos",
+      "navodilo": "Iz para »zavesti se / zavedati se« izberite ustrezni nedoločnik ob faznem glagolu začeti. Vpišite samo nedoločnik brez se, saj je se že zapisano pred pomožnikom.",
+      "kontekst": "Šele po temeljiti analizi posledic se je uprava začela postopoma ___ resnosti položaja.",
+      "moznosti": [],
+      "pravilni_odgovor": "zavedati",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Začeti kot fazni glagol ob nedoločniškem dopolnilu označuje začetno mejo procesa ali stanja. V tej zgradbi uporabimo nedovršni nedoločnik zavedati se: uprava se je začela zavedati resnosti položaja. Dovršna zveza zavesti se bi spremembo predstavila kot celoto in je ne povezujemo v začela se je zavesti. Se pripada glagolu zavedati se, vendar je zaradi razvrstitve naslonk že zapisano pred je; vrzel zato vsebuje samo zavedati. Resnosti položaja je rodilniško dopolnilo glagola zavedati se. Prislov postopoma poudarja razvijanje zavedanja.",
+      "tipicna_napaka": "Vnos zavesti ob faznem glagolu ali ponovno dodajanje se v vrzel. Zapisani se že pripada nedoločniku, čeprav od njega stoji ločeno.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "fazni_glagoli",
+        "nedolocnik",
+        "procesnost"
+      ]
+    },
+    {
+      "id": "C1-VID-005",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "parafraza_sprememba_vida",
+      "raven": "C1",
+      "tip_naloge": "parafraza",
+      "navodilo": "Poved preoblikujte tako, da bo namesto enkratnega opozorila izražala ponavljajoče se opozarjanje med sejo. Začnite z »Predsednik je med sejo«, uporabite nedovršnik opozarjati in besedo večkrat. Ohranite predmet opozarjanja in celotni odvisnik s preden. Vpišite celotno poved.",
+      "kontekst": "Predsednik je na seji enkrat opozoril na pomanjkanje sklepčnosti, preden so nadaljevali z glasovanjem.",
+      "moznosti": [],
+      "pravilni_odgovor": "Predsednik je med sejo večkrat opozarjal na pomanjkanje sklepčnosti, preden so nadaljevali z glasovanjem.",
+      "alternativni_odgovori": [
+        "Predsednik je med sejo opozarjal večkrat na pomanjkanje sklepčnosti, preden so nadaljevali z glasovanjem.",
+        "Predsednik je med sejo opozarjal na pomanjkanje sklepčnosti večkrat, preden so nadaljevali z glasovanjem."
+      ],
+      "slovnicna_razlaga": "Opozoriti in opozarjati sta vidski par. Izhodiščna zveza enkrat je opozoril predstavi eno celovito opozorilo, zahtevana zveza večkrat je opozarjal pa ponavljajoče se opozarjanje. Gre za namerno spremembo vidskega in količinskega pomena po navodilu, ne za povsem sopomensko parafrazo. Zveza med sejo sama ne zahteva nedovršnika, saj bi se med sejo lahko zgodilo tudi eno dovršno dejanje. Nedovršnik prav tako ne pomeni, da je predsednik neprekinjeno govoril vso sejo. Časovni odvisnik s preden ostaja nespremenjen in opozarjanje umešča pred nadaljevanje glasovanja. Alternative dopuščajo drugačen položaj prislova večkrat.",
+      "tipicna_napaka": "Ohranitev enkrat ali dovršnika opozoril kljub izrecni zahtevi po nedovršnem ponavljajočem se opozarjanju. Zamenjava odvisnika s preden z odvisnikom z da bi spremenila zahtevano vsebino.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "parafraza",
+        "vidski_pari",
+        "trajanje"
+      ]
+    },
+    {
+      "id": "C1-VID-006",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "popravek_vida_ob_faznem_glagolu",
+      "raven": "C1",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Popravite dovršni nedoločnik ob faznem glagolu začeti v ustrezni nedovršnik. Ohranite vse druge besede in vpišite celotno popravljeno poved.",
+      "kontekst": "Medtem ko je strokovna komisija začela pregledati prispele ponudbe, so vlagatelji nestrpno čakali na hodniku.",
+      "moznosti": [],
+      "pravilni_odgovor": "Medtem ko je strokovna komisija začela pregledovati prispele ponudbe, so vlagatelji nestrpno čakali na hodniku.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Napaka je zveza začela pregledati: fazni glagol začeti v tej zgradbi zahteva nedovršno dopolnilo pregledovati, saj označuje začetek pregledovanja. Preteklik je začela ostane nespremenjen; popravljamo nedoločnik, ne osebne glagolske oblike. Medtem ko tukaj časovno povezuje začetek pregledovanja s čakanjem vlagateljev. Veznik sam ne prepoveduje dovršnikov: prav dovršni glagol začela v popravljeni povedi označuje začetek procesa med njihovim čakanjem. Dovršnost tudi ne pomeni nujno, da je dejanje hipno.",
+      "tipicna_napaka": "Ohranitev dovršnega nedoločnika pregledati ob začela ali posplošitev, da za medtem ko nikoli ne sme stati dovršnik. Odločilna je tu vezava faznega glagola.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "popravek_napake",
+        "fazni_glagoli",
+        "medtem_ko",
+        "nedolocnik"
+      ]
+    },
+    {
+      "id": "C1-VID-007",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "sprotnost_ob_prislovih",
+      "raven": "C1",
+      "tip_naloge": "vnos",
+      "navodilo": "Iz para »odpraviti / odpravljati« vpišite deležnik na -l v ženski ednini. Dopustna sta prikaz sprotnega poteka in povzetek uspešno opravljenih posegov. Pomožnik je je že zapisan.",
+      "kontekst": "Vodja delavnice je sproti ___ drobne napake na izdelkih, zato je bila končna kakovost serije brezhibna.",
+      "moznosti": [],
+      "pravilni_odgovor": "odpravljala",
+      "alternativni_odgovori": [
+        "odpravila"
+      ],
+      "slovnicna_razlaga": "Odpravljala je deležnik nedovršnega glagola odpravljati: v ospredje postavi sprotno dejavnost oziroma ponavljanje posegov. Dopusten je tudi dovršni deležnik odpravila, ki v istem sobesedilu povzema uspešno opravljene posege. Prislov sproti pove, da se odpravljanje časovno prilagaja nastajanju ali odkrivanju napak, sam pa ne določa obveznega glagolskega vida. Zveza je sproti odpravila zato ne pomeni, da je vodja vse popravila naenkrat ob koncu. Obe obliki se ujemata z ženskim osebkom vodja; pomožnika je v vrzeli ne ponavljamo. Sklep o brezhibni kakovosti je združljiv z obema vidoma.",
+      "tipicna_napaka": "Zavračanje dovršnika odpravila zgolj zaradi prislova sproti ali domneva, da nedovršnik odpravljala nujno pomeni neuspešno odpravljanje. Vid določa način predstavitve dejanja, sobesedilo pa dopolnjuje podatke o uspešnosti.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "sproti",
+        "nedovrsnost",
+        "kakovost"
+      ]
+    },
+    {
+      "id": "C1-VID-008",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "dovrsni_sedanjik_v_ciljnem_odvisniku",
+      "raven": "C1",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite dovršni sedanjik, ki v odvisniku z da predstavlja želeni enkratni rezultat pogajanj.",
+      "kontekst": "Ekipa je odpotovala v Bruselj z jasnim ciljem, da na pogajanjih ___ ključne koncesije za domače kmetijstvo.",
+      "moznosti": [
+        "doseže",
+        "dosega",
+        "bo dosegala",
+        "bi dosegala"
+      ],
+      "pravilni_odgovor": "doseže",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Doseže je sedanjik dovršnega glagola doseči v 3. osebi ednine in se ujema s skupinskim osebkom ekipa. V zvezi z jasnim ciljem, da doseže označuje želeni rezultat, ki naj bi sledil odhodu; ne trdi, da je bil cilj že dosežen. Dosega in bo dosegala sta nedovršni obliki, bi dosegala pa je nedovršni pogojnik; ne ustrezajo izrecni zahtevi po dovršnem sedanjiku. Izbira vida temelji na predstavitvi cilja kot enkratnega dosežka, ne na splošnem pravilu, da vsak namen zahteva dovršnik. Ker je glagol v odvisniku z da, ne gre za namenilnik ob glagolu premikanja.",
+      "tipicna_napaka": "Enačenje dovršnega sedanjika s trenutno potekajočim dejanjem ali sklepanje, da odpotovala samo po sebi zahteva dovršnik. Namen lahko izražamo tudi z nedovršnikom, kadar želimo poudariti dejavnost namesto rezultata.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "namernost",
+        "dovrsnost",
+        "cilj"
+      ]
     }
   ]
 }

@@ -10,10 +10,10 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Število potrjenih C1 nalog** | `42` | `100+` |
-| **Tematski moduli z nalogami** | `5 / 7` (MOD-01 in MOD-02 zaključena ✅) | `7 / 7` |
+| **Število pripravljenih C1 nalog** | `50 / 110` | `110` |
+| **Tematski moduli z nalogami** | `6 / 7` (MOD-01 in MOD-02 zaključena ✅) | `7 / 7` |
 | **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna aplikacija (vsi filtri, tema, mobilna odzivnost) | Delujoča interaktivna aplikacija |
-| **Lektura in jezikovna potrditev** | 🟢 42 / 42 nalog potrjenih (100 %) | 100 % pregledanih nalog |
+| **Lektura in jezikovna potrditev** | 42 / 50 potrjenih; 8 novih avtorja Gemini je recenziral Codex, popravki čakajo na uredniško potrditev | 100 % pregledanih nalog |
 
 ---
 
@@ -42,7 +42,7 @@
 - [x] Modul 1: Vezljivost glagolov in predložne zveze (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
 - [x] Modul 2: Rodilnik zanikanja in delni rodilnik (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
 - [ ] Modul 3: Napredna frazeologija in idiomi (pripravljeno: 10, odobreno: 10, cilj: 20 nalog)
-- [ ] Modul 4: Glagolski vid in pomeni v kontekstu (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
+- [ ] Modul 4: Glagolski vid in pomeni v kontekstu (pripravljeno: 8 / 15, odobreno po recenziji: 0; avtor Gemini, recenzent Codex)
 - [ ] Modul 5: Dvojina in zahtevna ujemanja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
 - [ ] Modul 6: Polstavčne strukture in skladnja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
 - [ ] Modul 7: Slogovni registri in sopomenke (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
@@ -58,22 +58,29 @@
 
 ## 📚 Stanje tematskih modulov (Naloge C1)
 
-| Šifra | Tematski modul | Načrtovano | Pripravljeno (Codex) | Odobreno (Gemini) |
+| Šifra | Tematski modul | Načrtovano | Pripravljeno (Codex / Gemini) | Odobreno (Gemini) |
 | :--- | :--- | :---: | :---: | :---: |
 | **MOD-01** | Vezljivost in predlogi | 15 | 15 | 15 ✅ |
 | **MOD-02** | Rodilnik ob zanikanju | 15 | 15 | 15 ✅ |
 | **MOD-03** | Frazeologija in pregovori | 20 | 10 | 10 |
-| **MOD-04** | Glagolski vid | 15 | 0 | 0 |
+| **MOD-04** | Glagolski vid | 15 | 8 | 0 (popravki po recenziji) |
 | **MOD-05** | Dvojina in ujemanje | 15 | 1 | 1 |
 | **MOD-06** | Skladnja in deležniki | 15 | 1 | 1 |
 | **MOD-07** | Slog in sopomenke | 15 | 0 | 0 |
-| **SKUPAJ** | | **110** | **42** | **42** |
+| **SKUPAJ** | | **110** | **50** | **42** |
 
 ---
 
 ## 📝 Dnevnik sprememb in aktivnosti (Changelog)
 
 ### [23. 11. 2026]
+* **Gemini (avtor) / Codex (recenzent):**
+  - Dodanih 8 nalog `C1-VID-001`–`C1-VID-008` za MOD-04: 3 izbire, 3 vnosi, 1 parafraza in 1 popravek napake. MOD-04: **8/15**, skupaj **50/110**. Prejšnjih 42 nalog je ohranjenih brez sprememb.
+  - VID-001: velelnik prestavljen iz odvisnika v samostojno svarilo; VID-003: ločena slogovna nevtralnost od slovnične dopustnosti oblike naprošamo.
+  - VID-002 in VID-004: navodili natančno določata zahtevani vid in obseg vnosa; VID-005: popravljeno sklicevanje na odvisnik s preden ter usklajeni pomen ponavljanja in alternativni besedni redi.
+  - VID-006: nedvoumna napaka ob faznem glagolu namesto neutemeljene prepovedi dovršnika za medtem ko. VID-007: dodan dopustni odgovor odpravila; sproti ne zahteva samo nedovršnika. VID-008: pojasnjena razlika med ciljnim odvisnikom in namenilnikom.
+  - Odpravljene absolutne trditve o glagolskem vidu. Slovarski register preverjen na [Franu](https://fran.si/iskanje?Query=napro%C5%A1ati); ponavljanje z dovršnikom primerjano s [Slavističnim zbornikom 2011](https://zdsds.si/wp-content/uploads/2019/01/zbornik2011.pdf). Spremenjene različice so pripravljene za končno uredniško potrditev Gemini.
+  - Uspešni preverjanje UTF-8, sheme, 50 enoličnih ID-jev, vrzeli, odgovorov in nespremenjenosti prejšnjih 42 nalog ter `npm run build`.
 * **Codex / ChatGPT (Vsebina):**
   - Dodanih 9 nalog `C1-ROD-007`–`C1-ROD-015` (3 izbire, 6 vnosov). MOD-02 ima pripravljenih 15/15 nalog.
   - Dodanih 8 nalog za MOD-03 (`C1-FRA-003`–`C1-FRA-010`): parafraze s telesnimi in živalskimi frazemi (*iti na roko*, *delati iz muhe slona*), popravki zamešanih frazemov (*maslo na glavi*, *puška v koruzo*), dopolnjevanje ključnih sestavin (*mačka v žaklju*, *jabolko spora*) ter pregovori (*tiha voda bregove dere*, *po toči zvoniti je prepozno*).
@@ -94,7 +101,7 @@
 1. **Claude Code (Pika na i):**
    - Način »Osredotočena vaja« (kviz 10 naključnih nalog, ena po ena s povzetkom) ali zvočna izgovorjava povedi (TTS).
 2. **Kolegialno ustvarjanje (Gemini + Codex):**
-   - Gemini pripravi nabor nalog za novo poglavje (npr. MOD-04: Glagolski vid), Codex pa opravi tehnični in vsebinski recenzentski pregled!
+   - Gemini potrdi recenzentske popravke nalog `C1-VID-001`–`C1-VID-008`; nato sledi dopolnitev MOD-04 s preostalimi 7 nalogami.
 3. **Aljonin preizkus v živo:** 
    - Testiranje vadnice na pametnem telefonu na povezavi [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (že 42 nalog v živo!).
 
