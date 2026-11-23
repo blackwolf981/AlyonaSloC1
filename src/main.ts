@@ -44,8 +44,24 @@ let tipFilter: 'vse' | TipNaloge = 'vse';
 let samoOdprte = false; // »Samo nerešene / napačne«; vsi trije filtri se kombinirajo
 let filtriOdprti = false; // zloženi filtri pod 1024 px; na namizju so v stranski letvi vedno vidni
 
+/** Način »Osredotočena vaja«: ena naloga naenkrat, lastni rezultati (ločeni od seznama). */
+interface Kviz {
+  ids: string[];
+  indeks: number;
+  rezultati: Map<string, Rezultat>;
+  izbor: string; // opis filtra, iz katerega so naloge
+  koncan: boolean;
+}
+type Pogled = 'seznam' | 'kviz';
+let pogled: Pogled = 'seznam';
+let kviz: Kviz | null = null;
+const VELIKOST_KVIZA = 10;
+const vKvizu = () => pogled === 'kviz' && !!kviz && !kviz.koncan;
+/** Rezultat, ki velja v trenutnem pogledu: v kvizu šteje le odgovor iz tega kviza. */
+const rezultatZa = (n: Naloga): Rezultat | undefined => (vKvizu() ? kviz!.rezultati.get(n.id) : napredek[n.id]);
+
 const poId = (id: string | undefined) => naloge.find((n) => n.id === id);
-const trenutniOdgovor = (n: Naloga) => napredek[n.id]?.odgovor ?? osnutki.get(n.id) ?? '';
+const trenutniOdgovor = (n: Naloga) => rezultatZa(n)?.odgovor ?? osnutki.get(n.id) ?? '';
 const jeOdprta = (n: Naloga) => !napredek[n.id]?.pravilno; // nerešena ali napačna
 const vKategoriji = (n: Naloga) => filter === 'vse' || n.kategorija === filter;
 const vTipu = (n: Naloga) => tipFilter === 'vse' || n.tip_naloge === tipFilter;
@@ -93,6 +109,20 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
   if (gumb && !document.documentElement.dataset.theme) gumb.outerHTML = gumbTema();
 });
 
+/* ---------- izbor nalog po filtrih ---------- */
+
+/** Naloge, ki ustrezajo vsem trem filtrom (seznam jih prikaže, kviz izbira med njimi). */
+const izbraneNaloge = () => naloge.filter((n) => vKategoriji(n) && vTipu(n) && (!samoOdprte || jeOdprta(n)));
+
+function opisIzbora(): string {
+  const aktivni = [
+    filter !== 'vse' ? oznakaKategorije(filter) : '',
+    tipFilter !== 'vse' ? TIPI[tipFilter] : '',
+    samoOdprte ? 'samo nerešene' : '',
+  ].filter(Boolean);
+  return aktivni.length ? aktivni.join(' · ') : 'vse naloge';
+}
+
 /* ---------- izris: plošča na vrhu ---------- */
 
 function plosca(): string {
@@ -111,13 +141,6 @@ function plosca(): string {
   const vKat = naloge.filter(vKategoriji);
   const tipi = Object.keys(TIPI) as TipNaloge[];
 
-  // Povzetek izbranih filtrov za zloženi gumb »Filtri« (tablica, telefon).
-  const aktivni = [
-    filter !== 'vse' ? oznakaKategorije(filter) : '',
-    tipFilter !== 'vse' ? TIPI[tipFilter] : '',
-    samoOdprte ? 'samo nerešene' : '',
-  ].filter(Boolean);
-  const steviloVidnih = naloge.filter((n) => vKategoriji(n) && vTipu(n) && (!samoOdprte || jeOdprta(n))).length;
 
   return `
     <div class="statistika">
@@ -140,7 +163,7 @@ function plosca(): string {
     </div>
     <button type="button" class="filtri-preklop" data-akcija="filtri" aria-expanded="${filtriOdprti}" aria-controls="filtri">
       <span class="font-semibold">Filtri</span>
-      <span class="filtri-povzetek">${aktivni.length ? esc(aktivni.join(' · ')) : 'vse naloge'} (${steviloVidnih})</span>
+      <span class="filtri-povzetek">${esc(opisIzbora())} (${izbraneNaloge().length})</span>
       <span aria-hidden="true">${filtriOdprti ? '▴' : '▾'}</span>
     </button>
     <div id="filtri" class="filtri" data-odprto="${filtriOdprti}">
@@ -293,7 +316,10 @@ function odzivHtml(n: Naloga, rez: Rezultat | undefined): string {
 }
 
 function razlagaHtml(n: Naloga): string {
-  if (!odprteRazlage.has(n.id)) return '';
+  return odprteRazlage.has(n.id) ? razlagaSekcija(n) : '';
+}
+
+function razlagaSekcija(n: Naloga): string {
   return `
     <section class="razlaga" aria-label="Razlaga naloge ${esc(n.id)}">
       <div class="razlaga-blok">
@@ -308,7 +334,7 @@ function razlagaHtml(n: Naloga): string {
 }
 
 function kartica(n: Naloga): string {
-  const rez = napredek[n.id];
+  const rez = rezultatZa(n);
   const odgovor = trenutniOdgovor(n);
   const razred = rez ? (rez.pravilno ? 'kartica-ok' : 'kartica-napaka') : '';
   const stanje = rez
@@ -318,7 +344,12 @@ function kartica(n: Naloga): string {
     : '';
   const razlagaOdprta = odprteRazlage.has(n.id);
 
-  const gumbi = rez
+  const zadnjaVKvizu = vKvizu() && kviz!.indeks === kviz!.ids.length - 1;
+  const gumbi = rez && vKvizu()
+    ? `<button type="button" class="gumb gumb-glavni" data-akcija="naprej">
+         ${zadnjaVKvizu ? 'Zaključi kviz <span aria-hidden="true">🏁</span>' : 'Naslednja naloga <span aria-hidden="true">➔</span>'}
+       </button>`
+    : rez
     ? `<button type="button" class="gumb ${rez.pravilno ? 'gumb-tih' : 'gumb-glavni'}" data-akcija="znova">
          <span aria-hidden="true">↻</span> ${rez.pravilno ? 'Reši znova' : 'Poskusi znova'}
        </button>`
@@ -357,7 +388,202 @@ function seznam(): string {
     : '<p class="text-[var(--muted)]">Za izbrano kombinacijo kategorije in tipa še ni nalog.</p>';
 }
 
+/* ---------- izris: kviz (osredotočena vaja) ---------- */
+
+function premesaj<T>(a: T[]): T[] {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+  return b;
+}
+
+/** Do 10 naključnih nalog iz trenutnega filtra; naloge iz prejšnjega kviza pridejo na vrsto zadnje. */
+function zacniKviz() {
+  const nabor = izbraneNaloge();
+  const prej = new Set(kviz?.ids ?? []);
+  const vrstni = [...premesaj(nabor.filter((n) => !prej.has(n.id))), ...premesaj(nabor.filter((n) => prej.has(n.id)))];
+  const ids = vrstni.slice(0, VELIKOST_KVIZA).map((n) => n.id);
+  for (const id of ids) {
+    osnutki.delete(id);
+    odprteRazlage.delete(id);
+  }
+  kviz = { ids, indeks: 0, rezultati: new Map(), izbor: opisIzbora(), koncan: false };
+}
+
+/** Po kvizu: osnutki in odprte razlage iz kviza ne smejo ostati v seznamu. */
+function pospraviKviz() {
+  for (const id of kviz?.ids ?? []) {
+    osnutki.delete(id);
+    odprteRazlage.delete(id);
+  }
+}
+
+function trakKviza(k: Kviz): string {
+  const segmenti = k.ids
+    .map((id, i) => {
+      const r = k.rezultati.get(id);
+      const trenutni = !k.koncan && i === k.indeks && !r;
+      const razred = r ? (r.pravilno ? 'segment-ok' : 'segment-napaka') : trenutni ? 'segment-trenutni' : '';
+      const opis = `Naloga ${i + 1}: ${r ? (r.pravilno ? 'pravilno' : 'napačno') : trenutni ? 'trenutna' : 'še ni rešena'}`;
+      return `<li class="segment ${razred}" title="${opis}"><span class="sr-only">${opis}</span><span aria-hidden="true">${r ? (r.pravilno ? '✓' : '!') : ''}</span></li>`;
+    })
+    .join('');
+  return `<ol class="kviz-trak" aria-label="Potek kviza">${segmenti}</ol>`;
+}
+
+function kvizGlavaVsebina(k: Kviz): string {
+  return `
+    <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+      <p class="kviz-korak">Naloga <strong>${k.indeks + 1}</strong> / ${k.ids.length}</p>
+      <p class="text-sm text-[var(--muted)]">Izbor: ${esc(k.izbor)}</p>
+    </div>
+    ${trakKviza(k)}`;
+}
+
+function sporociloZaUspeh(odstotek: number): string {
+  if (odstotek === 100) return 'Popolno! Mojstrsko obvladaš raven C1. 🏆';
+  if (odstotek >= 80) return 'Odlično znanje C1! 🎉';
+  if (odstotek >= 60) return 'Dobro! Še malo vaje pri napakah spodaj. 💪';
+  if (odstotek >= 40) return 'Na pravi poti si. Preberi razlage in poskusi znova. 📚';
+  return 'Ne obupaj, vsaka napaka je korak naprej. Razlage so spodaj. 🌱';
+}
+
+function vrsticaPovzetka(n: Naloga, r: Rezultat | undefined, i: number): string {
+  const ok = !!r?.pravilno;
+  const kratko = n.kontekst.length > 160 ? `${n.kontekst.slice(0, 160).trimEnd()} …` : n.kontekst;
+  return `
+    <li class="povzetek-vrstica ${ok ? 'povzetek-ok' : 'povzetek-napaka'}">
+      <span class="odziv-znak" aria-hidden="true">${ok ? '✓' : '!'}</span>
+      <div class="min-w-0 flex-1">
+        <p class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="font-semibold">${i + 1}.</span>
+          <span class="font-mono text-[var(--muted)]">${esc(n.id)}</span>
+          <span class="znacka znacka-tip">${esc(TIPI[n.tip_naloge] ?? n.tip_naloge)}</span>
+          <span class="sr-only">${ok ? 'pravilno' : 'napačno'}</span>
+        </p>
+        <p class="povzetek-kontekst">${esc(kratko)}</p>
+        ${
+          ok
+            ? `<p class="text-sm">Vaš odgovor: <span class="resitev">${esc(r!.odgovor)}</span></p>`
+            : `<p class="text-sm text-[var(--muted)]">Vaš odgovor: <s class="vas-odgovor">${esc(r?.odgovor ?? '–')}</s></p>
+               <p class="text-sm">Pravilno: <span class="resitev">${esc(n.pravilni_odgovor)}</span></p>
+               <details class="povzetek-razlaga">
+                 <summary><span aria-hidden="true">💡</span> Prikaži razlago</summary>
+                 ${razlagaSekcija(n)}
+               </details>`
+        }
+      </div>
+    </li>`;
+}
+
+function povzetekHtml(k: Kviz): string {
+  const skupaj = k.ids.length;
+  const pravilne = k.ids.filter((id) => k.rezultati.get(id)?.pravilno).length;
+  const odstotek = Math.round((pravilne / skupaj) * 100);
+  const naslednji = Math.min(VELIKOST_KVIZA, izbraneNaloge().length);
+  return `
+    <section class="povzetek" aria-labelledby="povzetek-naslov">
+      <div class="povzetek-glava">
+        <p class="kviz-oznaka">Kviz zaključen · ${esc(k.izbor)}</p>
+        <h2 id="povzetek-naslov" class="povzetek-rezultat" tabindex="-1">
+          <span class="povzetek-st">${pravilne} / ${skupaj}</span> pravilno
+        </h2>
+        <p class="povzetek-odstotek">${odstotek} % uspešnost</p>
+        <p class="povzetek-sporocilo">${sporociloZaUspeh(odstotek)}</p>
+        ${trakKviza(k)}
+      </div>
+      <ol class="povzetek-seznam" aria-label="Pregled odgovorov">
+        ${k.ids.map((id, i) => vrsticaPovzetka(poId(id)!, k.rezultati.get(id), i)).join('')}
+      </ol>
+      <div class="povzetek-gumbi">
+        ${
+          naslednji
+            ? `<button type="button" class="gumb gumb-glavni" data-akcija="kviz-nov">
+                 <span aria-hidden="true">↻</span> Nov kviz (${naslednji} ${naslednji === 1 ? 'naloga' : naslednji === 2 ? 'nalogi' : naslednji < 5 ? 'naloge' : 'novih nalog'})
+               </button>`
+            : ''
+        }
+        <button type="button" class="gumb gumb-tih" data-akcija="kviz-izhod">
+          <span aria-hidden="true">✕</span> Nazaj na celotno vadnico
+        </button>
+      </div>
+    </section>`;
+}
+
+function kvizHtml(): string {
+  if (!kviz) return '';
+  const k = kviz;
+  if (!k.ids.length) {
+    return `
+      <div class="povzetek-glava">
+        <p>V izboru »${esc(k.izbor)}« ni nalog za kviz. Spremenite filtre v pogledu »Vse naloge«.</p>
+        <div class="povzetek-gumbi">
+          <button type="button" class="gumb gumb-glavni" data-akcija="kviz-izhod"><span aria-hidden="true">✕</span> Nazaj na vadnico</button>
+        </div>
+      </div>`;
+  }
+  if (k.koncan) return povzetekHtml(k);
+  return `
+    <div id="kviz-glava" class="kviz-glava" tabindex="-1">${kvizGlavaVsebina(k)}</div>
+    ${kartica(poId(k.ids[k.indeks])!)}
+    <div class="text-center">
+      <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="kviz-izhod">
+        <span aria-hidden="true">✕</span> Prekini kviz
+      </button>
+    </div>`;
+}
+
+function preklopnik(): string {
+  const gumb = (v: Pogled, ikona: string, oznaka: string) => `
+    <button type="button" class="preklop-gumb" data-akcija="pogled" data-vrednost="${v}" aria-pressed="${pogled === v}">
+      <span aria-hidden="true">${ikona}</span> ${oznaka}
+    </button>`;
+  return `
+    <div id="preklopnik" class="preklopnik" role="group" aria-label="Način vadbe">
+      ${gumb('seznam', '📋', 'Vse naloge')}${gumb('kviz', '🎯', `Kviz (${VELIKOST_KVIZA} nalog)`)}
+    </div>`;
+}
+
 /* ---------- osveževanje DOM ---------- */
+
+function izrisiPogled() {
+  const el = document.getElementById('vsebina');
+  if (!el) return;
+  const pp = document.getElementById('preklopnik');
+  if (pp) pp.outerHTML = preklopnik();
+  el.classList.toggle('postavitev-kviz', pogled === 'kviz');
+  if (pogled === 'seznam') {
+    el.innerHTML = `
+      <aside id="plosca" class="plosca" aria-label="Napredek in filtri"></aside>
+      <main id="seznam" class="seznam"></main>`;
+    osveziPlosco();
+    osveziSeznam();
+  } else {
+    el.innerHTML = `<main id="kviz" class="kviz">${kvizHtml()}</main>`;
+    el.querySelectorAll<HTMLTextAreaElement>('textarea[data-vnos]').forEach(prilagodiVisino);
+  }
+}
+
+function osveziKvizGlavo() {
+  const el = document.getElementById('kviz-glava');
+  if (el && kviz) el.innerHTML = kvizGlavaVsebina(kviz);
+}
+
+/** Po menjavi naloge: vrh vsebine v pogled, fokus na smiseln element.
+ *  Na zaslonih na dotik ne fokusiramo vnosnega polja, da se tipkovnica ne odpre sama. */
+function fokusNaVsebino() {
+  const v = document.getElementById('vsebina');
+  if (!v) return;
+  if (v.getBoundingClientRect().top < 0) v.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  const dotik = matchMedia('(pointer: coarse)').matches;
+  const cilj =
+    v.querySelector<HTMLElement>('#povzetek-naslov') ??
+    (dotik ? null : v.querySelector<HTMLElement>('[data-vnos]:not([readonly]), [data-akcija="izberi"]:not(:disabled)')) ??
+    v.querySelector<HTMLElement>('#kviz-glava');
+  cilj?.focus({ preventScroll: true });
+}
 
 const elPlosca = () => document.getElementById('plosca');
 const elSeznam = () => document.getElementById('seznam');
@@ -420,10 +646,15 @@ function preveri(n: Naloga) {
     elKartica(n.id)?.querySelector<HTMLElement>('[data-vnos], [data-akcija="izberi"]')?.focus();
     return;
   }
-  napredek[n.id] = { odgovor, pravilno: jePravilno(n, odgovor) };
+  const rez: Rezultat = { odgovor, pravilno: jePravilno(n, odgovor) };
+  napredek[n.id] = rez; // tudi odgovor v kvizu šteje v skupni napredek
   shraniNapredek(napredek);
+  if (vKvizu()) {
+    kviz!.rezultati.set(n.id, rez);
+    osveziKvizGlavo();
+  }
   odprteRazlage.add(n.id);
-  osveziKartico(n.id, '[data-akcija="znova"]');
+  osveziKartico(n.id, '[data-akcija="znova"], [data-akcija="naprej"]');
   osveziPlosco();
 }
 
@@ -456,7 +687,7 @@ app.addEventListener('click', (e) => {
 
   switch (el.dataset.akcija) {
     case 'izberi':
-      if (n && !napredek[n.id]) {
+      if (n && !rezultatZa(n)) {
         osnutki.set(n.id, el.dataset.vrednost ?? '');
         osveziKartico(n.id);
       }
@@ -502,6 +733,36 @@ app.addEventListener('click', (e) => {
       osveziSeznam();
       document.querySelector<HTMLElement>('[data-akcija="samo-odprte"]')?.focus();
       break;
+    case 'pogled': {
+      const nov: Pogled = el.dataset.vrednost === 'kviz' ? 'kviz' : 'seznam';
+      if (nov === pogled) break;
+      if (nov === 'kviz') zacniKviz();
+      else pospraviKviz();
+      pogled = nov;
+      izrisiPogled();
+      fokusNaVsebino();
+      break;
+    }
+    case 'naprej':
+      if (kviz) {
+        if (kviz.indeks >= kviz.ids.length - 1) kviz.koncan = true;
+        else kviz.indeks++;
+        izrisiPogled();
+        fokusNaVsebino();
+      }
+      break;
+    case 'kviz-nov':
+      pospraviKviz();
+      zacniKviz();
+      izrisiPogled();
+      fokusNaVsebino();
+      break;
+    case 'kviz-izhod':
+      pospraviKviz();
+      pogled = 'seznam';
+      izrisiPogled();
+      document.querySelector<HTMLElement>('[data-akcija="pogled"][data-vrednost="seznam"]')?.focus();
+      break;
     case 'filtri':
       filtriOdprti = !filtriOdprti;
       osveziPlosco();
@@ -545,12 +806,13 @@ app.addEventListener('keydown', (e) => {
 function lupina(vsebina: string): string {
   return `
     <header class="ovoj glava">
-      <div class="min-w-0">
+      <div class="glava-naslov min-w-0">
         <p class="text-sm font-semibold uppercase tracking-wide text-[var(--accent-text)]">Raven C1</p>
         <h1 class="text-2xl font-bold sm:text-3xl lg:text-4xl">Aljonina spletna vadnica slovenščine</h1>
         <p class="mt-1 text-[var(--muted)]">Vezljivost, frazeologija, glagolski vid, dvojina in slog za napredne.</p>
       </div>
-      ${gumbTema()}
+      <div class="glava-tema">${gumbTema()}</div>
+      <div class="glava-preklop">${preklopnik()}</div>
     </header>
     ${vsebina}`;
 }
@@ -564,12 +826,8 @@ async function zagon() {
     for (const id of Object.keys(napredek)) if (!ids.has(id)) delete napredek[id];
 
     app.innerHTML = lupina(`
-      <div class="ovoj postavitev">
-        <aside id="plosca" class="plosca" aria-label="Napredek in filtri"></aside>
-        <main id="seznam" class="seznam"></main>
-      </div>`);
-    osveziPlosco();
-    osveziSeznam();
+      <div id="vsebina" class="ovoj postavitev"></div>`);
+    izrisiPogled();
   } catch (e) {
     const sporocilo = e instanceof Error ? e.message : String(e);
     app.innerHTML = lupina(`
