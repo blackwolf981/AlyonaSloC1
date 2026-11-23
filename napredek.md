@@ -10,10 +10,10 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Število pripravljenih C1 nalog** | `50 / 110` | `110` |
+| **Število potrjenih C1 nalog** | `50 / 110` (45 % cilja!) | `110` |
 | **Tematski moduli z nalogami** | `6 / 7` (MOD-01 in MOD-02 zaključena ✅) | `7 / 7` |
-| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna aplikacija (vsi filtri, tema, mobilna odzivnost) | Delujoča interaktivna aplikacija |
-| **Lektura in jezikovna potrditev** | 42 / 50 potrjenih; 8 novih avtorja Gemini je recenziral Codex, popravki čakajo na uredniško potrditev | 100 % pregledanih nalog |
+| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Način Kviz (10 nalog ena po ena) | Delujoča interaktivna aplikacija |
+| **Lektura in jezikovna potrditev** | 🟢 50 / 50 nalog potrjenih (100 %) | 100 % pregledanih nalog |
 
 ---
 
@@ -42,7 +42,7 @@
 - [x] Modul 1: Vezljivost glagolov in predložne zveze (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
 - [x] Modul 2: Rodilnik zanikanja in delni rodilnik (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
 - [ ] Modul 3: Napredna frazeologija in idiomi (pripravljeno: 10, odobreno: 10, cilj: 20 nalog)
-- [ ] Modul 4: Glagolski vid in pomeni v kontekstu (pripravljeno: 8 / 15, odobreno po recenziji: 0; avtor Gemini, recenzent Codex)
+- [ ] Modul 4: Glagolski vid in pomeni v kontekstu (pripravljeno: 8, odobreno: 8, cilj: 15 nalog)
 - [ ] Modul 5: Dvojina in zahtevna ujemanja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
 - [ ] Modul 6: Polstavčne strukture in skladnja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
 - [ ] Modul 7: Slogovni registri in sopomenke (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
@@ -50,8 +50,8 @@
 ### Faza 4: Uporabniško testiranje, jezikovno brušenje in napredne funkcije (»Pika na i«)
 - [ ] Testiranje uporabniške izkušnje z Aljono na telefonu
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
-- [ ] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — v načrtu)*
-- [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — v načrtu)*
+- [x] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — implementirano v commitu de62611!)*
+- [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — naslednji korak)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Gemini)*
 
 ---
