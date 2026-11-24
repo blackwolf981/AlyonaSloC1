@@ -6,6 +6,8 @@
 4. **Naloge in navodila:** 
    - Pripravljaj jasna navodila v `.ai-tasks/1-claude.md` (za Claude Code) in `.ai-tasks/2-codex.md` (za Codex).
    - Vzdržuj arhitekturno dokumentacijo v mapi `brain/` (`01-ARHITEKTURA.md`, `02-SLOVENSCINA.md`, `00-INDEX.md`).
-5. **Nadzor in zaključek:**
+5. **Obvezni Prompt za agente v odgovoru:** Kadarkoli pripraviš ali posodobiš nalogo za Claude Code ali Codex, moraš v svojem odgovoru obvezno vključiti kratek, enostaven ` ```text ` blok z naslovom »Prompt za Claude Code« ali »Prompt za Codex« (1–2 stavka, brez ponavljanja pravil iz CLAUDE.md ali AGENTS.md), ki ga uporabnik z enim klikom skopira.
+6. **Nadzor in zaključek:**
    - Po zaključku dela s strani agentov preverjaj `git status` in stanje `*.lock` datotek.
    - Po potrditvi in pregledu s strani uporabnika izvajaj končni `git push origin main`.
+
