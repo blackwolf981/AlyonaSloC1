@@ -11,8 +11,8 @@
       "moznosti": ["na povzemanje že znanih podatkov", "s povzemanjem že znanih podatkov", "pri povzemanju že znanih podatkov", "za povzemanje že znanih podatkov"],
       "pravilni_odgovor": "na povzemanje že znanih podatkov",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Rečemo omejiti se na kaj: »Pri pogovoru se omejimo na eno temo.« Zato je pravilno na povzemanje, ne s povzemanjem.",
-      "tipicna_napaka": "Ne recite omejila se je s povzemanjem, temveč omejila se je na povzemanje.",
+      "slovnicna_razlaga": "Omejiti se pomeni ostati pri izbrani temi ali dejavnosti. Primer: »Pri pogovoru se omejimo na eno temo.«",
+      "tipicna_napaka": "Ob omejiti se potrebujemo na: omejila se je na povzemanje.",
       "oznake": ["vezljivost", "omejiti_se", "na_in_tozilnik", "glagolnik", "uradovalno_besedilo"]
     },
     {
@@ -26,8 +26,8 @@
       "moznosti": [],
       "pravilni_odgovor": "pri neodvisni strokovni presoji",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Ob vztrajati uporabimo pri: »Vztrajam pri svoji odločitvi.« Enako oblikujemo zvezo pri neodvisni strokovni presoji.",
-      "tipicna_napaka": "Rečemo vztrajati pri presoji, ne vztrajati za presojo.",
+      "slovnicna_razlaga": "Z vztrajati pri povemo, da od nečesa ne odstopimo. Primer: »Vztrajam pri svoji odločitvi.«",
+      "tipicna_napaka": "Ne zamenjajte vztrajam pri odločitvi z zavzemam se za odločitev.",
       "oznake": ["vezljivost", "vztrajati", "pri_in_mestnik", "ujemanje_pridevnikov"]
     },
     {
@@ -56,7 +56,7 @@
       "moznosti": ["Kdor visoko leta, nizko pade.", "Brez muje se še čevelj ne obuje.", "Po toči zvoniti je prepozno.", "Kdor drugemu jamo koplje, sam vanjo pade."],
       "pravilni_odgovor": "Kdor visoko leta, nizko pade.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Pregovor opozarja, da se pretirana samozavest lahko konča z neuspehom. Uporabimo ga denimo za nekoga, ki se hvali z gotovo zmago, nato pa izgubi: »Kdor visoko leta, nizko pade.«",
+      "slovnicna_razlaga": "Pregovor opozarja, da se precenjevanje lastnih zmožnosti lahko konča z neuspehom. Primer: »Obljubljal je gotovo zmago, zdaj pa je zadnji: kdor visoko leta, nizko pade.«",
       "tipicna_napaka": "Pregovor o kopanju jame govori o škodovanju drugemu; tukaj pa gre za pretirano samozavest.",
       "oznake": ["pregovori", "preneseni_pomen", "sobesedilo", "pretirana_samozavest", "pragmatika"]
     },
@@ -161,7 +161,7 @@
       "moznosti": [],
       "pravilni_odgovor": "k celoviti presoji dolgoročnih posledic",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Rečemo težiti k čemu, torej k celoviti presoji; h uporabljamo pred k in g. Primer: »Pri delu težimo k boljšim rezultatom.«",
+      "slovnicna_razlaga": "Težiti k nečemu pomeni prizadevati si, da bi to dosegli. Primer: »Pri delu težimo k boljšim rezultatom.«",
       "tipicna_napaka": "Pišemo k celoviti presoji, ne h celoviti presoji; h uporabimo pred besedo, ki se začne s k ali g.",
       "oznake": ["MOD-01", "teziti_k", "dajalnik", "predloga_k_h", "rodilnisko_dopolnilo"]
     },
@@ -176,7 +176,7 @@
       "moznosti": ["pravice do objave rezultatov", "pravico do objave rezultatov", "od pravice do objave rezultatov", "pravici do objave rezultatov"],
       "pravilni_odgovor": "pravici do objave rezultatov",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Rečemo odpovedati se čemu, zato je pravilno pravici tudi ob zanikanju. Primer: »Dopustu se nisem odpovedala.«",
+      "slovnicna_razlaga": "Pravici se lahko odpovemo ali pa ne; oblika pravici v obeh primerih ostane enaka. Primer: »Dopustu se nisem odpovedala.«",
       "tipicna_napaka": "Pravilno je ni se odpovedal pravici, ne pravice ali od pravice.",
       "oznake": ["MOD-01", "odpovedati_se", "dajalnik", "zanikanje", "pravica_do"]
     },
@@ -191,7 +191,7 @@
       "moznosti": [],
       "pravilni_odgovor": "s stopnjo prevzete odgovornosti",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Rečemo sorazmeren s čim, zato s stopnjo prevzete odgovornosti. Primer: »Cena naj bo sorazmerna s kakovostjo.«",
+      "slovnicna_razlaga": "Sorazmeren pove, da se dve stvari spreminjata v ustreznem razmerju. Primer: »Cena naj bo sorazmerna s kakovostjo.«",
       "tipicna_napaka": "Pišemo s stopnjo, ne z stopnjo ali s stopnji; besedi prevzete odgovornosti ostaneta nespremenjeni.",
       "oznake": ["MOD-01", "sorazmeren", "pridevniska_vezljivost", "orodnik", "predloga_z_s"]
     },
@@ -206,7 +206,7 @@
       "moznosti": ["po prejšnjih odločitvah razsodišča", "na prejšnje odločitve razsodišča", "s prejšnjimi odločitvami razsodišča", "na prejšnjih odločitvah razsodišča"],
       "pravilni_odgovor": "na prejšnje odločitve razsodišča",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Sklicevati se na kaj pomeni navesti nekaj v podporo svoji trditvi. Primer: »Sklicujem se na najin dogovor«; enako rečemo na prejšnje odločitve.",
+      "slovnicna_razlaga": "Sklicevati se pomeni nekaj navesti v podporo temu, kar trdimo. Primer: »Sklicujem se na najin dogovor.«",
       "tipicna_napaka": "Ne zamenjajte zvez: sklicujemo se na odločitve, naše mnenje pa lahko temelji na odločitvah.",
       "oznake": ["MOD-01", "sklicevati_se_na", "tozilnik", "mestnik", "argumentacija"]
     },
@@ -236,7 +236,7 @@
       "moznosti": ["na vsebinske zasnove raziskave", "vsebinske zasnove raziskave", "na vsebinsko zasnovo raziskave", "na vsebinski zasnovi raziskave"],
       "pravilni_odgovor": "na vsebinsko zasnovo raziskave",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Rečemo vplivati na kaj, zveza z na pa ostane enaka tudi ob zanikanju. Primer: »Dež ni vplival na naš izlet.«",
+      "slovnicna_razlaga": "Beseda ne ne spremeni zveze vplivati na kaj. Primer: »Dež ni vplival na naš izlet.«",
       "tipicna_napaka": "Tudi ob ni vplivala ostane na vsebinsko zasnovo; ne zamenjajte tega z na vsebinske zasnove.",
       "oznake": ["MOD-01", "vplivati_na", "tozilnik", "zanikanje", "hiperkorekcija"]
     },
@@ -281,7 +281,7 @@
       "moznosti": ["v strokovni avtonomiji zavoda", "v strokovno avtonomijo zavoda", "na strokovno avtonomijo zavoda", "strokovne avtonomije zavoda"],
       "pravilni_odgovor": "v strokovno avtonomijo zavoda",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Rečemo poseg v kaj, zato v strokovno avtonomijo zavoda. Primer: »Branje tujih sporočil je poseg v zasebnost.«",
+      "slovnicna_razlaga": "S poseg v kaj povemo, na katero področje neko dejanje vpliva. Primer: »Branje tujih sporočil je poseg v zasebnost.«",
       "tipicna_napaka": "Ne izpustite predloga v: poseg v avtonomijo, ne poseg avtonomije.",
       "oznake": ["MOD-01", "poseg_v", "samostalniska_vezljivost", "tozilnik", "nominalizacija"]
     },
@@ -296,7 +296,7 @@
       "moznosti": [],
       "pravilni_odgovor": "od pravočasne pridobitve vseh soglasij",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Ob odvisen uporabimo od in rodilnik: »Izlet bo odvisen od vremena.« Zato je pravilno od pravočasne pridobitve vseh soglasij.",
+      "slovnicna_razlaga": "Za odvisen uporabimo od, ker povemo, kaj odloča o izidu. Primer: »Izlet bo odvisen od vremena.«",
       "tipicna_napaka": "Uporabite od, ne na: odvisen od pridobitve soglasij.",
       "oznake": ["MOD-01", "odvisen_od", "pridevniska_vezljivost", "rodilnik", "glagolski_samostalnik"]
     },
@@ -386,7 +386,7 @@
       "moznosti": [],
       "pravilni_odgovor": "tako ostrega odziva strokovne javnosti",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Besedi nihče in nikoli ne odpravita zanikanja, zato uporabimo rodilnik: tako ostrega odziva. Primer: »Nihče ne bi pričakoval takšnega presenečenja.«",
+      "slovnicna_razlaga": "Tudi ob nihče in nikoli potrebujemo ne in obliko ostrega odziva. Primer: »Nihče ne bi pričakoval takšnega presenečenja.«",
       "tipicna_napaka": "Ob nihče in nikoli še vedno potrebujemo ne: nihče ne bi pričakoval tako ostrega odziva.",
       "oznake": ["MOD-02", "nikalno_ujemanje", "nihce", "nikoli", "pogojnik", "rodilnik_zanikanja"]
     },
@@ -476,7 +476,7 @@
       "moznosti": ["dokončno oceno stroškov", "dokončni oceni stroškov", "dokončna ocena stroškov", "dokončne ocene stroškov"],
       "pravilni_odgovor": "dokončne ocene stroškov",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Pri zanikanem prejeti uporabimo rodilnik: nismo prejeli dokončne ocene. Primer: »Prejela sem sporočilo, nisem pa prejela odgovora.«",
+      "slovnicna_razlaga": "Ko povemo, da nečesa nismo prejeli, se oblika besede spremeni. Primer: »Prejela sem sporočilo, nisem pa prejela odgovora.«",
       "tipicna_napaka": "V knjižnem zapisu je pravilno nismo prejeli dokončne ocene, ne nismo prejeli dokončno oceno.",
       "oznake": ["MOD-02", "rodilnik_zanikanja", "knjizna_norma", "pogovorna_raba", "register"]
     },
@@ -566,7 +566,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Po drugi zavrnitvi je raziskovalec vrgel puško v koruzo, čeprav bi lahko predlog še dopolnil.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Vreči puško v koruzo pomeni obupati in odnehati; ustaljena zveza vsebuje puško, ne kopja. Primer: »Po prvem neuspehu še ne vrzi puške v koruzo.«",
+      "slovnicna_razlaga": "Vreči puško v koruzo pomeni obupati in odnehati. Primer: »Po prvem neuspehu še ne vrzi puške v koruzo.«",
       "tipicna_napaka": "Ustaljena zveza je vreči puško v koruzo, ne vreči kopje v koruzo.",
       "oznake": ["MOD-03", "frazeologija", "vreci_pusko_v_koruzo", "kontaminacija", "dovrsnost", "register"]
     },
@@ -596,7 +596,7 @@
       "moznosti": [],
       "pravilni_odgovor": "spora",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Jabolko spora je nekaj, zaradi česar se ljudje prepirajo; zvezo dopolnimo z besedo spora. Primer: »Delitev stroškov je postala jabolko spora med sostanovalci.«",
+      "slovnicna_razlaga": "Jabolko spora je nekaj, zaradi česar se ljudje prepirajo. Primer: »Delitev stroškov je postala jabolko spora med sostanovalci.«",
       "tipicna_napaka": "Pravilno je jabolko spora, ne jabolko spor; govorimo o vzroku prepira, ne o sadju.",
       "oznake": ["MOD-03", "frazeologija", "jabolko_spora", "rodilnik", "mitoloska_prispodoba", "register"]
     },
@@ -646,8 +646,8 @@
       ],
       "pravilni_odgovor": "ne prekinite",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Navodilo zahteva opozorilo pred eno prekinitvijo: »Nikar ne prekinite povezave.« Oblika ne prekinjajte je sicer mogoča, vendar ne ustreza izrecni zahtevi po dovršnem glagolu.",
-      "tipicna_napaka": "Ločite neposredno opozorilo Ne prekinite povezave od zveze Pazite, da ne prekinete povezave.",
+      "slovnicna_razlaga": "Z ne prekinite opozorimo, naj do prekinitve ne pride. Primer: »Nikar ne prekinite povezave, dokler se datoteka ne prenese.«",
+      "tipicna_napaka": "Naloga zahteva ne prekinite; ne prekinjajte je sicer pravilna oblika, vendar poudarja potek ali ponavljanje.",
       "oznake": [
         "MOD-04",
         "glagolski_vid",
@@ -668,8 +668,8 @@
       "moznosti": [],
       "pravilni_odgovor": "spregledoval",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Spregledoval opisuje ponavljajoče se neopažanje ali neupoštevanje napak. Primer: »Pri branju je spregledoval napake.«",
-      "tipicna_napaka": "Vpišite samo spregledoval, saj je je že zapisano; pregledoval pomeni pregledovati, ne spregledovati napak.",
+      "slovnicna_razlaga": "Spregledoval pove, da nečesa večkrat ni opazil ali upošteval. Primer: »Pri branju je spregledoval napake.«",
+      "tipicna_napaka": "Pregledoval pomeni preverjal, spregledoval pa ni opazil ali upošteval; vpišite samo spregledoval.",
       "oznake": [
         "MOD-04",
         "glagolski_vid",
@@ -715,7 +715,7 @@
       "moznosti": [],
       "pravilni_odgovor": "zavedati",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Ob začela uporabimo zavedati, ker govorimo o začetku postopnega razumevanja. Primer: »Začela se je zavedati svoje napake«; se je v nalogi že zapisano.",
+      "slovnicna_razlaga": "Začela se je zavedati pomeni, da je postopoma začenjala razumeti. Primer: »Začela se je zavedati svoje napake.«",
       "tipicna_napaka": "Vpišite zavedati, ne zavesti; besede se ne dodajajte, ker je že zapisana.",
       "oznake": [
         "MOD-04",
@@ -739,8 +739,8 @@
         "Predsednik je med sejo opozarjal večkrat na pomanjkanje sklepčnosti, preden so nadaljevali z glasovanjem.",
         "Predsednik je med sejo opozarjal na pomanjkanje sklepčnosti večkrat, preden so nadaljevali z glasovanjem."
       ],
-      "slovnicna_razlaga": "Namesto enega opozorila želimo izraziti ponavljajoče se opozarjanje, zato enkrat opozoril zamenjamo z večkrat opozarjal. Primer: »Večkrat sem ga opozarjala na nevarnost.«",
-      "tipicna_napaka": "Enkrat opozoril zamenjajte z večkrat opozarjal, ker navodilo zahteva ponavljajoče se opozarjanje.",
+      "slovnicna_razlaga": "Večkrat opozarjal pove, da opozorilo ni bilo samo eno. Primer: »Večkrat sem ga opozarjala na nevarnost.«",
+      "tipicna_napaka": "Ne pustite besede enkrat, saj mora preoblikovana poved govoriti o več opozorilih.",
       "oznake": [
         "MOD-04",
         "glagolski_vid",
@@ -760,7 +760,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Medtem ko je strokovna komisija začela pregledovati prispele ponudbe, so vlagatelji nestrpno čakali na hodniku.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Začela pregledovati pove, da je komisija začela delo; začela pregledati tu ni pravilno. Primer: »Začela sem pregledovati pošto.«",
+      "slovnicna_razlaga": "Začela pregledovati pove, da se je pregledovanje šele začelo. Primer: »Začela sem pregledovati pošto.«",
       "tipicna_napaka": "Popravite začela pregledati v začela pregledovati; zveze medtem ko ne spreminjajte.",
       "oznake": [
         "MOD-04",
@@ -810,7 +810,7 @@
       ],
       "pravilni_odgovor": "doseže",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Doseže izraža želeni rezultat, zato ustreza zahtevi po dovršnem glagolu. Primer: »Na sestanek grem s ciljem, da dosežem dogovor.«",
+      "slovnicna_razlaga": "Doseže poudari cilj, ki naj bi bil uresničen. Primer: »Na sestanek grem s ciljem, da dosežem dogovor.«",
       "tipicna_napaka": "Doseže lahko izraža tudi prihodnji cilj; ne pomeni, da se uspeh dogaja prav zdaj.",
       "oznake": [
         "MOD-04",
@@ -877,7 +877,7 @@
       "moznosti": [],
       "pravilni_odgovor": "sta; zadovoljni",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Za dve ženski uporabimo sta in zadovoljni; sta velja tudi za drugi del povedi. Primer: »Sestri sta pripravili kosilo in bili zadovoljni z njim.«",
+      "slovnicna_razlaga": "Obe arhitektki sta opravili delo in sta z njim zadovoljni. Primer: »Sestri sta pripravili kosilo in bili zadovoljni z njim.«",
       "tipicna_napaka": "Za dve ženski pišemo sta bili zadovoljni, ne so bile zadovoljne ali sta bila zadovoljna.",
       "oznake": [
         "MOD-05",
@@ -898,7 +898,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Če bi dobila dodatno pomoč, bi vodja projekta in njen pomočnik prevzela tudi pripravo razstave.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Za žensko in moškega skupaj uporabimo dvojino: bi prevzela. Primer: »Ana in Marko bi prevzela ključe.«",
+      "slovnicna_razlaga": "Ko govorimo o ženski in moškem skupaj, rečemo bi prevzela. Primer: »Ana in Marko bi prevzela ključe.«",
       "tipicna_napaka": "Vodja in njen pomočnik sta dve osebi, zato bi prevzela, ne bi prevzeli.",
       "oznake": [
         "MOD-05",
@@ -946,7 +946,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Organizatorka se je prostovoljnim mentorjem zahvalila za pomoč pri pripravi delavnice.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Rečemo zahvaliti se komu za kaj, zato prostovoljnim mentorjem. Primer: »Sosedu sem se zahvalila za pomoč.«",
+      "slovnicna_razlaga": "Pri zahvali povemo, komu smo hvaležni in za kaj. Primer: »Sosedu sem se zahvalila za pomoč.«",
       "tipicna_napaka": "Pravilno je zahvalila se je mentorjem, ne zahvalila se je mentorje.",
       "oznake": [
         "MOD-01",
@@ -969,7 +969,7 @@
       "alternativni_odgovori": [
         "Maja potrjene prijavnice, ki jo potrebuje za udeležbo na delavnici, ni prejela."
       ],
-      "slovnicna_razlaga": "Ob ni prejela uporabimo potrjene prijavnice, del ki jo potrebuje pa ostane nespremenjen. Primer: »Nisem prejela vstopnice, ki jo potrebujem za koncert.«",
+      "slovnicna_razlaga": "Zanikanje spremeni prijavnico v prijavnice, ne spremeni pa dela ki jo potrebuje. Primer: »Nisem prejela vstopnice, ki jo potrebujem za koncert.«",
       "tipicna_napaka": "Spremenite potrjeno prijavnico v potrjene prijavnice, del ki jo potrebuje pa pustite nespremenjen.",
       "oznake": [
         "MOD-02",
@@ -993,7 +993,7 @@
         "Prijavljenim udeležencem dodatnega potrdila ni treba poslati, saj organizator že ima vse podatke.",
         "Prijavljenim udeležencem ni treba dodatnega potrdila poslati, saj organizator že ima vse podatke."
       ],
-      "slovnicna_razlaga": "Ni treba pomeni, da nekaj ni obvezno; povežemo ga z obliko udeležencem. Primer: »Otrokom ni treba prinesti malice.«",
+      "slovnicna_razlaga": "Ni treba pove, da lahko nekaj naredimo, vendar to ni naša obveznost. Primer: »Otrokom ni treba prinesti malice.«",
       "tipicna_napaka": "Ni treba ni isto kot ne smejo: prvo pomeni, da nekaj ni obvezno, drugo pa prepoved.",
       "oznake": [
         "MOD-06",
@@ -1036,7 +1036,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Ker Nina ni imela veljavne članske izkaznice, si brez pomoči knjižničarke ni mogla izposoditi knjige.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Ob ni imela uporabimo rodilnik: veljavne članske izkaznice. Primer: »Imam vozovnico, nimam pa osebne izkaznice.«",
+      "slovnicna_razlaga": "Ko povemo, česa ni imela, uporabimo veljavne članske izkaznice. Primer: »Imam vozovnico, nimam pa osebne izkaznice.«",
       "tipicna_napaka": "Ob ni imela spremenite veljavno člansko izkaznico v veljavne članske izkaznice.",
       "oznake": [
         "MOD-02",
@@ -1154,7 +1154,7 @@
       ],
       "pravilni_odgovor": "vseh podatkov; dogovorjeni rok",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Ob nimamo uporabimo vseh podatkov, za na pa ostane dogovorjeni rok tudi ob zanikanju. Primer: »Nimam vozovnice, vendar ne smem pozabiti na odhod.«",
+      "slovnicna_razlaga": "Pri nimamo se podatki spremenijo v podatkov, zveza na dogovorjeni rok pa ostane enaka. Primer: »Nimam vozovnice, vendar ne smem pozabiti na odhod.«",
       "tipicna_napaka": "Ne spreminjajte obeh zvez enako: nimamo vseh podatkov, vendar ne smemo pozabiti na dogovorjeni rok.",
       "oznake": [
         "MOD-02",
@@ -1222,6 +1222,888 @@
         "dopustnost",
         "parafraza",
         "dajalnik"
+      ]
+    },
+    {
+      "id": "C1-FRA-011",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "drzati_pesti",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Dopolnite ustaljeno zvezo, ki pomeni nekomu želeti uspeh. Vpišite samo manjkajočo besedo.",
+      "kontekst": "Pred razgovorom mi je sestra poslala sporočilo, da drži ___ zame.",
+      "moznosti": [],
+      "pravilni_odgovor": "pesti",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Držati pesti za koga pomeni želeti mu, da bi mu uspelo. Primer: »Jutri imaš izpit; držim pesti zate.«",
+      "tipicna_napaka": "Ne vpišite palcev; v tej slovenski zvezi držimo pesti.",
+      "oznake": [
+        "MOD-03",
+        "drzati_pesti"
+      ]
+    },
+    {
+      "id": "C1-FRA-012",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "zadeti_zebljico_na_glavico",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite zvezo, ki pomeni natančno prepoznati bistvo težave.",
+      "kontekst": "Sodelavci so iskali vzrok zamud v dostavi, Nina pa je opozorila na napačne naslove v naročilih. S tem je ___.",
+      "moznosti": [
+        "vrgla puško v koruzo",
+        "delala iz muhe slona",
+        "zadela žebljico na glavico",
+        "kupila mačka v žaklju"
+      ],
+      "pravilni_odgovor": "zadela žebljico na glavico",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Zadeti žebljico na glavico pomeni zelo natančno povedati ali ugotoviti bistvo. Primer: »Prav to je težava; zadela si žebljico na glavico.«",
+      "tipicna_napaka": "Ne izberite zveze o obupanju ali pretiravanju, saj je Nina pravilno našla vzrok.",
+      "oznake": [
+        "MOD-03",
+        "zadeti_zebljico_na_glavico"
+      ]
+    },
+    {
+      "id": "C1-FRA-013",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "imeti_polne_roke_dela",
+      "raven": "B2",
+      "tip_naloge": "parafraza",
+      "navodilo": "Zvezo »imela zelo veliko dela« nadomestite s frazemom »imeti polne roke dela«. Ohranite vse druge besede in vpišite celotno poved.",
+      "kontekst": "Pred odprtjem razstave je organizatorka imela zelo veliko dela, zato ni mogla na kosilo.",
+      "moznosti": [],
+      "pravilni_odgovor": "Pred odprtjem razstave je organizatorka imela polne roke dela, zato ni mogla na kosilo.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Imeti polne roke dela pomeni biti zelo zaposlen. Primer: »Danes imam polne roke dela, pokličem te jutri.«",
+      "tipicna_napaka": "Ne pišite polne roke del; ustaljena zveza se konča z dela.",
+      "oznake": [
+        "MOD-03",
+        "imeti_polne_roke_dela"
+      ]
+    },
+    {
+      "id": "C1-FRA-014",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "iti_po_gobe",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Popravite samo besedo »jagode«, da bo ustaljena zveza pomenila, da je načrt propadel. Vpišite celotno poved.",
+      "kontekst": "Ko je prevoznik odpovedal vožnjo, je naš načrt za izlet šel po jagode.",
+      "moznosti": [],
+      "pravilni_odgovor": "Ko je prevoznik odpovedal vožnjo, je naš načrt za izlet šel po gobe.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Iti po gobe v pogovoru pomeni propasti ali biti izgubljen. Primer: »Zaradi okvare je šel najin izlet po gobe.«",
+      "tipicna_napaka": "Ne menjajte gob z drugim sadežem ali rastlino; zveza je iti po gobe.",
+      "oznake": [
+        "MOD-03",
+        "iti_po_gobe"
+      ]
+    },
+    {
+      "id": "C1-FRA-015",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "vec_glav_vec_ve",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite pregovor, ki poudarja korist skupnega razmišljanja.",
+      "kontekst": "Pri načrtovanju poti je vsak predlagal nekaj koristnega: ena je poznala bližnjico, drugi dobro prenočišče, tretja pa vozni red. Vodja je sodelovanje povzel: ___",
+      "moznosti": [
+        "Po toči zvoniti je prepozno.",
+        "Več glav več ve.",
+        "Kdor visoko leta, nizko pade.",
+        "Brez muje se še čevelj ne obuje."
+      ],
+      "pravilni_odgovor": "Več glav več ve.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Pregovor poudarja, da skupaj pogosto najdemo boljšo rešitev. Primer: »Vprašajva še sosedo; več glav več ve.«",
+      "tipicna_napaka": "Ne izberite pregovora samo zato, ker omenja delo; tu štejejo različne zamisli več ljudi.",
+      "oznake": [
+        "MOD-03",
+        "vec_glav_vec_ve"
+      ]
+    },
+    {
+      "id": "C1-VID-013",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "omejeno_trajanje",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Iz para »prebrati / brati« izberite obliko, ki opisuje potek dela v preteklosti. Vpišite samo obliko v ženski ednini; je je že zapisano.",
+      "kontekst": "Urednica je ves dopoldan ___ dolg rokopis, vendar do kosila še ni prišla do zadnjega poglavja.",
+      "moznosti": [],
+      "pravilni_odgovor": "brala",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Brala opisuje delo, ki še ni bilo končano. Primer: »Brala sem knjigo, a je še nisem prebrala.«",
+      "tipicna_napaka": "Ne vpišite prebrala, saj se branje celotnega rokopisa še ni končalo.",
+      "oznake": [
+        "MOD-04",
+        "omejeno_trajanje"
+      ]
+    },
+    {
+      "id": "C1-VID-014",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "dokoncanje_pred_rokom",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite obliko, ki izraža dokončanje ene prijave pred rokom.",
+      "kontekst": "Rok se izteče ob polnoči, zato mora Maja še danes ___ prijavo za razpis.",
+      "moznosti": [
+        "oddajati",
+        "oddala",
+        "oddati",
+        "oddaja"
+      ],
+      "pravilni_odgovor": "oddati",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Oddati tukaj pomeni opraviti dejanje do konca, preden se rok izteče. Primer: »Danes moram oddati vlogo.«",
+      "tipicna_napaka": "Oddajati poudarja dejavnost; tukaj je pomembno, da ena prijava pravočasno prispe.",
+      "oznake": [
+        "MOD-04",
+        "dokoncanje_pred_rokom"
+      ]
+    },
+    {
+      "id": "C1-VID-015",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "navelicanost_dejavnosti",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Popravite samo glagol prevesti, da bo poved izražala naveličanost ponavljajočega se dela. Vpišite celotno poved.",
+      "kontekst": "Po več mesecih se je prevajalka naveličala prevesti navodila za vedno enake izdelke.",
+      "moznosti": [],
+      "pravilni_odgovor": "Po več mesecih se je prevajalka naveličala prevajati navodila za vedno enake izdelke.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Naveličala se je prevajati pove, da ji ponavljajoče se delo ne ustreza več. Primer: »Naveličala sem se odgovarjati na ista vprašanja.«",
+      "tipicna_napaka": "Uporabite prevajati, saj govorimo o naveličanosti dela, ne o dokončanju enega prevoda.",
+      "oznake": [
+        "MOD-04",
+        "navelicanost_dejavnosti"
+      ]
+    },
+    {
+      "id": "C1-DVO-006",
+      "kategorija": "dvojina",
+      "podkategorija": "oba_in_obe",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite par oblik za dve ženski; rešitvi sta navedeni v vrstnem redu vrzeli.",
+      "kontekst": "___ zdravnici sta po posvetu ___ enako zdravljenje.",
+      "moznosti": [
+        "Oba; predlagala",
+        "Obe; predlagali",
+        "Obe; predlagale",
+        "Oba; predlagali"
+      ],
+      "pravilni_odgovor": "Obe; predlagali",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za dve ženski rečemo obe in sta predlagali. Primer: »Obe sosedi sta predlagali sprehod.«",
+      "tipicna_napaka": "Oba uporabimo za dva moška ali mešani par, ne za dve zdravnici.",
+      "oznake": [
+        "MOD-05",
+        "oba_in_obe"
+      ]
+    },
+    {
+      "id": "C1-DVO-007",
+      "kategorija": "dvojina",
+      "podkategorija": "dajalnik_dveh_oseb",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Zvezo »oba nova sodelavca« postavite v ustrezno obliko. Vpišite samo manjkajočo zvezo.",
+      "kontekst": "Vodja je ___ poslala navodila, da bi se lažje pripravila na prvi delovni dan.",
+      "moznosti": [],
+      "pravilni_odgovor": "obema novima sodelavcema",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Ko nekaj pošljemo dvema sodelavcema, rečemo obema novima sodelavcema. Primer: »Obema prijateljema sem poslala vabilo.«",
+      "tipicna_napaka": "Ne vpišite obema novim sodelavcem; tukaj govorimo o dveh, ne o več sodelavcih.",
+      "oznake": [
+        "MOD-05",
+        "dajalnik_dveh_oseb"
+      ]
+    },
+    {
+      "id": "C1-DVO-008",
+      "kategorija": "dvojina",
+      "podkategorija": "orodnik_dveh_zensk",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Zvezo »obe izkušeni mentorici« postavite v ustrezno obliko za že zapisanim predlogom z.",
+      "kontekst": "Pred začetkom prakse sem se z ___ dogovorila, kako bomo spremljale moj napredek.",
+      "moznosti": [],
+      "pravilni_odgovor": "obema izkušenima mentoricama",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za z uporabimo obema mentoricama, kadar govorimo o dveh ženskah. Primer: »Pogovarjala sem se z obema sosedama.«",
+      "tipicna_napaka": "Ne ostanite pri obliki obe mentorici; pravilno je z obema mentoricama.",
+      "oznake": [
+        "MOD-05",
+        "orodnik_dveh_zensk"
+      ]
+    },
+    {
+      "id": "C1-DVO-009",
+      "kategorija": "dvojina",
+      "podkategorija": "nikalni_predmet_dvojina",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite obliko, ki pomeni, da manjkajo natanko dva podpisana izvoda.",
+      "kontekst": "Čeprav smo pogodbo poslali pravočasno, še nismo prejeli ___, ki ju potrebujemo za arhiv.",
+      "moznosti": [
+        "oba podpisana izvoda",
+        "obema podpisanima izvodoma",
+        "obeh podpisanih izvodov",
+        "obema podpisanima izvodov"
+      ],
+      "pravilni_odgovor": "obeh podpisanih izvodov",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Ob nismo prejeli uporabimo obeh izvodov; ju potrjuje, da govorimo o dveh. Primer: »Nisem prejela obeh vabil.«",
+      "tipicna_napaka": "Ne izberite oba izvoda ob nismo prejeli.",
+      "oznake": [
+        "MOD-05",
+        "nikalni_predmet_dvojina"
+      ]
+    },
+    {
+      "id": "C1-DVO-010",
+      "kategorija": "dvojina",
+      "podkategorija": "zaimek_nama",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Govorka govori samo o sebi in svoji prijateljici. Popravite nam v ustrezno obliko; vse drugo ohranite.",
+      "kontekst": "S prijateljico sva zamudili zadnji avtobus, zato nam je sosed ponudil prevoz.",
+      "moznosti": [],
+      "pravilni_odgovor": "S prijateljico sva zamudili zadnji avtobus, zato nama je sosed ponudil prevoz.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Nama se nanaša na govorko in še eno osebo. Primer: »S sestro sva čakali, nato nama je oče odprl vrata.«",
+      "tipicna_napaka": "Nam se nanaša na več kot dve osebi; za govorko in prijateljico uporabite nama.",
+      "oznake": [
+        "MOD-05",
+        "zaimek_nama"
+      ]
+    },
+    {
+      "id": "C1-DVO-011",
+      "kategorija": "dvojina",
+      "podkategorija": "zaimek_vama",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Nagovorjeni sta natanko dve osebi. Izberite par zaimkov v vrstnem redu vrzeli.",
+      "kontekst": "Ker sta se prijavila skupaj, ___ bomo poslali eno obvestilo in ___ povabili na isti termin.",
+      "moznosti": [
+        "vam; vas",
+        "vaju; vama",
+        "vama; vama",
+        "vama; vaju"
+      ],
+      "pravilni_odgovor": "vama; vaju",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Dvema osebama nekaj pošljemo vama, na dogodek pa povabimo vaju. Primer: »Vama pošljem naslov in vaju počakam pred vhodom.«",
+      "tipicna_napaka": "Ne uporabite vama v obeh vrzelih: povabimo vaju.",
+      "oznake": [
+        "MOD-05",
+        "zaimek_vama"
+      ]
+    },
+    {
+      "id": "C1-DVO-012",
+      "kategorija": "dvojina",
+      "podkategorija": "moski_dvojinski_pogojnik",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Vstavite pravilni obliki besed »morati« in »biti« za dva moška. Pomoč z bi je že zapisana; odgovora ločite s podpičjem in presledkom.",
+      "kontekst": "Če bi brata želela sodelovati, bi ___ oddati prijavo in bi ___ povabljena na razgovor.",
+      "moznosti": [],
+      "pravilni_odgovor": "morala; bila",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za dva moška uporabimo bi morala in bi bila. Primer: »Brata bi morala priti prej, da bi bila pravočasno doma.«",
+      "tipicna_napaka": "Ne vpisujte morala sta ali bila sta, saj je bi že zapisano.",
+      "oznake": [
+        "MOD-05",
+        "moski_dvojinski_pogojnik"
+      ]
+    },
+    {
+      "id": "C1-DVO-013",
+      "kategorija": "dvojina",
+      "podkategorija": "zenska_dvojina_parafraza",
+      "raven": "B2",
+      "tip_naloge": "parafraza",
+      "navodilo": "Poved preoblikujte za dve prevajalki. Začnite z »Prevajalki«, ohranite čas in preostalo vsebino ter vpišite celotno poved.",
+      "kontekst": "Prevajalka je pregledala besedilo in bila zadovoljna s popravki.",
+      "moznosti": [],
+      "pravilni_odgovor": "Prevajalki sta pregledali besedilo in bili zadovoljni s popravki.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Pri dveh ženskah prilagodimo vse oblike: sta pregledali, bili zadovoljni. Primer: »Sestri sta pospravili in bili zadovoljni.«",
+      "tipicna_napaka": "Ne spremenite samo začetka; tudi bila zadovoljna postane bili zadovoljni.",
+      "oznake": [
+        "MOD-05",
+        "zenska_dvojina_parafraza"
+      ]
+    },
+    {
+      "id": "C1-DVO-014",
+      "kategorija": "dvojina",
+      "podkategorija": "mestnik_dveh_predmetov",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Zvezo »dva različna predloga« postavite v pravilno obliko za že zapisanim o.",
+      "kontekst": "Na sestanku smo razpravljali o ___, ki sta oba predvidevala prenovo igrišča.",
+      "moznosti": [],
+      "pravilni_odgovor": "dveh različnih predlogih",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za o uporabimo dveh različnih predlogih, kadar govorimo o dveh predlogih. Primer: »Pogovarjali smo se o dveh izletih.«",
+      "tipicna_napaka": "Ne vpišite dvema predlogoma; to bi ustrezalo drugačni zvezi, na primer dodati kaj dvema predlogoma.",
+      "oznake": [
+        "MOD-05",
+        "mestnik_dveh_predmetov"
+      ]
+    },
+    {
+      "id": "C1-DVO-015",
+      "kategorija": "dvojina",
+      "podkategorija": "vrinjeni_stavek_in_ujemanje",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Popravite samo obliko čakali, ki se nanaša na dva starša. Vpišite celotno poved.",
+      "kontekst": "Starša, ki ju je učiteljica povabila na pogovor, sta pred učilnico čakali na konec pouka.",
+      "moznosti": [],
+      "pravilni_odgovor": "Starša, ki ju je učiteljica povabila na pogovor, sta pred učilnico čakala na konec pouka.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Ob starša sta uporabimo čakala, tudi če je vmes omenjena učiteljica. Primer: »Starša sta čakala pred šolo.«",
+      "tipicna_napaka": "Čakali se ne ravna po bližnji besedi učiteljica, ampak po starših.",
+      "oznake": [
+        "MOD-05",
+        "vrinjeni_stavek_in_ujemanje"
+      ]
+    },
+    {
+      "id": "C1-SKL-005",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "vejica_pred_ker",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Dodajte eno manjkajočo vejico. Besed in njihovega vrstnega reda ne spreminjajte.",
+      "kontekst": "Na sestanek bom prišla nekoliko pozneje ker se moje predavanje konča šele ob petih.",
+      "moznosti": [],
+      "pravilni_odgovor": "Na sestanek bom prišla nekoliko pozneje, ker se moje predavanje konča šele ob petih.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Del s ker pove razlog in ga od začetnega dela ločimo z vejico. Primer: »Ostala sem doma, ker sem bila utrujena.«",
+      "tipicna_napaka": "Vejica sodi pred ker, ne za njim.",
+      "oznake": [
+        "MOD-06",
+        "vejica_pred_ker"
+      ]
+    },
+    {
+      "id": "C1-SKL-006",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "vejici_ob_vrinjenem_ki",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Dodajte manjkajoči vejici ob delu s ki. Besed ne spreminjajte.",
+      "kontekst": "Knjigo ki si mi jo priporočila sem končno našla v knjižnici.",
+      "moznosti": [],
+      "pravilni_odgovor": "Knjigo, ki si mi jo priporočila, sem končno našla v knjižnici.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Vmesni del ki si mi jo priporočila omejimo z vejico na obeh straneh. Primer: »Film, ki sva ga gledali, mi je bil všeč.«",
+      "tipicna_napaka": "Ne pozabite druge vejice za priporočila.",
+      "oznake": [
+        "MOD-06",
+        "vejici_ob_vrinjenem_ki"
+      ]
+    },
+    {
+      "id": "C1-SKL-007",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "ce_in_ko",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite veznik, ki prihod izraža kot negotov pogoj, ne kot pričakovani dogodek.",
+      "kontekst": "___ bo jutri dovolj prijavljenih, bomo delavnico izvedli; sicer jo bomo prestavili.",
+      "moznosti": [
+        "Čeprav",
+        "Ker",
+        "Če",
+        "Ko"
+      ],
+      "pravilni_odgovor": "Če",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Če pokaže, da še ne vemo, ali bo pogoj izpolnjen. Primer: »Če boš imela čas, pridi na obisk.«",
+      "tipicna_napaka": "Ko bi prihodnji dogodek predstavil kot pričakovan; navodilo pa zahteva negotov pogoj.",
+      "oznake": [
+        "MOD-06",
+        "ce_in_ko"
+      ]
+    },
+    {
+      "id": "C1-SKL-008",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "ceprav_in_ker",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite veznik, ki izraža nasprotje med utrujenostjo in nadaljevanjem dela.",
+      "kontekst": "___ je bila utrujena, je ostala in pomagala sodelavki dokončati poročilo.",
+      "moznosti": [
+        "Ker",
+        "Čeprav",
+        "Da",
+        "Preden"
+      ],
+      "pravilni_odgovor": "Čeprav",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Čeprav pove, da je ravnala drugače, kot bi pričakovali zaradi utrujenosti. Primer: »Čeprav dežuje, grem na sprehod.«",
+      "tipicna_napaka": "Ker bi utrujenost predstavil kot razlog za pomoč, ne kot oviro, ki jo je premagala.",
+      "oznake": [
+        "MOD-06",
+        "ceprav_in_ker"
+      ]
+    },
+    {
+      "id": "C1-SKL-009",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "namen_z_da_bi",
+      "raven": "B2",
+      "tip_naloge": "parafraza",
+      "navodilo": "Povedi združite z zvezo »da bi« in besedo lažje. Začnite z »Udeležencem smo poslali zemljevid,« in izpustite »Želeli smo« ter »tako«.",
+      "kontekst": "Udeležencem smo poslali zemljevid. Želeli smo, da bi tako lažje našli vhod.",
+      "moznosti": [],
+      "pravilni_odgovor": "Udeležencem smo poslali zemljevid, da bi lažje našli vhod.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Da bi pove, kaj smo želeli doseči s pošiljanjem zemljevida. Primer: »Poklicala sem te, da bi se dogovorila za srečanje.«",
+      "tipicna_napaka": "Ne izpustite bi: govorimo o namenu, ne o že potrjenem uspehu.",
+      "oznake": [
+        "MOD-06",
+        "namen_z_da_bi"
+      ]
+    },
+    {
+      "id": "C1-SKL-010",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "vzrok_z_zaradi",
+      "raven": "B2",
+      "tip_naloge": "parafraza",
+      "navodilo": "Začetek s ker nadomestite z zaradi in ustrezno obliko zveze »močan veter«. Nadaljujte z »so odpovedali tekmo« in vpišite celotno poved.",
+      "kontekst": "Ker je pihal močan veter, so odpovedali tekmo.",
+      "moznosti": [],
+      "pravilni_odgovor": "Zaradi močnega vetra so odpovedali tekmo.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Zaradi poimenuje razlog za odpoved. Primer: »Zaradi dežja smo ostali doma.«",
+      "tipicna_napaka": "Pišemo zaradi močnega vetra, ne zaradi močan veter; za to začetno zvezo ni vejice.",
+      "oznake": [
+        "MOD-06",
+        "vzrok_z_zaradi"
+      ]
+    },
+    {
+      "id": "C1-SKL-011",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "vrstni_red_naslonk",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Popravite samo vrstni red besed je se v začetku povedi. Vpišite celotno poved.",
+      "kontekst": "Po pogovoru je se vodja odločila, da bo podaljšala rok za prijave.",
+      "moznosti": [],
+      "pravilni_odgovor": "Po pogovoru se je vodja odločila, da bo podaljšala rok za prijave.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "V tej povedi se stoji pred je. Primer: »Po kosilu se je odpravila domov.«",
+      "tipicna_napaka": "Ne pišite je se odločila, temveč se je odločila.",
+      "oznake": [
+        "MOD-06",
+        "vrstni_red_naslonk"
+      ]
+    },
+    {
+      "id": "C1-SKL-012",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "kateri_za_predlogom",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Vpišite ustrezno obliko besede »kateri«. Predlog je že zapisan.",
+      "kontekst": "To je sodelavka, s ___ sem lani pripravila razstavo o zgodovini kraja.",
+      "moznosti": [],
+      "pravilni_odgovor": "katero",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za s uporabimo katero, ko se nanašamo na sodelavko. Primer: »To je prijateljica, s katero pogosto potujem.«",
+      "tipicna_napaka": "Ne vpišite ki; za že zapisanim s potrebujemo katero.",
+      "oznake": [
+        "MOD-06",
+        "kateri_za_predlogom"
+      ]
+    },
+    {
+      "id": "C1-SKL-013",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "pogojnik_z_bi",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "V obe vrzeli vpišite manjkajočo besedo za izražanje zamišljene možnosti. Odgovora ločite s podpičjem in presledkom.",
+      "kontekst": "Če ___ imela več časa, ___ se udeležila tudi popoldanske delavnice.",
+      "moznosti": [],
+      "pravilni_odgovor": "bi; bi",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Z bi v obeh delih povemo, kaj bi bilo mogoče pod drugačnimi pogoji. Primer: »Če bi imela avto, bi te odpeljala.«",
+      "tipicna_napaka": "Ne izpustite drugega bi; potrebujemo če bi imela in bi se udeležila.",
+      "oznake": [
+        "MOD-06",
+        "pogojnik_z_bi"
+      ]
+    },
+    {
+      "id": "C1-SKL-014",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "pogoj_z_razen_ce",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite zvezo, ki pove, katera izjema bi preprečila izvedbo izleta.",
+      "kontekst": "Izlet bomo izvedli po načrtu, ___ bo cesta zaradi snega zaprta.",
+      "moznosti": [
+        "tako da",
+        "samo če",
+        "ker",
+        "razen če"
+      ],
+      "pravilni_odgovor": "razen če",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Razen če uvaja izjemo, ob kateri načrt ne velja. Primer: »Pridem peš, razen če bo močno deževalo.«",
+      "tipicna_napaka": "Samo če bi pomenilo, da je zaprta cesta pogoj za izvedbo izleta, kar ni smiselno.",
+      "oznake": [
+        "MOD-06",
+        "pogoj_z_razen_ce"
+      ]
+    },
+    {
+      "id": "C1-SKL-015",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "vejica_pred_temvec",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Dodajte eno manjkajočo vejico. Besed ne spreminjajte.",
+      "kontekst": "Nismo iskali najcenejše ponudbe temveč rešitev, ki bi ustrezala vsem udeležencem.",
+      "moznosti": [],
+      "pravilni_odgovor": "Nismo iskali najcenejše ponudbe, temveč rešitev, ki bi ustrezala vsem udeležencem.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Pred temveč postavimo vejico, ko zavrnjeni možnosti dodamo pravo. Primer: »Ne želim kave, temveč čaj.«",
+      "tipicna_napaka": "Vejico dodajte pred temveč; obstoječo vejico pred ki ohranite.",
+      "oznake": [
+        "MOD-06",
+        "vejica_pred_temvec"
+      ]
+    },
+    {
+      "id": "C1-SLO-001",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "vljudna_prosnja",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite vljudno prošnjo v obliki vprašanja za uradno sporočilo osebi, ki je ne poznate.",
+      "kontekst": "Pri prijavi manjka potrdilo o plačilu, zato organizator udeležencu napiše: ___",
+      "moznosti": [
+        "Pošlji nam potrdilo o plačilu.",
+        "Ali bi nam lahko poslali potrdilo o plačilu?",
+        "Potrdilo hočemo takoj.",
+        "Kje imaš potrdilo?"
+      ],
+      "pravilni_odgovor": "Ali bi nam lahko poslali potrdilo o plačilu?",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Vprašanje z ali bi lahko prošnjo ublaži in je primerno za uradni stik. Primer: »Ali bi mi lahko poslali naslov?«",
+      "tipicna_napaka": "Ne izberite ukaza ali tikanja, če pišete neznani osebi.",
+      "oznake": [
+        "MOD-07",
+        "vljudna_prosnja"
+      ]
+    },
+    {
+      "id": "C1-SLO-002",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "nevtralno_opravicilo",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite stvarno in vljudno opravičilo za poslovno sporočilo.",
+      "kontekst": "Odgovor stranki pošiljate tri dni pozneje, kot ste obljubili. Sporočilo začnete: ___",
+      "moznosti": [
+        "Saj ni bilo tako dolgo.",
+        "Pač nismo utegnili.",
+        "Opravičujemo se za pozen odgovor.",
+        "Ups, skoraj smo pozabili na vas."
+      ],
+      "pravilni_odgovor": "Opravičujemo se za pozen odgovor.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "V poslovnem sporočilu zamudo priznamo jasno in vljudno. Primer: »Opravičujemo se za zamudo pri dostavi.«",
+      "tipicna_napaka": "Ne zmanjšujte pomena zamude z izgovori ali šaljivim tonom.",
+      "oznake": [
+        "MOD-07",
+        "nevtralno_opravicilo"
+      ]
+    },
+    {
+      "id": "C1-SLO-003",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "pogovorno_in_nevtralno",
+      "raven": "B2",
+      "tip_naloge": "parafraza",
+      "navodilo": "Pogovorni besedi »ful« in »fajn« nadomestite z »zelo« in »dobro«. Druge besede ohranite in vpišite celotno poved.",
+      "kontekst": "Delavnica je bila ful fajn pripravljena, zato bi jo priporočila tudi sodelavcem.",
+      "moznosti": [],
+      "pravilni_odgovor": "Delavnica je bila zelo dobro pripravljena, zato bi jo priporočila tudi sodelavcem.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za nevtralno pisno oceno izberemo zelo dobro namesto ful fajn. Primer: »Predavanje je bilo zelo dobro pripravljeno.«",
+      "tipicna_napaka": "Ne pustite ene pogovorne besede v povedi; zamenjati morate obe.",
+      "oznake": [
+        "MOD-07",
+        "pogovorno_in_nevtralno"
+      ]
+    },
+    {
+      "id": "C1-SLO-004",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "besedna_zveza_sprejeti_odlocitev",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite glagol za običajno zvezo, ki pomeni odločiti se.",
+      "kontekst": "Po pregledu vseh ponudb je komisija ___ odločitev o izbiri izvajalca.",
+      "moznosti": [
+        "sprejela",
+        "izvajala",
+        "postregla",
+        "dvignila"
+      ],
+      "pravilni_odgovor": "sprejela",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Odločitev sprejmemo, ko izberemo možnost. Primer: »Sprejela sem odločitev, da se preselim.«",
+      "tipicna_napaka": "Odločitve v tej zvezi ne izvajamo; izvedemo lahko poznejši načrt.",
+      "oznake": [
+        "MOD-07",
+        "besedna_zveza_sprejeti_odlocitev"
+      ]
+    },
+    {
+      "id": "C1-SLO-005",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "izvesti_anketo",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite glagol, ki pomeni organizirati zbiranje odgovorov in ga opraviti.",
+      "kontekst": "Da bi izvedeli, kaj obiskovalci potrebujejo, smo med njimi ___ anketo.",
+      "moznosti": [
+        "izpolnili",
+        "izvedli",
+        "prebrali",
+        "odložili"
+      ],
+      "pravilni_odgovor": "izvedli",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Anketo izvedemo, ko zberemo odgovore sodelujočih. Primer: »Med stanovalci smo izvedli anketo o prenovi.«",
+      "tipicna_napaka": "Izpolnili bi pomenilo, da smo sami odgovarjali; tu smo odgovore zbirali od drugih.",
+      "oznake": [
+        "MOD-07",
+        "izvesti_anketo"
+      ]
+    },
+    {
+      "id": "C1-SLO-006",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "ucinkovit_in_uspesen",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite pridevnik, ki posebej poudarja dober rezultat ob majhni porabi časa.",
+      "kontekst": "Novi postopek je zelo ___: enako delo opravimo v polovici časa in z manj napakami.",
+      "moznosti": [
+        "učinkovitost",
+        "učinkovati",
+        "učinkovit",
+        "učinek"
+      ],
+      "pravilni_odgovor": "učinkovit",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Učinkovit poudarja, da z delom dobro izrabimo čas ali sredstva. Primer: »Ta način učenja je učinkovit, saj si v kratkem času veliko zapomnim.«",
+      "tipicna_napaka": "Ne zamenjajte učinkovit z učinkovitost; v tej povedi opisujemo postopek.",
+      "oznake": [
+        "MOD-07",
+        "ucinkovit_in_uspesen"
+      ]
+    },
+    {
+      "id": "C1-SLO-007",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "samostalnik_iz_pridevnika",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Iz pridevnika »zanesljiv« tvorite samostalnik za lastnost. Vpišite samo manjkajočo besedo.",
+      "kontekst": "Pri izbiri sodelavca nam poleg znanja veliko pomeni tudi njegova ___.",
+      "moznosti": [],
+      "pravilni_odgovor": "zanesljivost",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Lastnost zanesljive osebe poimenujemo zanesljivost. Primer: »Pri prijateljih cenim zanesljivost.«",
+      "tipicna_napaka": "Ne vpišite zanesljivo, saj potrebujemo ime lastnosti, ne opisa načina dela.",
+      "oznake": [
+        "MOD-07",
+        "samostalnik_iz_pridevnika"
+      ]
+    },
+    {
+      "id": "C1-SLO-008",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "pridevnik_iz_samostalnika",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Iz besede »odgovornost« tvorite pridevnik in ga prilagodite besedi ravnanje. Vpišite samo manjkajočo besedo.",
+      "kontekst": "Občino je prepričalo ___ ravnanje društva, ki je po dogodku uredilo okolico.",
+      "moznosti": [],
+      "pravilni_odgovor": "odgovorno",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Kdor ravna z odgovornostjo, ravna odgovorno; tako lahko opišemo tudi njegovo ravnanje. Primer: »Pohvalili so njeno odgovorno ravnanje.«",
+      "tipicna_napaka": "Ne vpišite odgovorna, saj opisujemo ravnanje, ne društva ali občine.",
+      "oznake": [
+        "MOD-07",
+        "pridevnik_iz_samostalnika"
+      ]
+    },
+    {
+      "id": "C1-SLO-009",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "oseba_in_dejavnost",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Iz glagola »prevajati« tvorite poimenovanje ženske, ki se s tem poklicno ukvarja. Vpišite samo eno besedo.",
+      "kontekst": "Pri pripravi dvojezičnega vodnika nam je pomagala izkušena ___, ki dobro pozna turistično besedišče.",
+      "moznosti": [],
+      "pravilni_odgovor": "prevajalka",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Žensko, ki prevaja, imenujemo prevajalka. Primer: »Prevajalka je pregledala besedilo za spletno stran.«",
+      "tipicna_napaka": "Prevajanje je delo, prevajalka pa oseba, ki ga opravlja.",
+      "oznake": [
+        "MOD-07",
+        "oseba_in_dejavnost"
+      ]
+    },
+    {
+      "id": "C1-SLO-010",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "vljudna_zavrnitev",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite vljudno zavrnitev, ki jasno pove, da termina ne morete sprejeti, in predlaga drugo možnost.",
+      "kontekst": "Poslovni partner vas povabi na sestanek v sredo, ko ste že zasedeni. Odgovorite: ___",
+      "moznosti": [
+        "Morda pridem, čeprav vem, da ne morem.",
+        "V sredo žal ne morem; ali bi se lahko sestali v četrtek?",
+        "Sreda je brez veze.",
+        "Saj boste počakali name."
+      ],
+      "pravilni_odgovor": "V sredo žal ne morem; ali bi se lahko sestali v četrtek?",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Vljudna zavrnitev je jasna in lahko ponudi drug termin. Primer: »Danes žal ne morem; bi vam ustrezal jutrišnji dan?«",
+      "tipicna_napaka": "Ne obljubite prihoda, če že veste, da takrat ne morete.",
+      "oznake": [
+        "MOD-07",
+        "vljudna_zavrnitev"
+      ]
+    },
+    {
+      "id": "C1-SLO-011",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "jasno_brez_odvecnega_ponavljanja",
+      "raven": "B2",
+      "tip_naloge": "parafraza",
+      "navodilo": "Zvezo »zaradi tega, ker« nadomestite s ker. Začnite z »Srečanje smo prestavili,« in ohranite preostalo vsebino.",
+      "kontekst": "Srečanje smo prestavili zaradi tega, ker je predavatelj zbolel.",
+      "moznosti": [],
+      "pravilni_odgovor": "Srečanje smo prestavili, ker je predavatelj zbolel.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Ker že samo pove razlog, zato lahko poved skrajšamo brez izgube pomena. Primer: »Odhajam, ker imam sestanek.«",
+      "tipicna_napaka": "Pri krajšanju ne izpustite razloga, zakaj je bilo srečanje prestavljeno.",
+      "oznake": [
+        "MOD-07",
+        "jasno_brez_odvecnega_ponavljanja"
+      ]
+    },
+    {
+      "id": "C1-SLO-012",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "predvidoma_in_zagotovo",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite besedo, ki pokaže, da je datum ocenjen in še ni dokončno potrjen.",
+      "kontekst": "Dela bodo ___ končana v petek, vendar je zaključek odvisen od dobave materiala.",
+      "moznosti": [
+        "zagotovo",
+        "nedvomno",
+        "predvidoma",
+        "vsekakor"
+      ],
+      "pravilni_odgovor": "predvidoma",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Predvidoma pove, kaj pričakujemo, ne pa zagotavljamo. Primer: »Paket bo predvidoma prispel jutri.«",
+      "tipicna_napaka": "Zagotovo bi izražalo večjo gotovost, kot jo dopušča negotova dobava.",
+      "oznake": [
+        "MOD-07",
+        "predvidoma_in_zagotovo"
+      ]
+    },
+    {
+      "id": "C1-SLO-013",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "sopomenka_v_kontekstu",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite besedo, ki v tem stavku pomeni »odpraviti nejasnosti«.",
+      "kontekst": "Pred podpisom pogodbe želimo ___ določilo o dodatnih stroških, saj si ga stranki razlagata različno.",
+      "moznosti": [
+        "razveljaviti",
+        "prezreti",
+        "razjasniti",
+        "prepisati"
+      ],
+      "pravilni_odgovor": "razjasniti",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Razjasniti pomeni doseči, da nekaj bolje razumemo. Primer: »Pred odhodom razjasnimo, kdo bo vozil.«",
+      "tipicna_napaka": "Razveljaviti bi pomenilo določilo odpraviti, ne pojasniti njegovega pomena.",
+      "oznake": [
+        "MOD-07",
+        "sopomenka_v_kontekstu"
+      ]
+    },
+    {
+      "id": "C1-SLO-014",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "uradno_brez_osebnega_napada",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite stvarno pripombo, ki opozori na manjkajoči podatek, ne da bi žalila avtorja.",
+      "kontekst": "V prejetem poročilu ni podatka o stroških, zato sodelavcu napišete: ___",
+      "moznosti": [
+        "Spet ste vse naredili narobe.",
+        "Očitno ne razumete svojega dela.",
+        "V poročilu manjka podatek o stroških; prosim, dopolnite ga.",
+        "To poročilo ni za nikamor."
+      ],
+      "pravilni_odgovor": "V poročilu manjka podatek o stroških; prosim, dopolnite ga.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Stvarna pripomba pove, kaj manjka in kaj je treba dopolniti. Primer: »V prijavi manjka naslov; prosim, dodajte ga.«",
+      "tipicna_napaka": "Ne ocenjujte človeka, kadar želite opozoriti na konkretno pomanjkljivost dokumenta.",
+      "oznake": [
+        "MOD-07",
+        "uradno_brez_osebnega_napada"
+      ]
+    },
+    {
+      "id": "C1-SLO-015",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "prislov_ob_glagolu",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Popravite samo besedo natančna, da bo opisovala način razlage. Vpišite celotno poved.",
+      "kontekst": "Vodnica je natančna razložila pot, zato smo brez težav našli muzej.",
+      "moznosti": [],
+      "pravilni_odgovor": "Vodnica je natančno razložila pot, zato smo brez težav našli muzej.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Kako je razložila, povemo z natančno; natančna bi opisovalo vodnico. Primer: »Učiteljica je natančno razložila nalogo.«",
+      "tipicna_napaka": "Ne pišite je natančna razložila, temveč je natančno razložila.",
+      "oznake": [
+        "MOD-07",
+        "prislov_ob_glagolu"
       ]
     }
   ]
