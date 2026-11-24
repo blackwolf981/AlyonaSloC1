@@ -1,8 +1,8 @@
-# 📊 NAPREDEK PROJEKTA: Aljonina spletna vadnica slovenščine (C1)
+# 📊 NAPREDEK PROJEKTA: Aljonina spletna vadnica slovenščine (B2–C1)
 
-**Zadnja posodobitev:** 23. november 2026  
-**Vodja projekta in urednik:** Gemini  
-**Status projekta:** 🟡 V teku (Zagonska faza)
+**Zadnja posodobitev:** 24. november 2026  
+**Vsebina in uredniški pregled:** Codex & Gemini; **vmesnik:** Claude Code  
+**Status projekta:** 🟡 V teku (Faza 3 & 4: Prehod na B2, poenostavitev razlag in UX)
 
 ---
 
@@ -10,10 +10,11 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Število potrjenih C1 nalog** | `50 / 110` (45 % cilja!) | `110` |
+| **Število vsebinsko potrjenih nalog B2–C1** | `63 / 110` (39 B2, 24 C1; posodobljene B2 razlage in tipične napake) | `110` |
 | **Tematski moduli z nalogami** | `6 / 7` (MOD-01 in MOD-02 zaključena ✅) | `7 / 7` |
-| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Način Kviz (10 nalog ena po ena) | Delujoča interaktivna aplikacija |
-| **Lektura in jezikovna potrditev** | 🟢 50 / 50 nalog potrjenih (100 %) | 100 % pregledanih nalog |
+| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Način Kviz + B2/C1 filter | Delujoča interaktivna aplikacija |
+| **Lektura in jezikovna potrditev** | 🟢 63 / 63 nalog pregledanih in prilagojenih (100 %) | 100 % pregledanih nalog |
+
 
 ---
 
@@ -38,7 +39,7 @@
 - [x] Filter po tipu naloge ter optimizacija mobilne odzivnosti z gumbi >= 44 px *(Claude Code)*
 - [x] Optimizacija odzivne orodjarne na desktopu: stranska letev na >= 1024 px, širina 72rem *(Claude Code)*
 
-### Faza 3: Širitev vsebinske baze C1
+### Faza 3: Širitev vsebinske baze B2–C1
 - [x] Modul 1: Vezljivost glagolov in predložne zveze (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
 - [x] Modul 2: Rodilnik zanikanja in delni rodilnik (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
 - [ ] Modul 3: Napredna frazeologija in idiomi (pripravljeno: 10, odobreno: 10, cilj: 20 nalog)
@@ -52,11 +53,15 @@
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
 - [x] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — implementirano v commitu de62611!)*
 - [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — naslednji korak)*
-- [ ] Končna jezikovna revizija vseh nalog in razlag *(Gemini)*
+- [ ] Končna jezikovna revizija vseh nalog in razlag *(Codex; po novem dogovoru z uporabnikom)*
 
 ---
 
-## 📚 Stanje tematskih modulov (Naloge C1)
+## 📚 Stanje tematskih modulov (Naloge B2–C1)
+
+Raven določa obstoječe polje `raven`: dovoljeni vrednosti sta `B2` in `C1`. Claude naj filter in prikaz ravni veže na to polje, ne na predpono ID-ja. Obstoječi ID-ji ostajajo nespremenjeni zaradi shranjenega napredka uporabnice.
+
+Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna kalibracija SEJO. B2 vključuje vodeno uporabo vezav, oblik in običajnih frazemov; C1 vključuje povezovanje več slovničnih zahtev, razlikovanje dosega zanikanja, skladenjske pretvorbe ter presojo registra. Upoštevata se sobesedilo in pomoč v navodilu, ne le dolžina razlage. Po preizkusu z Aljono lahko raven prilagodimo.
 
 | Šifra | Tematski modul | Načrtovano | Pripravljeno (Codex / Gemini) | Odobreno (Gemini) |
 | :--- | :--- | :---: | :---: | :---: |
@@ -74,6 +79,10 @@
 ## 📝 Dnevnik sprememb in aktivnosti (Changelog)
 
 ### [23. 11. 2026]
+* **Codex (razvrstitev B2/C1):**
+  - Pregledanih vseh 50 nalog: 26 označenih B2, 24 ohranjenih C1. Spremenjeno je samo polje raven; ID-ji, besedila in rešitve so ohranjeni.
+  - B2: VEZ-001, 002, 006, 007, 008, 009, 011, 014, 015; ROD-007, 013; FRA-001, 004–010; VID-001, 002, 004–008. Vsi navedeni ID-ji ohranjajo zgodovinsko predpono C1-.
+  - Preverjena nespremenjenost vseh drugih polj in uspešen `npm run build`. Filtre pripravi Claude; Codex prevzame vsebino in uredniški pregled med odsotnostjo Gemini.
 * **Gemini (avtor) / Codex (recenzent):**
   - Dodanih 8 nalog `C1-VID-001`–`C1-VID-008` za MOD-04: 3 izbire, 3 vnosi, 1 parafraza in 1 popravek napake. MOD-04: **8/15**, skupaj **50/110**. Prejšnjih 42 nalog je ohranjenih brez sprememb.
   - VID-001: velelnik prestavljen iz odvisnika v samostojno svarilo; VID-003: ločena slogovna nevtralnost od slovnične dopustnosti oblike naprošamo.
