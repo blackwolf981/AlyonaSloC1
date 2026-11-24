@@ -29,3 +29,11 @@ Ta dokument vsebuje stroga navodila za učitelja slovenščine (ChatGPT Codex) p
    * Polje slovnicna_razlaga mora jasno pojasniti zakaj je odgovor pravilen.
    * Polje tipicna_napaka mora opozoriti na specifično napako.
 4. **UTF-8 kodiranje:** Datoteka naloge.json mora biti vedno shranjena v kodiranju UTF-8 brez BOM.
+
+---
+
+## 3. Pravilo za razlage nalog ravni B2 (Pedagoška preprostost)
+* **Jedrnato in razumljivo:** Razlage za naloge ravni B2 morajo biti **kratke, jasne in v vsakdanji slovenščini** (1–2 kratka stavka).
+* **Brez težkega jezikoslovja:** Izogibati se je treba kopičenju zapletenih terminov (kot so *tožilniško jedro*, *rodilniško dopolnilo glagolnika*, *skladenjska valencevna struktura* ipd.).
+* **Praktični zgled:** Vsaka razlada naj vključuje kratek, vsakdanji zgled pravilne rabe, ki ga učenec lahko takoj dojame in uporabi v pogovoru.
+
