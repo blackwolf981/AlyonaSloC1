@@ -37,4 +37,7 @@ Ta dokument vsebuje stroga navodila za učitelja slovenščine (ChatGPT Codex) p
 * **Brez težkega jezikoslovja:** Izogibati se je treba kopičenju zapletenih terminov (kot so *tožilniško jedro*, *rodilniško dopolnilo glagolnika* ipd.).
 * **Preproste tipične napake (`tipicna_napaka`):** Opozorila na tipične napake ne smejo biti akademska ali preveč zapletena. Pojasniti morajo jedro napake v preprostem jeziku, da jih učenec takoj razume in se jim izogne.
 * **Praktični zgled:** Vsaka razlada naj vključuje kratek, vsakdanji zgled pravilne rabe.
+* **Naraven in domač jezik:** Razlage in opozorila na napake (`tipicna_napaka`) morajo zveneti domače, kot bi učitelju razlagali v sproščenem pogovoru. Brez mešanja suhoparnih šolskih definicij, ki begajo učenca.
+* **Brez nepotrebnega ponavljanja:** Če je poanta jasna iz samega odgovora, naj razlada ne ponavlja istega stavka na drug način, ampak naj poda samo ključni uvid in praktičen primer.
+
 
