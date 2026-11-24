@@ -32,3 +32,8 @@ desktop.ini
 
 # Lokalne nastavitve Claude Code
 .claude/settings.local.json
+
+# Multi-agent delovni tok in Obsidian
+*.lock
+.ai-tasks/
+brain/.obsidian/workspace.json
