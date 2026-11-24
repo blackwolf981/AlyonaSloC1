@@ -20,6 +20,14 @@ Ta projekt razvijamo s pomočjo treh specializiranih AI agentov v urejevalniku k
 - Urejaj le vsebino in `naloge.json` v skladu z jezikovnimi pravili iz `brain/02-SLOVENSCINA.md`.
 - Preveri veljavnost JSON in kodiranje UTF-8.
 - Ob koncu izbriši `codexprevajam.lock` in naredi lokalni `git commit` (NIKOLI ne izvajaj `git push`).
+- **Obvezna izhodna koda (Feedback za Cline):** Na čisto vsakem koncu svojega odgovora obvezno izpiši kratek, jedrnat "Feedback za Cline" znotraj enega samega ```text bloka (za enostavno kopiranje z enim klikom). V bloku naj bodo natanko 3–4 kratke vrstice:
+  ```text
+  [Feedback za Cline]
+  - Narejeno: [kratek opis]
+  - Spremenjene datoteke: [naloge.json]
+  - Stanje lock: ni aktivnih lock datotek (lock izbrisan)
+  - Opozorila / Vprašanja: [brez / opozorilo]
+  ```
 
 ---
 
