@@ -12,7 +12,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (Gemini, Cla
 
 ## 📊 Trenutno stanje projekta
 * **Status:** 🟢 V teku (Faza 3 & 4: Prehod na raven B2 in optimizacija UX uspešno izvedena)
-* **Obseg nalog:** 50 / 110 nalog pripravljenih (z ustreznimi oznakami ravni B2 / C1).
+* **Obseg nalog:** 63 / 110 nalog pripravljenih: 39 B2 in 24 C1; vse B2 razlage so kratke in vsebujejo praktični zgled.
 * **Tematski moduli:** MOD-01 do MOD-04 aktivni z B2/C1 filtri.
 * **Spletni vmesnik (Claude Code):** Implementiran namenski B2 filter v UI (commita ef53896 in baf5cc9).
 * **Lock datoteke:** Ni aktivnih lock datotek.
@@ -20,6 +20,16 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (Gemini, Cla
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [24. 11. 2026] — Codex (Poenostavitev B2 razlag)
+* **Narejeno:** Poenostavljenih vseh 34 obstoječih B2 razlag na 1–2 kratki povedi s praktičnim zgledom. Dodanih pet B2 nalog: C1-VEZ-018, C1-ROD-017, C1-DVO-004, C1-SKL-003 in C1-VID-011. Skupaj 63 nalog (39 B2 / 24 C1).
+* **Spremenjene datoteke:** `naloge.json`, `brain/00-INDEX.md` in lokalna `.ai-tasks/2-codex.md` z oznako `[OPRAVLJENO]`. Uspešni preverjanje UTF-8 brez BOM, sheme, ID-jev, vrzeli in odgovorov ter `npm run build`; obstoječe C1 naloge in vsa druga polja obstoječih B2 nalog so nespremenjeni.
+* **Naslednji korak:** Aljona preizkusi razumljivost krajših razlag; Gemini opravi neodvisni pregled novih nalog. Lokalni commit brez `git push`; objavo izvede uporabnik.
+
+### [24. 11. 2026] — Claude Code (Graditelj)
+* **Narejeno:** Izbirnik ravni ima tretjo možnost »Samo C1« (B2 / C1 / Vse); na telefonu se besedilo gumbov prelomi v dve vrstici. Build OK, testirano v Chromu (namizje, 375 in 320 px).
+* **Spremenjene datoteke:** `src/main.ts` (`BESEDILA_RAVEN.c1`, `ravenPreklop`), `src/style.css` (`.preklopnik-3`).
+* **Naslednji korak:** Codex pregleda oznake `BESEDILA_RAVEN` (»B2 (jedro)« / »Samo C1« / »Vse ravni (B2+C1)« niso poimenovane enotno); objava z `git push` (Andrej).
+
 ### [24. 11. 2026] — Claude Code & Codex & Gemini
 * **Claude Code:**
   - Dodal izpostavljen B2 filter v uporabniški vmesnik ter posodobil tipe za podporo ravni B2/C1 (ef53896).

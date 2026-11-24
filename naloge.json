@@ -11,7 +11,7 @@
       "moznosti": ["na povzemanje že znanih podatkov", "s povzemanjem že znanih podatkov", "pri povzemanju že znanih podatkov", "za povzemanje že znanih podatkov"],
       "pravilni_odgovor": "na povzemanje že znanih podatkov",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Glagol omejiti se v pomenu zožiti vsebino ali obseg svojega delovanja zahteva dopolnilo na + tožilnik: omejiti se na kaj. Tožilniško jedro je povzemanje, zveza že znanih podatkov pa je rodilniško dopolnilo glagolnika in poimenuje vsebino povzemanja. Predlog na tu ne izraža kraja ali smeri, temveč uvaja vezljivostno dopolnilo. Zveza s povzemanjem bi izražala sredstvo ali način, vendar ne bi nadomestila zahtevanega dopolnila v danem pomenu.",
+      "slovnicna_razlaga": "Rečemo omejiti se na kaj: »Pri pogovoru se omejimo na eno temo.« Zato je pravilno na povzemanje, ne s povzemanjem.",
       "tipicna_napaka": "Zamenjava vezljivostnega dopolnila z na videz pomensko sorodnim določilom načina: omejila se je s povzemanjem namesto omejila se je na povzemanje.",
       "oznake": ["vezljivost", "omejiti_se", "na_in_tozilnik", "glagolnik", "uradovalno_besedilo"]
     },
@@ -26,7 +26,7 @@
       "moznosti": [],
       "pravilni_odgovor": "pri neodvisni strokovni presoji",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "V pomenu ne odstopiti od zahteve ali stališča se glagol vztrajati veže s pri + mestnikom: vztrajati pri čem. Samostalnik presoja zato dobi mestniško obliko presoji, oba pridevnika pa se z njim ujemata v spolu, številu in sklonu: pri neodvisni strokovni presoji. Zveza ne poimenuje kraja vztrajanja, temveč vsebino zahteve. Pomenska bližina glagolu zavzemati se ne dovoljuje prenosa njegovega vezljivostnega vzorca za + tožilnik na glagol vztrajati.",
+      "slovnicna_razlaga": "Ob vztrajati uporabimo pri: »Vztrajam pri svoji odločitvi.« Enako oblikujemo zvezo pri neodvisni strokovni presoji.",
       "tipicna_napaka": "Raba zveze vztrajati za neodvisno strokovno presojo po analogiji z zavzemati se za neodvisno strokovno presojo.",
       "oznake": ["vezljivost", "vztrajati", "pri_in_mestnik", "ujemanje_pridevnikov"]
     },
@@ -56,7 +56,7 @@
       "moznosti": ["Kdor visoko leta, nizko pade.", "Brez muje se še čevelj ne obuje.", "Po toči zvoniti je prepozno.", "Kdor drugemu jamo koplje, sam vanjo pade."],
       "pravilni_odgovor": "Kdor visoko leta, nizko pade.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Pregovor Kdor visoko leta, nizko pade v tem kontekstu opozarja na posledice pretirane samozavesti in nerealnih ambicij. Nasprotje visoko–nizko ponazarja razkorak med zamišljenim uspehom in dejanskim porazom; letenje in padec razumemo preneseno. Zgradba kdor … uvaja posplošeno trditev, ki jo sobesedilo uporabi za konkretno osebo. Pregovor o muji bi poudaril nujnost truda za uspeh, pregovor o toči bi poudaril prepozno ukrepanje, pregovor o jami pa bi predpostavljal namerno škodovanje drugemu, česar besedilo ne navaja.",
+      "slovnicna_razlaga": "Pregovor opozarja, da se pretirana samozavest lahko konča z neuspehom. Uporabimo ga denimo za nekoga, ki se hvali z gotovo zmago, nato pa izgubi: »Kdor visoko leta, nizko pade.«",
       "tipicna_napaka": "Izbira pregovora zgolj zaradi besede pade, brez preverjanja, ali kontekst vsebuje škodoželjnost, ki jo predpostavlja pregovor o kopanju jame.",
       "oznake": ["pregovori", "preneseni_pomen", "sobesedilo", "pretirana_samozavest", "pragmatika"]
     },
@@ -161,7 +161,7 @@
       "moznosti": [],
       "pravilni_odgovor": "k celoviti presoji dolgoročnih posledic",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Težiti v pomenu biti usmerjen k cilju se veže s k + dajalnikom: težiti k čemu. Jedro presoja in pridevnik celovita zato dobita obliki celoviti presoji. Različico h uporabljamo pred besedami, ki se začenjajo na glas k ali g; ker naslednja beseda celoviti začenja z glasom c, pišemo k. Rodilniška zveza dolgoročnih posledic ostane dopolnilo samostalnika presoja in se ne prilagaja dajalniku njegovega jedra. Podobna končnica v mestniku ne spremeni dejstva, da predlog k zahteva dajalnik.",
+      "slovnicna_razlaga": "Rečemo težiti k čemu, torej k celoviti presoji; h uporabljamo pred k in g. Primer: »Pri delu težimo k boljšim rezultatom.«",
       "tipicna_napaka": "Prenos vezave prizadevati si za na glagol težiti ali zapis h celoviti presoji zaradi napačne domneve, da se h uporablja pred vsemi nezvenečimi soglasniki.",
       "oznake": ["MOD-01", "teziti_k", "dajalnik", "predloga_k_h", "rodilnisko_dopolnilo"]
     },
@@ -176,7 +176,7 @@
       "moznosti": ["pravice do objave rezultatov", "pravico do objave rezultatov", "od pravice do objave rezultatov", "pravici do objave rezultatov"],
       "pravilni_odgovor": "pravici do objave rezultatov",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Odpovedati se v pomenu prostovoljno opustiti kaj zahteva brezpredložni dajalnik: odpovedati se čemu. Pravilno je zato odpovedati se pravici in tudi ne odpovedati se pravici. Zanikanje dajalnika ne spremeni v rodilnik, saj rodilnik zanikanja nadomešča neposredni tožilniški predmet, ne dajalniškega dopolnila. Znotraj zveze pravici do objave rezultatov predlog do zahteva rodilnik objave, samostalnik objava pa rodilniško dopolnilo rezultatov. Zveza od pravice bi neupravičeno prenesla predlog iz pomensko sorodnega odstopiti od česa.",
+      "slovnicna_razlaga": "Rečemo odpovedati se čemu, zato je pravilno pravici tudi ob zanikanju. Primer: »Dopustu se nisem odpovedala.«",
       "tipicna_napaka": "Raba rodilnika pravice zgolj zaradi nikalnice ali zamenjava dajalniške vezave s predložno zvezo od pravice.",
       "oznake": ["MOD-01", "odpovedati_se", "dajalnik", "zanikanje", "pravica_do"]
     },
@@ -191,7 +191,7 @@
       "moznosti": [],
       "pravilni_odgovor": "s stopnjo prevzete odgovornosti",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Pridevnik sorazmeren izraža razmerje med količinama in se v uporabljeni zvezi veže z z/s + orodnikom: sorazmeren s čim. Jedro stopnja zato dobi orodniško obliko stopnjo. Pred nezvenečim nezvočnikom s na začetku besede stopnjo uporabimo različico s, ne z. Zveza prevzete odgovornosti ostaja v rodilniku, ker je dopolnilo samostalnika stopnja; orodnik je ne zajame. Vezljivostno dopolnilo tu določa pridevnik sorazmeren, čeprav je celotni povedek zgrajen s pomožnim glagolom biti.",
+      "slovnicna_razlaga": "Rečemo sorazmeren s čim, zato s stopnjo prevzete odgovornosti. Primer: »Cena naj bo sorazmerna s kakovostjo.«",
       "tipicna_napaka": "Zapis z stopnjo ali s stopnji ter postavljanje vseh besed v orodnik: s stopnjo prevzeto odgovornostjo.",
       "oznake": ["MOD-01", "sorazmeren", "pridevniska_vezljivost", "orodnik", "predloga_z_s"]
     },
@@ -206,7 +206,7 @@
       "moznosti": ["po prejšnjih odločitvah razsodišča", "na prejšnje odločitve razsodišča", "s prejšnjimi odločitvami razsodišča", "na prejšnjih odločitvah razsodišča"],
       "pravilni_odgovor": "na prejšnje odločitve razsodišča",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Sklicevati se v pomenu navajati vir ali podlago za trditev zahteva na + tožilnik: sklicevati se na kaj. Zveza prejšnje odločitve je zato v tožilniku množine, čeprav je njena oblika enaka imenovalniški. Mestnik na prejšnjih odločitvah bi ustrezal drugačni zvezi, denimo temeljiti na prejšnjih odločitvah, ne pa glagolu sklicevati se. Rodilnik razsodišča opredeljuje izdajatelja odločitev. Zaimek v nadaljevanju in deležniška oblika sprejete potrjujeta, da govorimo o več odločitvah, ne o eni.",
+      "slovnicna_razlaga": "Sklicevati se na kaj pomeni navesti nekaj v podporo svoji trditvi. Primer: »Sklicujem se na najin dogovor«; enako rečemo na prejšnje odločitve.",
       "tipicna_napaka": "Mešanje vzorcev sklicevati se na + tožilnik in temeljiti na + mestnik, ker se oba nanašata na podlago argumentacije.",
       "oznake": ["MOD-01", "sklicevati_se_na", "tozilnik", "mestnik", "argumentacija"]
     },
@@ -236,7 +236,7 @@
       "moznosti": ["na vsebinske zasnove raziskave", "vsebinske zasnove raziskave", "na vsebinsko zasnovo raziskave", "na vsebinski zasnovi raziskave"],
       "pravilni_odgovor": "na vsebinsko zasnovo raziskave",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Glagol vplivati zahteva na + tožilnik: vplivati na kaj. Zanikanje te predložne vezave ne spremeni, zato pišemo ni vplivala na vsebinsko zasnovo raziskave. Rodilnik zanikanja nadomešča neposredni brezpredložni tožilniški predmet, ne tožilnika za predlogom na. Primerjamo ni spremenila vsebinske zasnove in ni vplivala na vsebinsko zasnovo. Rodilnik raziskave je v obeh primerih dopolnilo samostalnika zasnova. Mestnik na vsebinski zasnovi bi ustrezal drugi vezavi, na primer temeljiti na čem.",
+      "slovnicna_razlaga": "Rečemo vplivati na kaj, zveza z na pa ostane enaka tudi ob zanikanju. Primer: »Dež ni vplival na naš izlet.«",
       "tipicna_napaka": "Zapis ni vplivala na vsebinske zasnove zaradi mehanskega prenosa rodilnika zanikanja v predložno zvezo ali opustitev predloga na.",
       "oznake": ["MOD-01", "vplivati_na", "tozilnik", "zanikanje", "hiperkorekcija"]
     },
@@ -281,7 +281,7 @@
       "moznosti": ["v strokovni avtonomiji zavoda", "v strokovno avtonomijo zavoda", "na strokovno avtonomijo zavoda", "strokovne avtonomije zavoda"],
       "pravilni_odgovor": "v strokovno avtonomijo zavoda",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Samostalnik poseg v tem pomenu ohranja predložno vezavo, ki jo poznamo pri poseči oziroma posegati v kaj: poseg v + tožilnik. Prizadeto področje je zato izraženo z v strokovno avtonomijo zavoda. Prehod od glagola k samostalniku ne pomeni, da vsako dopolnilo postane brezpredložni rodilnik. Mestnik v strokovni avtonomiji ne izraža zahtevane vezave, predlog na pa bi prenesli iz druge zveze, denimo vpliv na avtonomijo. Rodilnik zavoda določa nosilca avtonomije in ostaja znotraj samostalniške zveze.",
+      "slovnicna_razlaga": "Rečemo poseg v kaj, zato v strokovno avtonomijo zavoda. Primer: »Branje tujih sporočil je poseg v zasebnost.«",
       "tipicna_napaka": "Zapis poseg strokovne avtonomije po pretirani analogiji z zvezami, kot je omejevanje strokovne avtonomije, ali mešanje z vezavo vpliv na kaj.",
       "oznake": ["MOD-01", "poseg_v", "samostalniska_vezljivost", "tozilnik", "nominalizacija"]
     },
@@ -296,7 +296,7 @@
       "moznosti": [],
       "pravilni_odgovor": "od pravočasne pridobitve vseh soglasij",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Pridevnik odvisen zahteva od + rodilnik: odvisen od koga ali česa. Jedro pridobitev ima zato rodilniško obliko pridobitve, pridevnik pa obliko pravočasne. Zveza vseh soglasij je prav tako rodilniška, vendar iz drugega razloga: dopolnjuje glagolski samostalnik pridobitev in poimenuje tisto, kar je treba pridobiti. Rodilnik pravočasne pridobitve je torej predložni, rodilnik vseh soglasij pa samostalniško dopolnilo. Pomožnik bo ne določa te vezave; njeno jedro je pridevnik odvisen.",
+      "slovnicna_razlaga": "Ob odvisen uporabimo od in rodilnik: »Izlet bo odvisen od vremena.« Zato je pravilno od pravočasne pridobitve vseh soglasij.",
       "tipicna_napaka": "Zamenjava predloga od s predlogom na zaradi vpliva tujih jezikov ali pomensko sorodnih zvez ter nerazlikovanje med obema rodilniškima dopolniloma.",
       "oznake": ["MOD-01", "odvisen_od", "pridevniska_vezljivost", "rodilnik", "glagolski_samostalnik"]
     },
@@ -386,7 +386,7 @@
       "moznosti": [],
       "pravilni_odgovor": "tako ostrega odziva strokovne javnosti",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Nikalni zaimek nihče in nikalni prislov nikoli se povezujeta z zanikanim povedkom ne bi pričakoval. To je nikalno ujemanje: več nikalnih izrazov v slovenščini ne odpravi zanikanja in ne spremeni povedi v trdilno. Neposredni predmet je zato v rodilniku ednine, tako ostrega odziva. Pridevnik ostrega se ujema s samostalnikom odziva, prislov tako pa se ne sklanja. Zveza strokovne javnosti je dodatno rodilniško dopolnilo samostalnika odziv. Pogojnik izraža hipotetičnost pričakovanja, vendar ne odpravlja zahteve po rodilniku ob zanikanem dejanju.",
+      "slovnicna_razlaga": "Besedi nihče in nikoli ne odpravita zanikanja, zato uporabimo rodilnik: tako ostrega odziva. Primer: »Nihče ne bi pričakoval takšnega presenečenja.«",
       "tipicna_napaka": "Ohranitev tožilnika tako oster odziv zaradi domneve, da se več nikalnic medsebojno izniči, ali opustitev ne ob nihče in nikoli.",
       "oznake": ["MOD-02", "nikalno_ujemanje", "nihce", "nikoli", "pogojnik", "rodilnik_zanikanja"]
     },
@@ -476,7 +476,7 @@
       "moznosti": ["dokončno oceno stroškov", "dokončni oceni stroškov", "dokončna ocena stroškov", "dokončne ocene stroškov"],
       "pravilni_odgovor": "dokončne ocene stroškov",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Nismo prejeli zanika dejanje neposredno prehodnega glagola prejeti, zato njegov predmet v knjižnem zapisu stoji v rodilniku: dokončne ocene stroškov. Tožilnik dokončno oceno se lahko pojavi v sproščenem pogovornem govoru ali narečnih rabah, kjer rodilnik zanikanja slabi, vendar pojavnost še ne pomeni splošne knjižne dopustnosti. V tem primeru za tožilnik ni posebnega skladenjskega razloga, zato ga naloga ne sprejema. Raven C1 ni samostojna slovnična norma; cilj je obvladovanje knjižne norme in zavestno razlikovanje registrov. Rodilnik je tu potreben tudi, kadar predmet ločuje od nikalnice več besed.",
+      "slovnicna_razlaga": "Pri zanikanem prejeti uporabimo rodilnik: nismo prejeli dokončne ocene. Primer: »Prejela sem sporočilo, nisem pa prejela odgovora.«",
       "tipicna_napaka": "Prenos pogovornega nismo prejeli dokončno oceno v formalno poročilo ali prepričanje, da je tožilnik ob vsakem zanikanju že knjižno dovoljena različica.",
       "oznake": ["MOD-02", "rodilnik_zanikanja", "knjizna_norma", "pogovorna_raba", "register"]
     },
@@ -536,7 +536,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Vodja je na sestanku delal iz muhe slona, čeprav izvedba projekta ni bila ogrožena.",
       "alternativni_odgovori": ["Vodja je na sestanku iz muhe delal slona, čeprav izvedba projekta ni bila ogrožena.", "Vodja je delal iz muhe slona na sestanku, čeprav izvedba projekta ni bila ogrožena."],
-      "slovnicna_razlaga": "Delati iz muhe slona pomeni močno pretiravati in majhni težavi pripisovati nesorazmerno velik pomen. Prenesena podoba temelji na velikostnem nasprotju med muho in slonom. Predlog iz zahteva rodilnik muhe, slona pa je tožilnik ednine živega samostalnika moškega spola. Nedovršnik delati v obliki je delal ohrani potek pretiravanja. Frazem je ekspresiven in navadno kritičen: sogovorniku očita pretiravanje, zato lahko v občutljivem pogovoru učinkuje omalovažujoče.",
+      "slovnicna_razlaga": "Delati iz muhe slona pomeni pretiravati in majhno težavo predstavljati kot veliko. Primer: »Zamudila sem dve minuti, ti pa iz muhe delaš slona.«",
       "tipicna_napaka": "Obratna zveza delati iz slona muho spremeni smer prispodobe in ni zahtevani ustaljeni frazem. Dobesedno razumevanje kot spreminjanje živali prezre očitek pretiravanja.",
       "oznake": ["MOD-03", "frazeologija", "zivalski_frazemi", "delati_iz_muhe_slona", "rodilnik", "tozilnik", "pragmatika"]
     },
@@ -551,7 +551,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Nadzornik je drugim očital prikrivanje podatkov, čeprav je imel tudi sam maslo na glavi.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Imeti maslo na glavi pomeni biti tudi sam kriv oziroma imeti kaj na vesti. Podoba masla na glavi, ki se na toplem lahko stopi in razkrije svojega nosilca, ponazarja krivdo, ki je ni mogoče zanesljivo skriti; tu pojasnjuje motivacijo prispodobe. Marmelada spominja na zvezo zalotiti koga s prsti v marmeladi, ki poudarja zalotitev pri nedovoljenem dejanju, vendar sestavin ne moremo poljubno zamenjevati. Maslo je predmet v tožilniku, na glavi pa stalna mestniška sestavina. Frazem je ekspresiven, pogosto očitajoč ali ironičen, zato ni nevtralna ugotovitev o dokazani odgovornosti.",
+      "slovnicna_razlaga": "Imeti maslo na glavi pomeni biti tudi sam kriv oziroma imeti kaj na vesti. Primer: »Drugim očita laži, pa ima tudi sam maslo na glavi.«",
       "tipicna_napaka": "Mešanje frazemov imeti maslo na glavi in zalotiti koga s prsti v marmeladi. Dobesedna razlaga, da je oseba umazana od hrane, ne izrazi očitka lastne krivde.",
       "oznake": ["MOD-03", "frazeologija", "telesni_frazemi", "imeti_maslo_na_glavi", "kontaminacija", "pragmatika"]
     },
@@ -566,7 +566,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Po drugi zavrnitvi je raziskovalec vrgel puško v koruzo, čeprav bi lahko predlog še dopolnil.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Vreči puško v koruzo pomeni obupati in opustiti prizadevanje. Podoba odvrženega orožja ob umiku se prenese na odpoved nadaljnjemu boju za cilj. Kopje sodi v drugo ustaljeno zvezo, lomiti kopja, ki pomeni ostro razpravljati oziroma se spopadati glede česa. V zahtevani rešitvi dovršni preteklik je vrgel označuje odločitev za odnehanje; puško je v tožilniku, v koruzo pa je stalna predložna sestavina s tožilnikom. Frazem je ekspresiven, pogost v pogovoru in publicistiki, v tem sobesedilu pa vsebuje kritiko prehitrega odnehanja.",
+      "slovnicna_razlaga": "Vreči puško v koruzo pomeni obupati in odnehati; ustaljena zveza vsebuje puško, ne kopja. Primer: »Po prvem neuspehu še ne vrzi puške v koruzo.«",
       "tipicna_napaka": "Zamenjava puške s kopjem zaradi mešanja dveh podob bojevanja. Dobesedno iskanje orožja ali koruznega polja v opisani situaciji zgreši preneseni pomen opustitve prizadevanja.",
       "oznake": ["MOD-03", "frazeologija", "vreci_pusko_v_koruzo", "kontaminacija", "dovrsnost", "register"]
     },
@@ -581,7 +581,7 @@
       "moznosti": [],
       "pravilni_odgovor": "mačka",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Kupiti mačka v žaklju pomeni kupiti kaj, ne da bi prej preverili dejansko kakovost ali lastnosti kupljenega. Podoba živali, skrite v vreči, ponazarja neznano vsebino nakupa, ne nakupa domače živali. Ob trdilnem glagolu kupiti je mačka tožilnik ednine živega samostalnika moškega spola, oblikovno enak rodilniku; v žaklju je mestniška sestavina. Frazem je ekspresiven in primeren za pogovorno ali publicistično opozarjanje na nepremišljen nakup. V strokovnem opisu bi izrecno navedli, katero preverjanje je kupec opustil.",
+      "slovnicna_razlaga": "Kupiti mačka v žaklju pomeni nekaj kupiti, ne da bi prej preverili, kaj v resnici dobimo. Primer: »Avto bom najprej preizkusila, saj nočem kupiti mačka v žaklju.«",
       "tipicna_napaka": "Vnos maček namesto tožilnika mačka ali dobesedni prenos angleške živalske sestavine iz zveze buy a pig in a poke. Slovenski ustaljeni frazem vsebuje mačka; ne trdi, da je kupec dejansko kupoval žival.",
       "oznake": ["MOD-03", "frazeologija", "zivalski_frazemi", "kupiti_macka_v_zaklju", "tozilnik", "zivost", "tuji_kalk"]
     },
@@ -596,7 +596,7 @@
       "moznosti": [],
       "pravilni_odgovor": "spora",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Jabolko spora označuje stvar ali vprašanje, zaradi katerega pride do spora. Podoba izvira iz grškega mita o zlatem jabolku, ki je sprožilo spor med boginjami; v sodobni rabi lahko poimenuje tudi povsem abstraktno vprašanje. Spora je rodilniško dopolnilo samostalnika jabolko, celotna zveza pa je ob ostala povedkovo določilo. Zaimek katerega se nanaša na jabolko spora, torej na sporno vprašanje lokacije. Frazem je ustaljen v publicistiki in razpravljanju, vendar ostaja slikovitejši od nevtralne zveze predmet nesoglasja.",
+      "slovnicna_razlaga": "Jabolko spora je nekaj, zaradi česar se ljudje prepirajo; zvezo dopolnimo z besedo spora. Primer: »Delitev stroškov je postala jabolko spora med sostanovalci.«",
       "tipicna_napaka": "Raba tožilnika spor namesto rodilnika spora ali razumevanje, da se strani prepirata zaradi sadja. Podobna podoba jabolka v pregovoru jabolko ne pade daleč od drevesa govori o podobnosti med starši in otroki, ne o vzroku spora.",
       "oznake": ["MOD-03", "frazeologija", "jabolko_spora", "rodilnik", "mitoloska_prispodoba", "register"]
     },
@@ -611,7 +611,7 @@
       "moznosti": ["Jabolko ne pade daleč od drevesa.", "Kdor drugemu jamo koplje, sam vanjo pade.", "Tiha voda bregove dere.", "Po toči zvoniti je prepozno."],
       "pravilni_odgovor": "Tiha voda bregove dere.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Tiha voda bregove dere pove, da lahko navzven miren in neopazen človek preseneti z dejanjem ali močjo svojega vpliva. Prispodoba primerja takšno osebo z vodo, ki kljub navidezni mirnosti spodjeda bregove. Sedanjik dere ima posploševalno vrednost. Pregovor je vrednotenjski komentar, pogost v pogovoru in publicistiki; glede na sobesedilo lahko izraža občudovanje, presenečenje ali nezaupanje, tu pa presenečenje nad odločnostjo. Ne pomeni nujno prikrite zlonamernosti. Pregovor o jabolku bi zahteval primerjavo s starši, pregovor o jami škodovanje drugemu, pregovor o toči pa zamujeno ukrepanje.",
+      "slovnicna_razlaga": "Pregovor pove, da nas lahko tih in neopazen človek preseneti z odločnim dejanjem. Primer: »Navadno je tiho, danes pa je edina ugovarjala: tiha voda bregove dere.«",
       "tipicna_napaka": "Dobesedno razumevanje vode in bregov ali avtomatična razlaga, da je tiha oseba nevarna oziroma nepoštena. V tem kontekstu je njeno nepričakovano dejanje koristno in načelno.",
       "oznake": ["MOD-03", "pregovori", "tiha_voda", "preneseni_pomen", "sobesedilo", "pragmatika"]
     },
@@ -626,7 +626,7 @@
       "moznosti": ["Po toči zvoniti je prepozno.", "Brez muje se še čevelj ne obuje.", "Jabolko ne pade daleč od drevesa.", "Kdor visoko leta, nizko pade."],
       "pravilni_odgovor": "Po toči zvoniti je prepozno.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Po toči zvoniti je prepozno opozarja na zamujeno ukrepanje: ko je škoda že nastala, je ni več mogoče preprečiti. Podoba se navezuje na nekdanje zvonjenje ob nevarnosti toče v prepričanju, da jo je mogoče odvrniti; zvonjenje po neurju pridelka ne reši. Zveza po toči vsebuje mestnik in označuje čas po dogodku, nedoločnik zvoniti pa poimenuje prepozno dejanje. Pregovor je pogost v pogovornem in publicističnem komentiranju ter lahko zveni očitajoče. Tu se nanaša na izgubljene posnetke in ne zanika koristnosti zaščite za prihodnje podatke. Druge možnosti poudarjajo trud, družinsko podobnost ali posledice prevzetnosti, česar naloga ne postavlja v ospredje.",
+      "slovnicna_razlaga": "Pregovor opozarja, da po nastali škodi zamujenega ukrepa ne moremo uporabiti za njeno preprečitev. Primer: »Kolo so mi ukradli, jaz pa šele zdaj kupujem ključavnico: po toči zvoniti je prepozno.«",
       "tipicna_napaka": "Dobesedno omejevanje pregovora na vreme ali napačen sklep, da po napaki noben popravljalni oziroma preventivni ukrep nima več smisla. Pregovor tu izpostavlja samo nepopravljivost že nastale izgube.",
       "oznake": ["MOD-03", "pregovori", "po_toci_zvoniti", "preneseni_pomen", "prepozno_ukrepanje", "pragmatika"]
     },
@@ -646,7 +646,7 @@
       ],
       "pravilni_odgovor": "ne prekinite",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Ne prekinite je zanikani velelnik dovršnega glagola prekiniti v 2. osebi množine. Dovršnik predstavi prekinitev kot celovit dogodek, ki ga želi govorec preprečiti. Nedovršni velelnik ne prekinjajte je prav tako slovnično mogoč, vendar dejanje predstavlja kot potek ali ponavljajoče se ravnanje; navodilo izrecno zahteva dovršno svarilo. Razlika ni absolutno pravilo, da vsaka prepoved zahteva nedovršnik ali vsako svarilo dovršnik. V drugačni zgradbi Pazite, da ne prekinete napajanja bi v odvisniku stal sedanjik prekinete, ne velelnik prekinite. Napajanja je rodilnik zanikanega neposrednega predmeta.",
+      "slovnicna_razlaga": "Navodilo zahteva svarilo pred eno prekinitvijo: »Nikar ne prekinite povezave.« Ne prekinjajte je sicer mogoča oblika, vendar ne izpolni zahteve po dovršnem glagolu.",
       "tipicna_napaka": "Zamenjevanje velelnika ne prekinite s sedanjikom ne prekinete ali vstavljanje velelnika v odvisnik Pazite, da … . Napačno je tudi prepričanje, da dovršni glagol v zanikanem velelniku nikoli ni dopusten.",
       "oznake": [
         "MOD-04",
@@ -668,7 +668,7 @@
       "moznosti": [],
       "pravilni_odgovor": "spregledoval",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Spregledoval je deležnik na -l nedovršnega glagola spregledovati; s pomožnikom je tvori preteklik v moški ednini. Vztrajno in v svojih letnih poročilih podpirata prikaz ravnanja kot ponavljajoče se prakse. Nedovršnik je zahtevan z navodilom, ne s splošno prepovedjo dovršnika pri ponavljanju: tudi dovršni glagol lahko v ustreznem sobesedilu označuje ponovljene celovite dogodke, na primer Vsako leto je spregledal isto neskladje. Spregledati ne pomeni nujno hipnega dogodka. Pregledovati pomeni opravljati pregled, spregledovati pa ne opaziti oziroma ne upoštevati česa; glagola nista vidski par.",
+      "slovnicna_razlaga": "Navodilo zahteva obliko, ki ravnanje prikazuje kot ponavljajočo se prakso, zato spregledoval. Primer: »Pri branju je spregledoval napake.«",
       "tipicna_napaka": "Vnos celotnega preteklika je spregledoval, ki bi podvojil že zapisani pomožnik, ali zamenjava s pregledoval. Dovršnik spregledal ne izpolni izrecne zahteve po prikazu nedovršne prakse, ni pa ob vsakem ponavljanju slovnično napačen.",
       "oznake": [
         "MOD-04",
@@ -715,7 +715,7 @@
       "moznosti": [],
       "pravilni_odgovor": "zavedati",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Začeti kot fazni glagol ob nedoločniškem dopolnilu označuje začetno mejo procesa ali stanja. V tej zgradbi uporabimo nedovršni nedoločnik zavedati se: uprava se je začela zavedati resnosti položaja. Dovršna zveza zavesti se bi spremembo predstavila kot celoto in je ne povezujemo v začela se je zavesti. Se pripada glagolu zavedati se, vendar je zaradi razvrstitve naslonk že zapisano pred je; vrzel zato vsebuje samo zavedati. Resnosti položaja je rodilniško dopolnilo glagola zavedati se. Prislov postopoma poudarja razvijanje zavedanja.",
+      "slovnicna_razlaga": "Ob začela uporabimo zavedati, ker govorimo o začetku postopnega razumevanja. Primer: »Začela se je zavedati svoje napake«; se je v nalogi že zapisano.",
       "tipicna_napaka": "Vnos zavesti ob faznem glagolu ali ponovno dodajanje se v vrzel. Zapisani se že pripada nedoločniku, čeprav od njega stoji ločeno.",
       "oznake": [
         "MOD-04",
@@ -739,7 +739,7 @@
         "Predsednik je med sejo opozarjal večkrat na pomanjkanje sklepčnosti, preden so nadaljevali z glasovanjem.",
         "Predsednik je med sejo opozarjal na pomanjkanje sklepčnosti večkrat, preden so nadaljevali z glasovanjem."
       ],
-      "slovnicna_razlaga": "Opozoriti in opozarjati sta vidski par. Izhodiščna zveza enkrat je opozoril predstavi eno celovito opozorilo, zahtevana zveza večkrat je opozarjal pa ponavljajoče se opozarjanje. Gre za namerno spremembo vidskega in količinskega pomena po navodilu, ne za povsem sopomensko parafrazo. Zveza med sejo sama ne zahteva nedovršnika, saj bi se med sejo lahko zgodilo tudi eno dovršno dejanje. Nedovršnik prav tako ne pomeni, da je predsednik neprekinjeno govoril vso sejo. Časovni odvisnik s preden ostaja nespremenjen in opozarjanje umešča pred nadaljevanje glasovanja. Alternative dopuščajo drugačen položaj prislova večkrat.",
+      "slovnicna_razlaga": "Namesto enega opozorila želimo izraziti ponavljajoče se opozarjanje, zato enkrat opozoril zamenjamo z večkrat opozarjal. Primer: »Večkrat sem ga opozarjala na nevarnost.«",
       "tipicna_napaka": "Ohranitev enkrat ali dovršnika opozoril kljub izrecni zahtevi po nedovršnem ponavljajočem se opozarjanju. Zamenjava odvisnika s preden z odvisnikom z da bi spremenila zahtevano vsebino.",
       "oznake": [
         "MOD-04",
@@ -760,7 +760,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Medtem ko je strokovna komisija začela pregledovati prispele ponudbe, so vlagatelji nestrpno čakali na hodniku.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Napaka je zveza začela pregledati: fazni glagol začeti v tej zgradbi zahteva nedovršno dopolnilo pregledovati, saj označuje začetek pregledovanja. Preteklik je začela ostane nespremenjen; popravljamo nedoločnik, ne osebne glagolske oblike. Medtem ko tukaj časovno povezuje začetek pregledovanja s čakanjem vlagateljev. Veznik sam ne prepoveduje dovršnikov: prav dovršni glagol začela v popravljeni povedi označuje začetek procesa med njihovim čakanjem. Dovršnost tudi ne pomeni nujno, da je dejanje hipno.",
+      "slovnicna_razlaga": "Začela pregledovati pove, da je komisija začela delo; začela pregledati tu ni pravilno. Primer: »Začela sem pregledovati pošto.«",
       "tipicna_napaka": "Ohranitev dovršnega nedoločnika pregledati ob začela ali posplošitev, da za medtem ko nikoli ne sme stati dovršnik. Odločilna je tu vezava faznega glagola.",
       "oznake": [
         "MOD-04",
@@ -784,7 +784,7 @@
       "alternativni_odgovori": [
         "odpravila"
       ],
-      "slovnicna_razlaga": "Odpravljala je deležnik nedovršnega glagola odpravljati: v ospredje postavi sprotno dejavnost oziroma ponavljanje posegov. Dopusten je tudi dovršni deležnik odpravila, ki v istem sobesedilu povzema uspešno opravljene posege. Prislov sproti pove, da se odpravljanje časovno prilagaja nastajanju ali odkrivanju napak, sam pa ne določa obveznega glagolskega vida. Zveza je sproti odpravila zato ne pomeni, da je vodja vse popravila naenkrat ob koncu. Obe obliki se ujemata z ženskim osebkom vodja; pomožnika je v vrzeli ne ponavljamo. Sklep o brezhibni kakovosti je združljiv z obema vidoma.",
+      "slovnicna_razlaga": "Odpravljala poudarja delo, odpravila pa uspešno opravljene popravke; ob sproti sta tukaj pravilni obe obliki. Primer: »Napake je sproti odpravljala« ali »Napake je sproti odpravila.«",
       "tipicna_napaka": "Zavračanje dovršnika odpravila zgolj zaradi prislova sproti ali domneva, da nedovršnik odpravljala nujno pomeni neuspešno odpravljanje. Vid določa način predstavitve dejanja, sobesedilo pa dopolnjuje podatke o uspešnosti.",
       "oznake": [
         "MOD-04",
@@ -810,7 +810,7 @@
       ],
       "pravilni_odgovor": "doseže",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Doseže je sedanjik dovršnega glagola doseči v 3. osebi ednine in se ujema s skupinskim osebkom ekipa. V zvezi z jasnim ciljem, da doseže označuje želeni rezultat, ki naj bi sledil odhodu; ne trdi, da je bil cilj že dosežen. Dosega in bo dosegala sta nedovršni obliki, bi dosegala pa je nedovršni pogojnik; ne ustrezajo izrecni zahtevi po dovršnem sedanjiku. Izbira vida temelji na predstavitvi cilja kot enkratnega dosežka, ne na splošnem pravilu, da vsak namen zahteva dovršnik. Ker je glagol v odvisniku z da, ne gre za namenilnik ob glagolu premikanja.",
+      "slovnicna_razlaga": "Doseže izraža želeni rezultat, zato ustreza zahtevi po dovršnem glagolu. Primer: »Na sestanek grem s ciljem, da dosežem dogovor.«",
       "tipicna_napaka": "Enačenje dovršnega sedanjika s trenutno potekajočim dejanjem ali sklepanje, da odpotovala samo po sebi zahteva dovršnik. Namen lahko izražamo tudi z nedovršnikom, kadar želimo poudariti dejavnost namesto rezultata.",
       "oznake": [
         "MOD-04",
@@ -831,7 +831,7 @@
       "moznosti": [],
       "pravilni_odgovor": "izpolnjevala; izpolnila",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Nedovršnik izpolnjevati v prvi vrzeli predstavlja delo v njegovem poteku. Sobesedilo pove, da prijavnica takrat še ni bila pripravljena za oddajo. Dovršnik izpolniti v drugi vrzeli predstavi dejanje kot celoto z doseženim rezultatom, kar potrjujeta do konca in poznejša oddaja. Obliki izpolnjevala in izpolnila se ujemata z osebkom Nina v ženski ednini ter z že zapisanima pomožnikoma tvorita preteklik. Časovni izraz pol ure sam po sebi ni univerzalno pravilo za izbiro vida; tu odločata zahtevani pogled na dejanje in celotno sobesedilo.",
+      "slovnicna_razlaga": "Izpolnjevala opisuje potek dela, izpolnila pa doseženi rezultat. Primer: »Prijavnico sem še izpolnjevala; pozneje sem jo izpolnila do konca.«",
       "tipicna_napaka": "Uporaba istega vida v obeh vrzelih brez upoštevanja razlike med potekom in rezultatom ali ponavljanje pomožnika je v odgovoru.",
       "oznake": [
         "MOD-04",
@@ -857,7 +857,7 @@
       ],
       "pravilni_odgovor": "popravi",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Popravi je sedanjik dovršnega glagola popraviti v tretji osebi ednine. V pogojnem odvisniku se nanaša na možno prihodnje dejanje: vhod bomo odprli, če bo ključavnica uspešno popravljena. Nedovršnik popravlja poudarja dejavnost, ne nujno doseženega rezultata, zato ne izpolni izrecne zahteve navodila. Popravljal je deležnik, ki bi za osebno glagolsko obliko potreboval pomožnik; popravljati je nedoločnik. Veznik če sam ne zahteva dovršnika v vseh povedih: tu je dovršnost izbrana zaradi želenega rezultata.",
+      "slovnicna_razlaga": "Popravi tukaj izraža uspešno končano popravilo, od katerega je odvisno odprtje vhoda. Primer: »Če popravi kolo, se bom lahko odpeljala.«",
       "tipicna_napaka": "Enačenje sedanjika samo z dogajanjem v trenutku govorjenja ali izbira nedovršnika, čeprav je pogoj uspešno dokončano popravilo.",
       "oznake": [
         "MOD-04",
@@ -877,7 +877,7 @@
       "moznosti": [],
       "pravilni_odgovor": "sta; zadovoljni",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Arhitektki označuje dve ženski, zato uporabimo pomožnik sta in žensko dvojinsko obliko zadovoljni. Žensko dvojino izražata tudi že zapisana deležnika pripravili in bili. Pomožnik sta se v povedi nanaša na oba priredno povezana dela povedka: sta pripravili in sta bili zadovoljni; v drugem delu ga ni treba ponoviti. V odvisniku se z istim osebkom ujema vodita. Oblika pripravili je pri ženskah v dvojini enaka moški množinski obliki, zato števila ne določamo samo po končnici deležnika.",
+      "slovnicna_razlaga": "Za dve ženski uporabimo sta in zadovoljni; sta velja tudi za drugi del povedi. Primer: »Sestri sta pripravili kosilo in bili zadovoljni z njim.«",
       "tipicna_napaka": "Raba pomožnika so zaradi končnice -li v pripravili ali moške dvojinske oblike zadovoljna, čeprav osebek označuje dve ženski.",
       "oznake": [
         "MOD-05",
@@ -898,7 +898,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Če bi dobila dodatno pomoč, bi vodja projekta in njen pomočnik prevzela tudi pripravo razstave.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Vodja projekta in njen pomočnik sta dve osebi, zato povedek zahteva dvojino. Pri osebku, ki označuje žensko in moškega, uporabimo moško dvojinsko obliko deležnika: prevzela. Oblika bi se pri tvorbi pogojnika ne spreminja po osebah in številih, zato dvojino v bi prevzela izraža deležnik. Že zapisani dobila v pogojnem odvisniku se nanaša na isti osebi in je prav tako v moški dvojini. Množinska oblika prevzeli zato ni ustrezna.",
+      "slovnicna_razlaga": "Za žensko in moškega skupaj uporabimo dvojino: bi prevzela. Primer: »Ana in Marko bi prevzela ključe.«",
       "tipicna_napaka": "Raba množine prevzeli, ker osebek vsebuje več poimenovanj, ali ženske dvojine prevzeli, čeprav osebek vključuje tudi moškega.",
       "oznake": [
         "MOD-05",
@@ -924,7 +924,7 @@
       ],
       "pravilni_odgovor": "uvodnega srečanja; pri skupinski nalogi",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Udeležiti se zahteva rodilnik brez predloga: udeležiti se česa, zato uvodnega srečanja. Ta rodilnik ni posledica zanikanja v začetnem odvisniku, saj je glavni povedek udeležila se trdilen. Sodelovati pri čem pa se v danem pomenu veže s pri in mestnikom: pri skupinski nalogi. Pridevnika se ujemata s samostalnikoma. Čeprav glagola opisujeta sorodni dejavnosti, imata različna vezljivostna vzorca.",
+      "slovnicna_razlaga": "Rečemo udeležiti se česa, vendar sodelovati pri čem. Primer: »Udeležila sem se sestanka in sodelovala pri načrtovanju izleta.«",
       "tipicna_napaka": "Prenos tožilniške vezave glagola obiskati na udeležiti se ali mešanje predloga pri z obliko za drug sklon.",
       "oznake": [
         "MOD-01",
@@ -946,7 +946,7 @@
       "moznosti": [],
       "pravilni_odgovor": "Organizatorka se je prostovoljnim mentorjem zahvalila za pomoč pri pripravi delavnice.",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Zahvaliti se ima vezavo zahvaliti se komu za kaj. Prejemnike zahvale izrazimo z dajalnikom, zato prostovoljnim mentorjem, razlog zanjo pa z za in tožilnikom: za pomoč. Pridevnik prostovoljnim se s samostalnikom mentorjem ujema v dajalniku množine. Se je sestavni del glagola zahvaliti se in ostane v povedi. Tožilniška zveza prostovoljne mentorje bi bila ustrezna ob drugem glagolu, na primer pohvaliti mentorje, ne pa v tej zgradbi.",
+      "slovnicna_razlaga": "Rečemo zahvaliti se komu za kaj, zato prostovoljnim mentorjem. Primer: »Sosedu sem se zahvalila za pomoč.«",
       "tipicna_napaka": "Zamenjava dajalnika prejemnika zahvale s tožilnikom ali spreminjanje pravilne zveze za pomoč v rodilnik.",
       "oznake": [
         "MOD-01",
@@ -969,7 +969,7 @@
       "alternativni_odgovori": [
         "Maja potrjene prijavnice, ki jo potrebuje za udeležbo na delavnici, ni prejela."
       ],
-      "slovnicna_razlaga": "Ob zanikanem glagolu prejeti je neposredni predmet v rodilniku: ni prejela potrjene prijavnice. Pridevnik potrjene se s samostalnikom prijavnice ujema v rodilniku ednine. Zanikanje glavnega stavka ne zanika samodejno odvisnika ki jo potrebuje. V njem ostane glagol potrebuje trdilen, zaimek jo pa njegov tožilniški predmet. Alternativni besedni red ohranja pomen in nespremenjeno besedilo odvisnika; zaradi vrinjenega odvisnika zahteva tudi drugo vejico.",
+      "slovnicna_razlaga": "Ob ni prejela uporabimo potrjene prijavnice, del ki jo potrebuje pa ostane nespremenjen. Primer: »Nisem prejela vstopnice, ki jo potrebujem za koncert.«",
       "tipicna_napaka": "Ohranitev tožilnika potrjeno prijavnico ob ni prejela ali neupravičena sprememba jo potrebuje v je potrebuje zaradi prenosa rodilnika iz glavnega stavka.",
       "oznake": [
         "MOD-02",
@@ -993,7 +993,7 @@
         "Prijavljenim udeležencem dodatnega potrdila ni treba poslati, saj organizator že ima vse podatke.",
         "Prijavljenim udeležencem ni treba dodatnega potrdila poslati, saj organizator že ima vse podatke."
       ],
-      "slovnicna_razlaga": "Zveza ni treba izraža odsotnost obveznosti, ne prepovedi. Osebo, na katero se obveznost nanaša, v tej brezosebni zgradbi izrazimo z dajalnikom: prijavljenim udeležencem. Glagol poslati ostane v nedoločniku, njegov predmet pa je ob zanikanju v rodilniku: dodatnega potrdila. Zveza ne smejo poslati bi pomenila prepoved, ne morejo poslati pa nezmožnost oziroma oviro. Obe bi spremenili pomen izhodiščne povedi. Dopustni besedni redi ohranjajo zahtevani začetek in vsebino.",
+      "slovnicna_razlaga": "Ni treba pomeni, da nekaj ni obvezno, ne pa prepovedano; udeleženci se pri tem spremenijo v udeležencem. Primer: »Otrokom ni treba prinesti malice.«",
       "tipicna_napaka": "Zamenjava ni treba z ne smejo ali ohranitev imenovalnika prijavljeni udeleženci v zgradbi, ki zahteva dajalnik.",
       "oznake": [
         "MOD-06",
@@ -1002,6 +1002,119 @@
         "dajalnik",
         "nedolocnik",
         "parafraza"
+      ]
+    },
+    {
+      "id": "C1-VEZ-018",
+      "kategorija": "vezljivost_in_predlogi",
+      "podkategorija": "navaditi_se_in_prilagoditi_se",
+      "raven": "B2",
+      "tip_naloge": "vnos",
+      "navodilo": "Prvo vrzel dopolnite s predlogom in ustrezno obliko zveze »nov urnik«, drugo pa z ustrezno obliko zveze »drugačne delovne razmere«. Odgovora ločite s podpičjem in presledkom.",
+      "kontekst": "Po selitvi se je Maja hitro navadila ___, vendar se je morala še prilagoditi ___.",
+      "moznosti": [],
+      "pravilni_odgovor": "na nov urnik; drugačnim delovnim razmeram",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Rečemo navaditi se na kaj, vendar prilagoditi se čemu. Primer: »Navadila sem se na zgodnje vstajanje in se prilagodila novemu urniku.«",
+      "tipicna_napaka": "Prenos zveze z na tudi na prilagoditi se: prilagoditi se na drugačne delovne razmere namesto prilagoditi se drugačnim delovnim razmeram.",
+      "oznake": [
+        "MOD-01",
+        "navaditi_se",
+        "prilagoditi_se",
+        "tozilnik",
+        "dajalnik"
+      ]
+    },
+    {
+      "id": "C1-ROD-017",
+      "kategorija": "rodilnik_zanikanja",
+      "podkategorija": "zanikani_glagol_in_predlog_brez",
+      "raven": "B2",
+      "tip_naloge": "popravek_napake",
+      "navodilo": "Popravite samo obliko zveze »veljavno člansko izkaznico« ob zanikanem glagolu. Preostanek povedi ohranite in vpišite celotno popravljeno poved.",
+      "kontekst": "Ker Nina ni imela veljavno člansko izkaznico, si brez pomoči knjižničarke ni mogla izposoditi knjige.",
+      "moznosti": [],
+      "pravilni_odgovor": "Ker Nina ni imela veljavne članske izkaznice, si brez pomoči knjižničarke ni mogla izposoditi knjige.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Ob ni imela uporabimo rodilnik: veljavne članske izkaznice. Primer: »Imam vozovnico, nimam pa osebne izkaznice.«",
+      "tipicna_napaka": "Ohranitev oblike iz trdilne povedi: imela je veljavno člansko izkaznico, vendar ni imela veljavne članske izkaznice.",
+      "oznake": [
+        "MOD-02",
+        "rodilnik_zanikanja",
+        "imeti",
+        "popravek"
+      ]
+    },
+    {
+      "id": "C1-DVO-004",
+      "kategorija": "dvojina",
+      "podkategorija": "zenska_dvojina_v_prihodnjiku",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite par oblik, ki se nanaša na dve ženski. Prva oblika sodi v prvo vrzel, druga pa v drugo.",
+      "kontekst": "Ko se ___ vrnili z izobraževanja, bosta sodelavki ___ novo delavnico.",
+      "moznosti": [
+        "bodo; pripravile",
+        "bosta; pripravila",
+        "bosta; pripravili",
+        "bo; pripravili"
+      ],
+      "pravilni_odgovor": "bosta; pripravili",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za dve ženski v prihodnosti uporabimo bosta in pripravili. Primer: »Sestri se bosta vrnili in pripravili večerjo.«",
+      "tipicna_napaka": "Raba množine bodo oziroma pripravile ali moške dvojinske oblike pripravila namesto ženske pripravili.",
+      "oznake": [
+        "MOD-05",
+        "dvojina",
+        "prihodnjik",
+        "zenski_spol"
+      ]
+    },
+    {
+      "id": "C1-SKL-003",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "pogojna_poved_z_brez",
+      "raven": "B2",
+      "tip_naloge": "parafraza",
+      "navodilo": "Začetni pogojni del povedi nadomestite z zvezo »brez« in ustrezno obliko besed »tvoja pomoč«. Začnite z »Brez«, nadaljujte z »naloge« in ohranite konec »ne bi dokončala pravočasno«. Vpišite celotno poved.",
+      "kontekst": "Če mi ne bi pomagal, naloge ne bi dokončala pravočasno.",
+      "moznosti": [],
+      "pravilni_odgovor": "Brez tvoje pomoči naloge ne bi dokončala pravočasno.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Z brez tvoje pomoči povemo, da je bila pomoč potrebna za uspeh. Primer: »Brez tvoje pomoči ne bi našla poti.«",
+      "tipicna_napaka": "Zapis brez tvoja pomoč ali brez tvojo pomoč namesto brez tvoje pomoči.",
+      "oznake": [
+        "MOD-06",
+        "pogoj",
+        "parafraza",
+        "brez",
+        "rodilnik"
+      ]
+    },
+    {
+      "id": "C1-VID-011",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "trajanje_brez_dosezenega_rezultata",
+      "raven": "B2",
+      "tip_naloge": "izbira",
+      "navodilo": "Izberite glagolsko obliko, ki opisuje potek iskanja v preteklosti in se ujema z nadaljevanjem povedi.",
+      "kontekst": "Eva je ves večer ___ izgubljeni ključ, vendar ga do odhoda ni našla.",
+      "moznosti": [
+        "našla",
+        "iskala",
+        "najde",
+        "iskati"
+      ],
+      "pravilni_odgovor": "iskala",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Iskala opisuje prizadevanje, našla pa uspešen rezultat, ki ga tukaj ni bilo. Primer: »Iskala sem očala, vendar jih nisem našla.«",
+      "tipicna_napaka": "Izbira našla kljub nadaljevanju ni našla ali vnos iskati namesto oblike iskala ob že zapisanem je.",
+      "oznake": [
+        "MOD-04",
+        "glagolski_vid",
+        "trajanje",
+        "rezultat",
+        "preteklik"
       ]
     }
   ]
