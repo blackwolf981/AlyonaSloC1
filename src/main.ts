@@ -1,6 +1,6 @@
 import './style.css';
 import { naloziNaloge } from './data';
-import type { Naloga, TipNaloge } from './types';
+import type { Naloga, Raven, TipNaloge } from './types';
 import { jePravilno, sprejemljiviOdgovori } from './preverjanje';
 import { preberiNapredek, shraniNapredek, pobrisiNapredek, type Napredek, type Rezultat } from './napredek';
 
@@ -43,6 +43,30 @@ let filter = 'vse';
 let tipFilter: 'vse' | TipNaloge = 'vse';
 let samoOdprte = false; // »Samo nerešene / napačne«; vsi trije filtri se kombinirajo
 let filtriOdprti = false; // zloženi filtri pod 1024 px; na namizju so v stranski letvi vedno vidni
+
+/* Raven (B2 / vse): krovni filter nad kategorijo, tipom in stanjem; velja za seznam in kviz.
+   Izbira se zapomni v brskalniku. */
+const KLJUC_RAVEN = 'aljona-c1:raven';
+type RavenFilter = 'vse' | Raven;
+let ravenFilter: RavenFilter = (() => {
+  try {
+    const v = localStorage.getItem(KLJUC_RAVEN);
+    return v === 'B2' || v === 'C1' ? v : 'vse';
+  } catch {
+    return 'vse';
+  }
+})();
+const vRavni = (n: Naloga) => ravenFilter === 'vse' || n.raven === ravenFilter;
+/** Vse naloge izbrane ravni: osnova za statistiko, števce in filtre. */
+const naRavni = () => naloge.filter(vRavni);
+
+/* UI besedila za izbiro ravni: nadomestna, za jezikovni pregled (Codex). */
+const BESEDILA_RAVEN = {
+  skupina: 'Raven nalog',
+  b2: 'B2 (jedro)',
+  vse: 'Vse ravni (B2+C1)',
+  nadnaslov: { vse: 'Raven B2–C1', B2: 'Raven B2', C1: 'Raven C1' } as Record<RavenFilter, string>,
+};
 
 /** Način »Osredotočena vaja«: ena naloga naenkrat, lastni rezultati (ločeni od seznama). */
 interface Kviz {
@@ -112,10 +136,11 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
 /* ---------- izbor nalog po filtrih ---------- */
 
 /** Naloge, ki ustrezajo vsem trem filtrom (seznam jih prikaže, kviz izbira med njimi). */
-const izbraneNaloge = () => naloge.filter((n) => vKategoriji(n) && vTipu(n) && (!samoOdprte || jeOdprta(n)));
+const izbraneNaloge = () => naRavni().filter((n) => vKategoriji(n) && vTipu(n) && (!samoOdprte || jeOdprta(n)));
 
 function opisIzbora(): string {
   const aktivni = [
+    ravenFilter !== 'vse' ? ravenFilter : '',
     filter !== 'vse' ? oznakaKategorije(filter) : '',
     tipFilter !== 'vse' ? TIPI[tipFilter] : '',
     samoOdprte ? 'samo nerešene' : '',
@@ -126,6 +151,8 @@ function opisIzbora(): string {
 /* ---------- izris: plošča na vrhu ---------- */
 
 function plosca(): string {
+  // Statistika, števci in seznam kategorij veljajo za izbrano raven (zato zakrije modulski `naloge`).
+  const naloge = naRavni();
   const resene = naloge.filter((n) => napredek[n.id]);
   const pravilne = resene.filter((n) => napredek[n.id].pravilno).length;
   const uspesnost = resene.length ? `${Math.round((pravilne / resene.length) * 100)} %` : '– %';
@@ -361,6 +388,7 @@ function kartica(n: Naloga): string {
     <article class="kartica ${razred}" id="naloga-${esc(n.id)}" data-id="${esc(n.id)}">
       <header class="flex flex-wrap items-center gap-2 text-xs">
         <span class="font-mono font-semibold text-[var(--muted)]">${esc(n.id)}</span>
+        <span class="znacka znacka-raven" title="Raven">${esc(n.raven)}</span>
         <span class="znacka znacka-kat">${esc(oznakaKategorije(n.kategorija))}</span>
         <span class="znacka znacka-tip">${esc(TIPI[n.tip_naloge] ?? n.tip_naloge)}</span>
         ${stanje ? `<span class="ml-auto">${stanje}</span>` : ''}
@@ -380,7 +408,7 @@ function kartica(n: Naloga): string {
 }
 
 function seznam(): string {
-  const izbor = naloge.filter((n) => vKategoriji(n) && vTipu(n));
+  const izbor = naRavni().filter((n) => vKategoriji(n) && vTipu(n));
   const vidne = samoOdprte ? izbor.filter(jeOdprta) : izbor;
   if (vidne.length) return vidne.map(kartica).join('');
   return samoOdprte && izbor.length
@@ -546,6 +574,19 @@ function preklopnik(): string {
     </div>`;
 }
 
+/** Izpostavljen izbirnik ravni (B2 / vse) v glavi; velja za seznam in kviz. */
+function ravenPreklop(): string {
+  const stB2 = naloge.filter((n) => n.raven === 'B2').length;
+  const gumb = (v: RavenFilter, oznaka: string, st: number) => `
+    <button type="button" class="preklop-gumb" data-akcija="raven" data-vrednost="${v}" aria-pressed="${ravenFilter === v}">
+      ${ravenFilter === v ? '<span aria-hidden="true">✓</span>' : ''}${esc(oznaka)} <span class="cip-st">${st}</span>
+    </button>`;
+  return `
+    <div id="raven-preklop" class="preklopnik" role="group" aria-label="${esc(BESEDILA_RAVEN.skupina)}">
+      ${gumb('B2', BESEDILA_RAVEN.b2, stB2)}${gumb('vse', BESEDILA_RAVEN.vse, naloge.length)}
+    </div>`;
+}
+
 /* ---------- osveževanje DOM ---------- */
 
 function izrisiPogled() {
@@ -553,6 +594,10 @@ function izrisiPogled() {
   if (!el) return;
   const pp = document.getElementById('preklopnik');
   if (pp) pp.outerHTML = preklopnik();
+  const rp = document.getElementById('raven-preklop');
+  if (rp) rp.outerHTML = ravenPreklop();
+  const nn = document.getElementById('nadnaslov');
+  if (nn) nn.textContent = BESEDILA_RAVEN.nadnaslov[ravenFilter];
   el.classList.toggle('postavitev-kviz', pogled === 'kviz');
   if (pogled === 'seznam') {
     el.innerHTML = `
@@ -733,6 +778,26 @@ app.addEventListener('click', (e) => {
       osveziSeznam();
       document.querySelector<HTMLElement>('[data-akcija="samo-odprte"]')?.focus();
       break;
+    case 'raven': {
+      const v = el.dataset.vrednost;
+      const nova: RavenFilter = v === 'B2' || v === 'C1' ? v : 'vse';
+      if (nova === ravenFilter) break;
+      ravenFilter = nova;
+      try {
+        localStorage.setItem(KLJUC_RAVEN, nova);
+      } catch {
+        /* izbira velja do osvežitve */
+      }
+      // izbrana kategorija morda na tej ravni nima nalog
+      if (filter !== 'vse' && !naRavni().some((n) => n.kategorija === filter)) filter = 'vse';
+      if (pogled === 'kviz') {
+        pospraviKviz();
+        zacniKviz(); // kviz se začne znova z nalogami nove ravni
+      }
+      izrisiPogled();
+      document.querySelector<HTMLElement>(`[data-akcija="raven"][aria-pressed="true"]`)?.focus();
+      break;
+    }
     case 'pogled': {
       const nov: Pogled = el.dataset.vrednost === 'kviz' ? 'kviz' : 'seznam';
       if (nov === pogled) break;
@@ -807,12 +872,12 @@ function lupina(vsebina: string): string {
   return `
     <header class="ovoj glava">
       <div class="glava-naslov min-w-0">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[var(--accent-text)]">Raven C1</p>
+        <p id="nadnaslov" class="text-sm font-semibold uppercase tracking-wide text-[var(--accent-text)]">${esc(BESEDILA_RAVEN.nadnaslov[ravenFilter])}</p>
         <h1 class="text-2xl font-bold sm:text-3xl lg:text-4xl">Aljonina spletna vadnica slovenščine</h1>
         <p class="mt-1 text-[var(--muted)]">Vezljivost, frazeologija, glagolski vid, dvojina in slog za napredne.</p>
       </div>
       <div class="glava-tema">${gumbTema()}</div>
-      <div class="glava-preklop">${preklopnik()}</div>
+      <div class="glava-preklop">${preklopnik()}${naloge.length ? ravenPreklop() : ''}</div>
     </header>
     ${vsebina}`;
 }

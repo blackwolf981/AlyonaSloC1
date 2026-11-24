@@ -101,11 +101,10 @@ body {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
   }
-  .glava-preklop { grid-column: 1 / -1; }
-  @media (min-width: 1024px) {
-    .glava { grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; }
-    .glava-preklop { grid-column: 2; grid-row: 1; }
-    .glava-tema { grid-column: 3; grid-row: 1; }
+  /* pod naslovom: način vadbe + raven; na telefonu drug pod drugim, širše drug ob drugem */
+  .glava-preklop { grid-column: 1 / -1; display: grid; gap: 0.5rem; }
+  @media (min-width: 640px) {
+    .glava-preklop { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   }
 
   /* --- preklopnik pogledov (segmentni gumb) --- */
@@ -417,6 +416,7 @@ body {
   }
   .znacka-kat { color: var(--accent-text); }
   .znacka-tip { color: var(--ok-text); }
+  .znacka-raven { font-family: ui-monospace, monospace; font-weight: 800; color: var(--text); border-style: dashed; }
   .znacka-ok { background: var(--ok); border-color: var(--ok); color: var(--on-ok); }
   .znacka-napaka { background: var(--napaka); border-color: var(--napaka); color: var(--on-napaka); }
 

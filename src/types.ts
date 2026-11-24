@@ -1,11 +1,14 @@
 /** Shema po NAVODILA.md → »Standardna shema za naloge.json«. */
 export type TipNaloge = 'izbira' | 'vnos' | 'popravek_napake' | 'parafraza';
 
+/** Raven po SEJO/CEFR. Filter in prikaz ravni temeljita izključno na tem polju, ne na predponi ID-ja. */
+export type Raven = 'B2' | 'C1';
+
 export interface Naloga {
   id: string;
   kategorija: string;
   podkategorija: string;
-  raven: string;
+  raven: Raven;
   tip_naloge: TipNaloge;
   navodilo: string;
   kontekst: string;
