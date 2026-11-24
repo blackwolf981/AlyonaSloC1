@@ -32,8 +32,9 @@ Ta dokument vsebuje stroga navodila za učitelja slovenščine (ChatGPT Codex) p
 
 ---
 
-## 3. Pravilo za razlage nalog ravni B2 (Pedagoška preprostost)
+## 3. Pravilo za razlage in tipične napake nalog ravni B2 (Pedagoška preprostost)
 * **Jedrnato in razumljivo:** Razlage za naloge ravni B2 morajo biti **kratke, jasne in v vsakdanji slovenščini** (1–2 kratka stavka).
-* **Brez težkega jezikoslovja:** Izogibati se je treba kopičenju zapletenih terminov (kot so *tožilniško jedro*, *rodilniško dopolnilo glagolnika*, *skladenjska valencevna struktura* ipd.).
-* **Praktični zgled:** Vsaka razlada naj vključuje kratek, vsakdanji zgled pravilne rabe, ki ga učenec lahko takoj dojame in uporabi v pogovoru.
+* **Brez težkega jezikoslovja:** Izogibati se je treba kopičenju zapletenih terminov (kot so *tožilniško jedro*, *rodilniško dopolnilo glagolnika* ipd.).
+* **Preproste tipične napake (`tipicna_napaka`):** Opozorila na tipične napake ne smejo biti akademska ali preveč zapletena. Pojasniti morajo jedro napake v preprostem jeziku, da jih učenec takoj razume in se jim izogne.
+* **Praktični zgled:** Vsaka razlada naj vključuje kratek, vsakdanji zgled pravilne rabe.
 
