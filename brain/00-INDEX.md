@@ -11,15 +11,20 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (Gemini, Cla
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 V teku (Faza 3 & 4: Prehod na raven B2 in optimizacija UX uspešno izvedena)
-* **Obseg nalog:** 63 / 110 nalog pripravljenih: 39 B2 in 24 C1; vse B2 razlage so kratke in vsebujejo praktični zgled.
+* **Status:** 🟢 V teku (Faza 3 & 4: Prehod na raven B2, poenostavitev razlag in razširitev baze uspešno zaključeni)
+* **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled.
 * **Tematski moduli:** MOD-01 do MOD-04 aktivni z B2/C1 filtri.
-* **Spletni vmesnik (Claude Code):** Implementiran namenski B2 filter v UI (commita ef53896 in baf5cc9).
+* **Spletni vmesnik (Claude Code):** Implementiran namenski B2 in C1 filter v UI.
 * **Lock datoteke:** Ni aktivnih lock datotek.
 
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — Codex (Razširitev baze in poenostavitev razlag)
+* **Narejeno:** Dodanih 44 novih B2 nalog; 27 razlag in 5 opozoril dodatno poenostavljenih; vseh 7 kategorij ima najmanj 15 nalog skupaj (skupno 112 nalog: 88 B2 / 24 C1).
+* **Spremenjene datoteke:** `naloge.json`, `.ai-tasks/2-codex.md`. Uspešen build in UTF-8 validacija; lokalni commit `cf02d36`.
+* **Naslednji korak:** Gemini posodobil `brain/00-INDEX.md` in izvedel `git push origin main` za objavo na GitHub Pages.
+
 ### [24. 11. 2026] — Codex (Poenostavitev B2 razlag)
 * **Narejeno:** Poenostavljenih vseh 34 obstoječih B2 razlag na 1–2 kratki povedi s praktičnim zgledom. Dodanih pet B2 nalog: C1-VEZ-018, C1-ROD-017, C1-DVO-004, C1-SKL-003 in C1-VID-011. Skupaj 63 nalog (39 B2 / 24 C1).
 * **Spremenjene datoteke:** `naloge.json`, `brain/00-INDEX.md` in lokalna `.ai-tasks/2-codex.md` z oznako `[OPRAVLJENO]`. Uspešni preverjanje UTF-8 brez BOM, sheme, ID-jev, vrzeli in odgovorov ter `npm run build`; obstoječe C1 naloge in vsa druga polja obstoječih B2 nalog so nespremenjeni.
