@@ -136,6 +136,11 @@ body {
   @media (max-width: 379px) {
     .preklop-gumb { padding-inline: 0.375rem; font-size: 0.875rem; }
   }
+  /* izbirnik ravni s tremi možnostmi: na telefonu se besedilo sme prelomiti v dve vrstici */
+  .preklopnik-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: 639px) {
+    .preklopnik-3 .preklop-gumb { white-space: normal; text-align: center; line-height: 1.2; padding-inline: 0.375rem; }
+  }
   @media (min-width: 1024px) {
     .preklop-gumb { min-height: 2.5rem; }
   }

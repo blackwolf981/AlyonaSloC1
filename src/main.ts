@@ -64,6 +64,7 @@ const naRavni = () => naloge.filter(vRavni);
 const BESEDILA_RAVEN = {
   skupina: 'Raven nalog',
   b2: 'B2 (jedro)',
+  c1: 'Samo C1',
   vse: 'Vse ravni (B2+C1)',
   nadnaslov: { vse: 'Raven B2–C1', B2: 'Raven B2', C1: 'Raven C1' } as Record<RavenFilter, string>,
 };
@@ -576,14 +577,14 @@ function preklopnik(): string {
 
 /** Izpostavljen izbirnik ravni (B2 / vse) v glavi; velja za seznam in kviz. */
 function ravenPreklop(): string {
-  const stB2 = naloge.filter((n) => n.raven === 'B2').length;
+  const st = (r: Raven) => naloge.filter((n) => n.raven === r).length;
   const gumb = (v: RavenFilter, oznaka: string, st: number) => `
     <button type="button" class="preklop-gumb" data-akcija="raven" data-vrednost="${v}" aria-pressed="${ravenFilter === v}">
       ${ravenFilter === v ? '<span aria-hidden="true">✓</span>' : ''}${esc(oznaka)} <span class="cip-st">${st}</span>
     </button>`;
   return `
-    <div id="raven-preklop" class="preklopnik" role="group" aria-label="${esc(BESEDILA_RAVEN.skupina)}">
-      ${gumb('B2', BESEDILA_RAVEN.b2, stB2)}${gumb('vse', BESEDILA_RAVEN.vse, naloge.length)}
+    <div id="raven-preklop" class="preklopnik preklopnik-3" role="group" aria-label="${esc(BESEDILA_RAVEN.skupina)}">
+      ${gumb('B2', BESEDILA_RAVEN.b2, st('B2'))}${gumb('C1', BESEDILA_RAVEN.c1, st('C1'))}${gumb('vse', BESEDILA_RAVEN.vse, naloge.length)}
     </div>`;
 }
 
