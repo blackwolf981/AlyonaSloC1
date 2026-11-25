@@ -20,6 +20,12 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — Codex (Kratka kontrola petih B2 nalog iz commita `045f848`)
+* **Narejeno:** Pregledanih natanko pet B2 nalog iz commita `045f848`. Novo navodilo in razlaga pri `C1-ROD-018`, novo navodilo pri `C1-VID-012`; `C1-VEZ-019`, `C1-DVO-005` in `C1-SKL-004` po pregledu brez popravkov. Skupaj 3 spremenjena besedilna polja; ID-ji, rešitve in metapodatki nespremenjeni.
+* **Spremenjene datoteke:** `naloge.json` (3 vrstice); lokalni commit `00311d2`, brez `git push`.
+* **Sanity check (DeepSeek):** git status čist, diff omejen na `C1-ROD-018` (`navodilo`, `slovnicna_razlaga`) in `C1-VID-012` (`navodilo`); shema OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, 0 manjkajočih polj, min 15/kategorijo); UTF-8 brez BOM; brez lock datotek; `npm run build` uspešen (131 ms, paket `index-DhED8cZy.js` nespremenjen).
+* **Opomba:** v novem navodilu `C1-ROD-018` zveza `sodi za` ni knjižna; predlog za naslednji vsebinski obhod je `sodi k` oziroma `dopolnjuje`. Vsebina naloge in rešitve sta pravilni.
+
 ### [25. 11. 2026] — DeepSeek (Objava na GitHub Pages)
 * **Narejeno:** Po izrecni potrditvi uporabnika izveden `git push origin main` (`8769961..63cecfa`, 8 commitov); GitHub Actions (`deploy.yml`) je objavil novo različico.
 * **Preverjeno na živo:** https://blackwolf981.github.io/AlyonaSloC1/ streže nov paket `./assets/index-DhED8cZy.js`; v njem so nizi »Ponastavi rezultate«, »Samo B2«, »Vse ravni (B2 in C1)« in »Ravni B2 in C1«, starega »Ponastavi izbor« ni več.
@@ -35,7 +41,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 * **Narejeno:** Pregledanih 49 novih B2 nalog (dopolnitev seznama s petimi nalogami iz dnevnika 24. 11. + FRA-011–015, VID-013–015, DVO-006–015, SKL-005–015, SLO-001–015); popravljenih 21 besedilnih polj pri 18 nalogah (`navodilo`, `slovnicna_razlaga`, `tipicna_napaka`), ID-ji, rešitve in metapodatki nespremenjeni. Pripravljeni predlogi novih UI besedil (izbirnik ravni, »Ponastavi rezultate (N)«, opisi, `aria-label`, potrditvena sporočila); v `src/` ni posegal.
 * **Spremenjene datoteke:** `naloge.json`, `.ai-tasks/2-codex.md`; lokalni commit `1911aed`, brez `git push`.
 * **Sanity check (DeepSeek):** git status/diff OK (18 nalog / 21 polj, samo dovoljena besedilna polja), shema `naloge.json` OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, 0 manjkajočih polj, min 15/kategorijo), brez lock datotek, `npm run build` uspešen.
-* **Odprto vprašanje:** v seznamu pregledanih nalog ni petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004); priporočena kratka dodatna kontrola. Naloga za Codexa je pripravljena v `.ai-tasks/2-codex.md` ([V TEKU], omejena natanko na teh pet nalog in na besedilna polja).
+* **Odprto vprašanje:** v seznamu pregledanih nalog ni petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004); priporočena kratka dodatna kontrola. Kratka kontrola izvedena 25. 11. 2026 (`00311d2`, glej novejši vnos zgoraj).
 
 ### [25. 11. 2026] — Claude Code (Pogojna vidnost gumba za ponastavitev)
 * **Narejeno:** Gumb »↺ Ponastavi nalogo« je viden le, kadar ima naloga rezultat, osnutek odgovora ali odprto razlago (tudi sproti med tipkanjem in v kvizu); dodan `aria-label` z ID-jem naloge.
@@ -84,4 +90,4 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ## 🎯 Naslednji logični korak
 1. Aljona preizkusi objavljeno različico na telefonu in namizju: izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo in prelom gumbov.
 2. Claude Code: gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
-3. V teku: kratka dodatna kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — naloga pripravljena v `.ai-tasks/2-codex.md` ([V TEKU]), čaka na Codexa.
+3. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; odprt le mikro-popravek zveze `sodi za` v navodilu ROD-018.

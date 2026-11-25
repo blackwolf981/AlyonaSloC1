@@ -90,7 +90,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 * **Codex (Vsebina & UI copy):**
   - Jezikovni pregled 49 novih B2 nalog: popravljenih 21 besedilnih polj pri 18 nalogah (`navodilo`, `slovnicna_razlaga`, `tipicna_napaka`); ID-ji, rešitve in metapodatki nespremenjeni; lokalni commit `1911aed` brez `git push`.
   - Pripravljeni predlogi UI besedil (izbirnik ravni, gumb »Ponastavi rezultate (N)«, opisi, `aria-label`, potrditvena sporočila) — v `src/` ni posegal.
-  - Odprto: v seznamu pregledanih ni petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004); priporočena kratka dodatna kontrola — naloga zanjo je pripravljena v `.ai-tasks/2-codex.md` ([V TEKU]).
+  - Rešeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`.
 * **DeepSeek (Orkestrator):**
   - Sanity check: 18 nalog / 21 polj, samo dovoljena besedilna polja; shema OK (112 nalog: 88 B2 / 24 C1, enolični ID-ji, min 15/kategorijo); brez lock datotek; `npm run build` uspešen.
   - Pripravljena naloga za Claude Code v `.ai-tasks/1-claude.md`: prenos potrjenih UI predlogov v `src/main.ts`.
@@ -99,6 +99,12 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 * **DeepSeek (Orkestrator):**
   - Sanity check #2: spremenjen samo `src/main.ts` (+18/−12; besedila in trije komentarji), shema `naloge.json` OK (112 nalog: 88 B2 / 24 C1, min 15/kategorijo), brez lock datotek, `npm run build` uspešen; v `index.html` in `src/style.css` ni ostankov starih nizov.
   - Objava: `git push origin main` (`8769961..63cecfa`, 8 commitov) → GitHub Actions deploy; na živo preverjeno, da stran streže nov paket `index-DhED8cZy.js` z novimi UI besedili.
+
+* **Codex (Kratka kontrola petih B2 nalog iz `045f848`):**
+  - Pregledanih natanko 5 nalog: novo navodilo in razlaga pri `C1-ROD-018`, novo navodilo pri `C1-VID-012`; `C1-VEZ-019`, `C1-DVO-005` in `C1-SKL-004` brez popravkov. 3 spremenjena besedilna polja; ID-ji, rešitve in metapodatki nespremenjeni; lokalni commit `00311d2` brez `git push`.
+* **DeepSeek (Orkestrator):**
+  - Sanity check: diff omejen na `navodilo` in `slovnicna_razlaga` pri ROD-018 ter `navodilo` pri VID-012; shema OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, min 15/kategorijo); UTF-8 brez BOM; brez lock datotek; `npm run build` uspešen.
+  - Opomba za naslednji vsebinski obhod: v navodilu ROD-018 zveza `sodi za` ni knjižna — predlog `sodi k` ali `dopolnjuje`.
 
 ### [23. 11. 2026]
 * **Codex (razvrstitev B2/C1):**

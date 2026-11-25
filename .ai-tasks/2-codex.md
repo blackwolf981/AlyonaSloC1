@@ -1,4 +1,12 @@
-# [V TEKU] Kratka kontrola petih novih B2 nalog iz commita 045f848 — 25. 11. 2026
+# [OPRAVLJENO] Kratka kontrola petih novih B2 nalog iz commita 045f848 — 25. 11. 2026
+
+## Izid
+
+* **Pregledanih:** natanko 5 nalog (`C1-VEZ-019`, `C1-ROD-018`, `C1-DVO-005`, `C1-VID-012`, `C1-SKL-004`).
+* **Spremenjeno:** `C1-ROD-018` — `navodilo` in `slovnicna_razlaga`; `C1-VID-012` — `navodilo`. `C1-VEZ-019`, `C1-DVO-005` in `C1-SKL-004` brez popravkov; ID-ji, rešitve in metapodatki nespremenjeni.
+* **Commit:** `00311d2`, samo `naloge.json`, brez `git push`.
+* **Sanity check (DeepSeek):** 3 spremenjena besedilna polja na 2 ID-jih, 112 nalog (88 B2 / 24 C1), 0 podvojenih ID-jev, 0 manjkajočih polj, min 15/kategorijo, UTF-8 brez BOM, brez lock datotek, `npm run build` uspešen.
+* **Odprto (mikro):** v novem navodilu `C1-ROD-018` zveza `sodi za` ni knjižna; predlog `sodi k` ali `dopolnjuje` ob naslednjem vsebinskem obhodu. Vsebina naloge in rešitve sta pravilni.
 
 # Navodila za Codex (.ai-tasks/2-codex.md)
 
