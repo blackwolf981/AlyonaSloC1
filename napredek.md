@@ -105,6 +105,8 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 * **DeepSeek (Orkestrator):**
   - Sanity check: diff omejen na `navodilo` in `slovnicna_razlaga` pri ROD-018 ter `navodilo` pri VID-012; shema OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, min 15/kategorijo); UTF-8 brez BOM; brez lock datotek; `npm run build` uspešen.
   - Mikro-popravek opravljen: v navodilu ROD-018 zveza `sodi za` zamenjana z `dopolnjuje` (commit `e941ff3`, 1 polje, sanity check ponovljen).
+* **DeepSeek (Orkestrator, objava):**
+  - Po potrditvi uporabnika `git push origin main` (`63cecfa..50313f6`, 6 commitov, fast-forward); živa stran po ~20 s streže `naloge.json`, ki je po SHA-256 enak lokalnemu `dist/naloge.json` (112 nalog, novi navodili ROD-018 in VID-012).
 
 ### [23. 11. 2026]
 * **Codex (razvrstitev B2/C1):**

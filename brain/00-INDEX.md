@@ -11,7 +11,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 Objavljeno (Faza 3 zaključena: 112 nalog, vseh 49 novih B2 jezikovno pregledanih; Faza 4: UI besedila objavljena na GitHub Pages 25. 11. 2026, čaka UX preizkus)
+* **Status:** 🟢 Objavljeno (Faza 3 zaključena: vseh 112 nalog jezikovno pregledanih, vključno s petimi iz commita `045f848`; Faza 4: UI besedila in vsebinski popravki objavljeni na GitHub Pages 25. 11. 2026, čaka UX preizkus)
 * **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 112 nalog je vsebinsko pregledanih.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
 * **Spletni vmesnik (Claude Code):** Izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora »↻ Ponastavi rezultate (N)« (tudi v kvizu) z novimi opisi in `aria-label`.
@@ -20,6 +20,11 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — DeepSeek (Objava popravkov ROD-018 in VID-012)
+* **Narejeno:** Po izrecni potrditvi uporabnika izveden `git push origin main` (`63cecfa..50313f6`, 6 commitov, fast-forward, brez force).
+* **Preverjeno na živo:** https://blackwolf981.github.io/AlyonaSloC1/naloge.json je po ~20 s enak lokalnemu `dist/naloge.json` (SHA-256 `98e357e8…`, 112 nalog); navodili `C1-ROD-018` (nova zveza `dopolnjuje »nimamo«`) in `C1-VID-012` (sklic na `besedo »nehali«`) sta novi, starih nizov ni več. Paket `index-DhED8cZy.js` in `index-DHzShGcO.css` nespremenjen, ker se JS/CSS nista spreminjala.
+* **Opomba:** prvi HTTP test je bil lažno pozitiven (beseda `dopolnjuje` se pojavi tudi v drugi nalogi), zato je bilo preverjanje ponovljeno z natančnima nizoma in s primerjavo SHA-256.
+
 ### [25. 11. 2026] — Codex (Kratka kontrola petih B2 nalog iz commita `045f848`)
 * **Narejeno:** Pregledanih natanko pet B2 nalog iz commita `045f848`. Novo navodilo in razlaga pri `C1-ROD-018`, novo navodilo pri `C1-VID-012`; `C1-VEZ-019`, `C1-DVO-005` in `C1-SKL-004` po pregledu brez popravkov. Skupaj 3 spremenjena besedilna polja; ID-ji, rešitve in metapodatki nespremenjeni.
 * **Spremenjene datoteke:** `naloge.json` (3 vrstice); lokalni commit `00311d2`, brez `git push`.
