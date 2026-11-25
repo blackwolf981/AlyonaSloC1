@@ -11,15 +11,21 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 V teku (Faza 3 zaključena: 112 nalog, vseh 49 novih B2 jezikovno pregledanih; Faza 4: prenos UI predlogov v kodo in UX testiranje)
+* **Status:** 🟢 V teku (Faza 3 zaključena: 112 nalog, vseh 49 novih B2 jezikovno pregledanih; Faza 4: UI besedila prenesena v kodo, čaka UX preizkus in objava)
 * **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 112 nalog je vsebinsko pregledanih.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
-* **Spletni vmesnik (Claude Code):** Filter ravni B2 / C1 / Vse ter ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora (tudi v kvizu).
+* **Spletni vmesnik (Claude Code):** Izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora »↻ Ponastavi rezultate (N)« (tudi v kvizu) z novimi opisi in `aria-label`.
 * **Lock datoteke:** Ni aktivnih lock datotek.
 
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — Claude Code (UI besedila po jezikovnem pregledu)
+* **Narejeno:** Preneseni potrjeni predlogi Codexa v `src/main.ts`: izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)« z nadnaslovom »Ravni B2 in C1«; gumb »↻ Ponastavi rezultate (N)« z novim `title` in `aria-label`; potrditveno sporočilo z obrazložitvijo filtra in dodatkom za kviz; nov `title` gumba »Ponastavi nalogo«. Posodobljeni tudi trije komentarji v kodi; logika in stanja nespremenjeni.
+* **Spremenjene datoteke:** `src/main.ts` (+18/−12); lokalni commit `7f047db`, brez `git push`.
+* **Sanity check (DeepSeek):** git status/diff OK (samo `src/main.ts`, samo besedilni nizi in komentarji), shema `naloge.json` OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, min 15/kategorijo), brez lock datotek, `npm run build` uspešen; v `index.html` in `src/style.css` ni ostankov starih nizov.
+* **Opomba:** v brskalniku ni testirano (Claude); najdaljši možen `aria-label` meri ~115 znakov, torej znotraj dogovorjene meje.
+
 ### [25. 11. 2026] — Codex (Jezikovni pregled 49 novih B2 nalog in predlogi UI besedil)
 * **Narejeno:** Pregledanih 49 novih B2 nalog (dopolnitev seznama s petimi nalogami iz dnevnika 24. 11. + FRA-011–015, VID-013–015, DVO-006–015, SKL-005–015, SLO-001–015); popravljenih 21 besedilnih polj pri 18 nalogah (`navodilo`, `slovnicna_razlaga`, `tipicna_napaka`), ID-ji, rešitve in metapodatki nespremenjeni. Pripravljeni predlogi novih UI besedil (izbirnik ravni, »Ponastavi rezultate (N)«, opisi, `aria-label`, potrditvena sporočila); v `src/` ni posegal.
 * **Spremenjene datoteke:** `naloge.json`, `.ai-tasks/2-codex.md`; lokalni commit `1911aed`, brez `git push`.
@@ -71,7 +77,6 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 🎯 Naslednji logični korak
-1. Claude Code prenese potrjene UI predloge v `src/main.ts` (naloga je v `.ai-tasks/1-claude.md`).
-2. DeepSeek izvede sanity check #2 (samo `src/`, brez lock datotek, `npm run build`).
-3. Aljona preizkusi ponastavitev naloge in izbora na telefonu.
-4. Po izrecni potrditvi uporabnika izvesti `git push origin main` za objavo na GitHub Pages.
+1. Aljona preizkusi vmesnik v brskalniku in na telefonu: izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo in prelom gumbov.
+2. Po izrecni potrditvi uporabnika izvesti `git push origin main` (sproži `deploy.yml` → GitHub Pages).
+3. Odprto: odločitev o kratki dodatni kontroli petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004).

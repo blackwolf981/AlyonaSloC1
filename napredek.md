@@ -13,7 +13,7 @@
 | **Nalog v bazi B2–C1** | `112 / 110` (88 B2, 24 C1) | `≥ 110` |
 | **Vsebinsko potrjenih nalog** | `112 / 112` (88 B2, 24 C1; 49 novih B2 pregledanih 25. 11. 2026) | `112 / 112` |
 | **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 15 nalog ✅) | `7 / 7` |
-| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora (pogojna vidnost) | Delujoča interaktivna aplikacija |
+| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora (pogojna vidnost) + prenovljena UI besedila | Delujoča interaktivna aplikacija |
 
 ---
 
@@ -94,6 +94,10 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 * **DeepSeek (Orkestrator):**
   - Sanity check: 18 nalog / 21 polj, samo dovoljena besedilna polja; shema OK (112 nalog: 88 B2 / 24 C1, enolični ID-ji, min 15/kategorijo); brez lock datotek; `npm run build` uspešen.
   - Pripravljena naloga za Claude Code v `.ai-tasks/1-claude.md`: prenos potrjenih UI predlogov v `src/main.ts`.
+* **Claude Code (UI besedila):**
+  - Prenesena potrjena Codexova besedila v `src/main.ts`: »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, nadnaslov »Ravni B2 in C1«, gumb »↻ Ponastavi rezultate (N)« z novim `title` in `aria-label`, potrditveno sporočilo z dodatkom za kviz, nov `title` gumba »Ponastavi nalogo«; logika nespremenjena; lokalni commit `7f047db` brez `git push`.
+* **DeepSeek (Orkestrator):**
+  - Sanity check #2: spremenjen samo `src/main.ts` (+18/−12; besedila in trije komentarji), shema `naloge.json` OK (112 nalog: 88 B2 / 24 C1, min 15/kategorijo), brez lock datotek, `npm run build` uspešen; v `index.html` in `src/style.css` ni ostankov starih nizov.
 
 ### [23. 11. 2026]
 * **Codex (razvrstitev B2/C1):**
@@ -124,8 +128,8 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 🔜 Naslednji delovni sklop
-1. **Claude Code (UI besedila):**
-   - Prenos potrjenih Codexovih predlogov v `src/main.ts`: izbirnik ravni (»Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«), »Ponastavi rezultate (N)«, opisi, `aria-label` in potrditvena sporočila.
+1. **Preizkus v brskalniku (Aljona / uporabnik):**
+   - Izbirnik ravni, oba gumba za ponastavitev in potrditveno sporočilo (tudi v kvizu) na namizju in telefonu; lokalni predogled objave z `npm run preview`.
 2. **Claude Code (Pika na i):**
    - Gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
 3. **Aljonin preizkus v živo:**
