@@ -1,6 +1,61 @@
-# [OPRAVLJENO] Jezikovni pregled 49 novih B2 nalog — 25. 11. 2026
+# [V TEKU] Kratka kontrola petih novih B2 nalog iz commita 045f848 — 25. 11. 2026
 
-## Obseg in rezultat
+# Navodila za Codex (.ai-tasks/2-codex.md)
+
+## 🎯 Namen
+
+Pregled 49 novih B2 nalog (commit `1911aed`) je zajel vse nove naloge razen petih, ki so bile v bazo dodane že v commitu `045f848`. Ta naloga zapira to vrzel: jezikovni in pedagoški pregled **natanko teh petih nalog**. Obseg je namerno majhen — ne odpiraj drugih nalog in ne prinašaj novih vsebin.
+
+## 📋 Obseg: natanko 5 nalog
+
+| ID | Kategorija | Tip | Na kaj bodi pozoren |
+| :--- | :--- | :--- | :--- |
+| `C1-VEZ-019` | vezljivost_in_predlogi | vnos (2 vzreli) | dajalnik ob `zaupati` in tožilnik ob `zanesti se na`; navodilo zahteva »predlog + ustrezno obliko zveze«, odgovor pa mora ostati v obliki `prva; druga`; preveri, ali učenca zavaja, da je iz oblik `zaupala`/`zanesla` razvidno žensko obliko `vodje`, ki pa v navodilu ni omenjena |
+| `C1-ROD-018` | rodilnik_zanikanja | izbira | rodilnik ob `nimamo` proti tožilniku ob `pozabiti na`; navodilo »Pazite na razliko med česa nimamo in na kaj ne smemo pozabiti« je nerodno — predlagaj naravnejšo ubeseditev, ki pa ne izda odgovora; v `slovnicna_razlaga` zveza »Pri nimamo se podatki spremenijo v podatkov« potrebuje narekovaje ali drugačno ubeseditev |
+| `C1-DVO-005` | dvojina | popravek_napake | `jih` → `ju` pri natanko dveh osebah; preveri, da navodilo res zahteva celotno poved in da se druge besede ne spreminjajo, ter da se `povabil` ob `ju` ujema |
+| `C1-VID-012` | glagolski_vid | vnos | `nehali` + nedovršnik `pošiljati` (ne `poslati`); preveri, ali je sklicevanje na »zvezo nehali so« dovolj jasno glede na besedni red v kontekstu (`so jim iz podjetja nehali`) |
+| `C1-SKL-004` | skladnja_in_slog | parafraza | `kljub` + dajalnik (`slabemu vremenu`), brez vejice za uvodno zvezo; preveri, ali navodilo dovolj natančno pove, kaj ostane nespremenjeno, in ali je odgovor mogoče sestaviti samo na en način |
+
+## ✅ Kaj lahko spreminjaš
+
+Samo besedilna polja: `navodilo`, `kontekst`, `moznosti`, `pravilni_odgovor`, `alternativni_odgovori`, `slovnicna_razlaga`, `tipicna_napaka`.
+
+Upoštevaj `brain/02-SLOVENSCINA.md`: B2 razlage so 1–2 kratki povedi v vsakdanjem jeziku, brez težkih jezikoslovnih terminov, s kratkim praktičnim zgledom; brez nepotrebnega ponavljanja. Pravilni odgovor mora ostati vsebinsko enak (isti pomen, ista zahtevana oblika), tudi če ga prepišeš.
+
+## 🚫 Česa ne smeš spreminjati
+
+* Zaklenjena polja: `id`, `raven`, `kategorija`, `podkategorija`, `tip_naloge`, `oznake`. Če opaziš neskladje (npr. oznaka modula), ga samo opiši v poročilu.
+* Ne posegaj v druge naloge, v `src/`, v `brain/` ali v `napredek.md`.
+* Če katera od petih nalog ne potrebuje popravka, je to veljaven izid — napiši »brez popravkov« in pojasni zakaj.
+* Znano in namerno izven obsega: `C1-FRA-009` in `C1-FRA-010` (tip `izbira`) nimata vrzeli `___`. Ne popravljaj ju; lahko ju le omeniš v feedbacku.
+
+## 🧪 Preverjanje in zaključek
+
+1. Veljaven JSON in UTF-8 brez BOM. Pri tipu `izbira` ostanejo štiri `moznosti` in `pravilni_odgovor` mora biti ena od njih; pri `vnos` naj bo število odgovorov enako številu vrzeli (ločilo `; `), `kontekst` pa vsebuje vsaj tri podčrtaje.
+2. `npm run build` (TypeScript + Vite).
+3. `git add naloge.json .ai-tasks/2-codex.md` in `git commit -m "[Codex]: Kratka kontrola petih novih B2 nalog iz commita 045f848"` — brez `git push`.
+4. Lock: pred delom ustvari `codexprevajam.lock`, ob koncu ga obvezno izbriši.
+
+## 📤 Obvezni Feedback
+
+Na koncu odgovora en sam blok z oznako `text`:
+
+```text
+[Feedback za Cline]
+- Narejeno: [kaj si pregledal in katere spremembe si vnesel, po ID-jih]
+- Spremenjene datoteke: [naloge.json / brez sprememb]
+- Stanje lock: ni aktivnih lock datotek (lock izbrisan)
+- Opozorila / Vprašanja: [brez / opažanja izven obsega]
+```
+
+---
+
+
+# 🗄️ Arhiv prejšnjih predaj
+
+## [OPRAVLJENO] 25. 11. 2026 — Jezikovni pregled 49 novih B2 nalog in predlogi UI besedil
+
+### Obseg in rezultat
 
 Prejšnja lokalna predaja je vsebovala seznam 44 dodatkov, ne novega seznama 49 nalog. Obseg je zato dopolnjen s petimi nalogami iz zapisa z dne 24. 11. 2026 v brain/00-INDEX.md. Pregledanih je natanko 49 nalog, vsi ID-ji imajo predpono `C1-`:
 
@@ -36,23 +91,11 @@ Uspešno: primerjava s HEAD potrjuje omejitev sprememb na navedene naloge in bes
 
 ---
 
-## Arhiv prejšnje predaje
+### Arhiv prejšnje predaje
 
 [OPRAVLJENO] 25. 11. 2026 — Pregledanih vseh 44 obstoječih B2 razlag in opozoril; dodatno poenostavljenih 27 razlag ter izbrana opozorila. Dodanih 44 novih B2 nalog: FRA-011–015, VID-013–015, DVO-006–015, SKL-005–015 in SLO-001–015 (vsi ID-ji s predpono C1-). Skupaj 112 nalog: 88 B2 / 24 C1. Vseh sedem projektnih kategorij ima vsaj 15 nalog skupaj: vezljivost 19, rodilnik 18, preostalih pet po 15. Vejice in odvisniki so vključeni v skladnjo, register in besedotvorje v slog. Preverjeni UTF-8 brez BOM, shema, ID-ji, vrzeli, rešitve in build; C1 naloge ohranjene. Brez git push.
 
-# Navodila za Codex (.ai-tasks/2-codex.md)
-
-## 🎯 Glavni cilj za Codex:
-1. **Temeljita poenostavitev B2 razlag in tipičnih napak v `naloge.json`:**
-   - Preglej vse obstoječe B2 naloge ter dodatno poenostavi `slovnicna_razlaga` in `tipicna_napaka` v popolnoma naraven, domač in vsakdanji jezik.
-   - Odstrani vso suhoparno slovnično terminologijo, kadar ni nujno potrebna, in prepreči nepotrebno ponavljanje besedila.
-2. **Razširitev nabora nalog (vsaj 15 nalog na kategorijo):**
-   - Preglej število nalog po kategorijah in dopolni manjše kategorije (npr. dvojina, skladnja, vejice, odvisniki, glagolski načini, besedotvorje in register), da bo **vsaka kategorija štela najmanj 15 nalog**.
-3. **Validacija in lokalni commit:**
-   - Preveri veljavnost JSON, UTF-8 in zaženi `npm run build`.
-   - Naredi lokalni `git add naloge.json` in `git commit -m "[Codex]: Dodatno poenostavljene B2 razlage in razširitev baze na vsaj 15 nalog na kategorijo"` (brez `git push`).
-4. **Pravila zaklepanja:**
-   - Pred delom preveri in ustvari `codexprevajam.lock`, ob zaključku pa jo obvezno izbriši.
+_Starejša navodila (poenostavitev B2 razlag in razširitev baze) so izpolnjena in nadomeščena; odstranjena ob pripravi naloge 25. 11. 2026._
 
 
 

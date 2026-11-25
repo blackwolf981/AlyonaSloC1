@@ -90,7 +90,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 * **Codex (Vsebina & UI copy):**
   - Jezikovni pregled 49 novih B2 nalog: popravljenih 21 besedilnih polj pri 18 nalogah (`navodilo`, `slovnicna_razlaga`, `tipicna_napaka`); ID-ji, rešitve in metapodatki nespremenjeni; lokalni commit `1911aed` brez `git push`.
   - Pripravljeni predlogi UI besedil (izbirnik ravni, gumb »Ponastavi rezultate (N)«, opisi, `aria-label`, potrditvena sporočila) — v `src/` ni posegal.
-  - Odprto: v seznamu pregledanih ni petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004); priporočena kratka dodatna kontrola.
+  - Odprto: v seznamu pregledanih ni petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004); priporočena kratka dodatna kontrola — naloga zanjo je pripravljena v `.ai-tasks/2-codex.md` ([V TEKU]).
 * **DeepSeek (Orkestrator):**
   - Sanity check: 18 nalog / 21 polj, samo dovoljena besedilna polja; shema OK (112 nalog: 88 B2 / 24 C1, enolični ID-ji, min 15/kategorijo); brez lock datotek; `npm run build` uspešen.
   - Pripravljena naloga za Claude Code v `.ai-tasks/1-claude.md`: prenos potrjenih UI predlogov v `src/main.ts`.
