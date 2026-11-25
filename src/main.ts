@@ -63,10 +63,10 @@ const naRavni = () => naloge.filter(vRavni);
 /* UI besedila za izbiro ravni: nadomestna, za jezikovni pregled (Codex). */
 const BESEDILA_RAVEN = {
   skupina: 'Raven nalog',
-  b2: 'B2 (jedro)',
+  b2: 'Samo B2',
   c1: 'Samo C1',
-  vse: 'Vse ravni (B2+C1)',
-  nadnaslov: { vse: 'Raven B2–C1', B2: 'Raven B2', C1: 'Raven C1' } as Record<RavenFilter, string>,
+  vse: 'Vse ravni (B2 in C1)',
+  nadnaslov: { vse: 'Ravni B2 in C1', B2: 'Raven B2', C1: 'Raven C1' } as Record<RavenFilter, string>,
 };
 
 /** Način »Osredotočena vaja«: ena naloga naenkrat, lastni rezultati (ločeni od seznama). */
@@ -140,7 +140,7 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
 
 /** Naloge, ki ustrezajo vsem trem filtrom (seznam jih prikaže, kviz izbira med njimi). */
 const izbraneNaloge = () => naRavni().filter((n) => vKategoriji(n) && vTipu(n) && (!samoOdprte || jeOdprta(n)));
-/** Izbor raven + kategorija + tip, NE glede na stikalo »samo nerešene« (za »Ponastavi izbor«). */
+/** Izbor raven + kategorija + tip, NE glede na stikalo »samo nerešene« (za »Ponastavi rezultate«). */
 const izborBrezStanja = () => naRavni().filter((n) => vKategoriji(n) && vTipu(n));
 
 function opisIzbora(zStanjem = true): string {
@@ -153,15 +153,17 @@ function opisIzbora(zStanjem = true): string {
   return aktivni.length ? aktivni.join(' · ') : 'vse naloge';
 }
 
-/** »Ponastavi izbor (N)«: N = število nalog z rezultatom v izboru raven + kategorija + tip.
+/** »Ponastavi rezultate (N)«: N = število nalog z rezultatom v izboru raven + kategorija + tip.
  *  Isti gumb je v plošči (seznam) in pod nalogo v kvizu. */
 function gumbPonastaviIzbor(): string {
   const st = izborBrezStanja().filter((n) => napredek[n.id]).length;
-  const opis = `Pobriše rezultate za izbor: ${opisIzbora(false)}`;
+  const izbor = opisIzbora(false);
+  const opis = `Izbriše shranjene rezultate nalog v izboru: ${izbor}. Filter »samo nerešene« pri tem ne velja.`;
+  const dostopno = `Ponastavi rezultate. Število nalog s shranjenim rezultatom: ${st}. Izbor: ${izbor}.`;
   return `
     <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="ponastavi-izbor"
-            title="${esc(opis)}" aria-label="Ponastavi izbor (${st}). ${esc(opis)}" ${st ? '' : 'disabled'}>
-      <span aria-hidden="true">↻</span> Ponastavi izbor (${st})
+            title="${esc(opis)}" aria-label="${esc(dostopno)}" ${st ? '' : 'disabled'}>
+      <span aria-hidden="true">↻</span> Ponastavi rezultate (${st})
     </button>`;
 }
 
@@ -417,7 +419,7 @@ function kartica(n: Naloga): string {
           <span aria-hidden="true">💡</span> ${razlagaOdprta ? 'Skrij razlago' : 'Prikaži razlago'}
         </button>
         <button type="button" class="gumb gumb-tih gumb-mali ml-auto self-center" data-akcija="ponastavi-nalogo"
-                title="Pobriše odgovor, rezultat in razlago te naloge" aria-label="Ponastavi nalogo ${esc(n.id)}"
+                title="Izbriše odgovor in rezultat ter zapre razlago te naloge." aria-label="Ponastavi nalogo ${esc(n.id)}"
                 ${imaStanje(n) ? '' : 'hidden'}>
           <span aria-hidden="true">↺</span> Ponastavi nalogo
         </button>
@@ -638,7 +640,7 @@ function osveziKvizGlavo() {
   const el = document.getElementById('kviz-glava');
   if (el && kviz) el.innerHTML = kvizGlavaVsebina(kviz);
   const orodja = document.getElementById('kviz-orodja');
-  if (orodja) orodja.innerHTML = kvizOrodja(); // posodobi N v »Ponastavi izbor (N)«
+  if (orodja) orodja.innerHTML = kvizOrodja(); // posodobi N v »Ponastavi rezultate (N)«
 }
 
 /** Po menjavi naloge: vrh vsebine v pogled, fokus na smiseln element.
@@ -757,12 +759,16 @@ function ponastaviNalogo(n: Naloga) {
   osveziPlosco();
 }
 
-/** »Ponastavi izbor (N)«: rezultati za raven + kategorijo + tip (ne glede na »samo nerešene«).
+/** »Ponastavi rezultate (N)«: rezultati za raven + kategorijo + tip (ne glede na »samo nerešene«).
  *  V kvizu se kviz z istimi nalogami začne od začetka. */
 function ponastaviIzbor() {
   const izbor = izborBrezStanja().filter((n) => napredek[n.id]);
   if (!izbor.length) return;
-  if (!confirm(`Res želite pobrisati rezultate ${izbor.length} nalog v izboru »${opisIzbora(false)}«?`)) return;
+  const sporocilo =
+    `Želite izbrisati shranjene rezultate za izbor »${opisIzbora(false)}«? ` +
+    `Število nalog s shranjenim rezultatom: ${izbor.length}. Filter »samo nerešene« pri tem ne velja.` +
+    (pogled === 'kviz' && kviz ? ' Trenutni kviz se bo začel znova z istimi nalogami.' : '');
+  if (!confirm(sporocilo)) return;
   for (const n of izbor) {
     delete napredek[n.id];
     osnutki.delete(n.id);
