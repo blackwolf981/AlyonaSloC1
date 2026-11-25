@@ -13,7 +13,7 @@
 | **Nalog v bazi B2–C1** | `112 / 110` (88 B2, 24 C1) | `≥ 110` |
 | **Vsebinsko potrjenih nalog** | `63 / 112` (39 B2, 24 C1; 49 novih B2 nalog čaka na jezikovni pregled) | `112 / 112` |
 | **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 15 nalog ✅) | `7 / 7` |
-| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora | Delujoča interaktivna aplikacija |
+| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora (pogojna vidnost) | Delujoča interaktivna aplikacija |
 
 ---
 
@@ -82,6 +82,8 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
   - Dodan gumb »↺ Ponastavi nalogo« na vsako kartico: pobriše rezultat, vpisan odgovor in odprto razlago; v kvizu izprazni tudi segment na traku.
   - Gumb »Ponastavi« zamenjan z »↻ Ponastavi izbor (N)«: pobriše rezultate samo za trenutni izbor raven + kategorija + tip (stikalo »samo nerešene« ne vpliva), dosegljiv tudi v kvizu.
   - Uspešen `npm run build`, testirano v Chromu (seznam in kviz); lokalni commit `e94bf18` brez `git push`.
+  - Gumb »↺ Ponastavi nalogo« je viden le ob rezultatu, osnutku ali odprti razlagi (sproti med tipkanjem, tudi v kvizu) in ima `aria-label` z ID-jem naloge; commit `438da21`, `npm run build` uspešen.
+  - Sanity check orkestratorja (DeepSeek): spremenjen samo `src/main.ts`, shema `naloge.json` OK, brez lock datotek, build uspešen; 36 px na namizju je obstoječa velikost `.gumb-mali`, na telefonu ≥ 44 px.
 * **DeepSeek (Orkestrator):**
   - Vzpostavljena enakopravna vloga orkestratorja ob Geminiju (model routing, oznaka `[DeepSeek]`) in obvezni sanity check po vsakem delu Claude Code ali Codexa.
   - Usklajeni `.clinerules`, `CLAUDE.md`, `AGENTS.md`, `NAVODILA.md`, `brain/00-INDEX.md`, `napredek.md` in `.gitignore`; dashboard osvežen na 112 nalog (88 B2 / 24 C1).

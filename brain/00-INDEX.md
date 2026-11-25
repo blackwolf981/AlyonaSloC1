@@ -14,12 +14,17 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 * **Status:** 🟢 V teku (Faza 3: baza 112 nalog; Faza 4: jezikovni pregled 49 novih B2 nalog, UX in uporabniško testiranje)
 * **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
-* **Spletni vmesnik (Claude Code):** Filter ravni B2 / C1 / Vse ter ločena gumba za ponastavitev posamezne naloge in trenutnega izbora (tudi v kvizu).
+* **Spletni vmesnik (Claude Code):** Filter ravni B2 / C1 / Vse ter ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora (tudi v kvizu).
 * **Lock datoteke:** Ni aktivnih lock datotek.
 
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — Claude Code (Pogojna vidnost gumba za ponastavitev)
+* **Narejeno:** Gumb »↺ Ponastavi nalogo« je viden le, kadar ima naloga rezultat, osnutek odgovora ali odprto razlago (tudi sproti med tipkanjem in v kvizu); dodan `aria-label` z ID-jem naloge.
+* **Spremenjene datoteke:** `src/main.ts` (+7/−1); lokalni commit `438da21`, brez `git push`.
+* **Sanity check (DeepSeek):** git status/diff OK (samo `src/main.ts`), shema `naloge.json` OK (112 nalog, 0 podvojenih ID-jev, min 15/kategorijo), brez lock datotek, `npm run build` uspešen.
+
 ### [25. 11. 2026] — DeepSeek (Orkestrator: pravila, sanity check, dokumentacija)
 * **Narejeno:** Enakopravna vloga orkestratorja DeepSeek ob Geminiju (model routing `deepseek-v4-flash` privzeto / `deepseek-v4-pro` za zahtevnejše odločitve, oznaka `[DeepSeek]`) in obvezni sanity check po vsakem delu Claude Code ali Codexa (git status/diff, shema `naloge.json`, lock datoteke, build).
 * **Spremenjene datoteke:** `.clinerules`, `CLAUDE.md`, `AGENTS.md`, `brain/00-INDEX.md`, `NAVODILA.md`, `napredek.md`, `.gitignore`. Lokalni commit brez `git push`.
