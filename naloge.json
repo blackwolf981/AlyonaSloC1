@@ -1144,7 +1144,7 @@
       "podkategorija": "neposredni_predmet_in_predlog_na",
       "raven": "B2",
       "tip_naloge": "izbira",
-      "navodilo": "Izberite par oblik za obe vrzeli. Pazite na razliko med česa nimamo in na kaj ne smemo pozabiti.",
+      "navodilo": "Izberite par oblik, ki pravilno dopolni poved. Prva oblika sodi za »nimamo«, druga pa za »ne smemo pozabiti na«.",
       "kontekst": "Za dokončno odločitev še nimamo ___, vendar ne smemo pozabiti na ___.",
       "moznosti": [
         "vseh podatkov; dogovorjeni rok",
@@ -1154,7 +1154,7 @@
       ],
       "pravilni_odgovor": "vseh podatkov; dogovorjeni rok",
       "alternativni_odgovori": [],
-      "slovnicna_razlaga": "Pri nimamo se podatki spremenijo v podatkov, zveza na dogovorjeni rok pa ostane enaka. Primer: »Nimam vozovnice, vendar ne smem pozabiti na odhod.«",
+      "slovnicna_razlaga": "Ob zanikanju rečemo »nimamo vseh podatkov«, zveza s predlogom »na« pa ostane enaka kot brez zanikanja. Primer: »Nimam vozovnice, vendar ne smem pozabiti na odhod.«",
       "tipicna_napaka": "Ne spreminjajte obeh zvez enako: nimamo vseh podatkov, vendar ne smemo pozabiti na dogovorjeni rok.",
       "oznake": [
         "MOD-02",
@@ -1189,7 +1189,7 @@
       "podkategorija": "prenehanje_dejavnosti",
       "raven": "B2",
       "tip_naloge": "vnos",
-      "navodilo": "Iz para »pošiljati / poslati« izberite obliko, ki ustreza zvezi nehali so. Vpišite samo manjkajočo besedo.",
+      "navodilo": "Iz para »pošiljati / poslati« izberite glagol, ki ustreza besedi »nehali« v povedi. Vpišite samo manjkajočo besedo.",
       "kontekst": "Ko so uporabniki preklicali naročnino, so jim iz podjetja nehali ___ tedenska obvestila.",
       "moznosti": [],
       "pravilni_odgovor": "pošiljati",
