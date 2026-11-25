@@ -11,8 +11,8 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 V teku (Faza 3: baza 112 nalog; Faza 4: jezikovni pregled 49 novih B2 nalog, UX in uporabniško testiranje)
-* **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled.
+* **Status:** 🟢 V teku (Faza 3 zaključena: 112 nalog, vseh 49 novih B2 jezikovno pregledanih; Faza 4: prenos UI predlogov v kodo in UX testiranje)
+* **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 112 nalog je vsebinsko pregledanih.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
 * **Spletni vmesnik (Claude Code):** Filter ravni B2 / C1 / Vse ter ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora (tudi v kvizu).
 * **Lock datoteke:** Ni aktivnih lock datotek.
@@ -20,6 +20,12 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — Codex (Jezikovni pregled 49 novih B2 nalog in predlogi UI besedil)
+* **Narejeno:** Pregledanih 49 novih B2 nalog (dopolnitev seznama s petimi nalogami iz dnevnika 24. 11. + FRA-011–015, VID-013–015, DVO-006–015, SKL-005–015, SLO-001–015); popravljenih 21 besedilnih polj pri 18 nalogah (`navodilo`, `slovnicna_razlaga`, `tipicna_napaka`), ID-ji, rešitve in metapodatki nespremenjeni. Pripravljeni predlogi novih UI besedil (izbirnik ravni, »Ponastavi rezultate (N)«, opisi, `aria-label`, potrditvena sporočila); v `src/` ni posegal.
+* **Spremenjene datoteke:** `naloge.json`, `.ai-tasks/2-codex.md`; lokalni commit `1911aed`, brez `git push`.
+* **Sanity check (DeepSeek):** git status/diff OK (18 nalog / 21 polj, samo dovoljena besedilna polja), shema `naloge.json` OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, 0 manjkajočih polj, min 15/kategorijo), brez lock datotek, `npm run build` uspešen.
+* **Odprto vprašanje:** v seznamu pregledanih nalog ni petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004); priporočena kratka dodatna kontrola.
+
 ### [25. 11. 2026] — Claude Code (Pogojna vidnost gumba za ponastavitev)
 * **Narejeno:** Gumb »↺ Ponastavi nalogo« je viden le, kadar ima naloga rezultat, osnutek odgovora ali odprto razlago (tudi sproti med tipkanjem in v kvizu); dodan `aria-label` z ID-jem naloge.
 * **Spremenjene datoteke:** `src/main.ts` (+7/−1); lokalni commit `438da21`, brez `git push`.
@@ -65,6 +71,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 🎯 Naslednji logični korak
-1. Po potrditvi uporabnika izvesti `git push origin main` za objavo novih gumbov na GitHub Pages.
-2. Codex naj pregleda UI copy novih gumbov (»Ponastavi nalogo«, »Ponastavi izbor (N)« ter potrditvena besedila).
-3. Aljona preizkusi ponastavitev posamezne naloge in izbora na telefonu.
+1. Claude Code prenese potrjene UI predloge v `src/main.ts` (naloga je v `.ai-tasks/1-claude.md`).
+2. DeepSeek izvede sanity check #2 (samo `src/`, brez lock datotek, `npm run build`).
+3. Aljona preizkusi ponastavitev naloge in izbora na telefonu.
+4. Po izrecni potrditvi uporabnika izvesti `git push origin main` za objavo na GitHub Pages.

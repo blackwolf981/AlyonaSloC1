@@ -11,7 +11,7 @@
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
 | **Nalog v bazi B2–C1** | `112 / 110` (88 B2, 24 C1) | `≥ 110` |
-| **Vsebinsko potrjenih nalog** | `63 / 112` (39 B2, 24 C1; 49 novih B2 nalog čaka na jezikovni pregled) | `112 / 112` |
+| **Vsebinsko potrjenih nalog** | `112 / 112` (88 B2, 24 C1; 49 novih B2 pregledanih 25. 11. 2026) | `112 / 112` |
 | **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 15 nalog ✅) | `7 / 7` |
 | **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora (pogojna vidnost) | Delujoča interaktivna aplikacija |
 
@@ -46,7 +46,7 @@
 - [x] Modul 5: Dvojina in zahtevna ujemanja (15 / 15 nalog)
 - [x] Modul 6: Polstavčne strukture in skladnja (15 / 15 nalog)
 - [x] Modul 7: Slogovni registri in sopomenke (15 / 15 nalog)
-- [ ] Jezikovni pregled 49 novih B2 nalog (Codex/DeepSeek; vsebinsko potrjenih 63 od 112)
+- [x] Jezikovni pregled 49 novih B2 nalog (Codex; 21 popravljenih polj pri 18 nalogah; commit `1911aed`; sanity check DeepSeek OK)
 
 ### Faza 4: Uporabniško testiranje, jezikovno brušenje in napredne funkcije (»Pika na i«)
 - [ ] Testiranje uporabniške izkušnje z Aljono na telefonu
@@ -87,6 +87,13 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 * **DeepSeek (Orkestrator):**
   - Vzpostavljena enakopravna vloga orkestratorja ob Geminiju (model routing, oznaka `[DeepSeek]`) in obvezni sanity check po vsakem delu Claude Code ali Codexa.
   - Usklajeni `.clinerules`, `CLAUDE.md`, `AGENTS.md`, `NAVODILA.md`, `brain/00-INDEX.md`, `napredek.md` in `.gitignore`; dashboard osvežen na 112 nalog (88 B2 / 24 C1).
+* **Codex (Vsebina & UI copy):**
+  - Jezikovni pregled 49 novih B2 nalog: popravljenih 21 besedilnih polj pri 18 nalogah (`navodilo`, `slovnicna_razlaga`, `tipicna_napaka`); ID-ji, rešitve in metapodatki nespremenjeni; lokalni commit `1911aed` brez `git push`.
+  - Pripravljeni predlogi UI besedil (izbirnik ravni, gumb »Ponastavi rezultate (N)«, opisi, `aria-label`, potrditvena sporočila) — v `src/` ni posegal.
+  - Odprto: v seznamu pregledanih ni petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004); priporočena kratka dodatna kontrola.
+* **DeepSeek (Orkestrator):**
+  - Sanity check: 18 nalog / 21 polj, samo dovoljena besedilna polja; shema OK (112 nalog: 88 B2 / 24 C1, enolični ID-ji, min 15/kategorijo); brez lock datotek; `npm run build` uspešen.
+  - Pripravljena naloga za Claude Code v `.ai-tasks/1-claude.md`: prenos potrjenih UI predlogov v `src/main.ts`.
 
 ### [23. 11. 2026]
 * **Codex (razvrstitev B2/C1):**
@@ -117,9 +124,8 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 🔜 Naslednji delovni sklop
-1. **Codex (Vsebina & UI copy):**
-   - Jezikovni pregled 49 novih B2 nalog iz commita `cf02d36`.
-   - Pregled novih UI besedil: »Ponastavi nalogo«, »Ponastavi izbor (N)« in potrditvena sporočila.
+1. **Claude Code (UI besedila):**
+   - Prenos potrjenih Codexovih predlogov v `src/main.ts`: izbirnik ravni (»Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«), »Ponastavi rezultate (N)«, opisi, `aria-label` in potrditvena sporočila.
 2. **Claude Code (Pika na i):**
    - Gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
 3. **Aljonin preizkus v živo:**
