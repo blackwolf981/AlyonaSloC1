@@ -87,6 +87,8 @@ const rezultatZa = (n: Naloga): Rezultat | undefined => (vKvizu() ? kviz!.rezult
 
 const poId = (id: string | undefined) => naloge.find((n) => n.id === id);
 const trenutniOdgovor = (n: Naloga) => rezultatZa(n)?.odgovor ?? osnutki.get(n.id) ?? '';
+/** Ali je pri nalogi kaj za ponastaviti (rezultat v trenutnem pogledu, osnutek ali odprta razlaga)? */
+const imaStanje = (n: Naloga) => !!rezultatZa(n) || !!osnutki.get(n.id)?.trim() || odprteRazlage.has(n.id);
 const jeOdprta = (n: Naloga) => !napredek[n.id]?.pravilno; // nerešena ali napačna
 const vKategoriji = (n: Naloga) => filter === 'vse' || n.kategorija === filter;
 const vTipu = (n: Naloga) => tipFilter === 'vse' || n.tip_naloge === tipFilter;
@@ -415,7 +417,8 @@ function kartica(n: Naloga): string {
           <span aria-hidden="true">💡</span> ${razlagaOdprta ? 'Skrij razlago' : 'Prikaži razlago'}
         </button>
         <button type="button" class="gumb gumb-tih gumb-mali ml-auto self-center" data-akcija="ponastavi-nalogo"
-                title="Pobriše odgovor, rezultat in razlago te naloge">
+                title="Pobriše odgovor, rezultat in razlago te naloge" aria-label="Ponastavi nalogo ${esc(n.id)}"
+                ${imaStanje(n) ? '' : 'hidden'}>
           <span aria-hidden="true">↺</span> Ponastavi nalogo
         </button>
       </div>
@@ -912,6 +915,9 @@ app.addEventListener('input', (e) => {
   osveziVrzeli(k, n, t.value);
   const gumb = k.querySelector<HTMLButtonElement>('[data-akcija="preveri"]');
   if (gumb) gumb.disabled = !t.value.trim();
+  // osnutek se spreminja brez ponovnega izrisa kartice, zato vidnost gumba osvežimo tu
+  const ponastavi = k.querySelector<HTMLButtonElement>('[data-akcija="ponastavi-nalogo"]');
+  if (ponastavi) ponastavi.hidden = !imaStanje(n);
   if (t instanceof HTMLTextAreaElement) prilagodiVisino(t);
 });
 
