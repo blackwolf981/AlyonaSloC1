@@ -138,15 +138,29 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
 
 /** Naloge, ki ustrezajo vsem trem filtrom (seznam jih prikaže, kviz izbira med njimi). */
 const izbraneNaloge = () => naRavni().filter((n) => vKategoriji(n) && vTipu(n) && (!samoOdprte || jeOdprta(n)));
+/** Izbor raven + kategorija + tip, NE glede na stikalo »samo nerešene« (za »Ponastavi izbor«). */
+const izborBrezStanja = () => naRavni().filter((n) => vKategoriji(n) && vTipu(n));
 
-function opisIzbora(): string {
+function opisIzbora(zStanjem = true): string {
   const aktivni = [
     ravenFilter !== 'vse' ? ravenFilter : '',
     filter !== 'vse' ? oznakaKategorije(filter) : '',
     tipFilter !== 'vse' ? TIPI[tipFilter] : '',
-    samoOdprte ? 'samo nerešene' : '',
+    samoOdprte && zStanjem ? 'samo nerešene' : '',
   ].filter(Boolean);
   return aktivni.length ? aktivni.join(' · ') : 'vse naloge';
+}
+
+/** »Ponastavi izbor (N)«: N = število nalog z rezultatom v izboru raven + kategorija + tip.
+ *  Isti gumb je v plošči (seznam) in pod nalogo v kvizu. */
+function gumbPonastaviIzbor(): string {
+  const st = izborBrezStanja().filter((n) => napredek[n.id]).length;
+  const opis = `Pobriše rezultate za izbor: ${opisIzbora(false)}`;
+  return `
+    <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="ponastavi-izbor"
+            title="${esc(opis)}" aria-label="Ponastavi izbor (${st}). ${esc(opis)}" ${st ? '' : 'disabled'}>
+      <span aria-hidden="true">↻</span> Ponastavi izbor (${st})
+    </button>`;
 }
 
 /* ---------- izris: plošča na vrhu ---------- */
@@ -184,10 +198,7 @@ function plosca(): string {
            aria-valuemin="0" aria-valuemax="${naloge.length}" aria-valuenow="${resene.length}">
         <span style="width:${delez}%"></span>
       </div>
-      <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="ponastavi" aria-label="Ponastavi napredek"
-              title="Ponastavi napredek" ${resene.length ? '' : 'disabled'}>
-        <span aria-hidden="true">↻</span> Ponastavi
-      </button>
+      ${gumbPonastaviIzbor()}
     </div>
     <button type="button" class="filtri-preklop" data-akcija="filtri" aria-expanded="${filtriOdprti}" aria-controls="filtri">
       <span class="font-semibold">Filtri</span>
@@ -403,6 +414,10 @@ function kartica(n: Naloga): string {
         <button type="button" class="gumb gumb-tih" data-akcija="razlaga" aria-expanded="${razlagaOdprta}">
           <span aria-hidden="true">💡</span> ${razlagaOdprta ? 'Skrij razlago' : 'Prikaži razlago'}
         </button>
+        <button type="button" class="gumb gumb-tih gumb-mali ml-auto self-center" data-akcija="ponastavi-nalogo"
+                title="Pobriše odgovor, rezultat in razlago te naloge">
+          <span aria-hidden="true">↺</span> Ponastavi nalogo
+        </button>
       </div>
       ${razlagaHtml(n)}
     </article>`;
@@ -557,11 +572,15 @@ function kvizHtml(): string {
   return `
     <div id="kviz-glava" class="kviz-glava" tabindex="-1">${kvizGlavaVsebina(k)}</div>
     ${kartica(poId(k.ids[k.indeks])!)}
-    <div class="text-center">
-      <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="kviz-izhod">
-        <span aria-hidden="true">✕</span> Prekini kviz
-      </button>
-    </div>`;
+    <div id="kviz-orodja" class="flex flex-wrap justify-center gap-2">${kvizOrodja()}</div>`;
+}
+
+function kvizOrodja(): string {
+  return `
+    ${gumbPonastaviIzbor()}
+    <button type="button" class="gumb gumb-tih gumb-mali" data-akcija="kviz-izhod">
+      <span aria-hidden="true">✕</span> Prekini kviz
+    </button>`;
 }
 
 function preklopnik(): string {
@@ -615,6 +634,8 @@ function izrisiPogled() {
 function osveziKvizGlavo() {
   const el = document.getElementById('kviz-glava');
   if (el && kviz) el.innerHTML = kvizGlavaVsebina(kviz);
+  const orodja = document.getElementById('kviz-orodja');
+  if (orodja) orodja.innerHTML = kvizOrodja(); // posodobi N v »Ponastavi izbor (N)«
 }
 
 /** Po menjavi naloge: vrh vsebine v pogled, fokus na smiseln element.
@@ -714,14 +735,49 @@ function znova(n: Naloga) {
   osveziPlosco();
 }
 
-function ponastavi() {
-  if (!confirm('Res želite pobrisati ves napredek? Vsi odgovori in rezultati bodo izbrisani.')) return;
-  napredek = {};
-  pobrisiNapredek();
-  osnutki.clear();
-  odprteRazlage.clear();
+function shraniAliPobrisi() {
+  if (Object.keys(napredek).length) shraniNapredek(napredek);
+  else pobrisiNapredek();
+}
+
+/** »↺ Ponastavi nalogo«: rezultat, osnutek in razlaga ene naloge; v kvizu tudi rezultat kviza. */
+function ponastaviNalogo(n: Naloga) {
+  delete napredek[n.id];
+  shraniAliPobrisi();
+  osnutki.delete(n.id);
+  odprteRazlage.delete(n.id);
+  if (vKvizu()) {
+    kviz!.rezultati.delete(n.id);
+    osveziKvizGlavo();
+  }
+  osveziKartico(n.id, '[data-vnos], [data-akcija="izberi"]');
   osveziPlosco();
-  osveziSeznam();
+}
+
+/** »Ponastavi izbor (N)«: rezultati za raven + kategorijo + tip (ne glede na »samo nerešene«).
+ *  V kvizu se kviz z istimi nalogami začne od začetka. */
+function ponastaviIzbor() {
+  const izbor = izborBrezStanja().filter((n) => napredek[n.id]);
+  if (!izbor.length) return;
+  if (!confirm(`Res želite pobrisati rezultate ${izbor.length} nalog v izboru »${opisIzbora(false)}«?`)) return;
+  for (const n of izbor) {
+    delete napredek[n.id];
+    osnutki.delete(n.id);
+    odprteRazlage.delete(n.id);
+  }
+  shraniAliPobrisi();
+  if (pogled === 'kviz' && kviz) {
+    pospraviKviz();
+    kviz.rezultati.clear();
+    kviz.indeks = 0;
+    kviz.koncan = false;
+    izrisiPogled();
+    fokusNaVsebino();
+  } else {
+    osveziPlosco();
+    osveziSeznam();
+    document.querySelector<HTMLElement>('[data-akcija="filter"][aria-pressed="true"]')?.focus();
+  }
 }
 
 /* ---------- dogodki (delegirani) ---------- */
@@ -837,8 +893,11 @@ app.addEventListener('click', (e) => {
     case 'tema':
       preklopiTemo();
       break;
-    case 'ponastavi':
-      ponastavi();
+    case 'ponastavi-nalogo':
+      if (n) ponastaviNalogo(n);
+      break;
+    case 'ponastavi-izbor':
+      ponastaviIzbor();
       break;
   }
 });
