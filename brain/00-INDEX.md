@@ -24,7 +24,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 * **Narejeno:** Pregledanih natanko pet B2 nalog iz commita `045f848`. Novo navodilo in razlaga pri `C1-ROD-018`, novo navodilo pri `C1-VID-012`; `C1-VEZ-019`, `C1-DVO-005` in `C1-SKL-004` po pregledu brez popravkov. Skupaj 3 spremenjena besedilna polja; ID-ji, rešitve in metapodatki nespremenjeni.
 * **Spremenjene datoteke:** `naloge.json` (3 vrstice); lokalni commit `00311d2`, brez `git push`.
 * **Sanity check (DeepSeek):** git status čist, diff omejen na `C1-ROD-018` (`navodilo`, `slovnicna_razlaga`) in `C1-VID-012` (`navodilo`); shema OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, 0 manjkajočih polj, min 15/kategorijo); UTF-8 brez BOM; brez lock datotek; `npm run build` uspešen (131 ms, paket `index-DhED8cZy.js` nespremenjen).
-* **Opomba:** v novem navodilu `C1-ROD-018` zveza `sodi za` ni knjižna; predlog za naslednji vsebinski obhod je `sodi k` oziroma `dopolnjuje`. Vsebina naloge in rešitve sta pravilni.
+* **Opomba:** v navodilu `C1-ROD-018` je bila zveza `sodi za` neknjižna; Codex jo je v mikro-popravku zamenjal z `dopolnjuje` (commit `e941ff3`, 1 polje, sanity check ponovljen).
 
 ### [25. 11. 2026] — DeepSeek (Objava na GitHub Pages)
 * **Narejeno:** Po izrecni potrditvi uporabnika izveden `git push origin main` (`8769961..63cecfa`, 8 commitov); GitHub Actions (`deploy.yml`) je objavil novo različico.
@@ -90,4 +90,4 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ## 🎯 Naslednji logični korak
 1. Aljona preizkusi objavljeno različico na telefonu in namizju: izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo in prelom gumbov.
 2. Claude Code: gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
-3. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; odprt le mikro-popravek zveze `sodi za` v navodilu ROD-018.
+3. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; odprt le mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).

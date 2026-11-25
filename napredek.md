@@ -104,7 +104,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
   - Pregledanih natanko 5 nalog: novo navodilo in razlaga pri `C1-ROD-018`, novo navodilo pri `C1-VID-012`; `C1-VEZ-019`, `C1-DVO-005` in `C1-SKL-004` brez popravkov. 3 spremenjena besedilna polja; ID-ji, rešitve in metapodatki nespremenjeni; lokalni commit `00311d2` brez `git push`.
 * **DeepSeek (Orkestrator):**
   - Sanity check: diff omejen na `navodilo` in `slovnicna_razlaga` pri ROD-018 ter `navodilo` pri VID-012; shema OK (112 nalog: 88 B2 / 24 C1, 0 podvojenih ID-jev, min 15/kategorijo); UTF-8 brez BOM; brez lock datotek; `npm run build` uspešen.
-  - Opomba za naslednji vsebinski obhod: v navodilu ROD-018 zveza `sodi za` ni knjižna — predlog `sodi k` ali `dopolnjuje`.
+  - Mikro-popravek opravljen: v navodilu ROD-018 zveza `sodi za` zamenjana z `dopolnjuje` (commit `e941ff3`, 1 polje, sanity check ponovljen).
 
 ### [23. 11. 2026]
 * **Codex (razvrstitev B2/C1):**
