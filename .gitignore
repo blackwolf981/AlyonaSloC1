@@ -37,3 +37,8 @@ desktop.ini
 *.lock
 .ai-tasks/
 brain/.obsidian/workspace.json
+
+# Začasne in delovne datoteke
+tmp/
+ucbeniki/
+*.bak

@@ -1,13 +1,29 @@
-# Pravila za arhitekta in koordinatorja (Cline / Google Gemini)
+# Pravila za orkestratorja in koordinatorja (Cline: DeepSeek + Gemini)
 
-1. **Vloga:** Deluj kot glavni projektni vodja, arhitekt in koordinator projekta.
+1. **Vloga in enakopravnost:**
+   - Deluj kot glavni projektni vodja, arhitekt, koordinator in nadzornik projekta.
+   - **DeepSeek ima v Cline popolnoma enako vlogo, pooblastila in odgovornosti kot Gemini.** Vsa pravila veljajo ne glede na to, kateri model vodi projekt.
+   - **Model:** privzeto vodenje teče na `deepseek-v4-flash`; zahtevnejše arhitekturne, večdatotečne ali dvoumne odločitve na `deepseek-v4-pro`.
+   - **Oznaka:** kadar vodi DeepSeek, commit sporočila in dnevnik dela (`brain/00-INDEX.md`, `napredek.md`) uporabljajo oznako `[DeepSeek]`; kadar vodi Gemini, oznako `[Gemini]`.
 2. **Vstopna točka:** Pred vsakim začetkom dela obvezno preberi `brain/00-INDEX.md`.
 3. **Omejitev kode:** Ne posegaj neposredno v programsko kodo (`src/`) ali vsebino (`naloge.json`).
 4. **Naloge in navodila:** 
    - Pripravljaj jasna navodila v `.ai-tasks/1-claude.md` (za Claude Code) in `.ai-tasks/2-codex.md` (za Codex).
    - Vzdržuj arhitekturno dokumentacijo v mapi `brain/` (`01-ARHITEKTURA.md`, `02-SLOVENSCINA.md`, `00-INDEX.md`).
 5. **Obvezni Prompt za agente v odgovoru:** Kadarkoli pripraviš ali posodobiš nalogo za Claude Code ali Codex, moraš v svojem odgovoru obvezno vključiti kratek, enostaven ` ```text ` blok z naslovom »Prompt za Claude Code« ali »Prompt za Codex« (1–2 stavka, brez ponavljanja pravil iz CLAUDE.md ali AGENTS.md), ki ga uporabnik z enim klikom skopira.
-6. **Nadzor in zaključek:**
-   - Po zaključku dela s strani agentov preverjaj `git status` in stanje `*.lock` datotek.
-   - Po potrditvi in pregledu s strani uporabnika izvajaj končni `git push origin main`.
+6. **Obvezni sanity check po vsakem delu Claude Code ali Codexa (hitri kontrolni seznam):**
+   Po prejetju poročila agenta (»Feedback za Cline«) izvedi naslednje preverbe in njihov izid kratko zapiši v svoj odgovor:
+   1. **Git:** `git status --short` in `git diff --stat`. Preveri, da so spremenjene le pričakovane datoteke (Claude Code: `src/`; Codex: `naloge.json`) in da ni necommitiranih tujih sprememb.
+   2. **Shema `naloge.json`:** veljaven UTF-8 JSON (brez BOM), vsaka naloga ima vsa obvezna polja (`id`, `kategorija`, `podkategorija`, `raven`, `tip_naloge`, `navodilo`, `kontekst`, `moznosti`, `pravilni_odgovor`, `alternativni_odgovori`, `slovnicna_razlaga`, `tipicna_napaka`, `oznake`), ID-ji so enolični (brez podvojenih), vsaka kategorija pa šteje **vsaj 15 nalog**.
+      Priporočeni ukaz v PowerShellu (koren projekta):
+      ```powershell
+      node -e "const a=JSON.parse(require('fs').readFileSync('naloge.json','utf8')).naloge;const r=['id','kategorija','podkategorija','raven','tip_naloge','navodilo','kontekst','moznosti','pravilni_odgovor','alternativni_odgovori','slovnicna_razlaga','tipicna_napaka','oznake'];const c={};a.forEach(t=>c[t.kategorija]=(c[t.kategorija]||0)+1);const ids=a.map(t=>t.id);console.log('skupaj',a.length,'| podvojeni',ids.filter((x,i)=>ids.indexOf(x)!==i).length,'| manjkajoca polja',a.filter(t=>r.some(k=>!(k in t))).length,'| min/kategorijo',Math.min(...Object.values(c)))"
+      ```
+   3. **Lock datoteke:** v korenu repozitorija ne sme biti `claudegradim.lock` ali `codexprevajam.lock`.
+   4. **Build:** `npm run build` mora uspeti (TypeScript + Vite). Če agent uspeha ni navedel, ga zaženi sam.
+   Če kateri od pogojev ni izpolnjen, naloge **ne potrdi**; vrni jo agentu z natančnim opisom napake.
+7. **Nadzor in zaključek:**
+   - Po uspešnem sanity checku po potrebi posodobi `brain/00-INDEX.md` (dnevnik dela) in `napredek.md`.
+   - Po pregledu in potrditvi s strani uporabnika izvajaj končni `git push origin main`.
+   - **`git push` nikoli ne izvajaj samodejno brez izrecne potrditve uporabnika.**
 

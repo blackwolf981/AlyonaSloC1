@@ -1,6 +1,6 @@
 ﻿# 🧠 Obsidian Znanje in Arhitektura: Aljonina spletna vadnica slovenščine (C1)
 
-Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (Gemini, Claude, Codex) obvezno berejo to datoteko pred začetkom dela.
+Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Gemini, Claude, Codex) obvezno berejo to datoteko pred začetkom dela.
 
 ---
 
@@ -11,15 +11,25 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (Gemini, Cla
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 V teku (Faza 3 & 4: Prehod na raven B2, poenostavitev razlag in razširitev baze uspešno zaključeni)
+* **Status:** 🟢 V teku (Faza 3: baza 112 nalog; Faza 4: jezikovni pregled 49 novih B2 nalog, UX in uporabniško testiranje)
 * **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled.
-* **Tematski moduli:** MOD-01 do MOD-04 aktivni z B2/C1 filtri.
-* **Spletni vmesnik (Claude Code):** Implementiran namenski B2 in C1 filter v UI.
+* **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
+* **Spletni vmesnik (Claude Code):** Filter ravni B2 / C1 / Vse ter ločena gumba za ponastavitev posamezne naloge in trenutnega izbora (tudi v kvizu).
 * **Lock datoteke:** Ni aktivnih lock datotek.
 
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — DeepSeek (Orkestrator: pravila, sanity check, dokumentacija)
+* **Narejeno:** Enakopravna vloga orkestratorja DeepSeek ob Geminiju (model routing `deepseek-v4-flash` privzeto / `deepseek-v4-pro` za zahtevnejše odločitve, oznaka `[DeepSeek]`) in obvezni sanity check po vsakem delu Claude Code ali Codexa (git status/diff, shema `naloge.json`, lock datoteke, build).
+* **Spremenjene datoteke:** `.clinerules`, `CLAUDE.md`, `AGENTS.md`, `brain/00-INDEX.md`, `NAVODILA.md`, `napredek.md`, `.gitignore`. Lokalni commit brez `git push`.
+* **Naslednji korak:** Codex pregleda UI copy novih gumbov; Aljona preizkusi ponastavitev naloge in izbora na telefonu.
+
+### [25. 11. 2026] — Claude Code (Ponastavitev naloge in izbora)
+* **Narejeno:** Gumb »↺ Ponastavi nalogo« na vsaki kartici (pobriše rezultat, osnutek in razlago; v kvizu tudi segment na traku) in »↻ Ponastavi izbor (N)«, ki pobriše rezultate samo za trenutni izbor raven + kategorija + tip (ne glede na stikalo »samo nerešene«); dosegljiv tudi v kvizu.
+* **Spremenjene datoteke:** `src/main.ts`; lokalni commit `e94bf18`. `npm run build` uspešen, testirano v Chromu (seznam in kviz).
+* **Sanity check (DeepSeek):** git status/diff OK (samo `src/main.ts`), shema `naloge.json` OK (112 nalog, brez podvojenih ID-jev in manjkajočih polj), brez lock datotek, `tsc --noEmit` brez napak.
+
 ### [25. 11. 2026] — Codex (Razširitev baze in poenostavitev razlag)
 * **Narejeno:** Dodanih 44 novih B2 nalog; 27 razlag in 5 opozoril dodatno poenostavljenih; vseh 7 kategorij ima najmanj 15 nalog skupaj (skupno 112 nalog: 88 B2 / 24 C1).
 * **Spremenjene datoteke:** `naloge.json`, `.ai-tasks/2-codex.md`. Uspešen build in UTF-8 validacija; lokalni commit `cf02d36`.
@@ -50,5 +60,6 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (Gemini, Cla
 ---
 
 ## 🎯 Naslednji logični korak
-1. Izvesti git push origin main za osvežitev spletne strani na GitHub Pages.
-2. Testiranje delovanja B2 filtra in nalog v živo na mobilni napravi.
+1. Po potrditvi uporabnika izvesti `git push origin main` za objavo novih gumbov na GitHub Pages.
+2. Codex naj pregleda UI copy novih gumbov (»Ponastavi nalogo«, »Ponastavi izbor (N)« ter potrditvena besedila).
+3. Aljona preizkusi ponastavitev posamezne naloge in izbora na telefonu.

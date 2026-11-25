@@ -6,9 +6,13 @@ Ta projekt razvijamo s pomočjo treh specializiranih AI agentov v urejevalniku k
 
 ## 1. EKIPA IN VLOGE
 
-### 1. Project Manager & Architect: **Google Gemini (Cline / .clinerules)**
-- **Naloge:** Pregledovanje strukture projekta, načrtovanje korakov, vzdrževanje Obsidian zapiskov v `brain/`, priprava navodil v `.ai-tasks/`, spremljanje `git status`, upravljanje `.lock` datotek in končni `git push origin main`.
-- **Omejitve:** Gemini ne spreminja programske kode neposredno.
+### 1. Project Manager & Architect / Orkestrator: **Gemini ali DeepSeek (Cline / .clinerules)**
+- **Naloge:** Pregledovanje strukture projekta, načrtovanje korakov, vzdrževanje Obsidian zapiskov v `brain/`, priprava navodil v `.ai-tasks/`, spremljanje `git status`, upravljanje `.lock` datotek in končni `git push origin main` (šele po izrecni potrditvi uporabnika).
+- **Enakopravnost:** DeepSeek ima v Cline popolnoma enako vlogo, pooblastila in odgovornosti kot Gemini; vsa pravila veljajo ne glede na to, kateri model vodi projekt.
+- **Model:** privzeto vodenje teče na `deepseek-v4-flash`, zahtevnejše arhitekturne odločitve na `deepseek-v4-pro`.
+- **Oznaka:** kadar vodi DeepSeek, commit sporočila in dnevnik dela uporabljajo oznako `[DeepSeek]`; kadar vodi Gemini, oznako `[Gemini]`.
+- **Sanity check:** Po vsakem delu Claude Code ali Codexa obvezno izvede kontrolni seznam iz `.clinerules` (git status/diff, shema `naloge.json`, lock datoteke, build) in izid zapiše v svoj odgovor.
+- **Omejitve:** Orkestrator ne spreminja programske kode (`src/`) ali vsebine (`naloge.json`) neposredno.
 
 ### 2. Glavni graditelj (Builder): **Claude Code (CLAUDE.md)**
 - **Naloge:** Pisanje, refaktoriranje in odpravljanje napak v vsej programski kodi (`src/`, komponente, UI, tipizacija).

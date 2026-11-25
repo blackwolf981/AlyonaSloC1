@@ -12,7 +12,7 @@ Za doseganje najvišje kakovosti projekt vodi ekipa treh specializiranih agentov
 
 ```
                   ┌────────────────────────────────────────┐
-                  │          GEMINI (Vodja & Urednik)       │
+                  │   GEMINI / DEEPSEEK (Vodja & Urednik)  │
                   │  - koordinacija projekta               │
                   │  - vrhunski slovnični/slogovni pregled │
                   │  - potrjevanje nalog in napredka       │
@@ -28,8 +28,10 @@ Za doseganje najvišje kakovosti projekt vodi ekipa treh specializiranih agentov
 └───────────────────────────────┘              └───────────────────────────────┘
 ```
 
-### 1. 👑 Gemini — Glavni projektni vodja in slovnični urednik
+### 1. 👑 Gemini / DeepSeek — Glavni projektni vodja in slovnični urednik
 * **Odgovornost:** Arhitekturna usklajenost celote, vodenje `napredek.md`, določanje prioritet ter **brezkompromisna jezikovna avtentičnost in pravilnost**.
+* **Enakopravnost modelov:** DeepSeek ima v Cline popolnoma enako vlogo in pooblastila kot Gemini (privzeto `deepseek-v4-flash`, zahtevnejše odločitve `deepseek-v4-pro`); commit sporočila in dnevnik dela uporabljajo oznako `[Gemini]` ali `[DeepSeek]`.
+* **Nadzor kakovosti:** Po vsakem delu Claude Code ali Codexa izvede obvezni sanity check (git status/diff, shema `naloge.json`, lock datoteke, build) — glej `.clinerules`.
 * **Naloge:**
   - Pregleduje in potrjuje jezikovne vsebine (izloča kalkirane strukture, preverja skladnost s SP 2001, ePravopisom, SSKJ2 in sodobno normo).
   - Skrbi, da naloge dosegajo pravo težavnostno raven C1 (izogibanje banalnim osnovnošolskim pravilom; poudarek na niansah, vezljivosti, kontekstualni rabi).
@@ -112,9 +114,9 @@ Vse naloge morajo dosledno slediti naslednji JSON strukturi:
 ## 🔄 Protokol sodelovanja in delotok (Workflow)
 
 1. **Korak 1 (Codex):** Pripravi ali razširi nabor nalog v `naloge.json`. Po zaključku javi strukturo in obseg.
-2. **Korak 2 (Gemini):** Pregleda jezikovno neoporečnost nalog, preveri ustreznost razlag in potrdi vpis v `napredek.md`.
+2. **Korak 2 (Gemini ali DeepSeek):** Pregleda jezikovno neoporečnost nalog, preveri ustreznost razlag in potrdi vpis v `napredek.md`.
 3. **Korak 3 (Claude Code):** Implementira ali posodobi prikaz in funkcionalnost v aplikaciji, zagotovi brezhibno delovanje uporabniškega vmesnika.
 4. **Pravilo integritete:** Noben agent ne prepisuje ali spreminja logike drugega brez uskladitve. Vse bistvene spremembe se beležijo v `napredek.md`.
 5. **Pravilo selektivnega commitanja in sinhronizacije (po predlogu Claude Code):**
-   * Vsak agent v `git add` in `git commit` vključi **izključno svoje datoteke** (Claude: `src/`, slogi, UI konfiguracije; Codex: `naloge.json`; Gemini: `napredek.md`, `NAVODILA.md`).
+   * Vsak agent v `git add` in `git commit` vključi **izključno svoje datoteke** (Claude: `src/`, slogi, UI konfiguracije; Codex: `naloge.json`; Gemini/DeepSeek: `napredek.md`, `NAVODILA.md`, `brain/`, sistemska pravila).
    * Pred vsakim potiskom (`git push`) agent obvezno preveri stanje z `git pull`, da se preprečijo morebitna neskladja med sočasnim delom.

@@ -1,8 +1,8 @@
 # 📊 NAPREDEK PROJEKTA: Aljonina spletna vadnica slovenščine (B2–C1)
 
-**Zadnja posodobitev:** 24. november 2026  
-**Vsebina in uredniški pregled:** Codex & Gemini; **vmesnik:** Claude Code  
-**Status projekta:** 🟡 V teku (Faza 3 & 4: Prehod na B2, poenostavitev razlag in UX)
+**Zadnja posodobitev:** 25. november 2026  
+**Vsebina in uredniški pregled:** Codex & Gemini/DeepSeek; **vmesnik:** Claude Code  
+**Status projekta:** 🟡 V teku (Faza 3: vse kategorije ≥ 15 nalog; Faza 4: UX in jezikovni pregled novih B2 nalog)
 
 ---
 
@@ -10,11 +10,10 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Število vsebinsko potrjenih nalog B2–C1** | `63 / 110` (39 B2, 24 C1; posodobljene B2 razlage in tipične napake) | `110` |
-| **Tematski moduli z nalogami** | `6 / 7` (MOD-01 in MOD-02 zaključena ✅) | `7 / 7` |
-| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Način Kviz + B2/C1 filter | Delujoča interaktivna aplikacija |
-| **Lektura in jezikovna potrditev** | 🟢 63 / 63 nalog pregledanih in prilagojenih (100 %) | 100 % pregledanih nalog |
-
+| **Nalog v bazi B2–C1** | `112 / 110` (88 B2, 24 C1) | `≥ 110` |
+| **Vsebinsko potrjenih nalog** | `63 / 112` (39 B2, 24 C1; 49 novih B2 nalog čaka na jezikovni pregled) | `112 / 112` |
+| **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 15 nalog ✅) | `7 / 7` |
+| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora | Delujoča interaktivna aplikacija |
 
 ---
 
@@ -40,13 +39,14 @@
 - [x] Optimizacija odzivne orodjarne na desktopu: stranska letev na >= 1024 px, širina 72rem *(Claude Code)*
 
 ### Faza 3: Širitev vsebinske baze B2–C1
-- [x] Modul 1: Vezljivost glagolov in predložne zveze (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
-- [x] Modul 2: Rodilnik zanikanja in delni rodilnik (✅ 15 / 15 nalog odobrenih — MODUL ZAKLJUČEN!)
-- [ ] Modul 3: Napredna frazeologija in idiomi (pripravljeno: 10, odobreno: 10, cilj: 20 nalog)
-- [ ] Modul 4: Glagolski vid in pomeni v kontekstu (pripravljeno: 8, odobreno: 8, cilj: 15 nalog)
-- [ ] Modul 5: Dvojina in zahtevna ujemanja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
-- [ ] Modul 6: Polstavčne strukture in skladnja (pripravljeno: 1, odobreno: 1, cilj: 15 nalog)
-- [ ] Modul 7: Slogovni registri in sopomenke (pripravljeno: 0, odobreno: 0, cilj: 15 nalog)
+- [x] Modul 1: Vezljivost glagolov in predložne zveze (19 nalog; cilj 15 presežen)
+- [x] Modul 2: Rodilnik zanikanja in delni rodilnik (18 nalog; cilj 15 presežen)
+- [x] Modul 3: Napredna frazeologija in idiomi (15 / 20 nalog; cilj modula še ni dosežen)
+- [x] Modul 4: Glagolski vid in pomeni v kontekstu (15 / 15 nalog)
+- [x] Modul 5: Dvojina in zahtevna ujemanja (15 / 15 nalog)
+- [x] Modul 6: Polstavčne strukture in skladnja (15 / 15 nalog)
+- [x] Modul 7: Slogovni registri in sopomenke (15 / 15 nalog)
+- [ ] Jezikovni pregled 49 novih B2 nalog (Codex/DeepSeek; vsebinsko potrjenih 63 od 112)
 
 ### Faza 4: Uporabniško testiranje, jezikovno brušenje in napredne funkcije (»Pika na i«)
 - [ ] Testiranje uporabniške izkušnje z Aljono na telefonu
@@ -63,20 +63,28 @@ Raven določa obstoječe polje `raven`: dovoljeni vrednosti sta `B2` in `C1`. Cl
 
 Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna kalibracija SEJO. B2 vključuje vodeno uporabo vezav, oblik in običajnih frazemov; C1 vključuje povezovanje več slovničnih zahtev, razlikovanje dosega zanikanja, skladenjske pretvorbe ter presojo registra. Upoštevata se sobesedilo in pomoč v navodilu, ne le dolžina razlage. Po preizkusu z Aljono lahko raven prilagodimo.
 
-| Šifra | Tematski modul | Načrtovano | Pripravljeno (Codex / Gemini) | Odobreno (Gemini) |
-| :--- | :--- | :---: | :---: | :---: |
-| **MOD-01** | Vezljivost in predlogi | 15 | 15 | 15 ✅ |
-| **MOD-02** | Rodilnik ob zanikanju | 15 | 15 | 15 ✅ |
-| **MOD-03** | Frazeologija in pregovori | 20 | 10 | 10 |
-| **MOD-04** | Glagolski vid | 15 | 8 | 0 (popravki po recenziji) |
-| **MOD-05** | Dvojina in ujemanje | 15 | 1 | 1 |
-| **MOD-06** | Skladnja in deležniki | 15 | 1 | 1 |
-| **MOD-07** | Slog in sopomenke | 15 | 0 | 0 |
-| **SKUPAJ** | | **110** | **50** | **42** |
+| Šifra | Tematski modul (kategorija) | B2 | C1 | Skupaj | Cilj |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **MOD-01** | Vezljivost in predlogi (`vezljivost_in_predlogi`) | 13 | 6 | 19 | 15 |
+| **MOD-02** | Rodilnik ob zanikanju (`rodilnik_zanikanja`) | 5 | 13 | 18 | 15 |
+| **MOD-03** | Frazeologija in pregovori (`frazeologija_in_pregovori`) | 13 | 2 | 15 | 20 |
+| **MOD-04** | Glagolski vid (`glagolski_vid`) | 14 | 1 | 15 | 15 |
+| **MOD-05** | Dvojina in ujemanje (`dvojina`) | 14 | 1 | 15 | 15 |
+| **MOD-06** | Skladnja in deležniki (`skladnja_in_slog`) | 14 | 1 | 15 | 15 |
+| **MOD-07** | Slog in sopomenke (`slog_in_sopomenke`) | 15 | 0 | 15 | 15 |
+| **SKUPAJ** | | **88** | **24** | **112** | **110+** |
 
 ---
 
 ## 📝 Dnevnik sprememb in aktivnosti (Changelog)
+### [25. 11. 2026]
+* **Claude Code (Frontend & UX):**
+  - Dodan gumb »↺ Ponastavi nalogo« na vsako kartico: pobriše rezultat, vpisan odgovor in odprto razlago; v kvizu izprazni tudi segment na traku.
+  - Gumb »Ponastavi« zamenjan z »↻ Ponastavi izbor (N)«: pobriše rezultate samo za trenutni izbor raven + kategorija + tip (stikalo »samo nerešene« ne vpliva), dosegljiv tudi v kvizu.
+  - Uspešen `npm run build`, testirano v Chromu (seznam in kviz); lokalni commit `e94bf18` brez `git push`.
+* **DeepSeek (Orkestrator):**
+  - Vzpostavljena enakopravna vloga orkestratorja ob Geminiju (model routing, oznaka `[DeepSeek]`) in obvezni sanity check po vsakem delu Claude Code ali Codexa.
+  - Usklajeni `.clinerules`, `CLAUDE.md`, `AGENTS.md`, `NAVODILA.md`, `brain/00-INDEX.md`, `napredek.md` in `.gitignore`; dashboard osvežen na 112 nalog (88 B2 / 24 C1).
 
 ### [23. 11. 2026]
 * **Codex (razvrstitev B2/C1):**
@@ -107,12 +115,14 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 🔜 Naslednji delovni sklop
-1. **Claude Code (Pika na i):**
-   - Način »Osredotočena vaja« (kviz 10 naključnih nalog, ena po ena s povzetkom) ali zvočna izgovorjava povedi (TTS).
-2. **Kolegialno ustvarjanje (Gemini + Codex):**
-   - Gemini potrdi recenzentske popravke nalog `C1-VID-001`–`C1-VID-008`; nato sledi dopolnitev MOD-04 s preostalimi 7 nalogami.
-3. **Aljonin preizkus v živo:** 
-   - Testiranje vadnice na pametnem telefonu na povezavi [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (že 42 nalog v živo!).
+1. **Codex (Vsebina & UI copy):**
+   - Jezikovni pregled 49 novih B2 nalog iz commita `cf02d36`.
+   - Pregled novih UI besedil: »Ponastavi nalogo«, »Ponastavi izbor (N)« in potrditvena sporočila.
+2. **Claude Code (Pika na i):**
+   - Gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
+3. **Aljonin preizkus v živo:**
+   - Preizkus ponastavitve posamezne naloge in izbora na telefonu: [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (112 nalog v bazi).
+   - Objava na GitHub Pages sledi po potrditvi uporabnika (`git push`).
 
 ### [22. 11. 2026]
 * **Gemini (Vodja projekta in urednik):** 
@@ -151,9 +161,4 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 🔜 Naslednji takojšnji koraki
-1. **Claude Code (Frontend & UX):** 
-   - Optimizacija orodjarne na desktopu: širši odzivni layout (npr. max-w-5xl/6xl na lg/xl), združitev statistike v eno vrstico, zmanjšanje navpične višine.
-2. **Codex / ChatGPT (Faza 3 - Vsebina):** 
-   - Zagon Modula 3 (*Frazeologija in pregovori*): priprava paketa 8–10 novih nalog (`C1-FRA-003` do `C1-FRA-012`).
-3. **Aljona & uporabniško testiranje:** 
-   - Preizkus vadnice v živo na povezavi [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (že 34 nalog v živo!).
+Isti seznam kot »Naslednji delovni sklop« zgoraj; stanje in dnevnik se vzdržujeta na enem mestu.
