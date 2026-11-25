@@ -1144,7 +1144,7 @@
       "podkategorija": "neposredni_predmet_in_predlog_na",
       "raven": "B2",
       "tip_naloge": "izbira",
-      "navodilo": "Izberite par oblik, ki pravilno dopolni poved. Prva oblika sodi za »nimamo«, druga pa za »ne smemo pozabiti na«.",
+      "navodilo": "Izberite par oblik, ki pravilno dopolni poved. Prva oblika dopolnjuje »nimamo«, druga pa »ne smemo pozabiti na«.",
       "kontekst": "Za dokončno odločitev še nimamo ___, vendar ne smemo pozabiti na ___.",
       "moznosti": [
         "vseh podatkov; dogovorjeni rok",
