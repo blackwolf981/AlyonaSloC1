@@ -98,6 +98,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
   - Prenesena potrjena Codexova besedila v `src/main.ts`: »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, nadnaslov »Ravni B2 in C1«, gumb »↻ Ponastavi rezultate (N)« z novim `title` in `aria-label`, potrditveno sporočilo z dodatkom za kviz, nov `title` gumba »Ponastavi nalogo«; logika nespremenjena; lokalni commit `7f047db` brez `git push`.
 * **DeepSeek (Orkestrator):**
   - Sanity check #2: spremenjen samo `src/main.ts` (+18/−12; besedila in trije komentarji), shema `naloge.json` OK (112 nalog: 88 B2 / 24 C1, min 15/kategorijo), brez lock datotek, `npm run build` uspešen; v `index.html` in `src/style.css` ni ostankov starih nizov.
+  - Objava: `git push origin main` (`8769961..63cecfa`, 8 commitov) → GitHub Actions deploy; na živo preverjeno, da stran streže nov paket `index-DhED8cZy.js` z novimi UI besedili.
 
 ### [23. 11. 2026]
 * **Codex (razvrstitev B2/C1):**
@@ -134,7 +135,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
    - Gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
 3. **Aljonin preizkus v živo:**
    - Preizkus ponastavitve posamezne naloge in izbora na telefonu: [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (112 nalog v bazi).
-   - Objava na GitHub Pages sledi po potrditvi uporabnika (`git push`).
+   - Objava na GitHub Pages izvedena 25. 11. 2026 (`git push` → GitHub Actions; na živo preverjen nov paket `index-DhED8cZy.js`).
 
 ### [22. 11. 2026]
 * **Gemini (Vodja projekta in urednik):** 

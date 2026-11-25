@@ -11,7 +11,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 V teku (Faza 3 zaključena: 112 nalog, vseh 49 novih B2 jezikovno pregledanih; Faza 4: UI besedila prenesena v kodo, čaka UX preizkus in objava)
+* **Status:** 🟢 Objavljeno (Faza 3 zaključena: 112 nalog, vseh 49 novih B2 jezikovno pregledanih; Faza 4: UI besedila objavljena na GitHub Pages 25. 11. 2026, čaka UX preizkus)
 * **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 112 nalog je vsebinsko pregledanih.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
 * **Spletni vmesnik (Claude Code):** Izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora »↻ Ponastavi rezultate (N)« (tudi v kvizu) z novimi opisi in `aria-label`.
@@ -20,6 +20,11 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [25. 11. 2026] — DeepSeek (Objava na GitHub Pages)
+* **Narejeno:** Po izrecni potrditvi uporabnika izveden `git push origin main` (`8769961..63cecfa`, 8 commitov); GitHub Actions (`deploy.yml`) je objavil novo različico.
+* **Preverjeno na živo:** https://blackwolf981.github.io/AlyonaSloC1/ streže nov paket `./assets/index-DhED8cZy.js`; v njem so nizi »Ponastavi rezultate«, »Samo B2«, »Vse ravni (B2 in C1)« in »Ravni B2 in C1«, starega »Ponastavi izbor« ni več.
+* **Opomba:** `gh` CLI ni prijavljen (brez `GH_TOKEN`), zato je bila objava preverjena neposredno prek HTTP in ne prek `gh run list`.
+
 ### [25. 11. 2026] — Claude Code (UI besedila po jezikovnem pregledu)
 * **Narejeno:** Preneseni potrjeni predlogi Codexa v `src/main.ts`: izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)« z nadnaslovom »Ravni B2 in C1«; gumb »↻ Ponastavi rezultate (N)« z novim `title` in `aria-label`; potrditveno sporočilo z obrazložitvijo filtra in dodatkom za kviz; nov `title` gumba »Ponastavi nalogo«. Posodobljeni tudi trije komentarji v kodi; logika in stanja nespremenjeni.
 * **Spremenjene datoteke:** `src/main.ts` (+18/−12); lokalni commit `7f047db`, brez `git push`.
@@ -77,6 +82,6 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 🎯 Naslednji logični korak
-1. Aljona preizkusi vmesnik v brskalniku in na telefonu: izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo in prelom gumbov.
-2. Po izrecni potrditvi uporabnika izvesti `git push origin main` (sproži `deploy.yml` → GitHub Pages).
+1. Aljona preizkusi objavljeno različico na telefonu in namizju: izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo in prelom gumbov.
+2. Claude Code: gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
 3. Odprto: odločitev o kratki dodatni kontroli petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004).
