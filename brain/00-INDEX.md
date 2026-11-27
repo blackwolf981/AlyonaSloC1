@@ -119,7 +119,8 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ## 🎯 Naslednji logični korak
 1. **Codex — opravljeno 27. 11. 2026** (`2621eed`, `b5f2087`): predlog 5 nalog tipa `stavcni_puzzle`, nato vnos 1:1 v `naloge.json` (117 nalog) in izbris predloga; sanity check orkestratorja uspešen.
 2. **Claude Code — opravljeno 27. 11. 2026** (`063a834`): podpora tipu `stavcni_puzzle` v vmesniku (`TipNaloge` in `TIPI` »Sestavi poved«, veja v `odgovorHtml`, čiščenje stanja ob ponastavitvi, brez prikaza `kontekst`, povzetek kviza, razredi v `style.css`); sanity check in neodvisni preizkus v brskalniku uspešna.
-3. **DeepSeek (zdaj):** dokumentacija usklajena (117 nalog, tabela modulov, checklist); **objava čaka izrecno potrditev uporabnika** (`git push origin main`: `063a834`, `aeeb8de`, `b5f2087`), pred tem pa še neobvezen mikro-popravek `aria-live` po dogovoru s Claude Code.
-4. **Aljona:** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov, sestavljanke »Sestavi poved«) — še odprto.
-5. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet.
-6. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
+3. **DeepSeek — opravljeno 27. 11. 2026** (`dc7494d`): dokumentacija usklajena (117 nalog, tabela modulov, checklist, changelog).
+4. **Claude Code (zdaj):** mikro popravek dostopnosti pri »Sestavi poved« — `.sestavljeno` izgubi `role="status"` (vsebuje gumbe), `p.sr-only` postane edino živo območje in se izriše vedno; navodila v `.ai-tasks/1-claude.md`. Nato **objava po izrecni potrditvi uporabnika** (`git push origin main`).
+5. **Aljona:** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov, sestavljanke »Sestavi poved«) — še odprto.
+6. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet.
+7. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
