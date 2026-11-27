@@ -1,5 +1,5 @@
 /** Shema po NAVODILA.md → »Standardna shema za naloge.json«. */
-export type TipNaloge = 'izbira' | 'vnos' | 'popravek_napake' | 'parafraza';
+export type TipNaloge = 'izbira' | 'vnos' | 'popravek_napake' | 'parafraza' | 'stavcni_puzzle';
 
 /** Raven po SEJO/CEFR. Filter in prikaz ravni temeljita izključno na tem polju, ne na predponi ID-ja. */
 export type Raven = 'B2' | 'C1';

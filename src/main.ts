@@ -28,6 +28,7 @@ const TIPI: Record<TipNaloge, string> = {
   vnos: 'Vnos',
   popravek_napake: 'Popravek napake',
   parafraza: 'Parafraza',
+  stavcni_puzzle: 'Sestavi poved',
 };
 
 const VRZEL = /_{3,}/;
@@ -38,6 +39,7 @@ const steviloVrzeli = (n: Naloga) => n.kontekst.split(VRZEL).length - 1;
 let naloge: Naloga[] = [];
 let napredek: Napredek = preberiNapredek();
 const osnutki = new Map<string, string>(); // trenutni (še nepreverjeni) odgovori
+const sestavljanja = new Map<string, number[]>(); // stavcni_puzzle: indeksi v n.moznosti, v vrstnem redu izbire
 const odprteRazlage = new Set<string>();
 let filter = 'vse';
 let tipFilter: 'vse' | TipNaloge = 'vse';
@@ -92,6 +94,31 @@ const imaStanje = (n: Naloga) => !!rezultatZa(n) || !!osnutki.get(n.id)?.trim() 
 const jeOdprta = (n: Naloga) => !napredek[n.id]?.pravilno; // nerešena ali napačna
 const vKategoriji = (n: Naloga) => filter === 'vse' || n.kategorija === filter;
 const vTipu = (n: Naloga) => tipFilter === 'vse' || n.tip_naloge === tipFilter;
+
+/* ---------- sestavljanje povedi (stavcni_puzzle) ---------- */
+
+/** Vrednost osnutka: sestavine, ločene s presledki (normalizacija v preverjanje.ts poenoti presledke pred ločili). */
+const zdruziSestavine = (n: Naloga, izbor: number[]) => izbor.map((i) => n.moznosti[i]).join(' ');
+/** Za prikaz: brez presledka pred vejico in dvopičjem. */
+const brezPresledkaPredLocilom = (s: string) => s.replace(/\s+([,:])/g, '$1');
+const prikazSestave = (n: Naloga, izbor: number[]) => brezPresledkaPredLocilom(zdruziSestavine(n, izbor));
+/** Zapisan odgovor za prikaz (»Vaš odgovor«, povzetek kviza); pri drugih tipih nespremenjen. */
+const prikazOdgovora = (n: Naloga, odgovor: string) =>
+  n.tip_naloge === 'stavcni_puzzle' ? brezPresledkaPredLocilom(odgovor) : odgovor;
+
+/** Trenutni izbor sestavin; če ga ni (npr. po osvežitvi strani), ga rekonstruira iz zapisanega odgovora. */
+function sestava(n: Naloga, odgovor: string): number[] {
+  const obstojeci = sestavljanja.get(n.id);
+  if (obstojeci) return obstojeci;
+  const izbor: number[] = [];
+  for (const del of odgovor.split(/\s+/)) {
+    if (!del) continue;
+    const i = n.moznosti.findIndex((m, j) => m === del && !izbor.includes(j));
+    if (i >= 0) izbor.push(i); // neujemajoče dele tiho izpustimo
+  }
+  sestavljanja.set(n.id, izbor);
+  return izbor;
+}
 
 /* ---------- tema (svetla / temna) ---------- */
 
@@ -251,6 +278,7 @@ function vstavkiZaVrzeli(n: Naloga, odgovor: string): string[] {
 }
 
 function kontekstHtml(n: Naloga, odgovor: string, napacno = false): string {
+  if (n.tip_naloge === 'stavcni_puzzle') return ''; // kontekst je prazen; sestavine so v odgovorHtml
   const deli = n.kontekst.split(VRZEL);
   if (deli.length === 1) {
     const oznaka = n.tip_naloge === 'popravek_napake' ? 'Poved z napako' : 'Izhodiščna poved';
@@ -267,6 +295,53 @@ function kontekstHtml(n: Naloga, odgovor: string, napacno = false): string {
 
 function odgovorHtml(n: Naloga, odgovor: string, rez: Rezultat | undefined): string {
   const zaklenjeno = !!rez;
+
+  if (n.tip_naloge === 'stavcni_puzzle') {
+    if (!Array.isArray(n.moznosti) || !n.moznosti.length) {
+      return '<p class="text-[var(--muted)]">Ta naloga nima sestavin.</p>';
+    }
+    const izbor = sestava(n, odgovor);
+    const sestavljeno = izbor.length
+      ? izbor
+          .map((idx, poz) => {
+            const b = esc(n.moznosti[idx]);
+            return zaklenjeno
+              ? `<span class="sestavina sestavina-zaklenjena">${b}</span>`
+              : `<button type="button" class="sestavina" data-akcija="sestavina-odstrani" data-pozicija="${poz}"
+                         aria-label="Odstrani »${b}« iz povedi">${b}</button>`;
+          })
+          .join('')
+      : '<span class="sestavljeno-prazno">Dotaknite se besed spodaj …</span>';
+    const ponujene = n.moznosti
+      .map((m, idx) => {
+        const b = esc(m);
+        const off = zaklenjeno || izbor.includes(idx);
+        return `<button type="button" class="sestavina" data-akcija="sestavina" data-vrednost="${idx}"
+                        aria-label="Dodaj »${b}« v poved" ${off ? 'disabled' : ''}>${b}</button>`;
+      })
+      .join('');
+    return `
+      <div class="sestavljanje">
+        <p class="sestavljanje-oznaka">Vaša poved</p>
+        <div class="sestavljeno" role="status" aria-live="polite">${sestavljeno}</div>
+        ${izbor.length ? `<p class="sr-only">Trenutna poved: ${esc(prikazSestave(n, izbor))}</p>` : ''}
+        <div class="sestavine" role="group" aria-label="Sestavine">${ponujene}</div>
+        ${
+          zaklenjeno
+            ? ''
+            : `<div class="mt-2 flex flex-wrap items-center justify-between gap-2">
+                 <p class="namig !mt-0">Dotaknite se besede, da jo dodate v poved; dotaknite se besede v povedi, da jo odstranite.</p>
+                 ${
+                   izbor.length
+                     ? `<button type="button" class="gumb gumb-tih gumb-mali" data-akcija="pocisti-sestavo">
+                          <span aria-hidden="true">✕</span> Počisti
+                        </button>`
+                     : ''
+                 }
+               </div>`
+        }
+      </div>`;
+  }
 
   if (n.tip_naloge === 'izbira') {
     const moznosti = n.moznosti
@@ -341,7 +416,7 @@ function odzivHtml(n: Naloga, rez: Rezultat | undefined): string {
       <span class="odziv-znak" aria-hidden="true">!</span>
       <div class="min-w-0 space-y-2">
         <p><strong>Ni povsem pravilno.</strong></p>
-        <p class="text-sm text-[var(--muted)]">Vaš odgovor: <s class="vas-odgovor">${esc(rez.odgovor)}</s></p>
+        <p class="text-sm text-[var(--muted)]">Vaš odgovor: <s class="vas-odgovor">${esc(prikazOdgovora(n, rez.odgovor))}</s></p>
         <div>
           <p class="text-sm font-semibold">Pričakovana rešitev:</p>
           <p class="resitev">${esc(glavni)}</p>
@@ -456,6 +531,7 @@ function zacniKviz() {
   const ids = vrstni.slice(0, VELIKOST_KVIZA).map((n) => n.id);
   for (const id of ids) {
     osnutki.delete(id);
+    sestavljanja.delete(id);
     odprteRazlage.delete(id);
   }
   kviz = { ids, indeks: 0, rezultati: new Map(), izbor: opisIzbora(), koncan: false };
@@ -465,6 +541,7 @@ function zacniKviz() {
 function pospraviKviz() {
   for (const id of kviz?.ids ?? []) {
     osnutki.delete(id);
+    sestavljanja.delete(id);
     odprteRazlage.delete(id);
   }
 }
@@ -501,7 +578,8 @@ function sporociloZaUspeh(odstotek: number): string {
 
 function vrsticaPovzetka(n: Naloga, r: Rezultat | undefined, i: number): string {
   const ok = !!r?.pravilno;
-  const kratko = n.kontekst.length > 160 ? `${n.kontekst.slice(0, 160).trimEnd()} …` : n.kontekst;
+  const izhodisce = n.kontekst || n.pravilni_odgovor;
+  const kratko = izhodisce.length > 160 ? `${izhodisce.slice(0, 160).trimEnd()} …` : izhodisce;
   return `
     <li class="povzetek-vrstica ${ok ? 'povzetek-ok' : 'povzetek-napaka'}">
       <span class="odziv-znak" aria-hidden="true">${ok ? '✓' : '!'}</span>
@@ -515,8 +593,8 @@ function vrsticaPovzetka(n: Naloga, r: Rezultat | undefined, i: number): string 
         <p class="povzetek-kontekst">${esc(kratko)}</p>
         ${
           ok
-            ? `<p class="text-sm">Vaš odgovor: <span class="resitev">${esc(r!.odgovor)}</span></p>`
-            : `<p class="text-sm text-[var(--muted)]">Vaš odgovor: <s class="vas-odgovor">${esc(r?.odgovor ?? '–')}</s></p>
+            ? `<p class="text-sm">Vaš odgovor: <span class="resitev">${esc(prikazOdgovora(n, r!.odgovor))}</span></p>`
+            : `<p class="text-sm text-[var(--muted)]">Vaš odgovor: <s class="vas-odgovor">${esc(r ? prikazOdgovora(n, r.odgovor) : '–')}</s></p>
                <p class="text-sm">Pravilno: <span class="resitev">${esc(n.pravilni_odgovor)}</span></p>
                <details class="povzetek-razlaga">
                  <summary><span aria-hidden="true">💡</span> Prikaži razlago</summary>
@@ -652,7 +730,7 @@ function fokusNaVsebino() {
   const dotik = matchMedia('(pointer: coarse)').matches;
   const cilj =
     v.querySelector<HTMLElement>('#povzetek-naslov') ??
-    (dotik ? null : v.querySelector<HTMLElement>('[data-vnos]:not([readonly]), [data-akcija="izberi"]:not(:disabled)')) ??
+    (dotik ? null : v.querySelector<HTMLElement>('[data-vnos]:not([readonly]), [data-akcija="izberi"]:not(:disabled), [data-akcija="sestavina"]:not(:disabled)')) ??
     v.querySelector<HTMLElement>('#kviz-glava');
   cilj?.focus({ preventScroll: true });
 }
@@ -715,7 +793,7 @@ function prilagodiVisino(t: HTMLTextAreaElement) {
 function preveri(n: Naloga) {
   const odgovor = (osnutki.get(n.id) ?? '').trim();
   if (!odgovor) {
-    elKartica(n.id)?.querySelector<HTMLElement>('[data-vnos], [data-akcija="izberi"]')?.focus();
+    elKartica(n.id)?.querySelector<HTMLElement>('[data-vnos], [data-akcija="izberi"], [data-akcija="sestavina"]:not(:disabled)')?.focus();
     return;
   }
   const rez: Rezultat = { odgovor, pravilno: jePravilno(n, odgovor) };
@@ -736,7 +814,7 @@ function znova(n: Naloga) {
   delete napredek[n.id];
   shraniNapredek(napredek);
   odprteRazlage.delete(n.id);
-  osveziKartico(n.id, '[data-vnos], [data-akcija="izberi"][aria-pressed="true"], [data-akcija="izberi"]');
+  osveziKartico(n.id, '[data-vnos], [data-akcija="izberi"][aria-pressed="true"], [data-akcija="izberi"], [data-akcija="sestavina"]:not(:disabled), [data-akcija="preveri"]');
   osveziPlosco();
 }
 
@@ -750,12 +828,13 @@ function ponastaviNalogo(n: Naloga) {
   delete napredek[n.id];
   shraniAliPobrisi();
   osnutki.delete(n.id);
+  sestavljanja.delete(n.id);
   odprteRazlage.delete(n.id);
   if (vKvizu()) {
     kviz!.rezultati.delete(n.id);
     osveziKvizGlavo();
   }
-  osveziKartico(n.id, '[data-vnos], [data-akcija="izberi"]');
+  osveziKartico(n.id, '[data-vnos], [data-akcija="izberi"], [data-akcija="sestavina"]:not(:disabled)');
   osveziPlosco();
 }
 
@@ -772,6 +851,7 @@ function ponastaviIzbor() {
   for (const n of izbor) {
     delete napredek[n.id];
     osnutki.delete(n.id);
+    sestavljanja.delete(n.id);
     odprteRazlage.delete(n.id);
   }
   shraniAliPobrisi();
@@ -801,6 +881,33 @@ app.addEventListener('click', (e) => {
       if (n && !rezultatZa(n)) {
         osnutki.set(n.id, el.dataset.vrednost ?? '');
         osveziKartico(n.id);
+      }
+      break;
+    case 'sestavina':
+      if (n && !rezultatZa(n)) {
+        const izbor = [...sestava(n, trenutniOdgovor(n))];
+        const idx = Number(el.dataset.vrednost);
+        if (Number.isInteger(idx) && idx >= 0 && idx < n.moznosti.length && !izbor.includes(idx)) izbor.push(idx);
+        sestavljanja.set(n.id, izbor);
+        osnutki.set(n.id, zdruziSestavine(n, izbor));
+        osveziKartico(n.id, '[data-akcija="sestavina"]:not(:disabled), [data-akcija="pocisti-sestavo"], [data-akcija="preveri"]');
+      }
+      break;
+    case 'sestavina-odstrani':
+      if (n && !rezultatZa(n)) {
+        const izbor = [...sestava(n, trenutniOdgovor(n))];
+        izbor.splice(Number(el.dataset.pozicija), 1); // položaj v izboru je edinstven, niz v moznosti morda ne
+        if (izbor.length) osnutki.set(n.id, zdruziSestavine(n, izbor));
+        else osnutki.delete(n.id);
+        sestavljanja.set(n.id, izbor);
+        osveziKartico(n.id, '[data-akcija="sestavina"]:not(:disabled), [data-akcija="preveri"], [data-akcija="znova"]');
+      }
+      break;
+    case 'pocisti-sestavo':
+      if (n && !rezultatZa(n)) {
+        sestavljanja.delete(n.id);
+        osnutki.delete(n.id);
+        osveziKartico(n.id, '[data-akcija="sestavina"]:not(:disabled)');
       }
       break;
     case 'preveri':

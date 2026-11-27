@@ -535,6 +535,20 @@ body {
   .moznost-napacna .moznost-besedilo { text-decoration: line-through; }
   .moznost-zatemnjena { opacity: 0.5; }
 
+  /* --- sestavljanje povedi (stavcni_puzzle) --- */
+  .sestavljanje { margin-top: 0; }
+  .sestavljanje-oznaka { margin-bottom: 0.375rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+  .sestavljeno { display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem; min-height: 3rem; padding: 0.5rem 0.75rem; border: 2px dashed var(--border); border-radius: 0.75rem; background: var(--bg); }
+  .sestavljeno-prazno { font-size: 0.95rem; color: var(--muted); }
+  .sestavine { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+  .sestavina { min-height: 2.75rem; padding: 0.5rem 0.875rem; border: 2px solid var(--border); border-radius: 0.625rem; background: var(--surface); color: var(--text); font-size: 1rem; line-height: 1.2; cursor: pointer; transition: border-color 0.15s, background-color 0.15s, opacity 0.15s; }
+  .sestavina:hover:not(:disabled) { border-color: var(--ok); }
+  .sestavina:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+  .sestavina:disabled { opacity: 0.35; cursor: default; }
+  .sestavljeno .sestavina { border-color: var(--ok); background: var(--ok-tint); }
+  /* .sestavljeno .sestavina-zaklenjena: mora premagati .sestavljeno .sestavina (preverjena poved) */
+  .sestavljeno .sestavina-zaklenjena { display: inline-flex; align-items: center; opacity: 1; border-color: var(--border); background: var(--surface); cursor: default; }
+
   /* --- vnosna polja --- */
   .vnos {
     width: 100%;
