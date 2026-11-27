@@ -1,3 +1,11 @@
+# [OPRAVLJENO] Predlog 5 nalog novega tipa stavcni_puzzle (B2) — 27. 11. 2026
+
+- Pripravljeni ID-ji: C1-SKL-016, C1-DVO-016, C1-VID-016, C1-FRA-016, C1-SLO-016.
+- Predlog: predlogi-stavcni-puzzle.json; natanko 5 objektov s po 13 polji, UTF-8 brez BOM.
+- Navodilo omejuje rešitve na začetno besedo z veliko začetnico in nevtralen besedni red; dodane so nevtralne alternative, ne zaznamovane ali pesniške razporeditve.
+- Omejitev tipa: VID in SLO utrjujeta rabo že ponujenih oblik; brez odvečnih sestavin ne preverjata samostojne izbire vida oziroma sopomenke.
+- naloge.json, src/, brain/ in napredek.md ostajajo nespremenjeni; predlog še ni vključen v aplikacijo.
+
 # Navodila za Codex (.ai-tasks/2-codex.md)
 
 ## 🎯 Namen

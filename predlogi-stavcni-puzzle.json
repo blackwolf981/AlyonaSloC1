@@ -1,0 +1,79 @@
+{
+  "naloge": [
+    {
+      "id": "C1-SKL-016",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "naslonski_niz",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": ["bom", "mu", ",", "vrnila", "sem", "da", "Obljubila", "se"],
+      "pravilni_odgovor": "Obljubila sem mu, da se bom vrnila.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Kratke besede imajo določen vrstni red: »sem mu« in »se bom«, pred »da« pa stoji vejica. Primer: »Rekla sem mu, da se bom oglasila.«",
+      "tipicna_napaka": "Ne sestavite »mu sem« ali »bom se« in ne pozabite vejice pred »da«.",
+      "oznake": ["MOD-06", "naslonski_niz", "stavcni_puzzle"]
+    },
+    {
+      "id": "C1-DVO-016",
+      "kategorija": "dvojina",
+      "podkategorija": "ujemanje_v_dvojini",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": ["udeležili", "novi", "sta", "izobraževanja", "Obe", "se", "sodelavki"],
+      "pravilni_odgovor": "Obe novi sodelavki sta se udeležili izobraževanja.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Besede »obe novi sodelavki« sodijo skupaj, »sta se udeležili« pa pove, kaj sta naredili dve ženski. Primer: »Obe novi sosedi sta se predstavili.«",
+      "tipicna_napaka": "Zveze »obe novi sodelavki« ne razbijte z »sta se«; najprej sestavite celotno skupino besed za osebi.",
+      "oznake": ["MOD-05", "ujemanje_v_dvojini", "stavcni_puzzle"]
+    },
+    {
+      "id": "C1-VID-016",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "vid_v_kontekstu",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": ["uri", "napisal", "v", "Poročilo", "eni", "sem", "sami"],
+      "pravilni_odgovor": "Poročilo sem napisal v eni sami uri.",
+      "alternativni_odgovori": ["Poročilo sem v eni sami uri napisal."],
+      "slovnicna_razlaga": "»Napisal v eni sami uri« pomeni, da je bilo delo v tem času končano, »pisal eno uro« pa opisuje trajanje dela. Časovni podatek lahko stoji pred »napisal« ali za njim; primer: »Kosilo sem skuhala v eni uri.«",
+      "tipicna_napaka": "Besed »v eni sami uri« ne razdelite; skupaj povedo, koliko časa je bilo potrebnega za dokončanje.",
+      "oznake": ["MOD-04", "vid_v_kontekstu", "stavcni_puzzle"]
+    },
+    {
+      "id": "C1-FRA-016",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "frazem_v_povedi",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": ["srca", "je", "izpitu", "kamen", "Po", "od", "mi", "padel"],
+      "pravilni_odgovor": "Po izpitu mi je padel kamen od srca.",
+      "alternativni_odgovori": ["Po izpitu mi je kamen padel od srca."],
+      "slovnicna_razlaga": "»Pasti komu kamen od srca« pomeni občutiti olajšanje; primer: »Ko sem našla ključe, mi je padel kamen od srca.« »Mi je« ostane v tem vrstnem redu, »kamen« pa lahko stoji pred »padel« ali za njim.",
+      "tipicna_napaka": "Ne sestavite »je mi« in ne zamenjajte zveze »od srca« z »od izpitu«.",
+      "oznake": ["MOD-03", "frazem_v_povedi", "stavcni_puzzle"]
+    },
+    {
+      "id": "C1-SLO-016",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "slogovni_register",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": ["kopijo", "nam", "vas", "pogodbe", ",", "Prosimo", "podpisane", "posredujete", "da"],
+      "pravilni_odgovor": "Prosimo vas, da nam posredujete kopijo podpisane pogodbe.",
+      "alternativni_odgovori": ["Prosimo vas, da nam kopijo podpisane pogodbe posredujete."],
+      "slovnicna_razlaga": "»Prosimo vas, da nam posredujete …« je vljudna prošnja v uradnem sporočilu; primer: »Prosimo vas, da nam posredujete naslov.« »Nam« stoji za »da«, predmet prošnje pa lahko stoji pred »posredujete« ali za njim.",
+      "tipicna_napaka": "Ohranite zvezo »kopijo podpisane pogodbe«: podpisana je pogodba, ne kopija.",
+      "oznake": ["MOD-07", "slogovni_register", "stavcni_puzzle"]
+    }
+  ]
+}
