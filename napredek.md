@@ -82,6 +82,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 * **Codex (vsebina):** V `naloge.json` vnesenih 5 potrjenih nalog tipa `stavcni_puzzle` (`C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`), prepis 1:1 iz predloga; `predlogi-stavcni-puzzle.json` izbrisan. Baza: **117 nalog** (93 B2 / 24 C1), vsaka kategorija vsaj 16 nalog. Commit `b5f2087`, brez `git push`.
 * **DeepSeek (Orkestrator, sanity check vnosa):** Spremenjeni samo `naloge.json` (+75 vrstic, brez izbrisov) in `.ai-tasks/2-codex.md`; prvih 112 nalog JSON-identičnih prejšnji različici in v istem vrstnem redu; vseh 5 novih objektov **1:1** s predlogom iz commita `2621eed` (13 polj, enak vrstni red polj); 117 nalog, 0 podvojenih ID-jev, 0 manjkajočih polj, min **16**/kategorijo, UTF-8 brez BOM; brez lock datotek; `npm run build` uspešen. Sestavljanke preverjene s prepisom normalizacije iz `src/preverjanje.ts` (osnutek, kot ga shrani vmesnik, je sprejet pri vseh 7 sprejemljivih odgovorih). Neodvisni preizkus v brskalniku (glava Chrome nad `vite preview`): 5 kartic »Sestavi poved«, 39 gumbov sestavin, filter s števcem 5.
 * **DeepSeek (dokumentacija):** Usklajeni `brain/00-INDEX.md` in `napredek.md` na 117 nalog (dashboard, tabela modulov, checklist, changelog, naslednji koraki); commit `dc7494d`. Pripravljena naloga za Claude Code (`.ai-tasks/1-claude.md`): mikro popravek dostopnosti pri »Sestavi poved« — `.sestavljeno` preneha biti `role="status"` (vsebuje gumbe), edino živo območje postane `p.sr-only`.
+* **Claude (dostopnost):** Popravek `19d5e4c` — `role="status"`/`aria-live` odstranjen z `.sestavljeno`, `p.sr-only` se izriše **vedno** kot edino živo območje (prazno: »Trenutna poved je prazna.«); obseg +4 / −2 vrstici, samo `src/main.ts`. Sanity check DeepSeek: shema 117 nalog nespremenjena, brez lock datotek, `npm run build` OK, v brskalniku 5/5 kartic z enim živim območjem in brez `role` na vsebniku z gumbi. Znano: ob vsakem kliku se kartica zamenja (`outerHTML`), zato je območje novo vozlišče — če bralnik zaslona ne prebere ničesar, sledi trajno območje zunaj kartice.
 * **Claude Code (UI):** Podpora tipu `stavcni_puzzle` (»Sestavi poved«) — `src/types.ts` (`TipNaloge`), `TIPI`, nova veja v `odgovorHtml` (sestavine kot gumbi: dotik doda v poved, dotik na sestavini v povedi jo odstrani; »Počisti«), brez prikaza praznega `konteksta`, čiščenje stanja ob ponastavitvi/znova/kvizu, prikaz odgovora brez presledka pred vejico, `aria-live` in `sr-only` povzetek povedi, novi razredi v `src/style.css` (>= 44 px). Živi preizkus v brskalniku uspešen; commit `063a834`, brez `git push`.
 * **DeepSeek (Orkestrator, sanity check):** Spremenjene samo datoteke v `src/`, `naloge.json` nespremenjen (112 nalog, 13 polj, 0 podvojenih ID-jev, min 15/kategorijo), brez lock datotek, `npm run build` uspešen. Dodatno neodvisno preverjanje: 5 predlogov začasno združenih v bazo, `vite preview` + glava Chrome (`--dump-dom`) — 5 kartic »Sestavi poved«, 39 gumbov sestavin (8+7+7+8+9), 5 praznih blokov »Vaša poved«, filter s števcem 5; po preizkusu baza obnovljena (`git diff --quiet`). Predaja Codexu za vnos v `naloge.json`.
 * **DeepSeek (Orkestrator, predaja Codexu):**
@@ -150,13 +151,15 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 🔜 Naslednji delovni sklop
-1. **Claude Code (mikro popravek, v teku):**
-   - Dostopnost pri »Sestavi poved«: `.sestavljeno` ne sme biti `role="status"` (vsebuje gumbe); edino živo območje je `p.sr-only[role="status"]`, ki se izriše vedno. Navodila: `.ai-tasks/1-claude.md`.
-2. **Preizkus v brskalniku (Aljona / uporabnik):**
+1. **Claude Code (mikro popravek — opravljeno 27. 11. 2026):**
+   - Dostopnost pri »Sestavi poved«: `.sestavljeno` ni več `role="status"` (vsebuje gumbe); edino živo območje je `p.sr-only[role="status"]`, izrisano vedno (`19d5e4c`). Odprto le, če bralnik zaslona ob kliku ne prebere ničesar → trajno območje zunaj kartice.
+2. **Objava (DeepSeek, čaka izrecno potrditev uporabnika):**
+   - `git push origin main` z neobjavljenimi commiti `063a834`, `aeeb8de`, `b5f2087`, `dc7494d`, `49a4301`, `19d5e4c` (117 nalog + dostopnost).
+3. **Preizkus v brskalniku (Aljona / uporabnik):**
    - Izbirnik ravni, oba gumba za ponastavitev in potrditveno sporočilo (tudi v kvizu) na namizju in telefonu; lokalni predogled objave z `npm run preview`.
-3. **Claude Code (Pika na i):**
+4. **Claude Code (Pika na i):**
    - Gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
-4. **Aljonin preizkus v živo:**
+5. **Aljonin preizkus v živo:**
    - Preizkus ponastavitve posamezne naloge in izbora na telefonu: [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (117 nalog v bazi, vključno s 5 sestavljankami »Sestavi poved«).
    - Objava na GitHub Pages izvedena 25. 11. 2026 (`git push` → GitHub Actions; na živo preverjen nov paket `index-DhED8cZy.js`); **nova objava (117 nalog + mikro popravek) čaka izrecno potrditev uporabnika**.
 
