@@ -1,3 +1,11 @@
+# [OPRAVLJENO] 27. 11. 2026 — Vnos 5 nalog tipa stavcni_puzzle
+
+- Na konec polja `naloge` prenesenih 5 potrjenih objektov 1:1: C1-SKL-016, C1-DVO-016, C1-VID-016, C1-FRA-016, C1-SLO-016; obstoječih 112 nalog je nespremenjenih.
+- `predlogi-stavcni-puzzle.json` izbrisan; vsebina je zdaj v `naloge.json`.
+- Validacija uspešna: 117 nalog (93 B2 / 24 C1), brez podvojenih ID-jev, natanko 13 polj, UTF-8 brez BOM; sestavine se ujemajo z vsemi rešitvami in alternativami.
+- Najmanj nalog na kategorijo je po vnosu 16 (navodila so pričakovala 15); `npm run build` uspešen.
+- Brez posegov v `src/`, `brain/` in `napredek.md`; zaključek z lokalnim commitom, brez `git push`.
+
 # 📥 Trenutna naloga (27. 11. 2026) — vnos 5 potrjenih nalog tipa `stavcni_puzzle` v `naloge.json`
 
 ## Stanje
