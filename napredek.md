@@ -53,7 +53,7 @@
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
 - [x] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — implementirano v commitu de62611!)*
 - [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — naslednji korak)*
-- [ ] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Codex — predlog natanko 5 stavkov v `predlogi-stavcni-puzzle.json`, 27. 11. 2026; Claude Code — podpora tipu v UI; vnos v `naloge.json` po objavi podpore)*
+- [ ] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Claude Code — podpora tipu v UI objavljena 27. 11. 2026, `063a834`; Codex — 5 predlogov pripravljenih in potrjenih v `predlogi-stavcni-puzzle.json`; **čaka vnos v `naloge.json`**)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Codex; po novem dogovoru z uporabnikom)*
 
 ---
@@ -79,6 +79,8 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 
 ## 📝 Dnevnik sprememb in aktivnosti (Changelog)
 ### [27. 11. 2026]
+* **Claude Code (UI):** Podpora tipu `stavcni_puzzle` (»Sestavi poved«) — `src/types.ts` (`TipNaloge`), `TIPI`, nova veja v `odgovorHtml` (sestavine kot gumbi: dotik doda v poved, dotik na sestavini v povedi jo odstrani; »Počisti«), brez prikaza praznega `konteksta`, čiščenje stanja ob ponastavitvi/znova/kvizu, prikaz odgovora brez presledka pred vejico, `aria-live` in `sr-only` povzetek povedi, novi razredi v `src/style.css` (>= 44 px). Živi preizkus v brskalniku uspešen; commit `063a834`, brez `git push`.
+* **DeepSeek (Orkestrator, sanity check):** Spremenjene samo datoteke v `src/`, `naloge.json` nespremenjen (112 nalog, 13 polj, 0 podvojenih ID-jev, min 15/kategorijo), brez lock datotek, `npm run build` uspešen. Dodatno neodvisno preverjanje: 5 predlogov začasno združenih v bazo, `vite preview` + glava Chrome (`--dump-dom`) — 5 kartic »Sestavi poved«, 39 gumbov sestavin (8+7+7+8+9), 5 praznih blokov »Vaša poved«, filter s števcem 5; po preizkusu baza obnovljena (`git diff --quiet`). Predaja Codexu za vnos v `naloge.json`.
 * **DeepSeek (Orkestrator, predaja Codexu):**
   - Opredeljen nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«, raven B2): učenka sestavi pravilno poved iz premešanih besed in ločil. Shema `naloge.json` ostaja nespremenjena — sestavine so v obstoječem polju `moznosti`, `kontekst` je prazen, končno ločilo ni sestavina.
   - V `.ai-tasks/2-codex.md` pripravljena naloga za Codex: predlog natanko 5 stavkov v novi datoteki `predlogi-stavcni-puzzle.json` — `C1-SKL-016` (naslonski niz), `C1-DVO-016` (dvojina), `C1-VID-016` (glagolski vid), `C1-FRA-016` (frazem), `C1-SLO-016` (slogovni register). Vsi ID-ji preverjeno prosti.

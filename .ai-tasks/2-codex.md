@@ -1,93 +1,39 @@
-# [OPRAVLJENO] Predlog 5 nalog novega tipa stavcni_puzzle (B2) — 27. 11. 2026
+# 📥 Trenutna naloga (27. 11. 2026) — vnos 5 potrjenih nalog tipa `stavcni_puzzle` v `naloge.json`
 
-- Pripravljeni ID-ji: C1-SKL-016, C1-DVO-016, C1-VID-016, C1-FRA-016, C1-SLO-016.
-- Predlog: predlogi-stavcni-puzzle.json; natanko 5 objektov s po 13 polji, UTF-8 brez BOM.
-- Navodilo omejuje rešitve na začetno besedo z veliko začetnico in nevtralen besedni red; dodane so nevtralne alternative, ne zaznamovane ali pesniške razporeditve.
-- Omejitev tipa: VID in SLO utrjujeta rabo že ponujenih oblik; brez odvečnih sestavin ne preverjata samostojne izbire vida oziroma sopomenke.
-- naloge.json, src/, brain/ in napredek.md ostajajo nespremenjeni; predlog še ni vključen v aplikacijo.
+## Stanje
 
-# Navodila za Codex (.ai-tasks/2-codex.md)
+* `predlogi-stavcni-puzzle.json` vsebuje 5 potrjenih B2 nalog: `C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`.
+* Podpora tipu v vmesniku je končana (Claude Code, commit `063a834`: `src/types.ts`, `src/main.ts`, `src/style.css`) in v živo preverjena v brskalniku.
+* Sanity check DeepSeek (27. 11. 2026): predlog veljaven (13 polj, 7–9 sestavin, brez presledkov v sestavinah, vsaka sestavina enkrat), `naloge.json` še vedno 112 nalog, build uspešen, brez lock datotek.
 
-## 🎯 Namen
+## 📋 Kaj narediti
 
-Uvajamo **nov tip naloge `stavcni_puzzle`** (v vmesniku se bo prikazal kot »Sestavi poved«): učenka dobi poved, razsuto na posamezne besede in ločila, in jih mora sestaviti v pravilno poved — kot puzzle. Tvoja naloga je **predlog natanko 5 stavkov na ravni B2**.
+1. Preberi `predlogi-stavcni-puzzle.json`.
+2. Preveri, da v `naloge.json` ni nobenega od petih ID-jev (27. 11. 2026 so bili prosti).
+3. Vstavi vseh 5 objektov na **konec polja `naloge`**, v vrstnem redu: SKL-016, DVO-016, VID-016, FRA-016, SLO-016. Vsak objekt prepiši **1:1** z vsemi 13 polji; ne preimenuj ID-jev, ne dodajaj polj, ne spreminjaj vrstnega reda sestavin v `moznosti`.
+4. `kontekst` ostane `""`; končno ločilo ostane samo v `pravilni_odgovor`; `pravilni_odgovor` mora biti natanko združene `moznosti` z enim presledkom med njimi.
+5. Dovoljeni so le mikro-popravki jezikovnih besedil v `navodilo`, `slovnicna_razlaga` in `tipicna_napaka` (če najdeš dejansko napako). `moznosti`, `pravilni_odgovor` in `alternativni_odgovori` pusti nespremenjene — ujemati se morajo z različico, ki je bila v vmesniku že preverjena. `C1-VID-016` naj ostane v moški obliki (naloga preverja vid, ne spola).
+6. Izbriši `predlogi-stavcni-puzzle.json` (vsebina je zdaj v bazi) in izbris navedi v commitu.
+7. `brain/00-INDEX.md` in `napredek.md` ureja orkestrator. Na začetek **te** datoteke dodaj povzetek po ustaljenem vzorcu (`# [OPRAVLJENO] 27. 11. 2026 — Vnos 5 nalog tipa stavcni_puzzle` + 4–5 vrstic); prejšnji povzetek pusti v arhivu.
 
-**Pomembno:** v tej fazi nalog še **ne vpisuj v `naloge.json`**. Podpora novemu tipu v vmesniku (`src/`) še ni narejena; če bi naloge zdaj dodal v bazo, bi se prikazale kot navadno besedilno polje in bi jih bilo mogoče »rešiti« s prepisovanjem povedi. Zato predlog zapišeš v ločeno datoteko (glej spodaj), vnos v `naloge.json` sledi šele po tem, ko Claude Code doda podporo tipu.
+## 🧪 Preverjanje
 
-## 📋 Obseg: natanko 5 predlogov, vsak v svoji kategoriji
+1. Shema (koren projekta) — pričakovano `skupaj 117 | podvojeni 0 | manjkajoca polja 0 | min/kategorijo 15`:
 
-| ID | Kategorija | Podkategorija (predlog) | Kaj naj poved preverja |
-| :--- | :--- | :--- | :--- |
-| `C1-SKL-016` | skladnja_in_slog | naslonski_niz | mesto naslonskega niza in vejica pred odvisnikom |
-| `C1-DVO-016` | dvojina | ujemanje_v_dvojini | dvojina in ujemanje povedka ter prilastka |
-| `C1-VID-016` | glagolski_vid | vid_v_kontekstu | dovršnik proti nedovršniku ob prislovnem določilu |
-| `C1-FRA-016` | frazeologija_in_pregovori | frazem_v_povedi | frazem ostane nespremenjen, vstavi se v poved |
-| `C1-SLO-016` | slog_in_sopomenke | slogovni_register | slogovno ustrezna izbira besede v povedi |
+   ```powershell
+   node -e "const a=JSON.parse(require('fs').readFileSync('naloge.json','utf8')).naloge;const r=['id','kategorija','podkategorija','raven','tip_naloge','navodilo','kontekst','moznosti','pravilni_odgovor','alternativni_odgovori','slovnicna_razlaga','tipicna_napaka','oznake'];const c={};a.forEach(t=>c[t.kategorija]=(c[t.kategorija]||0)+1);const ids=a.map(t=>t.id);console.log('skupaj',a.length,'| podvojeni',ids.filter((x,i)=>ids.indexOf(x)!==i).length,'| manjkajoca polja',a.filter(t=>r.some(k=>!(k in t))).length,'| min/kategorijo',Math.min(...Object.values(c)))"
+   ```
 
-Vseh petih ID-jev v bazi še ni (preverjeno 27. 11. 2026), nobena obstoječa naloga pa še nima tipa `stavcni_puzzle`. Vseh pet predlogov je raven **B2**.
-
-## 📦 Kam zapišeš predlog
-
-1. **`predlogi-stavcni-puzzle.json`** v korenu projekta (nova datoteka, veljaven JSON, UTF-8 **brez BOM**) s strukturo, enako kot `naloge.json`: `{ "naloge": [ … natanko 5 objektov … ] }`. Datoteka je začasna; po pregledu bo vsebina združena v `naloge.json`.
-2. **Na začetek te datoteke** (`.ai-tasks/2-codex.md`) dodaj kratek povzetek po ustaljenem vzorcu: `# [OPRAVLJENO] Predlog 5 nalog novega tipa stavcni_puzzle (B2) — 27. 11. 2026` in pod njim 3–6 vrstic (katere ID-je si pripravil, kje je predlog, opozorila). Spodnjih navodil ne spreminjaj in ne briši.
-
-## 📐 Shema posameznega predloga (vseh 13 polj)
-
-```json
-{
-  "id": "C1-SKL-016",
-  "kategorija": "skladnja_in_slog",
-  "podkategorija": "naslonski_niz",
-  "raven": "B2",
-  "tip_naloge": "stavcni_puzzle",
-  "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte.",
-  "kontekst": "",
-  "moznosti": ["je", "Ko", "…premešane sestavine…"],
-  "pravilni_odgovor": "…sestavljena poved…",
-  "alternativni_odgovori": [],
-  "slovnicna_razlaga": "1–2 kratki povedi z zgledom",
-  "tipicna_napaka": "konkretno opozorilo v vsakdanjem jeziku",
-  "oznake": ["MOD-06", "naslonski_niz", "stavcni_puzzle"]
-}
-```
-
-* `moznosti` = premešane sestavine (besede in notranja ločila), `kontekst` = `""` (prazen, ker bi poved izdala rešitev).
-* `navodilo` naj bo pri vseh petih enako; lahko mu dodaš eno kratko namigovalno poved, če je nujna (npr. »Pazi na mesto naslonskega niza.«), ne sme pa izdati rešitve.
-
-## ✍️ Pravila za sestavine (`moznosti`) — obvezno
-
-* 7–12 sestavin na poved; vsaka sestavina je **ena beseda ali eno ločilo**, brez presledkov znotraj sestavine.
-* Premešaj jih tako, da prve tri sestavine **niso** začetek pravilne povedi in da se vrstni red ne da uganiti.
-* Notranja ločila (`,`, `:`, `–`) so samostojne sestavine.
-* Končnega ločila (`.`, `?`, `!`) **ne** dodajaj med sestavine; je samo v `pravilni_odgovor` (vmesnik končnega ločila pri primerjavi ne zahteva).
-* Narekovaje `» «` uporabi le, če poved brez dobesednega navedka ne gre; raje sestavi poved brez narekovajev.
-* Sestavine zapiši tako, kot so v povedi (prva beseda z veliko začetnico, lastna imena z veliko); primerjava v vmesniku ni občutljiva na velikost črk.
-* `pravilni_odgovor` = natanko združene sestavine v pravilnem vrstnem redu, ločene z enim presledkom, s končnim ločilom. Ne dodajaj besed, ki jih ni med sestavinami, in nobene sestavine ne uporabi dvakrat.
-* Če slovenščina dopušča več vrstnih redov, vse dopustne variante zapiši v `alternativni_odgovori`, v `slovnicna_razlaga` pa pojasni, kateri del vrstnega reda je vezan (naslonski niz) in kateri prost.
-* Vsaka poved mora imeti **eno jasno najboljšo rešitev**; izogibaj se povedim, kjer bi bili dve razporeditvi enako dobri brez jasnega pravila.
-
-## 📚 Vsebinske zahteve
-
-* Raven B2, 7–12 besed, vsakdanje teme (služba, potovanje, družina, šola, prosti čas).
-* `slovnicna_razlaga`: 1–2 kratki povedi v vsakdanjem jeziku + praktični zgled (glej `brain/02-SLOVENSCINA.md`).
-* `tipicna_napaka`: konkretna, preprosta napaka, ki jo učenka res lahko naredi pri sestavljanju.
-* `oznake`: `MOD-0x` (ustrezni modul), pojav (npr. `naslonski_niz`) in `stavcni_puzzle`.
-* Pet predlogov naj pokrije pet različnih pojavov; ne ponavljaj istega pojava dvakrat.
+2. Za vseh 5 novih nalog: vsaka sestavina brez presledka znotraj sestavine, vsaka uporabljena natanko enkrat, `pravilni_odgovor` se ujema z združenimi sestavinami (velikost črk in končno ločilo ne štejeta).
+3. UTF-8 **brez BOM**; `npm run build` (TypeScript + Vite) uspe.
+4. Lock: pred delom ustvari `codexprevajam.lock`, ob koncu ga obvezno izbriši.
+5. Zaključek: `git add naloge.json .ai-tasks/2-codex.md`, `git rm predlogi-stavcni-puzzle.json`, nato `git commit -m "[Codex]: Vnos 5 nalog tipa stavcni_puzzle (Sestavi poved) v naloge.json"` — **brez `git push`**.
 
 ## 🚫 Prepovedi
 
-* Ne urejaj `naloge.json`, `src/`, `brain/`, `napredek.md` ali `src/napredek.ts`.
-* Ne spreminjaj obstoječih nalog in ID-jev; ne uvajaj novih kategorij.
-* Ne dodajaj novih polj v shemo — uporabi natanko 13 obstoječih polj.
+* Ne urejaj `src/`, `brain/`, `napredek.md`.
+* Ne spreminjaj obstoječih 112 nalog, kategorij in sheme.
 * Ne izvajaj `git push`.
-
-## 🧪 Preverjanje in zaključek
-
-1. Veljaven JSON in UTF-8 brez BOM: `node -e "const d=JSON.parse(require('fs').readFileSync('predlogi-stavcni-puzzle.json','utf8'));console.log(d.naloge.length)"` → izpiše `5`.
-2. Samokontrola sestavin: vsaka sestavina brez presledka; `pravilni_odgovor` se ujema z združenimi sestavinami (upoštevaj velike/male začetnice in končno ločilo); vseh 13 polj je prisotnih.
-3. `npm run build` (TypeScript + Vite) mora uspeti.
-4. Lock: pred delom ustvari `codexprevajam.lock`, ob koncu ga obvezno izbriši.
-5. `git add predlogi-stavcni-puzzle.json .ai-tasks/2-codex.md` in `git commit -m "[Codex]: Predlog 5 nalog novega tipa stavcni_puzzle (B2)"` — brez `git push`.
 
 ## 📤 Obvezni Feedback
 
@@ -95,16 +41,23 @@ Na koncu odgovora en sam blok z oznako `text`:
 
 ```text
 [Feedback za Cline]
-- Narejeno: 5 predlogov (ID-ji) in kje je predlog shranjen
-- Spremenjene datoteke: predlogi-stavcni-puzzle.json, .ai-tasks/2-codex.md
+- Narejeno: [kaj je vstavljeno + rezultat validacije]
+- Spremenjene datoteke: [naloge.json, .ai-tasks/2-codex.md, predlogi-stavcni-puzzle.json (izbrisan)]
 - Stanje lock: ni aktivnih lock datotek (lock izbrisan)
-- Opozorila / Vprašanja: [brez / npr. kje je vrstni red dvoumen]
+- Opozorila / Vprašanja: [brez / opozorilo]
 ```
-
----
 
 
 # 🗄️ Arhiv prejšnjih predaj
+
+
+## [OPRAVLJENO] 27. 11. 2026 — Predlog 5 nalog novega tipa stavcni_puzzle (B2)
+
+- Pripravljeni ID-ji: C1-SKL-016, C1-DVO-016, C1-VID-016, C1-FRA-016, C1-SLO-016.
+- Predlog: predlogi-stavcni-puzzle.json; natanko 5 objektov s po 13 polji, UTF-8 brez BOM.
+- Navodilo omejuje rešitve na začetno besedo z veliko začetnico in nevtralen besedni red; dodane so nevtralne alternative, ne zaznamovane ali pesniške razporeditve.
+- Omejitev tipa: VID in SLO utrjujeta rabo že ponujenih oblik; brez odvečnih sestavin ne preverjata samostojne izbire vida oziroma sopomenke.
+- naloge.json, src/, brain/ in napredek.md ostajajo nespremenjeni; predlog še ni vključen v aplikacijo.
 
 ## [OPRAVLJENO] 25. 11. 2026 — Kratka kontrola petih novih B2 nalog iz commita `045f848`
 
