@@ -11,7 +11,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 Objavljeno (Faza 3 zaključena: vseh 112 nalog jezikovno pregledanih, vključno s petimi iz commita `045f848`; Faza 4: UI besedila in vsebinski popravki objavljeni na GitHub Pages 25. 11. 2026; **27. 11. 2026 lokalno dodanih še 5 nalog tipa `stavcni_puzzle` (skupno 117) — čaka objava**)
+* **Status:** 🟢 Objavljeno (Faza 3 zaključena: vseh 112 nalog jezikovno pregledanih, vključno s petimi iz commita `045f848`; Faza 4: UI besedila in vsebinski popravki objavljeni na GitHub Pages 25. 11. 2026; **27. 11. 2026 objavljenih 117 nalog** — 5 sestavljank `stavcni_puzzle` + dostopnostni popravek, paket `index-C-COV7AK.js`)
 * **Obseg nalog:** 117 nalog pripravljenih: 93 B2 in 24 C1; vseh 7 kategorij ima najmanj **16** nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 117 nalog je vsebinsko pregledanih.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj **16** nalog.
 * **Nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«, raven B2):** učenka sestavi poved iz premešanih besed in ločil. Podpora v vmesniku (`063a834`), **5 nalog v bazi** (`b5f2087`): `C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`; dostopnost urejena z enim živim območjem (`p.sr-only`, `19d5e4c`).
@@ -21,6 +21,12 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [27. 11. 2026] — DeepSeek (Objava na GitHub Pages — 117 nalog + dostopnostni popravek)
+* **Narejeno:** Po izrecni potrditvi uporabnika izveden `git push origin main` (7 commitov: `063a834`, `aeeb8de`, `b5f2087`, `dc7494d`, `49a4301`, `19d5e4c`, `4fc049c`); `origin/main` = `4fc049c`.
+* **Objava preverjena na živo:** GitHub Actions je objavil nov paket `index-C-COV7AK.js` + `index-B-68-mKZ.css` (prejšnji `index-DhED8cZy.js`); v paketu je novi niz `Trenutna poved je prazna.`
+* **Preizkus objavljene strani (glava Chrome nad `https://blackwolf981.github.io/AlyonaSloC1/`):** **117 kartic**, **5** kartic »Sestavi poved«, **5×** `p.sr-only[role="status"]`, **0** `role` na `.sestavljeno`; na strežniku `naloge.json` ima **117 nalog** (93 B2 / 24 C1), vseh 5 novih ID-jev (`C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`) po enkrat.
+* **Spremenjene datoteke:** `brain/00-INDEX.md`, `napredek.md` (lokalni commit dokumentacije; objava tega commita še ni izvedena).
+* **Naslednji korak:** Aljonin preizkus na telefonu; neobvezno trajno živo območje, če bralnik zaslona ne prebere sestavljene povedi.
 ### [27. 11. 2026] — DeepSeek (Sanity check mikro popravka dostopnosti — `19d5e4c`)
 * **Narejeno:** Preverjeno Claudeovo delo: spremenjena samo `src/main.ts` (+4 / −2, natanko predpisani dve vrstici); `.sestavljeno` nima več `role="status"`/`aria-live` (vsebuje gumbe), `p.sr-only` je edino in **vedno** izrisano živo območje (`Trenutna poved je prazna.` pri praznem izboru). `naloge.json` in `src/style.css` nespremenjena, delovno drevo čisto.
 * **Shema + build:** 117 nalog, 0 podvojenih ID-jev, 0 manjkajočih polj, min 16/kategorijo; brez lock datotek; `npm run build` uspešen (131 ms); nov niz `Trenutna poved je prazna.` je v novo zgrajenem paketu.
@@ -128,7 +134,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 2. **Claude Code — opravljeno 27. 11. 2026** (`063a834`): podpora tipu `stavcni_puzzle` v vmesniku (`TipNaloge` in `TIPI` »Sestavi poved«, veja v `odgovorHtml`, čiščenje stanja ob ponastavitvi, brez prikaza `kontekst`, povzetek kviza, razredi v `style.css`); sanity check in neodvisni preizkus v brskalniku uspešna.
 3. **DeepSeek — opravljeno 27. 11. 2026** (`dc7494d`, `49a4301`): dokumentacija usklajena (117 nalog, tabela modulov, checklist, changelog) in pripravljena navodila za mikro popravek dostopnosti.
 4. **Claude Code — opravljeno 27. 11. 2026** (`19d5e4c`): eno samo živo območje — `role="status"` odstranjen z `.sestavljeno` (vsebuje gumbe), `p.sr-only` se izriše vedno; sanity check in preizkus v brskalniku uspešna (5/5 kartic). Odprto le, če bralnik zaslona ne prebere ničesar (kartica se zamenja prek `outerHTML`): trajno območje zunaj kartice.
-5. **DeepSeek (zdaj):** **objava čaka izrecno potrditev uporabnika** — `git push origin main` (neobjavljeni: `063a834`, `aeeb8de`, `b5f2087`, `dc7494d`, `49a4301`, `19d5e4c`).
-6. **Aljona:** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov, sestavljanke »Sestavi poved«) — še odprto.
-7. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet.
+5. **DeepSeek — opravljeno 27. 11. 2026:** **objavljeno na GitHub Pages** (`git push origin main`, `origin/main` = `4fc049c`); nov paket `index-C-COV7AK.js` preverjen na živo (117 kartic, 5 sestavljank, 5 živih območij, `naloge.json` na strežniku 117 nalog).
+6. **Aljona (zdaj):** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov, sestavljanke »Sestavi poved«); po potrebi preizkus z bralnikom zaslona (VoiceOver/TalkBack).
+7. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet; po potrebi trajno živo območje zunaj kartice.
 8. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
