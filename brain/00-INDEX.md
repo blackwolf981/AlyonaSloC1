@@ -21,6 +21,11 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [27. 11. 2026] — DeepSeek (Sanity check predloga `stavcni_puzzle` in predaja Claude Code)
+* **Narejeno:** Pregledan Codexov predlog (`2621eed`, `predlogi-stavcni-puzzle.json`): 5 nalog (`C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`), vsaka s 13 polji, po 7–9 sestavin, brez presledkov znotraj sestavin, brez končnega ločila med sestavinami, vsaka sestavina uporabljena natanko enkrat (množično ujemanje z `pravilni_odgovor` in vsemi alternativami), prve tri sestavine niso začetek rešitve, veljaven UTF-8 brez BOM. V `naloge.json` ni poseženo (112 nalog, 0 podvojenih ID-jev); vseh pet novih ID-jev je prostih.
+* **Spremenjene datoteke:** `.ai-tasks/1-claude.md` (nova naloga: podpora tipu `stavcni_puzzle` v vmesniku), `brain/00-INDEX.md`.
+* **Opomba:** Codex sam opozarja na omejitev formata pri VID in SLO — ker je treba uporabiti vse sestavine, ni odvečnih variant, zato povedi utrjujeta rabo ponujenih oblik in ne preverjata samostojne izbire vida oziroma sopomenke. Za ta tip je to pričakovano; samostojno izbiro še naprej pokrivata `izbira` in `vnos`.
+* **Naslednji korak:** Claude Code doda podporo tipu (`src/types.ts`, `src/main.ts`, `src/style.css`); po objavi podpore Codex vnese 5 nalog v `naloge.json`.
 ### [27. 11. 2026] — DeepSeek (Predaja novega tipa naloge `stavcni_puzzle` Codexu)
 * **Narejeno:** Opredeljen nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«): učenka iz premešanih besed in ločil sestavi pravilno poved. Shema ostaja nespremenjena — sestavine so v obstoječem polju `moznosti`, `kontekst` je prazen, končno ločilo ni sestavina. Pripravljena navodila v `.ai-tasks/2-codex.md` za predlog natanko 5 stavkov (B2) v novi datoteki `predlogi-stavcni-puzzle.json`: `C1-SKL-016` (naslonski niz), `C1-DVO-016` (dvojina), `C1-VID-016` (glagolski vid), `C1-FRA-016` (frazem), `C1-SLO-016` (register). Preverjeno, da so vsi ID-ji prosti.
 * **Zakaj predlog in ne takojšnji vnos v `naloge.json`:** vmesnik tipa še ne podpira, zato bi se naloge prikazale kot navodno besedilno polje in bi jih bilo mogoče rešiti s prepisovanjem. Vnos v bazo sledi po objavi podpore v UI.
@@ -99,9 +104,9 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 🎯 Naslednji logični korak
-1. **Codex:** predlog 5 nalog novega tipa `stavcni_puzzle` (B2, »Sestavi poved«) v `predlogi-stavcni-puzzle.json` — navodila v `.ai-tasks/2-codex.md` (27. 11. 2026).
-2. **Claude Code (po potrditvi predloga):** podpora tipu `stavcni_puzzle` v vmesniku — `TipNaloge` in `TIPI` (»Sestavi poved«), nova veja v `odgovorHtml` (sestavine kot gumbi + sestavljena poved), čistilo stanja ob ponastavitvi, brez prikaza `kontekst`, povzetek kviza za ta tip, novi razredi v `style.css`.
-3. **Codex (po objavi UI podpore):** vnos 5 potrjenih nalog v `naloge.json`.
+1. **Codex — opravljeno 27. 11. 2026** (`2621eed`): predlog 5 nalog tipa `stavcni_puzzle` v `predlogi-stavcni-puzzle.json`; sanity check orkestratorja uspešen, predlog čaka na vnos v bazo.
+2. **Claude Code (zdaj):** podpora tipu `stavcni_puzzle` v vmesniku — `TipNaloge` in `TIPI` (»Sestavi poved«), nova veja v `odgovorHtml` (sestavine kot gumbi + sestavljena poved), čistilo stanja ob ponastavitvi, brez prikaza `kontekst`, povzetek kviza za ta tip, novi razredi v `style.css`; navodila v `.ai-tasks/1-claude.md`.
+3. **Codex (po objavi UI podpore):** vnos 5 potrjenih nalog iz `predlogi-stavcni-puzzle.json` v `naloge.json` (ID-ji `C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`).
 4. **Aljona:** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov) — še odprto.
 5. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet.
 6. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
