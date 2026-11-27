@@ -1,6 +1,6 @@
 # 📊 NAPREDEK PROJEKTA: Aljonina spletna vadnica slovenščine (B2–C1)
 
-**Zadnja posodobitev:** 25. november 2026  
+**Zadnja posodobitev:** 27. november 2026  
 **Vsebina in uredniški pregled:** Codex & Gemini/DeepSeek; **vmesnik:** Claude Code  
 **Status projekta:** 🟡 V teku (Faza 3: vse kategorije ≥ 15 nalog; Faza 4: UX in jezikovni pregled novih B2 nalog)
 
@@ -53,6 +53,7 @@
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
 - [x] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — implementirano v commitu de62611!)*
 - [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — naslednji korak)*
+- [ ] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Codex — predlog natanko 5 stavkov v `predlogi-stavcni-puzzle.json`, 27. 11. 2026; Claude Code — podpora tipu v UI; vnos v `naloge.json` po objavi podpore)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Codex; po novem dogovoru z uporabnikom)*
 
 ---
@@ -77,6 +78,13 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 📝 Dnevnik sprememb in aktivnosti (Changelog)
+### [27. 11. 2026]
+* **DeepSeek (Orkestrator, predaja Codexu):**
+  - Opredeljen nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«, raven B2): učenka sestavi pravilno poved iz premešanih besed in ločil. Shema `naloge.json` ostaja nespremenjena — sestavine so v obstoječem polju `moznosti`, `kontekst` je prazen, končno ločilo ni sestavina.
+  - V `.ai-tasks/2-codex.md` pripravljena naloga za Codex: predlog natanko 5 stavkov v novi datoteki `predlogi-stavcni-puzzle.json` — `C1-SKL-016` (naslonski niz), `C1-DVO-016` (dvojina), `C1-VID-016` (glagolski vid), `C1-FRA-016` (frazem), `C1-SLO-016` (slogovni register). Vsi ID-ji preverjeno prosti.
+  - V `naloge.json` se predlog še ne vpisuje: vmesnik tipa še ne podpira, zato bi naloge delovale kot navadno besedilno polje. Vnos sledi po objavi podpore v UI (Claude Code).
+  - Usklajena dokumentacija: `NAVODILA.md` (5. dovoljeni tip), `brain/02-SLOVENSCINA.md` (pravila za sestavine), `brain/00-INDEX.md`, `napredek.md`. Brez posegov v `src/` in `naloge.json`.
+
 ### [25. 11. 2026]
 * **Claude Code (Frontend & UX):**
   - Dodan gumb »↺ Ponastavi nalogo« na vsako kartico: pobriše rezultat, vpisan odgovor in odprto razlago; v kvizu izprazni tudi segment na traku.

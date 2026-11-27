@@ -90,6 +90,7 @@ Vse naloge morajo dosledno slediti naslednji JSON strukturi:
 2. `vnos` (Fill in the blanks — vpis pravilne oblike besede/predloga)
 3. `popravek_napake` (Poišči in popravi slogovno/slovnično napako v stavku)
 4. `parafraza` (Preoblikuj stavek z uporabo zahtevanega frazema ali veznika)
+5. `stavcni_puzzle` (Sestavi poved — iz premešanih besed in ločil sestavi pravilno poved; **v pripravi:** podpora v vmesniku se razvija, zato se naloge tega tipa v bazo vnašajo šele po objavi podpore v UI)
 
 ### ⚠️ Pomembna pravila formatiranja za Codex:
 * **Oblikovanje vrzeli:** Vsaka vrzel v polju `kontekst` mora biti označena s tremi ali več podčrtaji (`___`). Med tipkanjem se vrzel v živo polni z vnosom učenca.

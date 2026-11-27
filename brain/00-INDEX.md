@@ -14,12 +14,18 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 * **Status:** 🟢 Objavljeno (Faza 3 zaključena: vseh 112 nalog jezikovno pregledanih, vključno s petimi iz commita `045f848`; Faza 4: UI besedila in vsebinski popravki objavljeni na GitHub Pages 25. 11. 2026, čaka UX preizkus)
 * **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 112 nalog je vsebinsko pregledanih.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
+* **Nov tip naloge (v pripravi):** `stavcni_puzzle` (v UI »Sestavi poved«, raven B2) — učenka sestavi poved iz premešanih besed in ločil. Predlog 5 stavkov pripravlja Codex, podporo v vmesniku Claude Code; vnos v `naloge.json` šele po objavi podpore v UI.
 * **Spletni vmesnik (Claude Code):** Izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora »↻ Ponastavi rezultate (N)« (tudi v kvizu) z novimi opisi in `aria-label`.
 * **Lock datoteke:** Ni aktivnih lock datotek.
 
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [27. 11. 2026] — DeepSeek (Predaja novega tipa naloge `stavcni_puzzle` Codexu)
+* **Narejeno:** Opredeljen nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«): učenka iz premešanih besed in ločil sestavi pravilno poved. Shema ostaja nespremenjena — sestavine so v obstoječem polju `moznosti`, `kontekst` je prazen, končno ločilo ni sestavina. Pripravljena navodila v `.ai-tasks/2-codex.md` za predlog natanko 5 stavkov (B2) v novi datoteki `predlogi-stavcni-puzzle.json`: `C1-SKL-016` (naslonski niz), `C1-DVO-016` (dvojina), `C1-VID-016` (glagolski vid), `C1-FRA-016` (frazem), `C1-SLO-016` (register). Preverjeno, da so vsi ID-ji prosti.
+* **Zakaj predlog in ne takojšnji vnos v `naloge.json`:** vmesnik tipa še ne podpira, zato bi se naloge prikazale kot navodno besedilno polje in bi jih bilo mogoče rešiti s prepisovanjem. Vnos v bazo sledi po objavi podpore v UI.
+* **Spremenjene datoteke:** `.ai-tasks/2-codex.md`, `NAVODILA.md` (5. dovoljeni tip), `brain/02-SLOVENSCINA.md` (pravila za sestavine), `brain/00-INDEX.md`, `napredek.md`.
+* **Naslednji korak:** Codex pripravi predlog; nato Claude Code doda podporo tipu; šele zatem vnos v `naloge.json`.
 ### [25. 11. 2026] — DeepSeek (Objava popravkov ROD-018 in VID-012)
 * **Narejeno:** Po izrecni potrditvi uporabnika izveden `git push origin main` (`63cecfa..50313f6`, 6 commitov, fast-forward, brez force).
 * **Preverjeno na živo:** https://blackwolf981.github.io/AlyonaSloC1/naloge.json je po ~20 s enak lokalnemu `dist/naloge.json` (SHA-256 `98e357e8…`, 112 nalog); navodili `C1-ROD-018` (nova zveza `dopolnjuje »nimamo«`) in `C1-VID-012` (sklic na `besedo »nehali«`) sta novi, starih nizov ni več. Paket `index-DhED8cZy.js` in `index-DHzShGcO.css` nespremenjen, ker se JS/CSS nista spreminjala.
@@ -93,6 +99,9 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 🎯 Naslednji logični korak
-1. Aljona preizkusi objavljeno različico na telefonu in namizju: izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo in prelom gumbov.
-2. Claude Code: gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
-3. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; odprt le mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
+1. **Codex:** predlog 5 nalog novega tipa `stavcni_puzzle` (B2, »Sestavi poved«) v `predlogi-stavcni-puzzle.json` — navodila v `.ai-tasks/2-codex.md` (27. 11. 2026).
+2. **Claude Code (po potrditvi predloga):** podpora tipu `stavcni_puzzle` v vmesniku — `TipNaloge` in `TIPI` (»Sestavi poved«), nova veja v `odgovorHtml` (sestavine kot gumbi + sestavljena poved), čistilo stanja ob ponastavitvi, brez prikaza `kontekst`, povzetek kviza za ta tip, novi razredi v `style.css`.
+3. **Codex (po objavi UI podpore):** vnos 5 potrjenih nalog v `naloge.json`.
+4. **Aljona:** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov) — še odprto.
+5. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet.
+6. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
