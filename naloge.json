@@ -2180,6 +2180,718 @@
       "slovnicna_razlaga": "»Prosimo vas, da nam posredujete …« je vljudna prošnja v uradnem sporočilu; primer: »Prosimo vas, da nam posredujete naslov.« »Nam« stoji za »da«, predmet prošnje pa lahko stoji pred »posredujete« ali za njim.",
       "tipicna_napaka": "Ohranite zvezo »kopijo podpisane pogodbe«: podpisana je pogodba, ne kopija.",
       "oznake": ["MOD-07", "slogovni_register", "stavcni_puzzle"]
+    },
+    {
+      "id": "C1-VEZ-020",
+      "kategorija": "vezljivost_in_predlogi",
+      "podkategorija": "vezljivost_glagolov",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "je",
+        "zavzela",
+        "Sodelavka",
+        "razdelitev",
+        "pravičnejšo",
+        "nalog",
+        "za",
+        "se"
+      ],
+      "pravilni_odgovor": "Sodelavka se je zavzela za pravičnejšo razdelitev nalog.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Zveza »zavzeti se za« pove, kaj nekdo podpira, »se je« pa ostane v tem vrstnem redu. Primer: »Zavzela se je za boljše pogoje dela.«",
+      "tipicna_napaka": "Ne sestavite »je se«; predlog »za« povežite s celotno zvezo »pravičnejšo razdelitev nalog«.",
+      "oznake": [
+        "MOD-01",
+        "vezljivost_glagolov",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-VEZ-021",
+      "kategorija": "vezljivost_in_predlogi",
+      "podkategorija": "predlozno_dopolnilo",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "od",
+        "odvisen",
+        "Uspeh",
+        "pripravljenosti",
+        "pogajanj",
+        "sodelovanje",
+        "na",
+        "je"
+      ],
+      "pravilni_odgovor": "Uspeh pogajanj je odvisen od pripravljenosti na sodelovanje.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Rečemo »odvisen od česa« in »pripravljenost na kaj«, zato predloga pripadata različnima zvezama. Primer: »Izid je odvisen od pripravljenosti na pogovor.«",
+      "tipicna_napaka": "Ne zamenjajte predlogov: »od« stoji pred »pripravljenosti«, »na« pa pred »sodelovanje«.",
+      "oznake": [
+        "MOD-01",
+        "predlozno_dopolnilo",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-ROD-019",
+      "kategorija": "rodilnik_zanikanja",
+      "podkategorija": "zanikanje_glavnega_stavka",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "okvare",
+        "mogli",
+        "nismo",
+        "prenosa",
+        "Zaradi",
+        "podatkov",
+        "dokončati"
+      ],
+      "pravilni_odgovor": "Zaradi okvare nismo mogli dokončati prenosa podatkov.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Zanikano »nismo mogli« zahteva »dokončati prenosa«, ne »dokončati prenos«; »zaradi okvare« pojasni razlog. Primer: »Nismo mogli odpreti priponke.«",
+      "tipicna_napaka": "»Zaradi okvare« naj ostane skupaj; ne sestavite »zaradi prenosa okvare podatkov«.",
+      "oznake": [
+        "MOD-02",
+        "zanikanje_glavnega_stavka",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-ROD-020",
+      "kategorija": "rodilnik_zanikanja",
+      "podkategorija": "delni_rodilnik_in_rodilnik_zanikanja",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "urnika",
+        "prejela",
+        "Nobenega",
+        "obvestila",
+        "o",
+        "nisem",
+        "spremembi",
+        "še"
+      ],
+      "pravilni_odgovor": "Nobenega obvestila o spremembi urnika še nisem prejela.",
+      "alternativni_odgovori": [
+        "Nobenega obvestila o spremembi urnika nisem še prejela."
+      ],
+      "slovnicna_razlaga": "Ob zanikanju uporabimo »nobenega obvestila«; »še« lahko stoji pred »nisem« ali pred »prejela«. Primer: »Nobenega odgovora še nisem dobila.«",
+      "tipicna_napaka": "Ne ločite »o spremembi urnika« na nepovezane dele; ta zveza pojasnjuje vsebino obvestila.",
+      "oznake": [
+        "MOD-02",
+        "delni_rodilnik_in_rodilnik_zanikanja",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-ROD-021",
+      "kategorija": "rodilnik_zanikanja",
+      "podkategorija": "predlog_brez",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "vam",
+        "Brez",
+        "moremo",
+        "potrdila",
+        "pošiljke",
+        "ne",
+        "veljavnega",
+        "izročiti"
+      ],
+      "pravilni_odgovor": "Brez veljavnega potrdila vam ne moremo izročiti pošiljke.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Za »brez« stoji rodilnik »veljavnega potrdila«, ob zanikanju pa »izročiti pošiljke«. Primer: »Brez osebnega dokumenta ne morete prevzeti paketa.«",
+      "tipicna_napaka": "Skupaj sestavite »brez veljavnega potrdila«; »vam« postavite pred »ne moremo«.",
+      "oznake": [
+        "MOD-02",
+        "predlog_brez",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-FRA-017",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "frazem_v_povedi",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "v",
+        "neuspeha",
+        "vrgel",
+        "puške",
+        "še",
+        "koruzo",
+        "Zaradi",
+        "nisem"
+      ],
+      "pravilni_odgovor": "Zaradi neuspeha še nisem vrgel puške v koruzo.",
+      "alternativni_odgovori": [
+        "Zaradi neuspeha nisem še vrgel puške v koruzo."
+      ],
+      "slovnicna_razlaga": "»Vreči puško v koruzo« pomeni obupati, ne zares odvreči puške; »še« lahko stoji tudi za »nisem«. Primer: »Po zavrnitvi ni vrgla puške v koruzo.«",
+      "tipicna_napaka": "Ne zamenjajte »v koruzo« z »v puško« in ohranite zvezo »zaradi neuspeha«.",
+      "oznake": [
+        "MOD-03",
+        "frazem_v_povedi",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-FRA-018",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "frazem_v_povedi",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "selitvi",
+        "priskočila",
+        "pri",
+        "Soseda",
+        "mi",
+        "je",
+        "pomoč",
+        "na"
+      ],
+      "pravilni_odgovor": "Soseda mi je priskočila na pomoč pri selitvi.",
+      "alternativni_odgovori": [
+        "Soseda mi je pri selitvi priskočila na pomoč."
+      ],
+      "slovnicna_razlaga": "»Priskočiti na pomoč« pomeni pomagati; »mi je« ohrani vrstni red, »pri selitvi« pa lahko premaknemo. Primer: »Prijatelj mi je priskočil na pomoč.«",
+      "tipicna_napaka": "Ne sestavite »je mi« ali »na selitvi«; pravilni zvezi sta »na pomoč« in »pri selitvi«.",
+      "oznake": [
+        "MOD-03",
+        "frazem_v_povedi",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-FRA-019",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "frazem_v_povedi",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "očitnimi",
+        "zatiskal",
+        "oči",
+        "pred",
+        "Vodja",
+        "težavami",
+        "je",
+        "si"
+      ],
+      "pravilni_odgovor": "Vodja si je zatiskal oči pred očitnimi težavami.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Zatiskati si oči pred čim« pomeni namenoma prezreti nekaj neprijetnega, »si je« pa ima določen vrstni red. Primer: »Ne zatiskaj si oči pred napakami.«",
+      "tipicna_napaka": "Ne sestavite »je si« ali »pred očitnimi oči«; »očitnimi« opisuje težave.",
+      "oznake": [
+        "MOD-03",
+        "frazem_v_povedi",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-FRA-020",
+      "kategorija": "frazeologija_in_pregovori",
+      "podkategorija": "frazem_v_povedi",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "so",
+        "pripravah",
+        "mi",
+        "pri",
+        "hrbet",
+        "krili",
+        "Sodelavci"
+      ],
+      "pravilni_odgovor": "Sodelavci so mi pri pripravah krili hrbet.",
+      "alternativni_odgovori": [
+        "Sodelavci so mi krili hrbet pri pripravah."
+      ],
+      "slovnicna_razlaga": "»Kriti komu hrbet« pomeni nekoga podpirati in varovati; »pri pripravah« lahko stoji tudi na koncu. Primer: »Ekipa mi je med pogajanji krila hrbet.«",
+      "tipicna_napaka": "Ne sestavite »mi so«; »pri« povežite s »pripravah«, ne s »hrbet«.",
+      "oznake": [
+        "MOD-03",
+        "frazem_v_povedi",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-VID-017",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "vid_v_kontekstu",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "dokončam",
+        "poročilo",
+        ",",
+        "bom",
+        "začel",
+        "pripravljati",
+        "predstavitev",
+        "Ko"
+      ],
+      "pravilni_odgovor": "Ko dokončam poročilo, bom začel pripravljati predstavitev.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Dokončam« označuje konec prvega dela, za »začel« pa uporabimo »pripravljati«, ker se drugo delo začne. Primer: »Ko pridem, bom začela kuhati.«",
+      "tipicna_napaka": "Vejico postavite za »poročilo«; »začel« povežite s »pripravljati«, ne z »dokončam«.",
+      "oznake": [
+        "MOD-04",
+        "vid_v_kontekstu",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-VID-018",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "vid_v_kontekstu",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "nadaljevala",
+        "iskanje",
+        "odgovor",
+        "stanovanja",
+        "bom",
+        "čakam",
+        ",",
+        "Dokler"
+      ],
+      "pravilni_odgovor": "Dokler čakam odgovor, bom nadaljevala iskanje stanovanja.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Dokler čakam« opisuje trajanje, med katerim poteka druga dejavnost; »bom« stoji za vejico. Primer: »Dokler čakam prevoz, bom pregledovala zapiske.«",
+      "tipicna_napaka": "Vejica loči »dokler čakam odgovor« od preostanka; »bom« ne sodi pred »čakam«.",
+      "oznake": [
+        "MOD-04",
+        "vid_v_kontekstu",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-VID-019",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "vid_v_kontekstu",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        ",",
+        "preveriti",
+        "moram",
+        "podatkov",
+        "oddam",
+        "Preden",
+        "prijavo",
+        "pravilnost"
+      ],
+      "pravilni_odgovor": "Preden oddam prijavo, moram preveriti pravilnost podatkov.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Preveriti« pomeni opraviti pregled do konca, preden prijavo oddamo; »moram« uvaja to obveznost. Primer: »Preden odidem, moram zakleniti vrata.«",
+      "tipicna_napaka": "Vejico postavite za »prijavo«; »pravilnost podatkov« je skupaj predmet preverjanja.",
+      "oznake": [
+        "MOD-04",
+        "vid_v_kontekstu",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-VID-020",
+      "kategorija": "glagolski_vid",
+      "podkategorija": "vid_v_kontekstu",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "kuham",
+        "poslušam",
+        "radijsko",
+        "oddajo",
+        "Medtem",
+        "ko",
+        ",",
+        "kosilo"
+      ],
+      "pravilni_odgovor": "Medtem ko kuham kosilo, poslušam radijsko oddajo.",
+      "alternativni_odgovori": [
+        "Medtem ko poslušam radijsko oddajo, kuham kosilo."
+      ],
+      "slovnicna_razlaga": "Dejavnosti potekata hkrati, zato lahko zamenjamo njuno zaporedje; »medtem ko« ostane skupaj. Primer: »Medtem ko čakam avtobus, poslušam glasbo.«",
+      "tipicna_napaka": "Vejice ne postavite med »medtem« in »ko«, temveč za celotni prvi del povedi.",
+      "oznake": [
+        "MOD-04",
+        "vid_v_kontekstu",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-DVO-017",
+      "kategorija": "dvojina",
+      "podkategorija": "ujemanje_v_dvojini",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "mirna",
+        "reševalca",
+        "sta",
+        "izkušena",
+        "Oba",
+        "povsem",
+        "ostala"
+      ],
+      "pravilni_odgovor": "Oba izkušena reševalca sta ostala povsem mirna.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Oba izkušena reševalca« in »sta ostala mirna« govorita o dveh moških; »povsem« stoji ob »mirna«. Primer: »Oba utrujena pohodnika sta ostala zbrana.«",
+      "tipicna_napaka": "»Sta« ne postavljajte med »oba« in »izkušena reševalca«; opis obeh oseb naj ostane skupaj.",
+      "oznake": [
+        "MOD-05",
+        "ujemanje_v_dvojini",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-DVO-018",
+      "kategorija": "dvojina",
+      "podkategorija": "oba_in_obe",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "predlagani",
+        "se",
+        "izkazali",
+        "ustrezni",
+        "za",
+        "Obe",
+        "sta",
+        "rešitvi"
+      ],
+      "pravilni_odgovor": "Obe predlagani rešitvi sta se izkazali za ustrezni.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Obe predlagani rešitvi« zahteva »sta se izkazali« in »ustrezni«, saj govorimo o dveh rešitvah. Primer: »Obe možnosti sta se izkazali za dobri.«",
+      "tipicna_napaka": "Ne sestavite »se sta«; »za« stoji pred »ustrezni«, ne pred »rešitvi«.",
+      "oznake": [
+        "MOD-05",
+        "oba_in_obe",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-DVO-019",
+      "kategorija": "dvojina",
+      "podkategorija": "dajalnik_dveh_oseb",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "izobraževanju",
+        "na",
+        "smo",
+        "strokovnem",
+        "udeležbo",
+        "sodelavcema",
+        "omogočili",
+        "Novima"
+      ],
+      "pravilni_odgovor": "Novima sodelavcema smo omogočili udeležbo na strokovnem izobraževanju.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Novima sodelavcema« pove, komu smo omogočili udeležbo: dvema osebama, ne eni ali več kot dvema. Primer: »Novima sosedoma smo pokazali okolico.«",
+      "tipicna_napaka": "»Na strokovnem izobraževanju« naj ostane skupaj; »novima« opisuje sodelavca, ne izobraževanja.",
+      "oznake": [
+        "MOD-05",
+        "dajalnik_dveh_oseb",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-DVO-020",
+      "kategorija": "dvojina",
+      "podkategorija": "ujemanje_v_dvojini",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "sta",
+        "ponosna",
+        "hčerkin",
+        "nastop",
+        "samostojni",
+        "na",
+        "bila",
+        "Starša"
+      ],
+      "pravilni_odgovor": "Starša sta bila ponosna na hčerkin samostojni nastop.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Ob »starša« uporabimo »sta bila ponosna«, pridevnika »hčerkin samostojni« pa opisujeta nastop. Primer: »Starša sta bila zadovoljna z obiskom.«",
+      "tipicna_napaka": "Ne sestavite »starša sta bila samostojni«; »samostojni« sodi k »nastop«.",
+      "oznake": [
+        "MOD-05",
+        "ujemanje_v_dvojini",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SKL-017",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "naslonski_niz",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "ostala",
+        "da",
+        "Želela",
+        "sem",
+        ",",
+        "doma",
+        "si",
+        "bi"
+      ],
+      "pravilni_odgovor": "Želela sem si, da bi ostala doma.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "V glavnem delu stoji »sem si«, v odvisnem pa »da bi«; pred »da« napišemo vejico. Primer: »Želela sem si, da bi dobila prosto soboto.«",
+      "tipicna_napaka": "Ne sestavite »si sem« ali »bi da«; vejico postavite pred »da«.",
+      "oznake": [
+        "MOD-06",
+        "naslonski_niz",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SKL-018",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "vejica_pred_ker",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        ",",
+        "zamujam",
+        "se",
+        "bom",
+        "ker",
+        "Opravičila",
+        "sestanek",
+        "na"
+      ],
+      "pravilni_odgovor": "Opravičila se bom, ker zamujam na sestanek.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Ker« uvaja razlog za opravičilo, zato pred njim stoji vejica; »se bom« ohrani vrstni red. Primer: »Opravičila se bom, ker zamujam na pogovor.«",
+      "tipicna_napaka": "Ne sestavite »bom se« in vejice ne postavite za »ker«.",
+      "oznake": [
+        "MOD-06",
+        "vejica_pred_ker",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SKL-019",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "namen_z_da_bi",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "se",
+        "da",
+        "Umaknila",
+        "telefonirala",
+        "nemoteno",
+        "sem",
+        "bi",
+        ","
+      ],
+      "pravilni_odgovor": "Umaknila sem se, da bi nemoteno telefonirala.",
+      "alternativni_odgovori": [
+        "Umaknila sem se, da bi telefonirala nemoteno."
+      ],
+      "slovnicna_razlaga": "»Da bi« pove namen umika, zato besedi ostaneta skupaj; pred njima stoji vejica. Primer: »Ustavila sem se, da bi preverila naslov.«",
+      "tipicna_napaka": "Ne razdelite »da bi« s prislovom »nemoteno«; ta opisuje telefoniranje.",
+      "oznake": [
+        "MOD-06",
+        "namen_z_da_bi",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SKL-020",
+      "kategorija": "skladnja_in_slog",
+      "podkategorija": "naslonski_niz",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "da",
+        ",",
+        "se",
+        "z",
+        "mi",
+        "zahtevami",
+        "pretiravaš",
+        "je",
+        "Zdelo"
+      ],
+      "pravilni_odgovor": "Zdelo se mi je, da pretiravaš z zahtevami.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "Kratke besede sledijo vrstnemu redu »se mi je«, odvisni del pa uvedemo z vejico in »da«. Primer: »Zdelo se mi je, da potrebuješ pomoč.«",
+      "tipicna_napaka": "Ne sestavite »mi se je« ali »je se mi«; »z« povežite z »zahtevami«.",
+      "oznake": [
+        "MOD-06",
+        "naslonski_niz",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SLO-017",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "vljudna_prosnja",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "obračuna",
+        "za",
+        "glede",
+        "Prosila",
+        "bi",
+        "stroškov",
+        "vas",
+        "pojasnilo"
+      ],
+      "pravilni_odgovor": "Prosila bi vas za pojasnilo glede obračuna stroškov.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Prosila bi vas« je vljudna oblika prošnje, »glede obračuna stroškov« pa določa njeno vsebino. Primer: »Prosila bi vas za pojasnilo glede računa.«",
+      "tipicna_napaka": "Ne sestavite »vas bi«; »glede« stoji pred »obračuna«, »za« pa pred »pojasnilo«.",
+      "oznake": [
+        "MOD-07",
+        "vljudna_prosnja",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SLO-018",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "slogovni_register",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "se",
+        "zahtevanih",
+        "za",
+        "pravočasno",
+        "podatkov",
+        "posredovanje",
+        "vam",
+        "Zahvaljujemo"
+      ],
+      "pravilni_odgovor": "Zahvaljujemo se vam za pravočasno posredovanje zahtevanih podatkov.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Zahvaljujemo se vam za« je običajna zahvala v uradnem sporočilu; »se vam« ostane v tem vrstnem redu. Primer: »Zahvaljujemo se vam za odgovor.«",
+      "tipicna_napaka": "Ne sestavite »vam se«; »pravočasno« opisuje posredovanje, »zahtevanih« pa podatke.",
+      "oznake": [
+        "MOD-07",
+        "slogovni_register",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SLO-019",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "vljudna_prosnja",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "termin",
+        "vam",
+        "nam",
+        "predlagani",
+        "Sporočite",
+        "ustreza",
+        "ali",
+        ","
+      ],
+      "pravilni_odgovor": "Sporočite nam, ali vam predlagani termin ustreza.",
+      "alternativni_odgovori": [
+        "Sporočite nam, ali vam ustreza predlagani termin."
+      ],
+      "slovnicna_razlaga": "»Sporočite nam« je vljuden poziv, »ali« pa uvaja vprašanje brez vprašaja na koncu. Primer: »Sporočite nam, ali se boste udeležili srečanja.«",
+      "tipicna_napaka": "Vejico postavite pred »ali«; »predlagani« naj ostane ob »termin«.",
+      "oznake": [
+        "MOD-07",
+        "vljudna_prosnja",
+        "stavcni_puzzle"
+      ]
+    },
+    {
+      "id": "C1-SLO-020",
+      "kategorija": "slog_in_sopomenke",
+      "podkategorija": "sopomenka_v_kontekstu",
+      "raven": "B2",
+      "tip_naloge": "stavcni_puzzle",
+      "navodilo": "Sestavite pravilno poved iz ponujenih besed in ločil. Vsako sestavino uporabite natanko enkrat; ničesar ne dodajajte ali spreminjajte. Začnite z besedo z veliko začetnico in uporabite nevtralen besedni red.",
+      "kontekst": "",
+      "moznosti": [
+        "k",
+        "bo",
+        "izboljšanju",
+        "prispeval",
+        "Predlagani",
+        "ukrep",
+        "prometne",
+        "varnosti"
+      ],
+      "pravilni_odgovor": "Predlagani ukrep bo prispeval k izboljšanju prometne varnosti.",
+      "alternativni_odgovori": [],
+      "slovnicna_razlaga": "»Prispevati k izboljšanju« pomeni pomagati, da nekaj postane boljše, in je primerno za uradni predlog. Primer: »Ukrep bo prispeval k večji varnosti.«",
+      "tipicna_napaka": "Ne sestavite »k prometne varnosti«; za »k« stoji »izboljšanju«, nato »prometne varnosti«.",
+      "oznake": [
+        "MOD-07",
+        "sopomenka_v_kontekstu",
+        "stavcni_puzzle"
+      ]
     }
   ]
 }
