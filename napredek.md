@@ -10,9 +10,9 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Nalog v bazi B2–C1** | `117 / 110` (93 B2, 24 C1) | `≥ 110` |
-| **Vsebinsko potrjenih nalog** | `117 / 117` (93 B2, 24 C1; 5 nalog tipa `stavcni_puzzle` pregledanih 27. 11. 2026) | `117 / 117` |
-| **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 16 nalog ✅) | `7 / 7` |
+| **Nalog v bazi B2–C1** | `142 / 110` (118 B2, 24 C1) | `≥ 110` |
+| **Vsebinsko potrjenih nalog** | `142 / 142` (118 B2, 24 C1; 30 nalog tipa `stavcni_puzzle`, pregledanih 27. 11. 2026) | `142 / 142` |
+| **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 20 nalog ✅) | `7 / 7` |
 | **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora (pogojna vidnost) + prenovljena UI besedila + nov tip »Sestavi poved« (`stavcni_puzzle`) | Delujoča interaktivna aplikacija |
 
 ---
@@ -39,13 +39,13 @@
 - [x] Optimizacija odzivne orodjarne na desktopu: stranska letev na >= 1024 px, širina 72rem *(Claude Code)*
 
 ### Faza 3: Širitev vsebinske baze B2–C1
-- [x] Modul 1: Vezljivost glagolov in predložne zveze (19 nalog; cilj 15 presežen)
-- [x] Modul 2: Rodilnik zanikanja in delni rodilnik (18 nalog; cilj 15 presežen)
-- [x] Modul 3: Napredna frazeologija in idiomi (15 / 20 nalog; cilj modula še ni dosežen)
-- [x] Modul 4: Glagolski vid in pomeni v kontekstu (15 / 15 nalog)
-- [x] Modul 5: Dvojina in zahtevna ujemanja (15 / 15 nalog)
-- [x] Modul 6: Polstavčne strukture in skladnja (15 / 15 nalog)
-- [x] Modul 7: Slogovni registri in sopomenke (15 / 15 nalog)
+- [x] Modul 1: Vezljivost glagolov in predložne zveze (21 nalog; cilj 15 presežen)
+- [x] Modul 2: Rodilnik zanikanja in delni rodilnik (21 nalog; cilj 15 presežen)
+- [x] Modul 3: Napredna frazeologija in idiomi (20 / 20 nalog; cilj modula dosežen)
+- [x] Modul 4: Glagolski vid in pomeni v kontekstu (20 nalog)
+- [x] Modul 5: Dvojina in zahtevna ujemanja (20 nalog)
+- [x] Modul 6: Polstavčne strukture in skladnja (20 nalog)
+- [x] Modul 7: Slogovni registri in sopomenke (20 nalog)
 - [x] Jezikovni pregled 49 novih B2 nalog (Codex; 21 popravljenih polj pri 18 nalogah; commit `1911aed`; sanity check DeepSeek OK)
 
 ### Faza 4: Uporabniško testiranje, jezikovno brušenje in napredne funkcije (»Pika na i«)
@@ -53,7 +53,7 @@
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
 - [x] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — implementirano v commitu de62611!)*
 - [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — naslednji korak)*
-- [x] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Claude Code — podpora v UI `063a834`; Codex — predlog `2621eed`; vnos 5 nalog v bazo `b5f2087`, 27. 11. 2026; sanity check DeepSeek OK — 117 nalog, min 16/kategorijo; **v pripravi še 25 sestavljank** — predano Codexu 27. 11. 2026, cilj 30 sestavljank in 142 nalog)*
+- [x] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Claude Code — podpora v UI `063a834`; Codex — predlog `2621eed`; vnos 5 nalog v bazo `b5f2087`; **27. 11. 2026 dodanih še 25 sestavljank** (`9c4f23c`) → **30 sestavljank, 142 nalog**; sanity check DeepSeek OK — 30/30 sestavljank, min 20/kategorijo)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Codex; po novem dogovoru z uporabnikom)*
 
 ---
@@ -66,14 +66,14 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 
 | Šifra | Tematski modul (kategorija) | B2 | C1 | Skupaj | Cilj |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **MOD-01** | Vezljivost in predlogi (`vezljivost_in_predlogi`) | 13 | 6 | 19 | 15 |
-| **MOD-02** | Rodilnik ob zanikanju (`rodilnik_zanikanja`) | 5 | 13 | 18 | 15 |
-| **MOD-03** | Frazeologija in pregovori (`frazeologija_in_pregovori`) | 14 | 2 | 16 | 20 |
-| **MOD-04** | Glagolski vid (`glagolski_vid`) | 15 | 1 | 16 | 15 |
-| **MOD-05** | Dvojina in ujemanje (`dvojina`) | 15 | 1 | 16 | 15 |
-| **MOD-06** | Skladnja in deležniki (`skladnja_in_slog`) | 15 | 1 | 16 | 15 |
-| **MOD-07** | Slog in sopomenke (`slog_in_sopomenke`) | 16 | 0 | 16 | 15 |
-| **SKUPAJ** | | **93** | **24** | **117** | **110+** |
+| **MOD-01** | Vezljivost in predlogi (`vezljivost_in_predlogi`) | 15 | 6 | 21 | 15 |
+| **MOD-02** | Rodilnik ob zanikanju (`rodilnik_zanikanja`) | 8 | 13 | 21 | 15 |
+| **MOD-03** | Frazeologija in pregovori (`frazeologija_in_pregovori`) | 18 | 2 | 20 | 20 |
+| **MOD-04** | Glagolski vid (`glagolski_vid`) | 19 | 1 | 20 | 15 |
+| **MOD-05** | Dvojina in ujemanje (`dvojina`) | 19 | 1 | 20 | 15 |
+| **MOD-06** | Skladnja in deležniki (`skladnja_in_slog`) | 19 | 1 | 20 | 15 |
+| **MOD-07** | Slog in sopomenke (`slog_in_sopomenke`) | 20 | 0 | 20 | 15 |
+| **SKUPAJ** | | **118** | **24** | **142** | **110+** |
 
 ---
 
@@ -92,6 +92,9 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
   - V `naloge.json` se predlog še ne vpisuje: vmesnik tipa še ne podpira, zato bi naloge delovale kot navadno besedilno polje. Vnos sledi po objavi podpore v UI (Claude Code).
   - Usklajena dokumentacija: `NAVODILA.md` (5. dovoljeni tip), `brain/02-SLOVENSCINA.md` (pravila za sestavine), `brain/00-INDEX.md`, `napredek.md`. Brez posegov v `src/` in `naloge.json`.
 * **DeepSeek (predaja Codexu — 25 novih sestavljank):** V `.ai-tasks/2-codex.md` pripravljena naloga za **25 novih sestavljank `stavcni_puzzle` (B2)**; baza po vnosu **142 nalog** (118 B2 / 24 C1), sestavljank 30. Razporeditev (kategorije po vnosu 20–21): VEZ +2 (`C1-VEZ-020`, `C1-VEZ-021`), ROD +3 (`C1-ROD-019`…`021`), FRA/VID/DVO/SKL/SLO po +4 (`C1-XXX-017`…`020`). Pravila: 7–9 različnih sestavin, natanko ena z veliko začetnico, končno ločilo samo v odgovoru, enolična rešljivost, alternative le, če so resnično sprejemljive; kratke B2 razlage v vsakdanji slovenščini. Preverjanje: `node tmp/preveri-puzzle.cjs` (nova skripta orkestratorja; na obstoječih 5 sestavljankah `VSE PREVERBE OK (5/5)`) + ročno branje rešitev. `brain/02-SLOVENSCINA.md`: tip prestavljen iz »v pripravi« v aktivnega in dopolnjen s pravili o enoličnosti.
+* **Codex (vsebina — 25 novih sestavljank):** V `naloge.json` dodanih 25 novih sestavljank `stavcni_puzzle` (B2) na konec polja: `C1-VEZ-020`–`021`, `C1-ROD-019`–`021`, `C1-FRA-017`–`020`, `C1-VID-017`–`020`, `C1-DVO-017`–`020`, `C1-SKL-017`–`020`, `C1-SLO-017`–`020`. Baza: **142 nalog** (118 B2 / 24 C1), **30 sestavljank**, vse kategorije **20–21** nalog (MOD-03 dosegel cilj 20). Commit `9c4f23c`, samo `naloge.json` (+712 vrstic, brez izbrisov), brez `git push`.
+* **DeepSeek (Orkestrator, sanity check `9c4f23c`):** Prvih **117 nalog JSON-identičnih** prejšnji različici (primerjava z `git show HEAD~1:naloge.json`); 142 nalog, 0 podvojenih ID-jev, 0 manjkajočih polj, min **20**/kategorijo, UTF-8 brez BOM; `tmp/preveri-puzzle.cjs` → **VSE PREVERBE OK (30/30)** (7–9 različnih sestavin, natanko ena velika začetnica, odgovori in alternative sestavljivi iz sestavin, brez podvojenih rešitev); brez lock datotek; `npm run build` uspešen (135 ms). Vsebinski pregled vseh 25 rešitev: povedi slovnično pravilne in naravne (npr. `nismo mogli dokončati prenosa podatkov`, `nobenega obvestila … še nisem prejela`, `nisem vrgel puške v koruzo`, `novima sodelavcema smo omogočili`, `sporočite nam, ali vam predlagani termin ustreza`).
+* **Raznolikost novih sestavljank (ugotovitev za naslednji korak):** 25 novih prinaša **zanikanje** (ROD-019–021, FRA-017), **dvojino** (DVO-017–020), **množino** (DVO-019, FRA-020, SLO-018), **ženski spol** (VID-018, ROD-020, SKL-017/019, SLO-017), **2. osebo** (SKL-020) in **velelnik z odvisnim vprašanjem** (SLO-019). **Neposredne vprašalne povedi ni nobene** (0 od 30), velelnik je en sam, v celotni bazi pa se z `?` končata le 2 odgovora. Predlog za naslednji paket: 6–8 nalog z mešanimi vrstami povedi (vprašanja z `Ali` + naslonke, vprašalnice, velelniki, zanikanje), po potrebi s prikazom končnega ločila v vrstici »Vaša poved«.
 
 ### [25. 11. 2026]
 * **Claude Code (Frontend & UX):**
@@ -153,9 +156,9 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 🔜 Naslednji delovni sklop
-1. **Codex (v teku — predano 27. 11. 2026):**
-   - 25 novih sestavljank `stavcni_puzzle` (raven B2) po navodilih v `.ai-tasks/2-codex.md`: VEZ +2, ROD +3, FRA/VID/DVO/SKL/SLO po +4 → baza **142 nalog**, vse kategorije 20–21 nalog.
-   - Preverjanje: `node tmp/preveri-puzzle.cjs` (shema, sestavine, ena velika začetnica, sestavljivost odgovorov, podvajanja) in ročno branje vseh 25 rešitev; lokalni commit brez `git push`.
+1. **Codex — opravljeno 27. 11. 2026 (`9c4f23c`):**
+   - 25 novih sestavljank `stavcni_puzzle` (B2) vnesenih: VEZ +2, ROD +3, FRA/VID/DVO/SKL/SLO po +4 → baza **142 nalog** (118 B2 / 24 C1), **30 sestavljank**, vse kategorije 20–21 nalog.
+   - Sanity check DeepSeek uspešen: prvih 117 nalog nespremenjenih, 30/30 sestavljank po `tmp/preveri-puzzle.cjs`, UTF-8 brez BOM, brez lock datotek, `npm run build` OK.
 2. **Claude Code (mikro popravek — opravljeno 27. 11. 2026):**
    - Dostopnost pri »Sestavi poved«: `.sestavljeno` ni več `role="status"` (vsebuje gumbe); edino živo območje je `p.sr-only[role="status"]`, izrisano vedno (`19d5e4c`). Odprto le, če bralnik zaslona ob kliku ne prebere ničesar → trajno območje zunaj kartice.
 3. **Objava (opravljeno 27. 11. 2026):**
@@ -167,7 +170,11 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 6. **Aljonin preizkus v živo:**
    - Preizkus ponastavitve posamezne naloge in izbora na telefonu: [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (117 nalog v bazi, vključno s 5 sestavljankami »Sestavi poved«).
    - Objava na GitHub Pages izvedena 25. 11. 2026 (`git push` → GitHub Actions; na živo preverjen nov paket `index-DhED8cZy.js`); **nova objava (117 nalog + dostopnostni popravek) izvedena 27. 11. 2026** — paket `index-C-COV7AK.js`.
-7. **Objava paketa s 25 novimi sestavljankami:** po Codexovem vnosu in uspešnem sanity checku orkestratorja; `git push origin main` šele po izrecni potrditvi uporabnika.
+7. **Objava paketa s 142 nalogami (čaka na izrecno potrditev uporabnika):**
+   - `main` je pred `origin/main` za 3 commite: `0cf886d` (dokumentacija objave), `cd4d494` (predaja 25 sestavljank), `9c4f23c` (25 sestavljank) + dokumentacija sanity checka. Objava šele na izrecno potrditev (»objavi«).
+8. **Predlog za naslednji paket — mešane vrste povedi (odločitev uporabnika):**
+   - 6–8 novih sestavljank: 2–3 vprašanja z `Ali` + naslonski niz, 1–2 z vprašalnico (`Kdaj`, `Zakaj`, `Kako`), 1–2 velelnika/vljudno-velelna, 1 želelni/vzklikni, po potrebi zanikane.
+   - Neobvezno pred tem: mikro naloga za Claude Code, da vrstica »Vaša poved« prikaže končno ločilo iz pravilnega odgovora (`.`, `?`, `!`), ker UI končnega ločila zdaj ne prikazuje; brez tega učenka vrsto povedi prepozna le po sestavinah.
 
 ### [22. 11. 2026]
 * **Gemini (Vodja projekta in urednik):** 

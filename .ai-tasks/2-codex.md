@@ -6,7 +6,12 @@
 - Najmanj nalog na kategorijo je po vnosu 16 (navodila so pričakovala 15); `npm run build` uspešen.
 - Brez posegov v `src/`, `brain/` in `napredek.md`; zaključek z lokalnim commitom, brez `git push`.
 
-# 📥 Trenutna naloga (27. 11. 2026) — 25 novih sestavljank `stavcni_puzzle` (B2)
+# 📥 [OPRAVLJENO 27. 11. 2026 — `9c4f23c`] 25 novih sestavljank `stavcni_puzzle` (B2)
+
+**Izid (preveril orkestrator DeepSeek):** vnesenih 25 nalog po razporeditvi (VEZ 020–021, ROD 019–021, FRA/VID/DVO/SKL/SLO 017–020); baza **142 nalog** (118 B2 / 24 C1), **30 sestavljank**, kategorije 20–21; prvih 117 nalog JSON-identičnih; `tmp/preveri-puzzle.cjs` 30/30 OK; UTF-8 brez BOM; `npm run build` OK; lokalni commit brez `git push`. Naloga je zaključena — spodnjih navodil **ne izvajaj ponovno**.
+**Odprta želja za naslednji paket (še ni naloga):** 6–8 sestavljank z mešanimi vrstami povedi (vprašanja z `Ali` + naslonke, vprašalnice, velelniki) — med 30 obstoječimi ni neposrednega vprašanja.
+
+---
 
 ## Stanje
 - Baza ima **117 nalog**; tip `stavcni_puzzle` je v njej s **5 nalogami** (B2), vmesnik ga podpira in je objavljen na GitHub Pages.
