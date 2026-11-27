@@ -323,8 +323,10 @@ function odgovorHtml(n: Naloga, odgovor: string, rez: Rezultat | undefined): str
     return `
       <div class="sestavljanje">
         <p class="sestavljanje-oznaka">Vaša poved</p>
-        <div class="sestavljeno" role="status" aria-live="polite">${sestavljeno}</div>
-        ${izbor.length ? `<p class="sr-only">Trenutna poved: ${esc(prikazSestave(n, izbor))}</p>` : ''}
+        <div class="sestavljeno">${sestavljeno}</div>
+        <p class="sr-only" role="status" aria-live="polite">${
+          izbor.length ? `Trenutna poved: ${esc(prikazSestave(n, izbor))}` : 'Trenutna poved je prazna.'
+        }</p>
         <div class="sestavine" role="group" aria-label="Sestavine">${ponujene}</div>
         ${
           zaklenjeno
