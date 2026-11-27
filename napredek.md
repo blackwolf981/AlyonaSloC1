@@ -10,10 +10,10 @@
 
 | Metrika | Vrednost | Cilj |
 | :--- | :--- | :--- |
-| **Nalog v bazi B2–C1** | `112 / 110` (88 B2, 24 C1) | `≥ 110` |
-| **Vsebinsko potrjenih nalog** | `112 / 112` (88 B2, 24 C1; 49 novih B2 pregledanih 25. 11. 2026) | `112 / 112` |
-| **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 15 nalog ✅) | `7 / 7` |
-| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora (pogojna vidnost) + prenovljena UI besedila | Delujoča interaktivna aplikacija |
+| **Nalog v bazi B2–C1** | `117 / 110` (93 B2, 24 C1) | `≥ 110` |
+| **Vsebinsko potrjenih nalog** | `117 / 117` (93 B2, 24 C1; 5 nalog tipa `stavcni_puzzle` pregledanih 27. 11. 2026) | `117 / 117` |
+| **Tematski moduli z nalogami** | `7 / 7` (vse kategorije vsaj 16 nalog ✅) | `7 / 7` |
+| **Spletni vmesnik (Frontend)** | 🟢 Polno interaktivna vadnica + 🎯 Kviz + filter B2/C1 + ponastavitev naloge/izbora (pogojna vidnost) + prenovljena UI besedila + nov tip »Sestavi poved« (`stavcni_puzzle`) | Delujoča interaktivna aplikacija |
 
 ---
 
@@ -53,7 +53,7 @@
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
 - [x] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — implementirano v commitu de62611!)*
 - [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — naslednji korak)*
-- [ ] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Claude Code — podpora tipu v UI objavljena 27. 11. 2026, `063a834`; Codex — 5 predlogov pripravljenih in potrjenih v `predlogi-stavcni-puzzle.json`; **čaka vnos v `naloge.json`**)*
+- [x] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Claude Code — podpora v UI `063a834`; Codex — predlog `2621eed`; vnos 5 nalog v bazo `b5f2087`, 27. 11. 2026; sanity check DeepSeek OK — 117 nalog, min 16/kategorijo)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Codex; po novem dogovoru z uporabnikom)*
 
 ---
@@ -68,17 +68,19 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **MOD-01** | Vezljivost in predlogi (`vezljivost_in_predlogi`) | 13 | 6 | 19 | 15 |
 | **MOD-02** | Rodilnik ob zanikanju (`rodilnik_zanikanja`) | 5 | 13 | 18 | 15 |
-| **MOD-03** | Frazeologija in pregovori (`frazeologija_in_pregovori`) | 13 | 2 | 15 | 20 |
-| **MOD-04** | Glagolski vid (`glagolski_vid`) | 14 | 1 | 15 | 15 |
-| **MOD-05** | Dvojina in ujemanje (`dvojina`) | 14 | 1 | 15 | 15 |
-| **MOD-06** | Skladnja in deležniki (`skladnja_in_slog`) | 14 | 1 | 15 | 15 |
-| **MOD-07** | Slog in sopomenke (`slog_in_sopomenke`) | 15 | 0 | 15 | 15 |
-| **SKUPAJ** | | **88** | **24** | **112** | **110+** |
+| **MOD-03** | Frazeologija in pregovori (`frazeologija_in_pregovori`) | 14 | 2 | 16 | 20 |
+| **MOD-04** | Glagolski vid (`glagolski_vid`) | 15 | 1 | 16 | 15 |
+| **MOD-05** | Dvojina in ujemanje (`dvojina`) | 15 | 1 | 16 | 15 |
+| **MOD-06** | Skladnja in deležniki (`skladnja_in_slog`) | 15 | 1 | 16 | 15 |
+| **MOD-07** | Slog in sopomenke (`slog_in_sopomenke`) | 16 | 0 | 16 | 15 |
+| **SKUPAJ** | | **93** | **24** | **117** | **110+** |
 
 ---
 
 ## 📝 Dnevnik sprememb in aktivnosti (Changelog)
 ### [27. 11. 2026]
+* **Codex (vsebina):** V `naloge.json` vnesenih 5 potrjenih nalog tipa `stavcni_puzzle` (`C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`), prepis 1:1 iz predloga; `predlogi-stavcni-puzzle.json` izbrisan. Baza: **117 nalog** (93 B2 / 24 C1), vsaka kategorija vsaj 16 nalog. Commit `b5f2087`, brez `git push`.
+* **DeepSeek (Orkestrator, sanity check vnosa):** Spremenjeni samo `naloge.json` (+75 vrstic, brez izbrisov) in `.ai-tasks/2-codex.md`; prvih 112 nalog JSON-identičnih prejšnji različici in v istem vrstnem redu; vseh 5 novih objektov **1:1** s predlogom iz commita `2621eed` (13 polj, enak vrstni red polj); 117 nalog, 0 podvojenih ID-jev, 0 manjkajočih polj, min **16**/kategorijo, UTF-8 brez BOM; brez lock datotek; `npm run build` uspešen. Sestavljanke preverjene s prepisom normalizacije iz `src/preverjanje.ts` (osnutek, kot ga shrani vmesnik, je sprejet pri vseh 7 sprejemljivih odgovorih). Neodvisni preizkus v brskalniku (glava Chrome nad `vite preview`): 5 kartic »Sestavi poved«, 39 gumbov sestavin, filter s števcem 5.
 * **Claude Code (UI):** Podpora tipu `stavcni_puzzle` (»Sestavi poved«) — `src/types.ts` (`TipNaloge`), `TIPI`, nova veja v `odgovorHtml` (sestavine kot gumbi: dotik doda v poved, dotik na sestavini v povedi jo odstrani; »Počisti«), brez prikaza praznega `konteksta`, čiščenje stanja ob ponastavitvi/znova/kvizu, prikaz odgovora brez presledka pred vejico, `aria-live` in `sr-only` povzetek povedi, novi razredi v `src/style.css` (>= 44 px). Živi preizkus v brskalniku uspešen; commit `063a834`, brez `git push`.
 * **DeepSeek (Orkestrator, sanity check):** Spremenjene samo datoteke v `src/`, `naloge.json` nespremenjen (112 nalog, 13 polj, 0 podvojenih ID-jev, min 15/kategorijo), brez lock datotek, `npm run build` uspešen. Dodatno neodvisno preverjanje: 5 predlogov začasno združenih v bazo, `vite preview` + glava Chrome (`--dump-dom`) — 5 kartic »Sestavi poved«, 39 gumbov sestavin (8+7+7+8+9), 5 praznih blokov »Vaša poved«, filter s števcem 5; po preizkusu baza obnovljena (`git diff --quiet`). Predaja Codexu za vnos v `naloge.json`.
 * **DeepSeek (Orkestrator, predaja Codexu):**
@@ -152,7 +154,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 2. **Claude Code (Pika na i):**
    - Gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
 3. **Aljonin preizkus v živo:**
-   - Preizkus ponastavitve posamezne naloge in izbora na telefonu: [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (112 nalog v bazi).
+   - Preizkus ponastavitve posamezne naloge in izbora na telefonu: [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (117 nalog v bazi, vključno s 5 sestavljankami »Sestavi poved«).
    - Objava na GitHub Pages izvedena 25. 11. 2026 (`git push` → GitHub Actions; na živo preverjen nov paket `index-DhED8cZy.js`).
 
 ### [22. 11. 2026]

@@ -11,16 +11,23 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 📊 Trenutno stanje projekta
-* **Status:** 🟢 Objavljeno (Faza 3 zaključena: vseh 112 nalog jezikovno pregledanih, vključno s petimi iz commita `045f848`; Faza 4: UI besedila in vsebinski popravki objavljeni na GitHub Pages 25. 11. 2026, čaka UX preizkus)
-* **Obseg nalog:** 112 nalog pripravljenih: 88 B2 in 24 C1; vseh 7 kategorij ima najmanj 15 nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 112 nalog je vsebinsko pregledanih.
-* **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj 15 nalog.
-* **Nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«, raven B2):** učenka sestavi poved iz premešanih besed in ločil. Podpora v vmesniku je objavljena (`063a834`), predlog 5 stavkov je potrjen; **v bazo še ni vnesen** — vnos izvede Codex.
+* **Status:** 🟢 Objavljeno (Faza 3 zaključena: vseh 112 nalog jezikovno pregledanih, vključno s petimi iz commita `045f848`; Faza 4: UI besedila in vsebinski popravki objavljeni na GitHub Pages 25. 11. 2026; **27. 11. 2026 lokalno dodanih še 5 nalog tipa `stavcni_puzzle` (skupno 117) — čaka objava**)
+* **Obseg nalog:** 117 nalog pripravljenih: 93 B2 in 24 C1; vseh 7 kategorij ima najmanj **16** nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 117 nalog je vsebinsko pregledanih.
+* **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj **16** nalog.
+* **Nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«, raven B2):** učenka sestavi poved iz premešanih besed in ločil. Podpora v vmesniku (`063a834`) in **5 nalog v bazi** (`b5f2087`): `C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`.
 * **Spletni vmesnik (Claude Code):** Izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora »↻ Ponastavi rezultate (N)« (tudi v kvizu) z novimi opisi in `aria-label`; tip `stavcni_puzzle` s sestavinami kot gumbi (dotik doda/odstrani), brez povleci-in-spusti.
 * **Lock datoteke:** Ni aktivnih lock datotek.
 
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [27. 11. 2026] — DeepSeek (Sanity check vnosa 5 nalog `stavcni_puzzle` v bazo)
+* **Narejeno:** Preverjen Codexov vnos (`b5f2087`): spremenjena samo `naloge.json` (+75 vrstic, 0 izbrisov) in `.ai-tasks/2-codex.md`, `predlogi-stavcni-puzzle.json` izbrisan. Prvih 112 nalog je JSON-identičnih prejšnji različici in v istem vrstnem redu; vseh 5 novih objektov je **1:1** s predlogom iz commita `2621eed` (13 polj, enak vrstni red polj, nobenega mikro-popravka).
+* **Shema:** 117 nalog (93 B2 / 24 C1), 0 podvojenih ID-jev, 0 manjkajočih polj, min **16**/kategorijo (prej 15 — vseh pet kategorij se je dvignilo na 16; Codexova opomba je pravilna), UTF-8 brez BOM, brez lock datotek, `npm run build` uspešen (134 ms).
+* **Preverjanje rešljivosti:** s prepisom `normaliziraj` iz `src/preverjanje.ts` preverjeno, da vmesnikov osnutek (sestavine, ločene s presledki, npr. `… mu , da …`) ustreza vsem 7 sprejemljivim odgovorom (5 nalog; VID, FRA in SLO imajo po 2). Vseh 5 nalog ima 7–9 sestavin, prazen `kontekst`, končno ločilo samo v rešitvi.
+* **Neodvisni preizkus v brskalniku:** `vite preview` + glava Chrome (`--dump-dom`) nad zgrajeno aplikacijo z novo bazo — 5 kartic »Sestavi poved«, 39 gumbov sestavin, 5 blokov »Vaša poved« v praznem stanju, filter »Sestavi poved« s števcem 5.
+* **Spremenjene datoteke:** `brain/00-INDEX.md`, `napredek.md` (dashboard 117 nalog, tabela modulov, checklist, changelog).
+* **Naslednji korak:** objava (`git push origin main`) šele po izrecni potrditvi uporabnika; nato Aljonin preizkus sestavljank na telefonu. Odprta neblokirajoča opomba: podvojen `aria-live` pri sestavljeni povedi (glej vnos zgoraj).
 ### [27. 11. 2026] — DeepSeek (Sanity check UI podpore `stavcni_puzzle` in predaja Codexu)
 * **Narejeno:** Preverjeno Claudeovo delo (`063a834`): spremenjene samo `src/types.ts`, `src/main.ts`, `src/style.css` (+130 / −9 vrstic), `naloge.json` nespremenjen (112 nalog, 13 polj, 0 podvojenih ID-jev, min 15/kategorijo), ni lock datotek, `npm run build` uspešen.
 * **Neodvisno preverjanje v brskalniku:** 5 predlogov začasno združenih v `naloge.json`, zgrajeno, postreženo z `vite preview` in izpisan DOM z glavo Chrome (`--headless --dump-dom`). Izid: 5 kartic »Sestavi poved«, 5 blokov »Vaša poved« v praznem stanju, **39 gumbov sestavin** (8+7+7+8+9, natanko kot v predlogu), 5 namigov, filter »Sestavi poved« s števcem 5; »Preveri« je ob praznem sestavljanju onemogočen, »Počisti« se prikaže šele ob izbiri. Po preizkusu je bil `naloge.json` obnovljen in s `git diff --quiet` potrjen kot nespremenjen (tudi `dist/` je znova zgrajen z originalno bazo).
@@ -110,9 +117,9 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 ---
 
 ## 🎯 Naslednji logični korak
-1. **Codex — opravljeno 27. 11. 2026** (`2621eed`): predlog 5 nalog tipa `stavcni_puzzle` v `predlogi-stavcni-puzzle.json`; sanity check orkestratorja uspešen, predlog čaka na vnos v bazo.
+1. **Codex — opravljeno 27. 11. 2026** (`2621eed`, `b5f2087`): predlog 5 nalog tipa `stavcni_puzzle`, nato vnos 1:1 v `naloge.json` (117 nalog) in izbris predloga; sanity check orkestratorja uspešen.
 2. **Claude Code — opravljeno 27. 11. 2026** (`063a834`): podpora tipu `stavcni_puzzle` v vmesniku (`TipNaloge` in `TIPI` »Sestavi poved«, veja v `odgovorHtml`, čiščenje stanja ob ponastavitvi, brez prikaza `kontekst`, povzetek kviza, razredi v `style.css`); sanity check in neodvisni preizkus v brskalniku uspešna.
-3. **Codex (zdaj):** vnos 5 potrjenih nalog iz `predlogi-stavcni-puzzle.json` v `naloge.json` (ID-ji `C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`), izbris predloga; navodila v `.ai-tasks/2-codex.md`.
-4. **Aljona:** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov) — še odprto.
+3. **DeepSeek (zdaj):** dokumentacija usklajena (117 nalog, tabela modulov, checklist); **objava čaka izrecno potrditev uporabnika** (`git push origin main`: `063a834`, `aeeb8de`, `b5f2087`), pred tem pa še neobvezen mikro-popravek `aria-live` po dogovoru s Claude Code.
+4. **Aljona:** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov, sestavljanke »Sestavi poved«) — še odprto.
 5. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet.
 6. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
