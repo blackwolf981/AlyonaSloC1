@@ -53,7 +53,7 @@
 - [ ] Odprava morebitnih hroščev in optimizacija delovanja na mobilnih napravah
 - [x] **Način »Osredotočena vaja« (Dnevni kviz):** Način reševanja 10 naključnih nalog po korakih (ena naloga naenkrat) s končnim povzetkom uspešnosti *(Claude Code — implementirano v commitu de62611!)*
 - [ ] **Zvočna izgovorjava (Text-to-Speech):** Gumb z zvočnikom ob povedi za poslušanje naravne slovenske izgovorjave (`window.speechSynthesis` z `sl-SI`) *(Claude Code — naslednji korak)*
-- [x] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Claude Code — podpora v UI `063a834`; Codex — predlog `2621eed`; vnos 5 nalog v bazo `b5f2087`, 27. 11. 2026; sanity check DeepSeek OK — 117 nalog, min 16/kategorijo)*
+- [x] **Nov tip naloge `stavcni_puzzle` (»Sestavi poved«, B2):** učenka sestavi pravilno poved iz premešanih besed in ločil (kot puzzle) *(Claude Code — podpora v UI `063a834`; Codex — predlog `2621eed`; vnos 5 nalog v bazo `b5f2087`, 27. 11. 2026; sanity check DeepSeek OK — 117 nalog, min 16/kategorijo; **v pripravi še 25 sestavljank** — predano Codexu 27. 11. 2026, cilj 30 sestavljank in 142 nalog)*
 - [ ] Končna jezikovna revizija vseh nalog in razlag *(Codex; po novem dogovoru z uporabnikom)*
 
 ---
@@ -91,6 +91,7 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
   - V `.ai-tasks/2-codex.md` pripravljena naloga za Codex: predlog natanko 5 stavkov v novi datoteki `predlogi-stavcni-puzzle.json` — `C1-SKL-016` (naslonski niz), `C1-DVO-016` (dvojina), `C1-VID-016` (glagolski vid), `C1-FRA-016` (frazem), `C1-SLO-016` (slogovni register). Vsi ID-ji preverjeno prosti.
   - V `naloge.json` se predlog še ne vpisuje: vmesnik tipa še ne podpira, zato bi naloge delovale kot navadno besedilno polje. Vnos sledi po objavi podpore v UI (Claude Code).
   - Usklajena dokumentacija: `NAVODILA.md` (5. dovoljeni tip), `brain/02-SLOVENSCINA.md` (pravila za sestavine), `brain/00-INDEX.md`, `napredek.md`. Brez posegov v `src/` in `naloge.json`.
+* **DeepSeek (predaja Codexu — 25 novih sestavljank):** V `.ai-tasks/2-codex.md` pripravljena naloga za **25 novih sestavljank `stavcni_puzzle` (B2)**; baza po vnosu **142 nalog** (118 B2 / 24 C1), sestavljank 30. Razporeditev (kategorije po vnosu 20–21): VEZ +2 (`C1-VEZ-020`, `C1-VEZ-021`), ROD +3 (`C1-ROD-019`…`021`), FRA/VID/DVO/SKL/SLO po +4 (`C1-XXX-017`…`020`). Pravila: 7–9 različnih sestavin, natanko ena z veliko začetnico, končno ločilo samo v odgovoru, enolična rešljivost, alternative le, če so resnično sprejemljive; kratke B2 razlage v vsakdanji slovenščini. Preverjanje: `node tmp/preveri-puzzle.cjs` (nova skripta orkestratorja; na obstoječih 5 sestavljankah `VSE PREVERBE OK (5/5)`) + ročno branje rešitev. `brain/02-SLOVENSCINA.md`: tip prestavljen iz »v pripravi« v aktivnega in dopolnjen s pravili o enoličnosti.
 
 ### [25. 11. 2026]
 * **Claude Code (Frontend & UX):**
@@ -152,17 +153,21 @@ Razvrstitev je začetna uredniška ocena zahtevnosti posamezne naloge, ne uradna
 ---
 
 ## 🔜 Naslednji delovni sklop
-1. **Claude Code (mikro popravek — opravljeno 27. 11. 2026):**
+1. **Codex (v teku — predano 27. 11. 2026):**
+   - 25 novih sestavljank `stavcni_puzzle` (raven B2) po navodilih v `.ai-tasks/2-codex.md`: VEZ +2, ROD +3, FRA/VID/DVO/SKL/SLO po +4 → baza **142 nalog**, vse kategorije 20–21 nalog.
+   - Preverjanje: `node tmp/preveri-puzzle.cjs` (shema, sestavine, ena velika začetnica, sestavljivost odgovorov, podvajanja) in ročno branje vseh 25 rešitev; lokalni commit brez `git push`.
+2. **Claude Code (mikro popravek — opravljeno 27. 11. 2026):**
    - Dostopnost pri »Sestavi poved«: `.sestavljeno` ni več `role="status"` (vsebuje gumbe); edino živo območje je `p.sr-only[role="status"]`, izrisano vedno (`19d5e4c`). Odprto le, če bralnik zaslona ob kliku ne prebere ničesar → trajno območje zunaj kartice.
-2. **Objava (opravljeno 27. 11. 2026):**
+3. **Objava (opravljeno 27. 11. 2026):**
    - `git push origin main` z commiti `063a834`, `aeeb8de`, `b5f2087`, `dc7494d`, `49a4301`, `19d5e4c`, `4fc049c` (117 nalog + dostopnost). Objavljen paket `index-C-COV7AK.js`, živo preverjen.
-3. **Preizkus v brskalniku (Aljona / uporabnik):**
+4. **Preizkus v brskalniku (Aljona / uporabnik):**
    - Izbirnik ravni, oba gumba za ponastavitev in potrditveno sporočilo (tudi v kvizu) na namizju in telefonu; lokalni predogled objave z `npm run preview`.
-4. **Claude Code (Pika na i):**
+5. **Claude Code (Pika na i):**
    - Gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`).
-5. **Aljonin preizkus v živo:**
+6. **Aljonin preizkus v živo:**
    - Preizkus ponastavitve posamezne naloge in izbora na telefonu: [https://blackwolf981.github.io/AlyonaSloC1/](https://blackwolf981.github.io/AlyonaSloC1/) (117 nalog v bazi, vključno s 5 sestavljankami »Sestavi poved«).
    - Objava na GitHub Pages izvedena 25. 11. 2026 (`git push` → GitHub Actions; na živo preverjen nov paket `index-DhED8cZy.js`); **nova objava (117 nalog + dostopnostni popravek) izvedena 27. 11. 2026** — paket `index-C-COV7AK.js`.
+7. **Objava paketa s 25 novimi sestavljankami:** po Codexovem vnosu in uspešnem sanity checku orkestratorja; `git push origin main` šele po izrecni potrditvi uporabnika.
 
 ### [22. 11. 2026]
 * **Gemini (Vodja projekta in urednik):** 

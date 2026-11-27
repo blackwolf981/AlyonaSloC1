@@ -29,11 +29,13 @@ Ta dokument vsebuje stroga navodila za učitelja slovenščine (ChatGPT Codex) p
    * Polje slovnicna_razlaga mora jasno pojasniti zakaj je odgovor pravilen.
    * Polje tipicna_napaka mora opozoriti na specifično napako.
 4. **UTF-8 kodiranje:** Datoteka naloge.json mora biti vedno shranjena v kodiranju UTF-8 brez BOM.
-5. **Tip `stavcni_puzzle` (Sestavi poved, v pripravi):**
+5. **Tip `stavcni_puzzle` (Sestavi poved, raven B2; v bazi 30 nalog po vnosu 27. 11. 2026):**
    * `kontekst` je prazen niz (`""`), ker bi poved izdala rešitev.
-   * `moznosti` so **sestavine** v premešanem vrstnem redu: vsaka sestavina je ena beseda ali eno ločilo, **brez presledkov znotraj sestavine**.
+   * `moznosti` so **sestavine** v premešanem vrstnem redu: vsaka sestavina je ena beseda ali eno ločilo, **brez presledkov znotraj sestavine**; 7–9 sestavin.
+   * Vse sestavine so med seboj **različni nizi** in natanko **ena** se začne z veliko začetnico (začetek povedi); lastnih imen sredi povedi ne uporabljamo, ker bi naredila rešitev dvoumno.
    * Notranja ločila (vejica, dvopičje, pomišljaj) so samostojne sestavine; končno ločilo (`. ? !`) **ni** sestavina, ampak je samo v `pravilni_odgovor`.
-   * `pravilni_odgovor` je natanko združene sestavine v pravilnem vrstnem redu, s končnim ločilom; nobene sestavine ne uporabi dvakrat in ne dodajaj besed, ki jih ni med sestavinami.
+   * `pravilni_odgovor` je natanko združene sestavine v pravilnem vrstnem redu, z enim presledkom med njimi in s končnim ločilom; nobene sestavine ne uporabi dvakrat in ne dodajaj besed, ki jih ni med sestavinami.
+   * Rešitev mora biti **enolična**: iz sestavin je mogoče sestaviti samo pravilno poved (in morebitne navedene alternative); preveri tako, da sestavine premešaš in poskusiš sestaviti napačno poved.
    * Če so dopustni različni vrstni redi, so vsi navedeni v `alternativni_odgovori`, razlaga pa pove, kateri del vrstnega reda je vezan (naslonski niz) in kateri prost.
 
 ---

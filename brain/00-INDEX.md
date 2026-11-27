@@ -14,13 +14,19 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 * **Status:** 🟢 Objavljeno (Faza 3 zaključena: vseh 112 nalog jezikovno pregledanih, vključno s petimi iz commita `045f848`; Faza 4: UI besedila in vsebinski popravki objavljeni na GitHub Pages 25. 11. 2026; **27. 11. 2026 objavljenih 117 nalog** — 5 sestavljank `stavcni_puzzle` + dostopnostni popravek, paket `index-C-COV7AK.js`)
 * **Obseg nalog:** 117 nalog pripravljenih: 93 B2 in 24 C1; vseh 7 kategorij ima najmanj **16** nalog; vse B2 razlage so poenostavljene in vsebujejo praktični zgled; vseh 117 nalog je vsebinsko pregledanih.
 * **Tematski moduli:** MOD-01 do MOD-07 aktivni z B2/C1 filtri; vse kategorije imajo vsaj **16** nalog.
-* **Nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«, raven B2):** učenka sestavi poved iz premešanih besed in ločil. Podpora v vmesniku (`063a834`), **5 nalog v bazi** (`b5f2087`): `C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`; dostopnost urejena z enim živim območjem (`p.sr-only`, `19d5e4c`).
+* **Nov tip naloge `stavcni_puzzle` (v UI »Sestavi poved«, raven B2):** učenka sestavi poved iz premešanih besed in ločil. Podpora v vmesniku (`063a834`), **5 nalog v bazi** (`b5f2087`): `C1-SKL-016`, `C1-DVO-016`, `C1-VID-016`, `C1-FRA-016`, `C1-SLO-016`; dostopnost urejena z enim živim območjem (`p.sr-only`, `19d5e4c`). **V pripravi:** 25 novih sestavljank (B2), predanih Codexu 27. 11. 2026 — po vnosu 30 sestavljank in 142 nalog.
 * **Spletni vmesnik (Claude Code):** Izbirnik ravni »Samo B2« / »Samo C1« / »Vse ravni (B2 in C1)«, ločena gumba za ponastavitev posamezne naloge (pogojna vidnost) in trenutnega izbora »↻ Ponastavi rezultate (N)« (tudi v kvizu) z novimi opisi in `aria-label`; tip `stavcni_puzzle` s sestavinami kot gumbi (dotik doda/odstrani), brez povleci-in-spusti.
 * **Lock datoteke:** Ni aktivnih lock datotek.
 
 ---
 
 ## 📝 Dnevnik dela (Work Log)
+### [27. 11. 2026] — DeepSeek (Predaja 25 novih sestavljank `stavcni_puzzle` Codexu)
+* **Narejeno:** V `.ai-tasks/2-codex.md` pripravljena naloga za Codexa: **25 novih sestavljank istega tipa** (raven B2), baza po vnosu **142 nalog**. Razporeditev je določena tako, da so kategorije uravnotežene: VEZ +2 (`C1-VEZ-020`, `021`), ROD +3 (`C1-ROD-019`…`021`), FRA, VID, DVO, SKL in SLO po +4 (`C1-XXX-017`…`020`) → vse kategorije 20–21 nalog.
+* **Pravila v predaji:** 13 polj, `kontekst` = `""`, `raven` = `"B2"`, 7–9 sestavin brez presledkov, ločila kot samostojne sestavine, končno ločilo samo v odgovoru, sestavine med seboj različne, **natanko ena** z veliko začetnico, enolična rešljivost, alternative le, če so resnično sprejemljive; razlage kratke in v vsakdanji slovenščini.
+* **Orodje:** Pripravljena je bila skripta `tmp/preveri-puzzle.cjs` (mapa `tmp/` je v `.gitignore`) — preveri shemo sestavljank, dolžino in obliko sestavin, unikatnost, eno veliko začetnico, sestavljivost odgovorov in alternativ iz sestavin ter podvajanje pravih odgovorov; na obstoječih 5 sestavljankah izpiše `VSE PREVERBE OK (5/5)`.
+* **Dokumentacija:** V `brain/02-SLOVENSCINA.md` je tip `stavcni_puzzle` prestavljen iz »v pripravi« v aktivnega (B2, po vnosu 30 nalog) in dopolnjen s pravili o različnih sestavinah, eni veliki začetnici in enolični rešljivosti.
+* **Naslednji korak:** Codex vnese 25 sestavljank (lokalni commit, brez `git push`); nato sanity check orkestratorja in po izrecni potrditvi uporabnika objava.
 ### [27. 11. 2026] — DeepSeek (Objava na GitHub Pages — 117 nalog + dostopnostni popravek)
 * **Narejeno:** Po izrecni potrditvi uporabnika izveden `git push origin main` (7 commitov: `063a834`, `aeeb8de`, `b5f2087`, `dc7494d`, `49a4301`, `19d5e4c`, `4fc049c`); `origin/main` = `4fc049c`.
 * **Objava preverjena na živo:** GitHub Actions je objavil nov paket `index-C-COV7AK.js` + `index-B-68-mKZ.css` (prejšnji `index-DhED8cZy.js`); v paketu je novi niz `Trenutna poved je prazna.`
@@ -135,6 +141,7 @@ Vstopna točka v projektno dokumentacijo in bazo znanja. Vsi agenti (DeepSeek/Ge
 3. **DeepSeek — opravljeno 27. 11. 2026** (`dc7494d`, `49a4301`): dokumentacija usklajena (117 nalog, tabela modulov, checklist, changelog) in pripravljena navodila za mikro popravek dostopnosti.
 4. **Claude Code — opravljeno 27. 11. 2026** (`19d5e4c`): eno samo živo območje — `role="status"` odstranjen z `.sestavljeno` (vsebuje gumbe), `p.sr-only` se izriše vedno; sanity check in preizkus v brskalniku uspešna (5/5 kartic). Odprto le, če bralnik zaslona ne prebere ničesar (kartica se zamenja prek `outerHTML`): trajno območje zunaj kartice.
 5. **DeepSeek — opravljeno 27. 11. 2026:** **objavljeno na GitHub Pages** (`git push origin main`, `origin/main` = `4fc049c`); nov paket `index-C-COV7AK.js` preverjen na živo (117 kartic, 5 sestavljank, 5 živih območij, `naloge.json` na strežniku 117 nalog).
-6. **Aljona (zdaj):** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov, sestavljanke »Sestavi poved«); po potrebi preizkus z bralnikom zaslona (VoiceOver/TalkBack).
-7. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet; po potrebi trajno živo območje zunaj kartice.
-8. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
+6. **Codex (zdaj):** 25 novih sestavljank `stavcni_puzzle` (B2) po navodilih v `.ai-tasks/2-codex.md` (razporeditev po kategorijah, baza po vnosu 142 nalog); preverjanje z `node tmp/preveri-puzzle.cjs` in ročno branje rešitev, lokalni commit brez `git push`.
+7. **Aljona (zdaj):** preizkus objavljene različice na telefonu in namizju (izbirnik ravni, oba gumba za ponastavitev, potrditveno sporočilo, prelom gumbov, sestavljanke »Sestavi poved«); po potrebi preizkus z bralnikom zaslona (VoiceOver/TalkBack).
+8. **Claude Code:** gumb za zvočno izgovorjavo povedi (TTS, `window.speechSynthesis` s `sl-SI`) — v kodi še ni začet; po potrebi trajno živo območje zunaj kartice.
+9. Zaključeno 25. 11. 2026: kratka kontrola petih B2 nalog iz commita `045f848` (VEZ-019, ROD-018, DVO-005, VID-012, SKL-004) — commit `00311d2`; mikro-popravek zveze `sodi za` v navodilu ROD-018 (opravljen v `e941ff3`).
